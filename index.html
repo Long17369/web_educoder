@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>educoder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>欢迎查看educoder!</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="posts">
+            <article>
+                <iframe src=".\main.html" id="post-iframe-1" scrolling="no"></iframe>
+                <a id="post-a-1" onclick="toggleIframe(1)">展开</a>
+            </article>
+            <article>
+                <h2>第二篇博客文章</h2>
+                <p>今天我想和大家分享一些有趣的事情。</p>
+                <button onclick="alert('感谢阅读!')">阅读更多</button>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>
