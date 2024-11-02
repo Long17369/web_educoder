@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加载 iframe 示例</title>
+    <style>
+        #loading {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+        }
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #iframeContainer {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div id="iframeContainer">
+    <div id="loading">
+        <div class="spinner"></div>
+        正在加载...
+    </div>
+    <iframe id="myIframe" src="https://example.com" width="600" height="400" style="display:none;" onload="hideLoading()"></iframe>
+</div>
+
+<script>
+    function showLoading() {
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('myIframe').style.display = 'none';
+    }
+
+    function hideLoading() {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('myIframe').style.display = 'block';
+    }
+    // 在页面加载时显示加载效果
+    window.onload = showLoading;
+</script>
+
+</body>
+</html>

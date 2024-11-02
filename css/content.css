@@ -13,9 +13,15 @@ h1 {
 
 h2 {
     color: #5a5a5a;
-    border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
     margin-top: 30px;
+}
+
+.menu-title {
+    color: #5a5a5a;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    font-size: 1.5em;
 }
 
 ul {
@@ -41,4 +47,17 @@ ul li:hover {
     background-color: #e0e0e0;
     padding: 5px;
     border-radius: 5px;
+}
+
+.chapter-title {
+    color: #5a5a5a;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.menu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
 }
