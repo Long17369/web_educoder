@@ -1,7 +1,12 @@
 {
     "title": "educoder",
     "stylesheet": "./css/content.css",
-    "script": "./js/menu.js",
+    "script": [
+        "./js/menu.js",
+        "./js/marked.min.js",
+        "./js/highlight.min.js",
+        "./js/content.js"
+    ],
     "contents": [
         {
             "title": "基本输入输出操作",

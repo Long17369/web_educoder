@@ -26,3 +26,6 @@ function hideLoading(id) {
     document.getElementById("post-loading-" + id).style.display = 'none';
     document.getElementById("post-container-" + id).style.display = 'block';
 }
+function showLoading(id) {
+document.getElementById('content').innerHTML = marked(markdownContent);
+}

@@ -110,7 +110,10 @@ class HTMLGenerator:
         self.write_html(f"<title>{self.data['title']}</title>")
         self.write_html("<meta charset='UTF-8'>")
         self.write_html(f"<link rel='stylesheet' href='{self.data['stylesheet']}'>")
-        self.write_html(f"<script src='{self.data['script']}'></script>")
+        self.write_html(f"<script src='{self.data['script'][0]}'></script>")
+        self.write_html(f"<script src='{self.data['script'][1]}'></script>")
+        self.write_html(f"<script src='{self.data['script'][2]}'></script>")
+        self.write_html(f"<script src='{self.data['script'][3]}'></script>")
         self.write_html("</head>")
 
     def body(self):
@@ -121,16 +124,21 @@ class HTMLGenerator:
         self.write_html("<ul class='menu' id='menu-1'>")
         for chapter in self.data['contents']: # 章节目录
             self.write_html(f"<li><a href='#{chapter['id']}'>{int(chapter['id'])+1}:{chapter['title']}</a></li>")
-        self.write_html("</ul>")
+        self.write_html("</ul><ul>")
         for chapter in self.data['contents']:
             self.write_html(f"<h3 id='{chapter['id']}' href='#{chapter['id']}' class='chapter-title'>{int(chapter['id'])+1}:{chapter['title']}</h3>")
             for content in chapter['content']: # 内容
                 self.write_html(f"<div><a href='#{chapter['id']}_{content['id']}' id='{content['id']}' class='content-title'>{int(content['id'])+1}:{content['title']}</a></div>")
+        self.write_html("</ul><ul>")
         for chapter in self.data['contents']:
             self.write_html("<ul>")
             for content in chapter['content']:
-                self.write_html(f"<li id='{chapter['id']}_{content['id']}' class='code_content'>{self.data['codes'][chapter['id']][content['id']]}</li>")
+                self.write_html(f"<div id='{chapter['id']}_{content['id']}' class='content-content'>")
+                self.write_html(f"<h4>{content['title']}</h4>")
+                self.write_html(f"<li id='code_{chapter['id']}_{content['id']}' class='code_content'></li>")
+                self.write_html(f"</div>")
             self.write_html("</ul>")
+        self.write_html("</ul>")
         self.write_html("</body>")
         self.write_html("</html>")
 

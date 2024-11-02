@@ -61,3 +61,6 @@ ul li:hover {
     list-style-type: none;
     padding-left: 20px;
 }
+.content-content{
+    display: none;
+}
