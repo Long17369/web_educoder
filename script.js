@@ -27,5 +27,5 @@ function hideLoading(id) {
     document.getElementById("post-container-" + id).style.display = 'block';
 }
 function showLoading(id) {
-document.getElementById('content').innerHTML = marked(markdownContent);
+    document.getElementById('content').innerHTML = marked(markdownContent);
 }

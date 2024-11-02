@@ -5,7 +5,7 @@ class Main:
         match int(input("按0开始生成HTML文件\n按1开始编辑章节\n按2手动编辑章节\n按3退出程序")):
             case 0:
                 self.read_json('./main.json')
-                HTMLGenerator(self.data, './test.html')
+                HTMLGenerator(self.data, './main.html')
             case 1:
                 self.read_json('./main.json')
                 self.chapter_edit()
@@ -109,11 +109,10 @@ class HTMLGenerator:
         self.write_html("<head>")
         self.write_html(f"<title>{self.data['title']}</title>")
         self.write_html("<meta charset='UTF-8'>")
-        self.write_html(f"<link rel='stylesheet' href='{self.data['stylesheet']}'>")
-        self.write_html(f"<script src='{self.data['script'][0]}'></script>")
-        self.write_html(f"<script src='{self.data['script'][1]}'></script>")
-        self.write_html(f"<script src='{self.data['script'][2]}'></script>")
-        self.write_html(f"<script src='{self.data['script'][3]}'></script>")
+        for i in self.data['stylesheet']:
+            self.write_html(f"<link rel='stylesheet' href='{i}'>")
+        for i in self.data['script']:
+            self.write_html(f"<script src='{i}'></script>")
         self.write_html("</head>")
 
     def body(self):
@@ -130,11 +129,12 @@ class HTMLGenerator:
             for content in chapter['content']: # 内容
                 self.write_html(f"<div><a href='#{chapter['id']}_{content['id']}' id='{content['id']}' class='content-title'>{int(content['id'])+1}:{content['title']}</a></div>")
         self.write_html("</ul><ul>")
-        for chapter in self.data['contents']:
+        for chapter in self.data['contents']: # 内容目录
+            self.write_html(f"<h3 id='{chapter['id']}' class='chapter-title'>{int(chapter['id'])+1}:{chapter['title']}</h3>")
             self.write_html("<ul>")
-            for content in chapter['content']:
+            for content in chapter['content']: # 代码
                 self.write_html(f"<div id='{chapter['id']}_{content['id']}' class='content-content'>")
-                self.write_html(f"<h4>{content['title']}</h4>")
+                self.write_html(f"<h4>{int(chapter['id'])+1}.{int(content['id'])+1}.{content['title']}</h4>")
                 self.write_html(f"<li id='code_{chapter['id']}_{content['id']}' class='code_content'></li>")
                 self.write_html(f"</div>")
             self.write_html("</ul>")

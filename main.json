@@ -1,11 +1,14 @@
 {
     "title": "educoder",
-    "stylesheet": "./css/content.css",
+    "stylesheet": [
+        "./css/content.css",
+        "./highlight/styles/default.css"
+    ],
     "script": [
         "./js/menu.js",
         "./js/marked.min.js",
-        "./js/highlight.min.js",
-        "./js/content.js"
+        "./js/content.js",
+        "./highlight/highlight.min.js"
     ],
     "contents": [
         {

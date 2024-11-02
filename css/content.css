@@ -29,7 +29,7 @@ ul {
     padding: 0;
 }
 
-li {
+li.menu {
     margin: 10px 0;
 }
 
@@ -43,7 +43,7 @@ a:hover {
     color: #0056b3;
 }
 
-ul li:hover {
+ul li.menu:hover {
     background-color: #e0e0e0;
     padding: 5px;
     border-radius: 5px;
