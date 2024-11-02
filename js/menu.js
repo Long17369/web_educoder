@@ -10,6 +10,17 @@ function toggleMenu(id) {
         submenu.style.display = "none"; // 收起菜单
         icon.textContent = "▶"; // 更改箭头为向右
     }
+    resizeIframe(); // 刷新页面
+}
+
+function reflash(){
+    if(window.Spread===true){
+        resizeIframe();
+    }
+}
+
+function resizeIframe() {
+    window.Spread = true; // 标记页面已刷新
     window.parent.postMessage({
         'type': 'resize', 'id': window.id
     }, '*'); // 向父页面发送消息，刷新页面

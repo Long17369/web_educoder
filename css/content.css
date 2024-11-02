@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -61,6 +65,7 @@ ul li.menu:hover {
     list-style-type: none;
     padding-left: 20px;
 }
-.content-content{
+
+.content-content {
     display: none;
 }

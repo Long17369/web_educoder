@@ -43,6 +43,7 @@ function showcontent(id) {
     var text = content.children[1].children[0].children[0]
     text.innerHTML = hljs.highlight(window.contentdata.contents[id[0]].content[id[1]].code, { language: text.classList[0].split('-')[1] }).value;
     content.style.display = 'block';
+    reflash();
 }
 
 async function load_content(content) {

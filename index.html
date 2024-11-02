@@ -41,6 +41,27 @@
         </section>
     </main>
 
+    <button id="scrollToTopBtn" class="scroll-to-top">Top</button>
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        // 显示或隐藏按钮
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        // 点击按钮时，滚动到顶部
+        scrollToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" // 平滑滚动
+            });
+        }
+    </script>
+
 </body>
 
 </html>

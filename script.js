@@ -29,3 +29,4 @@ function hideLoading(id) {
 function showLoading(id) {
     document.getElementById('content').innerHTML = marked(markdownContent);
 }
+
