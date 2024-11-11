@@ -1,23 +1,30 @@
 import json
 
+class MainError(Exception):...
+
 class Main:
-    def __init__(self):
+    def __init__(self,file='main'):
+        if (file not in ['main','pta']):
+            raise MainError("文件名错误")
         match int(input("按0开始生成HTML文件\n按1开始编辑章节\n按2手动编辑章节\n按3退出程序")):
             case 0:
-                self.read_json('./main.json')
-                HTMLGenerator(self.data, './main.html')
+                self.read_json(f'./{file}.json')
+                HTMLGenerator(self.data, f'./{file}.html')
             case 1:
-                self.read_json('./main.json')
+                self.read_json(f'./{file}.json')
                 self.chapter_edit()
-                self.save_json('./main.json')
+                self.save_json(f'./{file}.json')
             case 2:
-                self.read_json('./main.json')
+                self.read_json(f'./{file}.json')
             case _:
                 pass
 
     def read_json(self, file_path):
         with open(file_path, 'r') as f:
             self.data = json.load(f)
+        if int(self.data['contents'][0]['id'])<0:
+            for i in self.data['contents']:
+                i['id'] = -int(i['id']) - 1
         return self.data
 
     def write_json(self, file_path):
@@ -147,4 +154,4 @@ class HTMLGenerator:
             print(data, file=f)
 
 if __name__ == '__main__':
-    a = Main()
+    a = Main(input("请输入文件名："))
