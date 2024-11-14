@@ -68,7 +68,7 @@ async function set_content(id, code) {
     code = "```c" + code;
     let c = window.contentdata.contents[id[0]].content[id[1]];
     c.code = code.split('```')[1];
-    if (c.code.slice(0, 3) == 'cpp') c.code = c.code.slice(2);
+    if (c.code.slice(0, 3) == 'cpp') c.code = c.code.slice(3);
     else c.code = c.code.slice(1);
     document.getElementById('code_' + id[0] + '_' + id[1]).innerHTML = await marked.parse(code);
     return id
