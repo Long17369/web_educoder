@@ -1,3 +1,5 @@
 # Vscode workspace settings
 .vscode/
 
+# python cache files
+__pycache__/

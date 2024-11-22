@@ -81,7 +81,10 @@ class Main:
                         return
 
     def add_content(self,chapter,data):
-        id = len(self.data['contents'][chapter]['content'])
+        try:id = len(self.data['contents'][chapter]['content'])
+        except:
+            self.data['contents'][chapter]['content'] = []
+            id = 0
         for i in data:
             self.data['contents'][chapter]['content'].append({'title': i,'id': id,})
             id += 1
