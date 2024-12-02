@@ -137,7 +137,7 @@ class HTMLGenerator:
         for chapter in self.data['contents']:
             self.write_html(f"<h3 id='{chapter['id']}' href='#{chapter['id']}' class='chapter-title'>{int(chapter['id'])+1}:{chapter['title']}</h3>")
             for content in chapter['content']: # 内容
-                self.write_html(f"<div><a href='#{chapter['id']}_{content['id']}' id='{content['id']}' class='content-title'>{int(content['id'])+1}:{content['title']}</a></div>")
+                self.write_html(f"<div><a href='#{chapter['id']}_{content['id']}' class='content-title'>{int(content['id'])+1}:{content['title']}</a></div>")
         self.write_html("</ul><ul>")
         for chapter in self.data['contents']: # 内容目录
             self.write_html(f"<h3 id='{chapter['id']}' class='chapter-title'>{int(chapter['id'])+1}:{chapter['title']}</h3>")
