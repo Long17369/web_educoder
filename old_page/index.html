@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>educoder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="../js/marked.min.js"></script>
+    <script>
+        function showLoading(id) {
+            document.getElementById("post-loading-" + id).style.display = 'flex';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>欢迎查看educoder!</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="posts">
+            <article id="post-1" class="iframeContainer">
+                <div id="post-loading-1" class="post-loading">
+                    <div class="spinner"></div>
+                    正在加载...
+                </div>
+                <script>showLoading(1);</script>
+                <div id="post-container-1" class="post-container">
+                    <iframe src=".\main.html" id="post-iframe-1" scrolling="no"></iframe>
+                    <a id="post-a-1" onclick="toggleIframe(1)">展开</a>
+                </div>
+            </article>
+            <article id="post-2" class="iframeContainer">
+                <div id="post-loading-2" class="post-loading">
+                    <div class="spinner"></div>
+                    正在加载...
+                </div>
+                <script>showLoading(2);</script>
+                <div id="post-container-2" class="post-container">
+                    <iframe src=".\pta.html" id="post-iframe-2" scrolling="no"></iframe>
+                    <a id="post-a-2" onclick="toggleIframe(2)">展开</a>
+                </div>
+            </article>
+            <article id="post-3" class="iframeContainer">
+                <div id="post-loading-3" class="post-loading">
+                    <div class="spinner"></div>
+                    正在加载...
+                </div>
+                <script>showLoading(3);</script>
+                <div id="post-container-3" class="post-container">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">Top</button>
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        // 显示或隐藏按钮
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        // 点击按钮时，滚动到顶部
+        scrollToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" // 平滑滚动
+            });
+        }
+    </script>
+
+</body>
+
+</html>

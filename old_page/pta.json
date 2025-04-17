@@ -1,14 +1,14 @@
 {
     "title": "pta",
     "stylesheet": [
-        "./css/content.css",
-        "./highlight/styles/default.css"
+        "../css/content.css",
+        "../highlight/styles/default.css"
     ],
     "script": [
-        "./js/menu.js",
-        "./js/marked.min.js",
-        "./js/content.js",
-        "./highlight/highlight.min.js"
+        "../js/menu.js",
+        "../js/marked.min.js",
+        "../js/content.js",
+        "../highlight/highlight.min.js"
     ],
     "contents": [
         {
@@ -764,6 +764,84 @@
                 {
                     "title": "7-9-2 计算职工工资",
                     "id": 29
+                }
+            ]
+        },
+        {
+            "title": "C语言集训-数组（2024）",
+            "id": -9,
+            "content": [
+                {
+                    "title": "翻转数组",
+                    "id": 0
+                },
+                {
+                    "title": "求一个数列前n项和[C]",
+                    "id": 1
+                },
+                {
+                    "title": "数组排序",
+                    "id": 2
+                },
+                {
+                    "title": "h0028. 数组翻转",
+                    "id": 3
+                },
+                {
+                    "title": "成绩排序",
+                    "id": 4
+                },
+                {
+                    "title": "求最小值",
+                    "id": 5
+                },
+                {
+                    "title": "最大数位置",
+                    "id": 6
+                },
+                {
+                    "title": "h0025. 高于平均水平",
+                    "id": 7
+                },
+                {
+                    "title": "找第一个只出现一次的字符",
+                    "id": 8
+                },
+                {
+                    "title": "翻转单词",
+                    "id": 9
+                },
+                {
+                    "title": "个位数字统计",
+                    "id": 10
+                },
+                {
+                    "title": "年龄与疾病",
+                    "id": 11
+                },
+                {
+                    "title": "计算矩阵边缘元素之和",
+                    "id": 12
+                },
+                {
+                    "title": "幻方",
+                    "id": 13
+                },
+                {
+                    "title": "打PTA",
+                    "id": 14
+                },
+                {
+                    "title": "数组元素逆置",
+                    "id": 15
+                },
+                {
+                    "title": "还是统计单词",
+                    "id": 16
+                },
+                {
+                    "title": "简单的加法",
+                    "id": 17
                 }
             ]
         }

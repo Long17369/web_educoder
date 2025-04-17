@@ -1,14 +1,14 @@
 {
     "title": "头歌",
     "stylesheet": [
-        "./css/content.css",
-        "./highlight/styles/default.css"
+        "../css/content.css",
+        "../highlight/styles/default.css"
     ],
     "script": [
-        "./js/menu.js",
-        "./js/marked.min.js",
-        "./js/content.js",
-        "./highlight/highlight.min.js"
+        "../js/menu.js",
+        "../js/marked.min.js",
+        "../js/content.js",
+        "../highlight/highlight.min.js"
     ],
     "contents": [
         {
