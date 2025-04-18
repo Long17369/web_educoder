@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1905213163607855106",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n\nint main(){\n    int n,m,num;\n    scanf(\"%d %d\",&n,&m);\n    long long sum=0;\n    for(int i=1;i<=n;i++){\n        for(int j=1;j<=m;j++){\n            scanf(\"%d\",&num);\n            if(i==1||i==n||j==1||j==m){\n                sum += num;\n            }\n        }\n    }\n    printf(\"%lld\",sum);\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:5:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    5 |     scanf(\"%d %d\",&n,&m);\n      |     ^~~~~~~~~~~~~~~~~~~~\na.c:9:13: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    9 |             scanf(\"%d\",&num);\n      |             ^~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1905213163607855106"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1905216958550540288",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1905213163607855106",
+    "submitAt": "2025-03-27T11:14:54Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 532480,
+    "previewSubmission": false,
+    "judgeAt": "2025-03-27T11:14:55Z"
+}

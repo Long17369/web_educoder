@@ -1,0 +1,111 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1912711373419077632",
+            "codeCompletionSubmissionDetail": {
+                "program": "void Shift(char s[]){\n    int len = strlen(s);\n    char tmp[3];\n    tmp[0] = s[0];\n    tmp[1] = s[1];\n    tmp[2] = s[2];\n    for(int i=3;i<len;i++){\n        s[i-3] = s[i];\n    }\n    s[len-3] = tmp[0];\n    s[len-2] = tmp[1];\n    s[len-1] = tmp[2];\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘GetString’:\na.c:11:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   11 |         scanf(\"%c\", &s[i]);\n      |         ^~~~~~~~~~~~~~~~~~\na.c:12:28: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   12 |         while (s[i]!='\\n') scanf(\"%c\", &s[++i]);\n      |                            ^~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 536576,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 7,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 589824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 589824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1912711373419077632"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1912824823965097984",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1912711373419077632",
+    "submitAt": "2025-04-17T11:05:51Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 589824,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-17T11:05:51Z"
+}

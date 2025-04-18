@@ -1,0 +1,112 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1909190512283586569",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<math.h>\n\nchar name[10005][10];\nint num[10005];\n\nint main(){\n    int sum = 0;\n    int n;\n    scanf(\"%d\",&n);\n    for(int i=0;i<n;i++){\n        scanf(\"%s %d\",name[i],num+i);\n        sum+=num[i];\n    }\n    int ans = (int)((double)sum/n/2);\n    printf(\"%d \",ans);\n    int min_d=abs(num[0]*n*2-sum);\n    int min_idx = 0;\n    for(int i=0;i<n;i++){\n        if(abs(num[i]*n*2-sum)<min_d){\n            min_idx = i;\n            min_d = abs(num[i]*n*2-sum);\n        }\n    }\n    printf(\"%s\",name[min_idx]);\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 536576,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 565248,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:17:15: warning: implicit declaration of function ‘abs’ [-Wimplicit-function-declaration]\n   17 |     int min_d=abs(num[0]*n*2-sum);\n      |               ^~~\na.c:3:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘abs’\n    2 | #include<math.h>\n  +++ |+#include <stdlib.h>\n    3 | \na.c:10:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   10 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~\na.c:12:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   12 |         scanf(\"%s %d\",name[i],num+i);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1909190512283586569"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1909225646902996992",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1909190512283586569",
+    "submitAt": "2025-04-07T12:44:00Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 565248,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-07T12:44:01Z"
+}

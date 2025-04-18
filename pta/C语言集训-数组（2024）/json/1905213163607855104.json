@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1905213163607855104",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n\nint main(){\n    int a[10]={0};\n    int n0;\n    while(scanf(\"%1d\",&n0)!=EOF){\n        a[n0]++;\n    }\n    for(int i=0;i<10;i++){\n        if(a[i]){\n            printf(\"%d:%d\\n\",i,a[i]);\n        }\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 372736,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 593920,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1905213163607855104"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1905214274078461952",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1905213163607855104",
+    "submitAt": "2025-03-27T11:04:14Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 593920,
+    "previewSubmission": false,
+    "judgeAt": "2025-03-27T11:04:15Z"
+}

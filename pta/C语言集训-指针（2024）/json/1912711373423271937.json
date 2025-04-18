@@ -1,0 +1,143 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1912711373423271937",
+            "codeCompletionSubmissionDetail": {
+                "program": "char *search( char *s, char *t ){\n    char *p1=s,*p2=s,*p3=t;\n    while(*p1!='\\0'){\n        while(*p2==*p3 && *p2!='\\0' && *p3!='\\0'){\n            p2++,p3++;\n        }\n        if(*p3=='\\0')return p1;\n        p3 = t;\n        p1++;\n        p2 = p1;\n    }\n    return NULL;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:22:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Wformat=]\n   22 |         printf(\"%d\\n\", pos - s);\n      |                 ~^     ~~~~~~~\n      |                  |         |\n      |                  int       long int\n      |                 %ld\na.c: In function ‘ReadString’:\na.c:9:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    9 |     scanf(\"%c\", &s[0]);\n      |     ^~~~~~~~~~~~~~~~~~\na.c:10:31: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   10 |         while ( s[i]!= '\\n' ) scanf(\"%c\", &s[++i]);\n      |                               ^~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 577536,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 593920,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 589824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 528384,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "5": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 319488,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1912711373423271937"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1912830144531996672",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1912711373423271937",
+    "submitAt": "2025-04-17T11:26:59Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 593920,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-17T11:27:00Z"
+}

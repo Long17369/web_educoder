@@ -1,0 +1,112 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1905213163607855111",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<string.h>\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    char num1[1001],num2[1001],result[1001];\n    while(n--){\n        scanf(\"%s %s\",num1,num2);\n        int len1 = strlen(num1);\n        int len2 = strlen(num2);\n        int len3 = (len1>len2)?len1:len2;\n        result[len3] = '\\0';\n        int v = 0;\n        int i=len1-1,j=len2-1,k=len3-1;\n        for(;(i>=0)&&(j>=0);i--,j--,k--){\n            result[k] = (num1[i] - '0') + (num2[j] - '0') + v;\n            v = result[k] / 10;\n            result[k] = result[k]%10+'0';\n        }\n        for(;i>=0;i--,k--){\n            result[k] = (num1[i] - '0') + v;\n            v = result[k] / 10;\n            result[k] = result[k]%10+'0';\n        }\n        for(;j>=0;j--,k--){\n            result[k] = (num2[j] - '0') + v;\n            v = result[k] / 10;\n            result[k] = result[k]%10+'0';\n        }\n        if(v)putchar(v+'0');\n        printf(result);\n        putchar('\\n');\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 319488,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 577536,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 75.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:32:16: warning: format not a string literal and no format arguments [-Wformat-security]\n   32 |         printf(result);\n      |                ^~~~~~\na.c:6:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    6 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~\na.c:9:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    9 |         scanf(\"%s %s\",num1,num2);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1905213163607855111"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1905230482320424960",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1905213163607855111",
+    "submitAt": "2025-03-27T12:08:39Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 577536,
+    "previewSubmission": false,
+    "judgeAt": "2025-03-27T12:08:39Z"
+}

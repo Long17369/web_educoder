@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1906657590569705472",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n\nint main(){\n    int T;\n    scanf(\"%d\",&T);\n    while(T--){\n        int a[5],sum=0,res = 0;\n        for(int i=0;i<5;i++){\n            scanf(\"%d\",a+i);\n            sum+=a[i];\n        }\n        sum %= 10;\n        for(int i=0;i<5;i++){\n            for(int j=i+1;j<5;j++){\n                if((a[i]+a[j])%10 == sum){\n                    if(sum)res = sum;\n                    else res = 10;\n                }\n            }\n        }\n        printf(\"%d\",res);\n        if(T)putchar('\\n');\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "nj": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 300.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:5:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    5 |     scanf(\"%d\",&T);\n      |     ^~~~~~~~~~~~~~\na.c:9:13: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    9 |             scanf(\"%d\",a+i);\n      |             ^~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1906657590569705472"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1906662999888228352",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1906657590569705472",
+    "submitAt": "2025-03-31T11:00:57Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 311296,
+    "previewSubmission": false,
+    "judgeAt": "2025-03-31T11:00:58Z"
+}

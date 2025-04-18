@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1910285811837255689",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n\nint min(int a,int b){\n    return a>b?b:a;\n}\n\nvoid print(int n,int k,int pa[]){\n    static int cnt=0;\n    cnt++;\n    printf(\"%d=\",n);\n    for(int i=1;i<k;i++){\n        printf(\"%d+\",pa[i]);\n    }\n    printf(\"%d;\",pa[k]);\n    if(cnt%4==0)putchar('\\n');\n}\n\nvoid dfs(int n,int k,int pa[]){\n    if(pa[k]==0){\n        print(n,k-1,pa);\n        return;\n    }\n    int l = pa[k];\n    for(int i=min(pa[k],pa[k-1]);i>0;i--){\n        pa[k]=i;\n        pa[k+1]=l-i;\n        dfs(n,k+1,pa);\n    }\n}\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    int pa[35]={0};\n    pa[0]=100;\n    pa[1]=n;\n    dfs(n,1,pa);\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "t": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 376832,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 150.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "t1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 150.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:33:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   33 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1910285811837255689"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1910352537002147840",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1910285811837255689",
+    "submitAt": "2025-04-10T15:21:52Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 544768,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-10T15:21:52Z"
+}

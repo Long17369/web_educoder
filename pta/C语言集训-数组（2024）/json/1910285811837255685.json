@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1910285811837255685",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n\nvoid add(int map[20][20],int i,int j,int x,int y){\n    map[i-1][j-1]++;\n    map[i-1][j]++;\n    map[i-1][j+1]++;\n    map[i][j-1]++;\n    map[i][j+1]++;\n    map[i+1][j-1]++;\n    map[i+1][j]++;\n    map[i+1][j+1]++;\n}\n\nint main(){\n    int T;\n    scanf(\"%d\",&T);\n    while(T--){\n        int map[20][20]={{0}};\n        int x,y;\n        char ch;\n        scanf(\"%d %d\",&x,&y);\n        for(int i=1;i<=x;i++){\n            while(getchar() != '\\n');\n            for(int j=1;j<=y;j++){\n                ch = getchar();\n                if(ch=='*'){\n                    add(map,i,j,x,y);\n                    map[i][j]=-20;\n                }\n            }\n        }\n        for(int i=1;i<=x;i++){\n            for(int j=1;j<=y;j++){\n                if(map[i][j]<0)putchar('*');\n                else printf(\"%d\",map[i][j]);\n            }\n            putchar('\\n');\n        }\n        if(T){\n            printf(\"\\n\");\n        }\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 300.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:16:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   16 |     scanf(\"%d\",&T);\n      |     ^~~~~~~~~~~~~~\na.c:21:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   21 |         scanf(\"%d %d\",&x,&y);\n      |         ^~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1910285811837255685"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1910303758743994368",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1910285811837255685",
+    "submitAt": "2025-04-10T12:08:02Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 524288,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-10T12:08:02Z"
+}

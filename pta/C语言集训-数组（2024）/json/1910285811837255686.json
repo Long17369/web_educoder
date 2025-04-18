@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1910285811837255686",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<string.h>\n\nint max = 1<<31;\nint min = 1<<31-1;\n\nint main(){\n    int T,t;\n    scanf(\"%d\",&T);\n    while(T--){\n        int m,n;\n        scanf(\"%d %d\",&m,&n);\n        int ma[105],mi[105];\n        for(int i=0;i<105;i++){\n            ma[i] = max;\n            mi[i] = min;\n        }\n        for(int i=0;i<m;i++){\n            for(int j=0;j<n;j++){\n                scanf(\"%d\",&t);\n                if(t>ma[j])ma[j]=t;\n                if(t<mi[i])mi[i]=t;\n            }\n        }\n        int cnt = 0;\n        int res;\n        for(int i=0;i<m;i++){\n            for(int j=0;j<m;j++){\n                if(ma[j]==mi[i]){\n                    cnt++;\n                    res = mi[i];\n                }\n            }\n        }\n        if(cnt == 1){\n            printf(\"%d\\n\",res);\n        }else{\n            printf(\"Impossible\\n\");\n        }\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 585728,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 300.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c:5:12: warning: suggest parentheses around ‘-’ inside ‘<<’ [-Wparentheses]\n    5 | int min = 1<<31-1;\n      |            ^~\na.c: In function ‘main’:\na.c:9:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    9 |     scanf(\"%d\",&T);\n      |     ^~~~~~~~~~~~~~\na.c:12:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   12 |         scanf(\"%d %d\",&m,&n);\n      |         ^~~~~~~~~~~~~~~~~~~~\na.c:20:17: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   20 |                 scanf(\"%d\",&t);\n      |                 ^~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1910285811837255686"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1910307271831191552",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1910285811837255686",
+    "submitAt": "2025-04-10T12:22:00Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 585728,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-10T12:22:00Z"
+}

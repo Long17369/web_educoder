@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1905213163607855108",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n\nint main(){\n    int n;\n    int type=0;\n    int q = 0;\n    char ch;\n    scanf(\"%d\",&n);\n    while(getchar()!='\\n');\n    while(n){\n        ch = getchar();\n        if(ch == '\\n' || ch == -1){\n            if(q==0)puts(\"enen\");\n            else if(type==3)puts(\"Yes!\");\n            else puts(\"No.\");\n            type = 0;\n            n--;\n            if(ch == '\\n')continue;\n            return 0;\n        }\n        if(q)q=0;\n        if(ch=='?')q=1;\n        switch(type){\n            case 0:\n                if(ch=='P'){\n                    type=1;\n                }\n                break;\n            case 1:\n                if(ch == 'T'){\n                    type = 2;\n                }\n                break;\n            case 2:\n                if(ch == 'A'){\n                    type = 3;\n                }\n                break;\n            default:break;\n        }\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 150.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 380928,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 150.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:8:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    8 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1905213163607855108"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1905239318745878528",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1905213163607855108",
+    "submitAt": "2025-03-27T12:43:45Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 380928,
+    "previewSubmission": false,
+    "judgeAt": "2025-03-27T12:43:46Z"
+}

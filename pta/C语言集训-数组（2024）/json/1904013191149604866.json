@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1904013191149604866",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<stdlib.h>\n\nint cmp(void*a,void*b){\n    return (*(int*)a-*(int*)b);\n}\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    int a[25];\n    for(int i=0;i<n;i++){\n        scanf(\"%d\",a+i);\n    }\n    qsort(a,n,sizeof(a[0]),cmp);\n    for(int i=0;i<n;i++){\n        printf(\" %d\",a[i]);\n    }\n    printf(\"\\n\");\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "sample1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "sample2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "sample3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 589824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:15:28: warning: passing argument 4 of ‘qsort’ from incompatible pointer type [-Wincompatible-pointer-types]\n   15 |     qsort(a,n,sizeof(a[0]),cmp);\n      |                            ^~~\n      |                            |\n      |                            int (*)(void *, void *)\nIn file included from a.c:2:\n/usr/include/stdlib.h:831:34: note: expected ‘__compar_fn_t’ {aka ‘int (*)(const void *, const void *)’} but argument is of type ‘int (*)(void *, void *)’\n  831 |                    __compar_fn_t __compar) __nonnull ((1, 4));\n      |                    ~~~~~~~~~~~~~~^~~~~~~~\na.c:10:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   10 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~\na.c:13:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   13 |         scanf(\"%d\",a+i);\n      |         ^~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1904013191149604866"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1904133192586403840",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1904013191149604866",
+    "submitAt": "2025-03-24T11:28:24Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 589824,
+    "previewSubmission": false,
+    "judgeAt": "2025-03-24T11:28:25Z"
+}

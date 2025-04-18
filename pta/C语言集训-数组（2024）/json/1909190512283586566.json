@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1909190512283586566",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<string.h>\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    char* l_str;\n    int max_len = 0;\n    char*str[n];\n    while(n--){\n        str[n] = (char*)malloc(85*sizeof(char));\n        scanf(\"%s\",str[n]);\n        if(strlen(str[n])>max_len){\n            l_str = str[n];\n            max_len = strlen(str[n]);\n        }\n    }\n    printf(\"The longest is: %s\",l_str);\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 352256,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:11:25: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]\n   11 |         str[n] = (char*)malloc(85*sizeof(char));\n      |                         ^~~~~~\na.c:3:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\n    2 | #include<string.h>\n  +++ |+#include <stdlib.h>\n    3 | \na.c:11:25: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]\n   11 |         str[n] = (char*)malloc(85*sizeof(char));\n      |                         ^~~~~~\na.c:11:25: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\na.c:6:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    6 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~\na.c:12:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   12 |         scanf(\"%s\",str[n]);\n      |         ^~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1909190512283586566"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1909216353877225472",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1909190512283586566",
+    "submitAt": "2025-04-07T12:07:04Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 532480,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-07T12:07:05Z"
+}

@@ -1,0 +1,128 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1909190512283586568",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<string.h>\n\nint check(char* password){\n    int len = strlen(password);\n    if(len<=6)return 1;\n    int zimu=0;\n    int shuzi=0;\n    for(int i=0;i<len-1;i++){\n        if('0'<=password[i]&&password[i]<='9')shuzi=1;\n        else if('a'<=password[i]&&password[i]<='z')zimu = 1;\n        else if('A'<=password[i]&&password[i]<='Z')zimu = 1;\n        else if(password[i] == '.');\n        else return 2;\n    }\n    if(zimu==0 && shuzi)return 4;\n    if(shuzi ==0 &&zimu)return 3;\n    return 0;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    char password[85];\n    while(getchar()!='\\n');\n    while(n--){\n        fgets(password,85,stdin);\n        switch(check(password)){\n            case 0:\n                puts(\"Your password is wan mei.\");\n                break;\n            case 1:\n                puts(\"Your password is tai duan le.\");\n                break;\n            case 2:\n                puts(\"Your password is tai luan le.\");\n                break;\n            case 3:\n                puts(\"Your password needs shu zi.\");\n                break;\n            case 4:\n                puts(\"Your password needs zi mu.\");\n                break;\n            default:break;\n        }\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 60.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 573440,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 60.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 60.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 589824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 60.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 327680,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 60.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:23:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   23 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~\na.c:27:9: warning: ignoring return value of ‘fgets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   27 |         fgets(password,85,stdin);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1909190512283586568"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1909226158398058496",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1909190512283586568",
+    "submitAt": "2025-04-07T12:46:02Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 589824,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-07T12:46:03Z"
+}

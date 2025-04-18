@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1906657590569705481",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<stdlib.h>\n#include<stdbool.h>\n\nint n, k, r;\nint x, cnt, ans, c[100010];\nint main() {\n    scanf(\"%d %d %d\", &n, &k, &r);\n    for (int i = 1;i <= k;i++) {\n        scanf(\"%d\", &x);\n        c[x] = 1;\n    }\n    for (int i = 1;i <= r;i++) {\n        cnt += c[i];\n    }\n    for (int i = r; i >= 1 && cnt < 2;i--) {\n        if (!c[i]) {\n            c[i] = 1;\n            cnt += c[i];\n            ans++;\n        }\n    }\n    for (int i = 2; i <= n - r + 1; i++) {\n        cnt += c[i + r - 1];\n        cnt -= c[i - 1];\n        for (int j = i + r - 1; j >= 1 && cnt < 2; j--) {\n            if (!c[j]) {\n                c[j] = 1;\n                cnt += c[j];\n                ans++;\n            }\n        }\n    }\n    printf(\"%d\",ans);\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 300.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 880640,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.003,
+                        "memory": 827392,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 634880,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 100.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:8:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    8 |     scanf(\"%d %d %d\", &n, &k, &r);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\na.c:10:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   10 |         scanf(\"%d\", &x);\n      |         ^~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1906657590569705481"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1904013190927306752",
+    "cause": "",
+    "id": "1906748391391703040",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1906657590569705481",
+    "submitAt": "2025-03-31T16:40:16Z",
+    "status": "ACCEPTED",
+    "score": 300.0,
+    "compiler": "GCC",
+    "time": 0.003,
+    "memory": 880640,
+    "previewSubmission": false,
+    "judgeAt": "2025-03-31T16:40:17Z"
+}
