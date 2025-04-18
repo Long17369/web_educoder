@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN"> 
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Page</title>
     <link rel="stylesheet" href="style.css">
     <script src="./js/script.js"></script>
-    <script src="./js/marked.min.js"></script>
-
-
+    <script src="./js/page.js"></script>
 </head>
+
 <body>
     <header>
-        <h1>欢迎访问educoder!</h1>
+        <h1></h1>
         <nav>
             <ul>
                 <li><a href=".\old_page">旧的页面</a></li>
             </ul>
         </nav>
     </header>
-    <p>如果你要访问旧的页面，请点<a href=".\old_page">这里</a></p>
     <main>
-        <p id="educoder" onclick="gotopage('type=头歌')">头歌</p>
-        <p id="pta" onclick="gotopage('type=pta')">PTA</p>
+        <p onclick="window.history.back()">返回上一级</p>
+        <ul></ul>
     </main>
     <footer>
         <p>&copy; 2025 My Web Page</p>
     </footer>
 
 </body>
+
 </html>
