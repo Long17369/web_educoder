@@ -1,0 +1,111 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1914266459665985539",
+            "codeCompletionSubmissionDetail": {
+                "program": "\n#include<stdlib.h>\n\nint cmp(const void*a,const void*b){\n    return strcmp(*(char**)a,*(char**)b);\n}\n\nint split_sort(char *str,char **pStr){\n    int n=0;\n    char *p = str;\n    while(*p!='\\0'){\n        while(*p==' ')p++;\n        if(*p=='\\0')break;\n        char *tmp = (char*)malloc(50*sizeof(char));\n        pStr[n++] = tmp;\n        while(*p!=' '&&*p!='\\0'){\n            *tmp = *p;\n            tmp++;\n            p++;\n        }\n        *tmp = '\\0';\n    }\n    qsort(pStr,n,sizeof(pStr[0]),cmp);\n    return n;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:9:9: warning: ‘gets’ is deprecated [-Wdeprecated-declarations]\n    9 |         gets(arr);\n      |         ^~~~\nIn file included from /usr/include/stdio.h:867,\n                 from a.c:1:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:235:1: note: declared here\n  235 | gets (char *__str)\n      | ^~~~\na.c: In function ‘cmp’:\na.c:22:12: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]\n   22 |     return strcmp(*(char**)a,*(char**)b);\n      |            ^~~~~~\na.c:20:1: note: include ‘<string.h>’ or provide a declaration of ‘strcmp’\n   19 | #include<stdlib.h>\n  +++ |+#include <string.h>\n   20 | \na.c: In function ‘main’:\na.c:9:9: warning: ignoring return value of ‘gets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    9 |         gets(arr);\n      |         ^~~~~~~~~\n/usr/bin/ld: /tmp/ccEqbwhk.o: in function `main':\na.c:(.text.startup+0x84): warning: the `gets' function is dangerous and should not be used.",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "data1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 577536,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "data2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "data3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "data4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 348160,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1914266459665985539"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1914286208244121600",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1914266459665985539",
+    "submitAt": "2025-04-21T11:52:52Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 577536,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-21T11:52:52Z"
+}

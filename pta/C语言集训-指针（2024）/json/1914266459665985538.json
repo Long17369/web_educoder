@@ -1,0 +1,63 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1914266459665985538",
+            "codeCompletionSubmissionDetail": {
+                "program": "char* strcpy(char *a, const char *b){\n    char *pa=a;\n    char *p = b;\n    for(;*p!='\\0';pa++,p++){\n        *pa = *p;\n    }\n    *pa = '\\0';\n    return a;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:6:5: warning: ‘gets’ is deprecated [-Wdeprecated-declarations]\n    6 |     gets(s3);\n      |     ^~~~\nIn file included from /usr/include/stdio.h:867,\n                 from a.c:1:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:235:1: note: declared here\n  235 | gets (char *__str)\n      | ^~~~\na.c: In function ‘strcpy’:\na.c:16:15: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]\n   16 |     char *p = b;\n      |               ^\na.c: In function ‘main’:\na.c:6:5: warning: ignoring return value of ‘gets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    6 |     gets(s3);\n      |     ^~~~~~~~\n/usr/bin/ld: /tmp/ccamwUKj.o: in function `main':\na.c:(.text.startup+0x34): warning: the `gets' function is dangerous and should not be used.",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1914266459665985538"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1914274743311269888",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1914266459665985538",
+    "submitAt": "2025-04-21T11:07:18Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 524288,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-21T11:07:19Z"
+}
