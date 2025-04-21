@@ -27,8 +27,28 @@ async function load_md_data(file) {
     return resdata;
 }
 
+function load_page() {
+    var info = readinfo(decodeURI(location.href).split('?')[1].split('&'))
+    if (info.type == undefined) {
+        location.href = "."
+        return
+    }
+    if (info.problems == undefined) {
+        document.title = info.type
+        load(info.type)
+        return
+    }
+    if (info.problem == undefined) {
+        document.title = info.problems
+        load(info.type + '/' + info.problems)
+        return
+    }
+    document.title = info.title
+}
+
 function load_code() {
-    var info = readinfo(location.href.split('?')[1].split('&'))
+    var info = readinfo(decodeURI(location.href).split('?')[1].split('&'))
+    load_page()
     var path = `${info.type}/${info.problems}/code/${info.problem}`
     load_md_data(`${path}.code.md`).then(data => {
         var codeTag = marked.marked(data, renderer)

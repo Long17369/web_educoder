@@ -21,13 +21,13 @@ function handle_data(data, type) {
         return ret
     }
     data.content.forEach(element => {
-        ret.push([element.proid + '.' + element.title, element.id])
+        ret.push([element.proid + '.' + element.title, element.id+"&title="+element.title])
     });
     return ret
 }
 
 async function load(path) {
-    var info = readinfo(location.href.split('?')[1].split('&'))
+    var info = readinfo(decodeURI(location.href).split('?')[1].split('&'))
     if (info.problems == undefined) {
         var type = "problems"
     }
@@ -52,18 +52,23 @@ async function load(path) {
 }
 
 function load_page() {
-    var info = readinfo(location.href.split('?')[1].split('&'))
+    var k = decodeURI(location.href).split('?')
+    if(k.length == 1) {
+        location.href = "."
+        return
+    }
+    var info = readinfo(k[1].split('&'))
     if (info.type == undefined) {
         location.href = "."
         return
     }
     if (info.problems == undefined) {
-        location.title = info.type
+        document.title = info.type
         load(info.type)
         return
     }
     if (info.problem == undefined) {
-        location.title = info.problems
+        document.title = info.problems
         load(info.type + '/' + info.problems)
         return
     }
