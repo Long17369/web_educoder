@@ -112,3 +112,71 @@ iframe {
 code {
     font-family: Consolas, 'Courier New', monospace;
 }
+
+
+
+.sdajopj {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+@media (min-width: 768px) {
+    main{
+        height: 100%;
+    }
+
+    .sdajopj div#pro,.sdajopj div#asdsada {
+        padding: 2%;
+        width: 45%;
+    }
+
+    #pro {
+        overflow: auto;
+        height: 100%;
+    }
+}
+
+.sdajopj{
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .sdajopj div#pro,.sdajopj div#asdsada {
+        padding: 2%;
+        width: 90%;
+    }
+}
+
+#pro {
+    display: flex;
+    flex-direction: column;
+
+    * {
+        display: inline-block;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    pre {
+        padding: 10px;
+        margin: 10px;
+    }
+}

@@ -50,6 +50,10 @@ function load_code() {
     var info = readinfo(decodeURI(location.href).split('?')[1].split('&'))
     load_page()
     var path = `${info.type}/${info.problems}/code/${info.problem}`
+    load_md_data(`${path}.cont.md`).then(data => {
+        var proTag = marked.marked(data, renderer)
+        document.getElementById("pro").innerHTML = proTag
+    })
     load_md_data(`${path}.code.md`).then(data => {
         var codeTag = marked.marked(data, renderer)
         var Tag = document.getElementById("code")
@@ -60,10 +64,6 @@ function load_code() {
         hljs.highlightAll();
     }
     )
-    load_md_data(`${path}.cont.md`).then(data => {
-        var proTag = marked.marked(data, renderer)
-        document.getElementById("pro").innerHTML = proTag
-    })
 }
 
 load_code()

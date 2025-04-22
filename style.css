@@ -1,7 +1,8 @@
 html {
     scroll-behavior: smooth;
 }
-main{
+
+main {
     font-size: 3rem;
     display: flex;
     flex: auto;
@@ -12,16 +13,25 @@ main{
     flex-direction: column;
     align-content: space-around;
 }
+
 main p {
     font-size: 2rem;
-    width: 100%;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+main span#back {
     display: flex;
     justify-content: space-around;
 }
-main ul li{
+
+main ul li {
     font-size: 2rem;
-    width: 100%;
+    width: fit-content;
+    cursor: pointer;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -123,7 +133,8 @@ iframe {
     bottom: 3em;
     right: 3em;
     z-index: 9999;
-    display: none; /* 初始隐藏 */
+    display: none;
+    /* 初始隐藏 */
     width: 60px;
     height: 60px;
     padding: 0;
