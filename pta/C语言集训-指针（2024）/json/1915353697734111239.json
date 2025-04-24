@@ -1,0 +1,63 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1915353697734111239",
+            "codeCompletionSubmissionDetail": {
+                "program": "#include<stdlib.h>\nint cmp(const void*a,const void*b){\n    return strcmp(*(char **)a,*(char**)b);\n}\n\nvoid fsort(char *color[ ], int n){\n    qsort(color,n,sizeof(color[0]),cmp);\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1915353697734111239"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1915392956071432192",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1915353697734111239",
+    "submitAt": "2025-04-24T13:10:41Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 311296,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-24T13:10:42Z"
+}

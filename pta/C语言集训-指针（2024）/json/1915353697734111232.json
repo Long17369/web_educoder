@@ -1,0 +1,63 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1915353697734111232",
+            "codeCompletionSubmissionDetail": {
+                "program": "void fun( char *p ){\r\n    char *q =p;\r\n    while(*q != '\\0'){\r\n        if(*q ==' '){\r\n            *(q-1) += 'A'-'a';\r\n        }\r\n        q++;\r\n    }\r\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:6:3: warning: ‘gets’ is deprecated [-Wdeprecated-declarations]\n    6 |   gets(chrstr);\n      |   ^~~~\nIn file included from /usr/include/stdio.h:867,\n                 from a.c:1:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:235:1: note: declared here\n  235 | gets (char *__str)\n      | ^~~~\na.c:7:5: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]\n    7 |   d=strlen(chrstr) ;\n      |     ^~~~~~\na.c:2:1: note: include ‘<string.h>’ or provide a declaration of ‘strlen’\n    1 | #include <stdio.h>\n  +++ |+#include <string.h>\n    2 | void fun( char *p );\na.c:7:5: warning: incompatible implicit declaration of built-in function ‘strlen’ [-Wbuiltin-declaration-mismatch]\n    7 |   d=strlen(chrstr) ;\n      |     ^~~~~~\na.c:7:5: note: include ‘<string.h>’ or provide a declaration of ‘strlen’\na.c:6:3: warning: ignoring return value of ‘gets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    6 |   gets(chrstr);\n      |   ^~~~~~~~~~~~\n/usr/bin/ld: /tmp/cc8oAl0j.o: in function `main':\na.c:(.text.startup+0x26): warning: the `gets' function is dangerous and should not be used.",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1915353697734111232"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1915361659261313024",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1915353697734111232",
+    "submitAt": "2025-04-24T11:06:19Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 311296,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-24T11:06:20Z"
+}

@@ -1,0 +1,79 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1915353697734111234",
+            "codeCompletionSubmissionDetail": {
+                "program": "int decode(char**s){\r\n    int map[256] = {0};\r\n    {\r\n        char *p = s[4];\r\n        while(*p!='\\0'){\r\n            map[*p]++;\r\n            p++;\r\n        }\r\n    }\r\n    int ret = 0;\r\n    int cnt;\r\n    for(int i=0;i<4;i++){\r\n        cnt = 0;\r\n        char *p = s[i];\r\n        while(*p!='\\0'){\r\n            cnt += map[*p]?1:0;\r\n            p++;\r\n        }\r\n        ret *= 10;\r\n        ret += cnt%10;\r\n    }\r\n    return ret;\r\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:14:9: warning: ‘gets’ is deprecated [-Wdeprecated-declarations]\n   14 |         gets(s[i]);\n      |         ^~~~\nIn file included from /usr/include/stdio.h:867,\n                 from a.c:1:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:235:1: note: declared here\n  235 | gets (char *__str)\n      | ^~~~\na.c: In function ‘decode’:\na.c:32:17: warning: array subscript has type ‘char’ [-Wchar-subscripts]\n   32 |             map[*p]++;\n      |                 ^~\na.c:42:24: warning: array subscript has type ‘char’ [-Wchar-subscripts]\n   42 |             cnt += map[*p]?1:0;\n      |                        ^~\na.c: In function ‘main’:\na.c:14:9: warning: ignoring return value of ‘gets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   14 |         gets(s[i]);\n      |         ^~~~~~~~~~\n/usr/bin/ld: /tmp/ccIGPaTj.o: in function `main':\na.c:(.text.startup+0x47): warning: the `gets' function is dangerous and should not be used.",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 438272,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 319488,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1915353697734111234"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1915368046250340352",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1915353697734111234",
+    "submitAt": "2025-04-24T11:31:42Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 438272,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-24T11:31:43Z"
+}

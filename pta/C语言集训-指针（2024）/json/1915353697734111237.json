@@ -1,0 +1,95 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1915353697734111237",
+            "codeCompletionSubmissionDetail": {
+                "program": "void Array_InputCalculate(int *p, int m, int n){\n    int t;\n    for(int i=0;i<m;i++){\n        for(int j=0;j<n;j++){\n            scanf(\"%d\",&t);\n            p[i]+=t;\n        }\n        printf(\"%d %.1f\\n\",p[i],(float)p[i]/n);\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:21:16: warning: implicit declaration of function ‘calloc’ [-Wimplicit-function-declaration]\n   21 |     p = (int *)calloc(m*n, sizeof(int)); //向系统申请内存\n      |                ^~~~~~\na.c:2:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘calloc’\n    1 | #include <stdio.h>\n  +++ |+#include <stdlib.h>\n    2 | \na.c:21:16: warning: incompatible implicit declaration of built-in function ‘calloc’ [-Wbuiltin-declaration-mismatch]\n   21 |     p = (int *)calloc(m*n, sizeof(int)); //向系统申请内存\n      |                ^~~~~~\na.c:21:16: note: include ‘<stdlib.h>’ or provide a declaration of ‘calloc’\na.c:25:9: warning: implicit declaration of function ‘exit’ [-Wimplicit-function-declaration]\n   25 |         exit(1);\n      |         ^~~~\na.c:25:9: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’\na.c:25:9: warning: incompatible implicit declaration of built-in function ‘exit’ [-Wbuiltin-declaration-mismatch]\na.c:25:9: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’\na.c:30:5: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]\n   30 |     free(p);  // 释放向系统申请的内存\n      |     ^~~~\na.c:30:5: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’\na.c:30:5: warning: incompatible implicit declaration of built-in function ‘free’ [-Wbuiltin-declaration-mismatch]\na.c:30:5: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’\na.c:18:12: warning: unused variable ‘aver’ [-Wunused-variable]\n   18 |     double aver;\n      |            ^~~~\na.c: In function ‘Array_InputCalculate’:\na.c:7:13: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    7 |             scanf(\"%d\",&t);\n      |             ^~~~~~~~~~~~~~\na.c: In function ‘main’:\na.c:19:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   19 |     scanf(\"%d\", &m);  //输入学生数\n      |     ^~~~~~~~~~~~~~~\na.c:20:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   20 |     scanf(\"%d\", &n);  //输入课程数\n      |     ^~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1915353697734111237"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1915393010765160448",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1915353697734111237",
+    "submitAt": "2025-04-24T13:10:54Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 532480,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-24T13:10:55Z"
+}

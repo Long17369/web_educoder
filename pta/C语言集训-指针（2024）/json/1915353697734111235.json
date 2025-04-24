@@ -1,0 +1,111 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1915353697734111235",
+            "codeCompletionSubmissionDetail": {
+                "program": "#include<stdlib.h>\n\nint  Descending(int a, int b){\n    return a < b; \n}\n\nint bit1_Des(int a, int b){\n    return a/10%10 < b/10%10;\n}\n\nvoid sort(int *p, int (*compare)(int a,int b), int N){\n    int i,j,k,t;\n    for(i=0;i<N-1;i++){\n        k = i;\n        for(j = i+1;j < N;j++){\n            if((*compare)(*(p+k),*(p+j))) k = j;\n        }\n        if(k!=i){\n            t = *(p+i);\n            *(p+i) = *(p+k);\n            *(p+k) = t;\n        }\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:12:12: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]\n   12 |    p=(int*)malloc(n*sizeof(int));\n      |            ^~~~~~\na.c:2:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\n    1 | #include<stdio.h>\n  +++ |+#include <stdlib.h>\n    2 | int  Ascending(int a, int b);\na.c:12:12: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]\n   12 |    p=(int*)malloc(n*sizeof(int));\n      |            ^~~~~~\na.c:12:12: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\na.c:11:4: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   11 |    scanf(\"%d\",&n);\n      |    ^~~~~~~~~~~~~~\na.c:14:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   14 |     scanf(\"%d\",s);\n      |     ^~~~~~~~~~~~~\na.c:15:4: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   15 |    scanf(\"%d\",&k);\n      |    ^~~~~~~~~~~~~~\na.c:23:4: warning: ‘fun’ may be used uninitialized in this function [-Wmaybe-uninitialized]\n   23 |    sort(p,fun,n);\n      |    ^~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 348160,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 536576,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1915353697734111235"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1915394235153797120",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1915353697734111235",
+    "submitAt": "2025-04-24T13:15:46Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 536576,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-24T13:15:47Z"
+}

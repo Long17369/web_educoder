@@ -1,0 +1,191 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1915353697734111236",
+            "codeCompletionSubmissionDetail": {
+                "program": "int insert(int a[ ], int value){\n    int i, b = 0, j, t;\n    for(i = 0;i < Count;i++){\n        if(a[i] == value){\n            b = 1;\n            break;\n        }\n    }\n    if(b == 1)return -1;\n    else{\n        a[Count] = value;\n        Count++;\n        for(i = 0;i < Count-1;i++){\n            for(j = 0;j < Count-1-i;j++){\n                if(a[j] > a[j+1]){\n                    t = a[j];\n                    a[j] = a[j+1];\n                    a[j+1] = t;\n                }\n            }\n        }\n    }\n    return i;\n}\n\nint del(int a[ ], int value){\n    int i, j, b = 0;\n    for(i=0;i < Count;i++){\n        if(a[i] == value){\n            b++;\n        }\n    }\n    if(b == 0) return -1;\n    else{\n        for(i=0;i < Count;i++){\n            if(a[i] == value){\n                for(j = i;j < Count-1;j++){\n                    a[j] = a[j+1];\n                }\n                Count--;\n            }\n        }\n    }\n    return i;\n}\n\nint modify(int a[ ], int value1, int value2){\n    int i, b = 0, c = 0, j, h, t;\n    for(i=0;i<Count ;i++){\n        if(a[i] == value1) b++;\n        if(a[i] == value2) c++;\n    }\n    if(c !=0 || b == 0) return -1;\n    else{\n        for(i = 0;i < Count;i++){\n            if(a[i] == value1)a[i] = value2;\n        }\n        for(j = 0;j < Count-1;j++){\n            for(h = 0;h < Count-1-j;h++){\n                if(a[h] > a[h+1]){\n                    t = a[h];\n                    a[h] = a[h+1];\n                    a[h+1] = t;\n                }\n            }\n        }\n    }\n    return i;\n}\n\nint query(int a[ ], int value){\n    int i, b = -1;\n    for(i = 0;i < Count;i++){\n        if(a[i] == value){\n            b=i;\n            break;\n        }\n    }\n    return b;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:29:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   29 |         scanf(\"%d\", &option);           /* 接受用户输入的编号 */\n      |         ^~~~~~~~~~~~~~~~~~~~\na.c:33:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   33 |         scanf(\"%d\", &value);                    /* 接受用户输入的参数value */\n      |         ^~~~~~~~~~~~~~~~~~~\na.c: In function ‘select’:\na.c:64:17: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   64 |                 scanf(\"%d\", &value2);           /* 接受用户输入的参数value2 */\n      |                 ^~~~~~~~~~~~~~~~~~~~\na.c: In function ‘input_array’:\na.c:86:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   86 |     scanf(\"%d\", &Count);\n      |     ^~~~~~~~~~~~~~~~~~~\na.c:88:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   88 |         scanf(\"%d\", &a[i]);\n      |         ^~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "5": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "6": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "7": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 528384,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "8": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.003,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1915353697734111236"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1915393922455855104",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1915353697734111236",
+    "submitAt": "2025-04-24T13:14:32Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.003,
+    "memory": 532480,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-24T13:14:32Z"
+}

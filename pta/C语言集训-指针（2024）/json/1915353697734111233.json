@@ -1,0 +1,127 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1915353697734111233",
+            "codeCompletionSubmissionDetail": {
+                "program": "int frequency ( char* paragraph, char* from, char* to ){\r\n    char * p = paragraph;\r\n    int count = 0;\r\n    while(*p != '\\0'){\r\n        if(*p == *from){\r\n            char * q = p;\r\n            char *goal = from;\r\n            while(*q !='\\0' && goal != to){\r\n                if(*q == *goal){\r\n                    goal++;\r\n                    q++;\r\n                    continue;\r\n                }\r\n                break;\r\n            }\r\n            if(goal == to && *q == *to){\r\n                count++;\r\n            }\r\n        }\r\n        p++;\r\n    }\r\n    return count;\r\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:13:5: warning: ‘gets’ is deprecated [-Wdeprecated-declarations]\n   13 |     gets(s);\n      |     ^~~~\nIn file included from /usr/include/stdio.h:867,\n                 from a.c:1:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:235:1: note: declared here\n  235 | gets (char *__str)\n      | ^~~~\na.c:11:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   11 |     scanf(\"%d\\n\",&N);\n      |     ^~~~~~~~~~~~~~~~\na.c:13:5: warning: ignoring return value of ‘gets’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   13 |     gets(s);\n      |     ^~~~~~~\na.c:14:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   14 |     scanf(\"%d %d\", &from, &to);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~\nIn file included from /usr/include/stdio.h:867,\n                 from a.c:1:\nIn function ‘gets’,\n    inlined from ‘main’ at a.c:13:5:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:239:10: warning: call to ‘__gets_warn’ declared with attribute warning: please use fgets or getline instead, gets can't specify buffer size [-Wattribute-warning]\n  239 |   return __gets_warn (__str);\n      |          ^~~~~~~~~~~~~~~~~~~\n/usr/bin/ld: /tmp/cclefS8n.o: in function `main':\na.c:(.text.startup+0x45): warning: the `gets' function is dangerous and should not be used.",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 585728,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 593920,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1915353697734111233"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1912711373087727616",
+    "cause": "",
+    "id": "1915365040977629184",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1915353697734111233",
+    "submitAt": "2025-04-24T11:19:46Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 593920,
+    "previewSubmission": false,
+    "judgeAt": "2025-04-24T11:19:46Z"
+}
