@@ -1,0 +1,79 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1921540045629960193",
+            "codeCompletionSubmissionDetail": {
+                "program": "int update_score(struct student *p,int n,int num,int course,int score){\n    for(int i=0;i<n;i++){\n        if(p[i].num == num){\n            switch(course){\n                case 1:\n                    p[i].math = score;\n                    break;\n                case 2:\n                    p[i].english = score;\n                    break;\n                case 3:\n                    p[i].computer = score;\n                    break;\n                default:break;\n            }\n            return i;\n        }\n    }\n    return -1;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:35:3: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   35 |   scanf(\"%d\", &n);\n      |   ^~~~~~~~~~~~~~~\na.c:37:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   37 |     scanf(\"%d\", &students[i].num);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\na.c:38:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   38 |     scanf(\"%s\", students[i].name);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\na.c:39:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   39 |     scanf(\"%d\", &students[i].math);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\na.c:40:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   40 |     scanf(\"%d\", &students[i].english);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\na.c:41:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   41 |     scanf(\"%d\", &students[i].computer);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\na.c:45:3: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   45 |   scanf(\"%d\", &num);\n      |   ^~~~~~~~~~~~~~~~~\na.c:46:3: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   46 |   scanf(\"%d\", &course);\n      |   ^~~~~~~~~~~~~~~~~~~~\na.c:47:3: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   47 |   scanf(\"%d\", &score);\n      |   ^~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 348160,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 323584,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1921540045629960193"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1921890381348749312",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1921540045629960193",
+    "submitAt": "2025-05-12T11:29:08Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 348160,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-12T11:29:09Z"
+}
