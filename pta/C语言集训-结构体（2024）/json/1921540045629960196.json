@@ -1,0 +1,95 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1921540045629960196",
+            "codeCompletionSubmissionDetail": {
+                "program": "struct DateG ymd(int y,int m,int d){\n    struct DateG r = {y,m,d};\n    return r;\n}\n\nstruct DateG days2Date(int x){\n    int year = 1;\n    int days = 0;\n    while(Days(ymd(year,1,1)) < x){\n        year++;\n    }\n    year--;\n    int m =1;\n    while(Days(ymd(year,m,1))<x && m <13){\n        m++;\n    }\n    m--;\n    days = Days(ymd(year,m,1));\n    struct DateG r = {year,m,x-days+1};\n    return r;\n}\n\nint Days(struct DateG x){\n    static int mo[]={0,31,28,31,30,31,30,31,31,30,31,30,31};\n    int y=x.yy,m=x.mm,d=x.dd;\n    if(m>12)return 0;\n    int days = 0;\n    y--;\n    days += y*365 + y/4-y/100+y/400;\n    y++;\n    for(int i=1;i<m;i++){\n        days += mo[i];\n        if(i==2 && leapYear(y))days++;\n    }\n    days += d;\n    return days;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:25:21: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   25 |         char st[12];scanf(\"%s\",st);\n      |                     ^~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 413696,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 585728,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1921540045629960196"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1921918099629043712",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1921540045629960196",
+    "submitAt": "2025-05-12T13:19:17Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 585728,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-12T13:19:17Z"
+}

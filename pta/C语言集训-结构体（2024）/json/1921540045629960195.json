@@ -1,0 +1,63 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1921540045629960195",
+            "codeCompletionSubmissionDetail": {
+                "program": "\n        score = p1->score;\n        p = p1;\n        for(p2=p1;p2<pData+n;p2++){\n            if(p2->score > score){\n                score = p2->score;\n                p = p2;\n            }\n        }\n        if(p != p1){\n            struct Student tmp = *p1;\n            *p1 = *p;\n            *p = tmp;\n        }\n\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘sortByChoose’:\na.c:35:26: warning: unused variable ‘j’ [-Wunused-variable]\n   35 |         int num, score,i,j;\n      |                          ^\na.c:35:24: warning: unused variable ‘i’ [-Wunused-variable]\n   35 |         int num, score,i,j;\n      |                        ^\na.c:35:13: warning: unused variable ‘num’ [-Wunused-variable]\n   35 |         int num, score,i,j;\n      |             ^~~\na.c: In function ‘main’:\na.c:19:17: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   19 |                 scanf(\"%d %d\",&p->num,&p->score);\n      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1921540045629960195"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1921897002946818048",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1921540045629960195",
+    "submitAt": "2025-05-12T11:55:27Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 311296,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-12T11:55:27Z"
+}
