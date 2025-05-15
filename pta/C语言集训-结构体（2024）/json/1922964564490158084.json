@@ -4,7 +4,7 @@
             "problemSetProblemId": "1922964564490158084",
             "programmingSubmissionDetail": {
                 "compiler": "GCC",
-                "program": "#include<stdio.h>\r\n#include<string.h>\r\n\r\ntypedef struct a{\r\n    char name[20];\r\n    char birth[20];\r\n    char phone[25];\r\n} Person;\r\n\r\nint cmp(const void *a, const void *b){\r\n    return strcmp(((Person*)a)->birth, ((Person*)b)->birth);\r\n}\r\n\r\nint main(){\r\n    int n;\r\n    scanf(\"%d\", &n);\r\n    Person people[15];\r\n    for(int i = 0; i < n; i++){\r\n        scanf(\"%s %s %s\", people[i].name, people[i].birth, people[i].phone);\r\n    }\r\n    qsort(people, n, sizeof(Person), cmp);\r\n    for(int i = 0; i < n; i++){\r\n        printf(\"%s %s %s\\n\", people[i].name, people[i].birth, people[i].phone);\r\n    }\r\n    return 0;\r\n}"
+                "program": "#include<stdio.h>\n#include<string.h>\n\ntypedef struct a{\n    char name[20];\n    char birth[20];\n    char phone[25];\n} Person;\n\nint cmp(const void *a, const void *b){\n    return strcmp(((Person*)a)->birth, ((Person*)b)->birth);\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    Person people[15];\n    for(int i = 0; i < n; i++){\n        scanf(\"%s %s %s\", people[i].name, people[i].birth, people[i].phone);\n    }\n    qsort(people, n, sizeof(Person), cmp);\n    for(int i = 0; i < n; i++){\n        printf(\"%s %s %s\\n\", people[i].name, people[i].birth, people[i].phone);\n    }\n    return 0;\n}\n"
             },
             "problemId": "0"
         }
@@ -19,7 +19,7 @@
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
                         "time": 0.001,
-                        "memory": 319488,
+                        "memory": 311296,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -51,7 +51,7 @@
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
                         "time": 0.001,
-                        "memory": 352256,
+                        "memory": 524288,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -81,16 +81,16 @@
     "hints": {},
     "problemSetId": "1921540045437001728",
     "cause": "",
-    "id": "1922982978747105280",
+    "id": "1922985251501010944",
     "userId": "1849272780568821760",
     "problemType": "PROGRAMMING",
     "problemSetProblemId": "1922964564490158084",
-    "submitAt": "2025-05-15T11:50:44Z",
+    "submitAt": "2025-05-15T11:59:45Z",
     "status": "ACCEPTED",
     "score": 10.0,
     "compiler": "GCC",
     "time": 0.001,
-    "memory": 352256,
+    "memory": 524288,
     "previewSubmission": false,
-    "judgeAt": "2025-05-15T11:50:44Z"
+    "judgeAt": "2025-05-15T11:59:46Z"
 }

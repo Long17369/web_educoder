@@ -4,7 +4,7 @@
             "problemSetProblemId": "1922964564490158082",
             "programmingSubmissionDetail": {
                 "compiler": "GCC",
-                "program": "#include<stdio.h>\r\n#include<string.h>\r\n\r\ntypedef struct a{\r\n    char name[20];\r\n    char tphone[20];\r\n    char phone[20];\r\n    char sex;\r\n    char birth[20];\r\n} Student;\r\n\r\nvoid input(Student *a){\r\n    scanf(\"%s %s %c %s %s\", a->name,a->birth,&(a->sex),a->tphone,a->phone);\r\n}\r\n\r\nvoid print(Student a){\r\n    printf(\"%s %s %s %c %s\\n\", a.name,a.tphone,a.phone,a.sex,a.birth);\r\n}\r\n\r\nint main(){\r\n    int N;\r\n    scanf(\"%d\", &N);\r\n    Student a[1001];\r\n    for(int i = 0; i < N; i++){\r\n        input(&a[i]);\r\n    }\r\n    int m,t;\r\n    scanf(\"%d\", &m);\r\n    for(int i = 0; i < m; i++){\r\n        scanf(\"%d\", &t);\r\n        if(t < 0 || t >= N){\r\n            printf(\"Not Found\\n\");\r\n            continue;\r\n        }\r\n        print(a[t]);\r\n    }\r\n}"
+                "program": "#include<stdio.h>\n#include<string.h>\n\ntypedef struct a{\n    char name[20];\n    char tphone[20];\n    char phone[20];\n    char sex;\n    char birth[20];\n} Student;\n\nvoid input(Student *a){\n    scanf(\"%s %s %c %s %s\", a->name,a->birth,&(a->sex),a->tphone,a->phone);\n}\n\nvoid print(Student a){\n    printf(\"%s %s %s %c %s\\n\", a.name,a.tphone,a.phone,a.sex,a.birth);\n}\n\nint main(){\n    int N;\n    scanf(\"%d\", &N);\n    Student a[1001];\n    for(int i = 0; i < N; i++){\n        input(&a[i]);\n    }\n    int m,t;\n    scanf(\"%d\", &m);\n    for(int i = 0; i < m; i++){\n        scanf(\"%d\", &t);\n        if(t < 0 || t >= N){\n            printf(\"Not Found\\n\");\n            continue;\n        }\n        print(a[t]);\n    }\n}\n"
             },
             "problemId": "0"
         }
@@ -18,8 +18,8 @@
                     "0": {
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
-                        "time": 0.002,
-                        "memory": 348160,
+                        "time": 0.001,
+                        "memory": 311296,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -35,7 +35,7 @@
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
                         "time": 0.001,
-                        "memory": 577536,
+                        "memory": 339968,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -50,8 +50,8 @@
                     "2": {
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
-                        "time": 0.002,
-                        "memory": 540672,
+                        "time": 0.001,
+                        "memory": 524288,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -81,16 +81,16 @@
     "hints": {},
     "problemSetId": "1921540045437001728",
     "cause": "",
-    "id": "1922982918219104256",
+    "id": "1922985207449255936",
     "userId": "1849272780568821760",
     "problemType": "PROGRAMMING",
     "problemSetProblemId": "1922964564490158082",
-    "submitAt": "2025-05-15T11:50:29Z",
+    "submitAt": "2025-05-15T11:59:35Z",
     "status": "ACCEPTED",
     "score": 10.0,
     "compiler": "GCC",
-    "time": 0.002,
-    "memory": 577536,
+    "time": 0.001,
+    "memory": 524288,
     "previewSubmission": false,
-    "judgeAt": "2025-05-15T11:50:30Z"
+    "judgeAt": "2025-05-15T11:59:35Z"
 }
