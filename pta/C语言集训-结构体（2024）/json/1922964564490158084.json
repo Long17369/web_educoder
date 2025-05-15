@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1922964564490158084",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\r\n#include<string.h>\r\n\r\ntypedef struct a{\r\n    char name[20];\r\n    char birth[20];\r\n    char phone[25];\r\n} Person;\r\n\r\nint cmp(const void *a, const void *b){\r\n    return strcmp(((Person*)a)->birth, ((Person*)b)->birth);\r\n}\r\n\r\nint main(){\r\n    int n;\r\n    scanf(\"%d\", &n);\r\n    Person people[15];\r\n    for(int i = 0; i < n; i++){\r\n        scanf(\"%s %s %s\", people[i].name, people[i].birth, people[i].phone);\r\n    }\r\n    qsort(people, n, sizeof(Person), cmp);\r\n    for(int i = 0; i < n; i++){\r\n        printf(\"%s %s %s\\n\", people[i].name, people[i].birth, people[i].phone);\r\n    }\r\n    return 0;\r\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 319488,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 352256,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:21:5: warning: implicit declaration of function ‘qsort’ [-Wimplicit-function-declaration]\n   21 |     qsort(people, n, sizeof(Person), cmp);\n      |     ^~~~~\na.c:16:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   16 |     scanf(\"%d\", &n);\n      |     ^~~~~~~~~~~~~~~\na.c:19:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   19 |         scanf(\"%s %s %s\", people[i].name, people[i].birth, people[i].phone);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1922964564490158084"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1922982978747105280",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1922964564490158084",
+    "submitAt": "2025-05-15T11:50:44Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 352256,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-15T11:50:44Z"
+}

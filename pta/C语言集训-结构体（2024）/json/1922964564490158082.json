@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1922964564490158082",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\r\n#include<string.h>\r\n\r\ntypedef struct a{\r\n    char name[20];\r\n    char tphone[20];\r\n    char phone[20];\r\n    char sex;\r\n    char birth[20];\r\n} Student;\r\n\r\nvoid input(Student *a){\r\n    scanf(\"%s %s %c %s %s\", a->name,a->birth,&(a->sex),a->tphone,a->phone);\r\n}\r\n\r\nvoid print(Student a){\r\n    printf(\"%s %s %s %c %s\\n\", a.name,a.tphone,a.phone,a.sex,a.birth);\r\n}\r\n\r\nint main(){\r\n    int N;\r\n    scanf(\"%d\", &N);\r\n    Student a[1001];\r\n    for(int i = 0; i < N; i++){\r\n        input(&a[i]);\r\n    }\r\n    int m,t;\r\n    scanf(\"%d\", &m);\r\n    for(int i = 0; i < m; i++){\r\n        scanf(\"%d\", &t);\r\n        if(t < 0 || t >= N){\r\n            printf(\"Not Found\\n\");\r\n            continue;\r\n        }\r\n        print(a[t]);\r\n    }\r\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 348160,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 6.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 577536,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 540672,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘input’:\na.c:13:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   13 |     scanf(\"%s %s %c %s %s\", a->name,a->birth,&(a->sex),a->tphone,a->phone);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\na.c: In function ‘main’:\na.c:22:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   22 |     scanf(\"%d\", &N);\n      |     ^~~~~~~~~~~~~~~\na.c:28:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   28 |     scanf(\"%d\", &m);\n      |     ^~~~~~~~~~~~~~~\na.c:30:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   30 |         scanf(\"%d\", &t);\n      |         ^~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1922964564490158082"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1922982918219104256",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1922964564490158082",
+    "submitAt": "2025-05-15T11:50:29Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 577536,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-15T11:50:30Z"
+}
