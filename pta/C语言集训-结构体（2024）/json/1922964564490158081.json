@@ -1,0 +1,112 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1922964564490158081",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<math.h>\n\nint main()\n{\n    double a,b,c,d,x[5],y[5];\n    int i,j;\n    char k[5]={'+','-','*','/'};\n    scanf(\"%lf %lf %lf %lf\",&a,&b,&c,&d);\n    x[0]=a+c;y[0]=b+d;\n    x[1]=a-c;y[1]=b-d;\n    x[2]=a*c-b*d;y[2]=b*c+a*d;\n    x[3]=(a*c+b*d)/(c*c+d*d);y[3]=(b*c-a*d)/(c*c+d*d);\n    for(i=0;i<4;i++){\n        if(fabs(x[i])<0.05&&fabs(y[i])<0.05){\n            printf(\"(%.1f%+.1fi) %c (%.1f%+.1fi) = 0.0\\n\",a,b,k[i],c,d);\n        }\n        else if(fabs(x[i])<0.05){\n            printf(\"(%.1f%+.1fi) %c (%.1f%+.1fi) = %.1fi\\n\",a,b,k[i],c,d,y[i]);\n        }\n        else if(fabs(y[i])<0.05){\n            printf(\"(%.1f%+.1fi) %c (%.1f%+.1fi) = %.1f\\n\",a,b,k[i],c,d,x[i]);\n        }\n        else {\n            printf(\"(%.1f%+.1fi) %c (%.1f%+.1fi) = %.1f%+.1fi\\n\",a,b,k[i],c,d,x[i],y[i]);\n        }\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 360448,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:7:11: warning: unused variable ‘j’ [-Wunused-variable]\n    7 |     int i,j;\n      |           ^\na.c:9:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n    9 |     scanf(\"%lf %lf %lf %lf\",&a,&b,&c,&d);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1922964564490158081"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1922982894294794240",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1922964564490158081",
+    "submitAt": "2025-05-15T11:50:23Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 544768,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-15T11:50:24Z"
+}
