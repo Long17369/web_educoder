@@ -4,7 +4,7 @@
             "problemSetProblemId": "1922964564490158083",
             "programmingSubmissionDetail": {
                 "compiler": "GCC",
-                "program": "#include<stdio.h>\r\n\r\ntypedef struct a{\r\n    char id[10];\r\n    char name[15];\r\n    int score[3];\r\n    int sum;\r\n} Student;\r\n\r\nvoid input(Student *s){\r\n    scanf(\"%s %s %d %d %d\", s->id, s->name, &s->score[0], &s->score[1], &s->score[2]);\r\n    s->sum = s->score[0] + s->score[1] + s->score[2];\r\n}\r\n\r\nvoid print(Student *s){\r\n    printf(\"%s %s %d\\n\", s->name, s->id, s->sum);\r\n}\r\n\r\nStudent * find_max(Student *s, int n){\r\n    int max = 0;\r\n    for(int i = 1; i < n; i++){\r\n        if(s[i].sum > s[max].sum){\r\n            max = i;\r\n        }\r\n    }\r\n    return &s[max];\r\n}\r\n\r\nint main(){\r\n    int n;\r\n    scanf(\"%d\", &n);\r\n    Student s[n];\r\n    for(int i = 0; i < n; i++){\r\n        input(&s[i]);\r\n    }\r\n    Student *max_student = find_max(s, n);\r\n    print(max_student);\r\n    return 0;\r\n}"
+                "program": "#include<stdio.h>\n\ntypedef struct a{\n    char id[10];\n    char name[15];\n    int score[3];\n    int sum;\n} Student;\n\nvoid input(Student *s){\n    scanf(\"%s %s %d %d %d\", s->id, s->name, &s->score[0], &s->score[1], &s->score[2]);\n    s->sum = s->score[0] + s->score[1] + s->score[2];\n}\n\nvoid print(Student *s){\n    printf(\"%s %s %d\\n\", s->name, s->id, s->sum);\n}\n\nStudent * find_max(Student *s, int n){\n    int max = 0;\n    for(int i = 1; i < n; i++){\n        if(s[i].sum > s[max].sum){\n            max = i;\n        }\n    }\n    return &s[max];\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    Student s[n];\n    for(int i = 0; i < n; i++){\n        input(&s[i]);\n    }\n    Student *max_student = find_max(s, n);\n    print(max_student);\n    return 0;\n}\n"
             },
             "problemId": "0"
         }
@@ -19,7 +19,7 @@
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
                         "time": 0.001,
-                        "memory": 524288,
+                        "memory": 315392,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -34,8 +34,8 @@
                     "1": {
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
-                        "time": 0.002,
-                        "memory": 311296,
+                        "time": 0.001,
+                        "memory": 524288,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -50,8 +50,8 @@
                     "2": {
                         "result": "ACCEPTED",
                         "exceed": "UNKNOWN_TESTCASE_EXCEED",
-                        "time": 0.001,
-                        "memory": 524288,
+                        "time": 0.002,
+                        "memory": 385024,
                         "exitcode": 0,
                         "termsig": 0,
                         "error": "",
@@ -81,16 +81,16 @@
     "hints": {},
     "problemSetId": "1921540045437001728",
     "cause": "",
-    "id": "1922982961340743680",
+    "id": "1922985233297731584",
     "userId": "1849272780568821760",
     "problemType": "PROGRAMMING",
     "problemSetProblemId": "1922964564490158083",
-    "submitAt": "2025-05-15T11:50:39Z",
+    "submitAt": "2025-05-15T11:59:41Z",
     "status": "ACCEPTED",
     "score": 10.0,
     "compiler": "GCC",
     "time": 0.002,
     "memory": 524288,
     "previewSubmission": false,
-    "judgeAt": "2025-05-15T11:50:40Z"
+    "judgeAt": "2025-05-15T11:59:42Z"
 }
