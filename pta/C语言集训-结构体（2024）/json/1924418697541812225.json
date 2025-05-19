@@ -1,0 +1,112 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1924418697541812225",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include <stdio.h>\n#include <string.h>\nstruct p {\n    char name[20];\n    int cnt;\n}a[10];\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    char t[30];\n    for (int i = 0; i < n; i++) {\n        scanf(\"%s\", t);\n        for (int j = 0; t[j]; j++) {\n            if (t[j] >= 'A' && t[j] <= 'Z') {\n                t[j] += 32;\n            }\n        }\n        strcpy(a[i].name, t);\n        a[i].cnt = 0;\n    }\n\n    int m;\n    scanf(\"%d\", &m);\n    int flag = 0, cnt = 0;\n    char vaild[20][20];\n    char c[30];\n    for (int i = 0; i < m; i++) {\n        scanf(\"%s\", t);\n        strcpy(c, t);\n        for (int j = 0; t[j]; j++) {\n            if (t[j] >= 'A' && t[j] <= 'Z') {\n                t[j] += 32;\n            }\n        }\n        for (int j = 0; j < n; j++) {\n            if (strcmp(a[j].name, t) == 0) {\n                a[j].cnt++;\n                flag = 1;\n            }\n        }\n        if (flag == 0) {\n            strcpy(vaild[cnt], c);\n            cnt++;\n        }\n        flag = 0;\n    }\n    struct p tmp;\n    for (int i = 0; i < n - 1; i++) {\n        for (int j = i + 1; j < n; j++) {\n            if (a[i].cnt < a[j].cnt) {\n                tmp = a[i];\n                a[i] = a[j];\n                a[j] = tmp;\n            }\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        printf(\"%s:%d\\n\", a[i].name, a[i].cnt);\n    }\n    if (cnt != 0) {\n        printf(\"\\ninvalid vote:\\n\");\n        for (int i = 0; i < cnt; i++)\n            printf(\"%s\\n\", vaild[i]);\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 536576,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:10:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   10 |     scanf(\"%d\", &n);\n      |     ^~~~~~~~~~~~~~~\na.c:13:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   13 |         scanf(\"%s\", t);\n      |         ^~~~~~~~~~~~~~\na.c:24:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   24 |     scanf(\"%d\", &m);\n      |     ^~~~~~~~~~~~~~~\na.c:29:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   29 |         scanf(\"%s\", t);\n      |         ^~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1924418697541812225"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1924443910299541504",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1924418697541812225",
+    "submitAt": "2025-05-19T12:35:57Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 536576,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-19T12:35:57Z"
+}
