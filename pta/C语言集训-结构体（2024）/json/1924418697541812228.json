@@ -1,0 +1,112 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1924418697541812228",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include <stdio.h>\n#include <math.h>\n\ntypedef struct a {\n    double x;\n    double y;\n} Point;\n\ndouble distance(Point* p1, Point* p2) {\n    return sqrt((p1->x - p2->x) * (p1->x - p2->x) + (p1->y - p2->y) * (p1->y - p2->y));\n}\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    Point* points = (Point*)malloc(n * sizeof(Point));\n    for(int i = 0; i < n; i++){\n        scanf(\"%lf %lf\", &points[i].x, &points[i].y);\n    }\n    Point* p1 = points, *p2 = points+1;\n    double min = distance(p1,p2);\n    for(int i = 0; i < n; i++){\n        for(int j = i + 1; j < n; j++){\n            double d = distance(&points[i], &points[j]);\n            if(d < min){\n                min = d;\n                p1 = &points[i];\n                p2 = &points[j];\n            }\n        }\n    }\n    if(p1->x+p1->y > p2->x+p2->y){\n        Point* tmp = p1;\n        p1 = p2;\n        p2 = tmp;\n    }\n    printf(\"(%.2f,%.2f),(%.2f,%.2f),miniDist=%.3f\", p1->x, p1->y, p2->x, p2->y,min);\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 458752,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 376832,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.104,
+                        "memory": 602112,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:16:29: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]\n   16 |     Point* points = (Point*)malloc(n * sizeof(Point));\n      |                             ^~~~~~\na.c:3:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\n    2 | #include <math.h>\n  +++ |+#include <stdlib.h>\n    3 | \na.c:16:29: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]\n   16 |     Point* points = (Point*)malloc(n * sizeof(Point));\n      |                             ^~~~~~\na.c:16:29: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\na.c:15:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   15 |     scanf(\"%d\", &n);\n      |     ^~~~~~~~~~~~~~~\na.c:18:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   18 |         scanf(\"%lf %lf\", &points[i].x, &points[i].y);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1924418697541812228"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1924444060073943040",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1924418697541812228",
+    "submitAt": "2025-05-19T12:36:33Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.104,
+    "memory": 602112,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-19T12:36:33Z"
+}

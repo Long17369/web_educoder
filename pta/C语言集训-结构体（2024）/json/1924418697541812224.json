@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1924418697541812224",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n#include<string.h>\n#include<stdlib.h>\n\ntypedef struct a {\n    char name[20];\n    int score[3];\n    float average;\n} Student;\n\nint cmp(const void* a, const void* b) {\n    Student* A = (Student*)a;\n    Student* B = (Student*)b;\n    if (A->average > B->average) return -1;\n    else if (A->average < B->average) return 1;\n    else return strcmp(A->name, B->name);\n}\n\nvoid avg(Student* a) {\n    a->average = (a->score[0] + a->score[1] + a->score[2]) / 3.0;\n}\n\nvoid print(Student a) {\n    printf(\"%s %d %d %d %.2f\\n\", a.name, a.score[0], a.score[1], a.score[2], a.average);\n}\n\nint main() {\n    Student* students = NULL;\n    int n;\n    while (scanf(\"%d\", &n) == 1) {\n        students = (Student*)malloc(n * sizeof(Student));\n        for (int i = 0; i < n; i++) {\n            scanf(\"%s %d %d %d\", students[i].name, &students[i].score[0], &students[i].score[1], &students[i].score[2]);\n            avg(&students[i]);\n        }\n        qsort(students, n, sizeof(Student), cmp);\n        for (int i = 0; i < n; i++) {\n            print(students[i]);\n        }\n        free(students);\n        students = NULL;\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1997": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 319488,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:33:13: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   33 |             scanf(\"%s %d %d %d\", students[i].name, &students[i].score[0], &students[i].score[1], &students[i].score[2]);\n      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1924418697541812224"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1924443812341571584",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1924418697541812224",
+    "submitAt": "2025-05-19T12:35:33Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 319488,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-19T12:35:34Z"
+}
