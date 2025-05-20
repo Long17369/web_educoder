@@ -188,3 +188,8 @@ tr td,
 tr th {
     padding-right: 1rem !important;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
