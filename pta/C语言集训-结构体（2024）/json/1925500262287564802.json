@@ -1,0 +1,128 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1925500262287564802",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include <stdio.h>\n\ntypedef struct Stu {\n    int id;\n    int base[8];\n    int sumBase;\n    int mid[4];\n    int sumMid;\n    int hard[3];\n    int sumHard;\n    int sum;\n}stu;\n\ntypedef struct Gro {\n    int base;\n    int mid;\n    int hard;\n    int sum;\n}gro;\n\nint main() {\n    int n;\n    int id;\n    char title[7];\n    int score;\n    stu s[5];\n    gro group;\n    group.base = 0;\n    group.mid = 0;\n    group.hard = 0;\n    for (int i = 0; i < 5; i++) {\n        s[i].id = i + 1;\n        s[i].base[0] = 0;\n        s[i].base[1] = 0;\n        s[i].base[2] = 0;\n        s[i].base[3] = 0;\n        s[i].base[4] = 0;\n        s[i].base[5] = 0;\n        s[i].base[6] = 0;\n        s[i].base[7] = 0;\n        s[i].mid[0] = 0;\n        s[i].mid[1] = 0;\n        s[i].mid[2] = 0;\n        s[i].mid[3] = 0;\n        s[i].hard[0] = 0;\n        s[i].hard[1] = 0;\n        s[i].hard[2] = 0;\n        s[i].sumBase = 0;\n        s[i].sumMid = 0;\n        s[i].sumHard = 0;\n    }\n    scanf(\"%d\", &n);\n    while(n--){\n        scanf(\"%d %s %d\", &id, title, &score);\n        if (title[1] == '1') {\n            if (score > s[id - 1].base[title[3] - '0' - 1]){\n                s[id - 1].base[title[3] - '0' - 1] = score;\n            }\n        }\n        else if (title[1] == '2') {\n            if (score > s[id - 1].mid[title[3] - '0' - 1]){\n                s[id - 1].mid[title[3] - '0' - 1] = score;\n            }\n        }\n        else if (title[1] == '3') {\n            if (score > s[id - 1].hard[title[3] - '0' - 1]){\n                s[id - 1].hard[title[3] - '0' - 1] = score;\n            }\n        }\n    }\n    for (int i = 0; i < 5; i++) {\n        for (int j = 0; j < 8; j++)s[i].sumBase += s[i].base[j];\n        for (int j = 0; j < 4; j++)s[i].sumMid += s[i].mid[j];\n        for (int j = 0; j < 3; j++)s[i].sumHard += s[i].hard[j];\n    }\n    group.base = s[0].sumBase + s[1].sumBase + s[2].sumBase + s[3].sumBase + s[4].sumBase;\n    group.mid = s[0].sumMid + s[1].sumMid + s[2].sumMid + s[3].sumMid + s[4].sumMid;\n    group.hard = s[0].sumHard + s[1].sumHard + s[2].sumHard + s[3].sumHard + s[4].sumHard;\n    for (int i = 0; i < 5; i++) {\n        if (s[i].sumBase < 60)s[i].sumMid = 0;\n        if (s[i].sumMid < 25)s[i].sumHard = 0;\n        s[i].sum = s[i].sumBase + s[i].sumMid + s[i].sumHard;\n    }\n    if (group.base < 300)group.mid = 0;\n    if (group.mid < 125)group.hard = 0;\n    group.sum = group.base + group.mid + group.hard;\n    stu* ps[5];\n    stu* pt;\n    ps[0] = &s[0];\n    ps[1] = &s[1];\n    ps[2] = &s[2];\n    ps[3] = &s[3];\n    ps[4] = &s[4];\n    for (int i = 0; i < 5; i++) {\n        for (int j = i; j < 5; j++) {\n            if (ps[i]->sum < ps[j]->sum) {\n                pt = ps[i];\n                ps[i] = ps[j];\n                ps[j] = pt;\n            }\n        }\n    }\n    printf(\"%d\\n\", group.sum);\n    for (int i = 0; i < 5; i++) {\n        printf(\"%d %d\\n\", ps[i]->id, ps[i]->sum);\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 536576,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 536576,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 593920,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:52:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   52 |     scanf(\"%d\", &n);\n      |     ^~~~~~~~~~~~~~~\na.c:54:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   54 |         scanf(\"%d %s %d\", &id, title, &score);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1925500262287564802"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1925528518147530752",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1925500262287564802",
+    "submitAt": "2025-05-22T12:25:47Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 593920,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-22T12:25:48Z"
+}
