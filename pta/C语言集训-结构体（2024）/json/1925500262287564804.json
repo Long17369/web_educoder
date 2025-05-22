@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1925500262287564804",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include <stdio.h>\n#include <string.h>\n#include <math.h>\n\nvoid print(double n) {\n    int i = (n);\n    double t = n - i;\n    double eps = 1e-5;\n    if (fabs(t - 0.4) <= eps) printf(\"spade\");\n    if (fabs(t - 0.3) <= eps) printf(\"heart\");\n    if (fabs(t - 0.2) <= eps) printf(\"club\");\n    if (fabs(t - 0.1) <= eps) printf(\"diamond\");\n    printf(\" %d\", i);\n}\n\nint main() {\n    int t;\n    scanf(\"%d\", &t);\n    getchar();\n    char se[100];\n    int di;\n    while (t--) {\n        int i = 0;\n        double sum[150] = { 0.0 };\n        while (1) {\n            char flag;\n            while (1) {\n                scanf(\"%c\", &flag);\n                if (flag == ' ') scanf(\"%c\", &flag);\n                if (flag == '\\n') break;\n                if (flag != ' ' && flag != '\\n') break;\n            }\n            if (flag == '\\n') break;\n            scanf(\"%s %d\", se, &di);\n            if (!(strcmp(se, \"pade\"))) sum[i++] = di + 0.4;\n            if (!(strcmp(se, \"eart\"))) sum[i++] = di + 0.3;\n            if (!(strcmp(se, \"lub\"))) sum[i++] = di + 0.2;\n            if (!(strcmp(se, \"iamond\"))) sum[i++] = di + 0.1;\n        }\n        int j, t;\n        double temp;\n        for (j = 1;j < i;j++)\n            for (t = i - 1;t >= j;t--) {\n                if (sum[t] > sum[t - 1]) {\n                    temp = sum[t];\n                    sum[t] = sum[t - 1];\n                    sum[t - 1] = temp;\n                }\n            }\n        for (j = 0;j < i;j++) {\n            if (j) printf(\" \");\n            print(sum[j]);\n        }\n        printf(\"\\n\");\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1285": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:18:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   18 |     scanf(\"%d\", &t);\n      |     ^~~~~~~~~~~~~~~\na.c:28:17: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   28 |                 scanf(\"%c\", &flag);\n      |                 ^~~~~~~~~~~~~~~~~~\na.c:29:34: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   29 |                 if (flag == ' ') scanf(\"%c\", &flag);\n      |                                  ^~~~~~~~~~~~~~~~~~\na.c:34:13: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   34 |             scanf(\"%s %d\", se, &di);\n      |             ^~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1925500262287564804"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1925528595108823040",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1925500262287564804",
+    "submitAt": "2025-05-22T12:26:06Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 544768,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-22T12:26:06Z"
+}

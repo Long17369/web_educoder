@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1925500262287564800",
+            "programmingSubmissionDetail": {
+                "compiler": "GCC",
+                "program": "#include<stdio.h>\n\ntypedef struct 组{\n    int id;\n    int score;\n    int cnt;\n    float avg;\n} Group;\n\nint cmp(const void* a, const void* b){\n    Group* groupA = (Group*)a;\n    Group* groupB = (Group*)b;\n    return groupA->avg > groupB->avg ? 1 : -1;\n}\n\nint main(){\n    int n;\n    float p;\n    scanf(\"%d %f\", &n, &p);\n    Group* groups = (Group*)malloc(sizeof(Group) * n);\n    for(int i = 0; i < n; i++){\n        scanf(\"%d %d\", &groups[i].score, &groups[i].cnt);\n        groups[i].avg = (float)groups[i].score / groups[i].cnt;\n        groups[i].id = i + 1;\n    }\n    qsort(groups, n, sizeof(Group), cmp);\n    int m = (int)(n * p)+1;\n    for(int i = 0; i < m; i++){\n        printf(\"%d %d %d %.2f\\n\", groups[i].id,groups[i].score,groups[i].cnt, groups[i].avg);\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "t1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "t2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "t3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:20:29: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]\n   20 |     Group* groups = (Group*)malloc(sizeof(Group) * n);\n      |                             ^~~~~~\na.c:2:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\n    1 | #include<stdio.h>\n  +++ |+#include <stdlib.h>\n    2 | \na.c:20:29: warning: incompatible implicit declaration of built-in function ‘malloc’ [-Wbuiltin-declaration-mismatch]\n   20 |     Group* groups = (Group*)malloc(sizeof(Group) * n);\n      |                             ^~~~~~\na.c:20:29: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’\na.c:26:5: warning: implicit declaration of function ‘qsort’ [-Wimplicit-function-declaration]\n   26 |     qsort(groups, n, sizeof(Group), cmp);\n      |     ^~~~~\na.c:19:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   19 |     scanf(\"%d %f\", &n, &p);\n      |     ^~~~~~~~~~~~~~~~~~~~~~\na.c:22:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   22 |         scanf(\"%d %d\", &groups[i].score, &groups[i].cnt);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1925500262287564800"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1921540045437001728",
+    "cause": "",
+    "id": "1925528252509675520",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1925500262287564800",
+    "submitAt": "2025-05-22T12:24:44Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.001,
+    "memory": 524288,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-22T12:24:45Z"
+}
