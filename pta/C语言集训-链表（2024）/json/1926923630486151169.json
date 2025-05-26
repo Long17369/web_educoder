@@ -1,0 +1,95 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1926923630486151169",
+            "codeCompletionSubmissionDetail": {
+                "program": "int  myCreate(struct stu *head,int m){\n    struct stu *p = NULL;\n    while (m--) {\n        p = (struct stu *)malloc(sizeof(struct stu));\n        p->next = NULL;\n        if(scanf(\"%s %d\", p->name, &p->no) != 2) {\n            free(p);\n            return 0;\n        }\n        head->next = p;\n        head = p;\n    }\n    return 1;\n}\nvoid show(struct stu *head){\n    struct stu *p = head->next;\n    while (p != NULL) {\n        printf(\"%s %d\\n\", p->name, p->no);\n        p = p->next;\n    }\n}\nstruct stu * myIndex(struct stu *head,char *s){\n    struct stu *p = head->next;\n    while (p != NULL) {\n        if (strcmp(p->name, s) == 0) return p;\n        p = p->next;\n    }\n    return NULL;\n}\nint myDel(struct stu *head,char *s){\n    struct stu *p = head->next, *prev = head;\n    while (p != NULL) {\n        if (strcmp(p->name, s) == 0) {\n            prev->next = p->next;\n            free(p);\n            p=NULL;\n            return 1;\n        }\n        prev = p;\n        p = p->next;\n    }\n    return 0;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:22:3: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   22 |   scanf(\"%d\", &m);// 输入m，代表结点个数\n      |   ^~~~~~~~~~~~~~~\na.c:27:26: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   27 |                          scanf(\"%s\",name);//输入要查找的姓名\n      |                          ^~~~~~~~~~~~~~~~\na.c:33:26: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   33 |                          scanf(\"%s\",name);//输入要删除的姓名\n      |                          ^~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 589824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1926923630486151169"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1926923630154801152",
+    "cause": "",
+    "id": "1926973304909946880",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1926923630486151169",
+    "submitAt": "2025-05-26T12:06:51Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 589824,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-26T12:06:52Z"
+}
