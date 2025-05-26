@@ -1,0 +1,111 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1926923630486151172",
+            "codeCompletionSubmissionDetail": {
+                "program": "struct ListNode *Createlist(int n){\n    struct ListNode *head = NULL, *p = NULL;\n    int data;\n    while(n--){\n        scanf(\"%d\", &data);\n        p = (struct ListNode *)malloc(sizeof(struct ListNode));\n        p->data = data;\n        p->next = head;\n        head = p;\n    }\n    return head;\n}\nstruct ListNode *Del_absrepeat( struct ListNode **head ){\n    if (*head == NULL) return NULL; \n    struct ListNode *current = *head;\n    struct ListNode *prev = NULL;\n    struct ListNode *delHead = NULL; \n    struct ListNode *delTail = NULL; \n    int seen[1001] = {0};\n    while (current != NULL) {\n        int absValue = abs(current->data);\n        if (seen[absValue]) {\n            if (prev != NULL) prev->next = current->next;\n            else *head = current->next;\n            if (delHead == NULL) {\n                delHead = current;\n                delTail = current;\n            } else {\n                delTail->next = current;\n                delTail = current;\n            }\n            delTail->next = NULL;\n            current = prev ? prev->next : *head;\n        } else {\n            seen[absValue] = 1;\n            prev = current;\n            current = current->next;\n        }\n    }\n\n    return delHead;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:16:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   16 |         scanf(\"%d\",&n);\n      |         ^~~~~~~~~~~~~~\na.c: In function ‘Createlist’:\na.c:43:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   43 |         scanf(\"%d\", &data);\n      |         ^~~~~~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 532480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1926923630486151172"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1926923630154801152",
+    "cause": "",
+    "id": "1926973621657374720",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1926923630486151172",
+    "submitAt": "2025-05-26T12:08:07Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 532480,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-26T12:08:08Z"
+}
