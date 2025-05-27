@@ -182,6 +182,10 @@ code {
     pre {
         margin: 10px;
     }
+
+    section{
+        display: inline-block;
+    }
 }
 
 tr td,
