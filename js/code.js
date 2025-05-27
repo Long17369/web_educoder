@@ -1,16 +1,5 @@
-const renderer = new marked.Renderer();
+const renderer = md.renderer ;
 
-
-marked.setOptions({
-    renderer: renderer,
-    gfm: true,
-    pedantic: false,
-    sanitize: false,
-    tables: true,
-    breaks: false,
-    smartLists: true,
-    smartypants: false,
-});
 
 function show_copy_button() {
     const codeBlocks = document.querySelectorAll('pre');
@@ -86,40 +75,35 @@ function load_page() {
     document.title = info.title
 }
 
-function hl(codeTag){
-    console.log(codeTag.querySelectorAll("code"));
-    codeTag.querySelectorAll("pre code").forEach(
-        function(code){
-            hljs.highlightElement(code);
-            hljs.lineNumbersBlock(code);
-        }
-    )
-}
-
 async function load_code() {
     var info = readinfo(decodeURI(location.href).split('?')[1].split('&'))
     load_page()
     var path = `${info.type}/${info.problems}/code/${info.problem}`
-    load_md_data(`${path}.cont.md`).then(data => {
-        console.log(data.replace('$$\\le$$', '≤').replace('$$<$$', '<'))
-        var proTag = marked.marked(data.replace('$$\\le$$', '≤').replace('$$<$$', '<'), renderer)
+    load_md_data(`${path}.cont.md`).then(data =>{
+        var dataSp = data.split("$$")
+        dataSp.forEach((element, index) => {
+            console.log(element)
+            if(element[0] in ["0","1","2","3","4","5","6","7","8","9"]){
+                dataSp[index] = " "+element
+            }
+        });
+        data = dataSp.join("$")
+        console.log(data)
+        return data
+    }).then(data => {
+        var proTag = md.render(data)
         console.log(proTag)
         var goalTag = document.getElementById("pro")
         var Tag = document.createElement("div")
         Tag.innerHTML = proTag
-        hl(Tag)
         goalTag.innerHTML = Tag.innerHTML
     })
     load_md_data(`${path}.code.md`).then(data => {
-        var codeTag = marked.marked(data, renderer)
+        var codeTag = md.render(data)
         var Tag = document.getElementById("code")
         Tag.innerHTML = codeTag
         var code = Tag
-        hl(code);
         return code;
-    }).then((data) => {
-        // hljs.highlightAll();
-        // hljs.initLineNumbersOnLoad();
     });
 }
 

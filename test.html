@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Editor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+  <style>
+    .editor-container {
+      display: flex;
+      height: 100vh;
+    }
+    .editor-container textarea {
+      width: 50%;
+      height: 100%;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .preview {
+      width: 50%;
+      padding: 10px;
+      border-left: 1px solid #ccc;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="editor-container">
+    <textarea id="markdown-editor"></textarea>
+    <div id="markdown-preview" class="preview"></div>
+  </div>
+
+  <script src="https://quantil.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+  <script src="https://quantil.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://quantil.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  <script src="https://quantil.jsdelivr.net/npm/markdown-it-gfm/dist/markdown-it-gfm.min.js"></script>
+  <script src="https://quantil.jsdelivr.net/npm/markdown-it-emoji/dist/markdown-it-emoji.min.js"></script>
+  <script src="https://quantil.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+  <script src="https://quantil.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    const editor = new EasyMDE({
+      element: document.getElementById('markdown-editor'),
+      autosave: {
+        enabled: true,
+        uniqueId: "markdown-editor",
+        delay: 1000,
+      },
+      spellChecker: false,
+      hideIcons: ['guide', 'heading', 'image', 'side-by-side', 'table'],
+      status: false,
+    });
+
+    const preview = document.getElementById('markdown-preview');
+    const md = window.markdownIt()
+      .use(window.markdownItGfm)
+      .use(window.markdownItEmoji);
+
+    mermaid.initialize({ startOnLoad: true });
+
+    editor.codemirror.on('change', () => {
+      const markdownText = editor.value();
+      const html = md.render(markdownText);
+      preview.innerHTML = html;
+
+      // 渲染数学公式
+      window.katex.renderToString(html, {
+        throwOnError: false
+      });
+
+      // 渲染 Mermaid 图表
+      mermaid.renderAll();
+    });
+  </script>
+</body>
+</html>

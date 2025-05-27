@@ -7,14 +7,18 @@
     <meta name="referrer" content="no-referrer">
     <title>educoder code page</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
     <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
-    <script
-        src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js"></script>
+
+    <link rel="stylesheet" href="https://quantil.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <link rel="stylesheet" href="https://quantil.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css" />
+
+    <script src="https://quantil.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <script src="https://quantil.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script src="https://quantil.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href=".\css\code.css">
@@ -22,26 +26,44 @@
     <script>
         hljs.registerLanguage('in', function (hljs) {
             return {
-                keywords: { keyword: '' }, // 定义关键词
+                keywords: { keyword: '' },
                 contains: [
-                    hljs.C_LINE_COMMENT_MODE, // 单行注释模式
-                    hljs.QUOTE_STRING_MODE    // 字符串模式
+                    hljs.C_LINE_COMMENT_MODE,
+                    hljs.QUOTE_STRING_MODE
                 ]
             };
         }); hljs.registerLanguage('out', function (hljs) {
             return {
-                keywords: { keyword: '' }, // 定义关键词
+                keywords: { keyword: '' },
                 contains: [
-                    hljs.C_LINE_COMMENT_MODE, // 单行注释模式
-                    hljs.QUOTE_STRING_MODE    // 字符串模式
+                    hljs.C_LINE_COMMENT_MODE,
+                    hljs.QUOTE_STRING_MODE
                 ]
             };
         });
-        hljs.addPlugin(new CopyButtonPlugin());
+        const md = window.markdownit({
+            html: true,
+            highlight: function (str, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    try {
+                        var data = hljs.highlight(str, { language: lang }).value
+                        const lines = data.split(/\n/).slice(0, -1)
+                        let html = lines.map((item, index) => {
+                            return '<li><span class="line-num" data-line="' + (index + 1) + '"></span>' + item + '</li>'
+                        }).join('')
+                        html = '<ol>' + html + '</ol>'
+                        if (lines.length) {
+                            html = '<b class="name">' + lang + '</b>' +html
+                        }
+                        return '<pre class="hljs"><code>' + html + '</code></pre>'
+                    } catch (__) { }
+                }
+                return '';
+            }
+        }).use(window.texmath, { engine: window.katex, delimiters: 'dollars' });
     </script>
 
     <script src="./js/script.js"></script>
-    <script src="./js/marked.min.js"></script>
     <script src="./js/code.js"></script>
 
 
