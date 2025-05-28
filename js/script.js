@@ -28,7 +28,7 @@ function gotopage(pageinfo){
         console.log(pageinfo.split("&"))
     }
     else{
-        info = readinfo(locationinfo[1].split(1)[0].split("&").concat(pageinfo.split("&")));
+        info = readinfo(locationinfo[1].split("&").concat(pageinfo.split("&")));
     }
     console.log(info);
     var pageurl = './content.html?'+linkinfo(info);
