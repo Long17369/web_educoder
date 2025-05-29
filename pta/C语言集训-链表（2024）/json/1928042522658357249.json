@@ -1,0 +1,143 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1928042522658357249",
+            "codeCompletionSubmissionDetail": {
+                "program": "typedef struct ListNode Node;\n\nNode *createlist(){\n    Node *head = (Node *)malloc(sizeof(Node));\n    head->next = NULL;\n    Node *tail = head;\n    int data;\n    while(scanf(\"%d\", &data) == 1 && data != -1){\n        Node *newNode = (Node *)malloc(sizeof(Node));\n        newNode->data = data;\n        newNode->next = NULL;\n        tail->next = newNode;\n        tail = newNode;\n    }\n    return head->next;\n}\n\nvoid delNode(Node *prev){\n    Node *toDelete = prev->next;\n    if(toDelete){\n        prev->next = toDelete->next;\n        free(toDelete);\n    }\n}\n\nNode *deleteeven(Node *head ){\n    if(head == NULL) return NULL;\n    Node *p = (Node*)malloc(sizeof(Node));\n    Node *q = p;\n    p->next = head;\n    while(q->next != NULL){\n        if(q->next->data % 2 == 0) delNode(q);\n        else q = q->next;\n    }\n    return p->next;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 434176,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 581632,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 524288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "5": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 589824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 1,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1928042522658357249"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1926923630154801152",
+    "cause": "",
+    "id": "1928062553458585600",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1928042522658357249",
+    "submitAt": "2025-05-29T12:15:09Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 589824,
+    "previewSubmission": false,
+    "judgeAt": "2025-05-29T12:15:09Z"
+}
