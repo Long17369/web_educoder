@@ -1,0 +1,79 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1930572357785571332",
+            "codeCompletionSubmissionDetail": {
+                "program": "typedef linklist *List;\n\nList DeleteNext(List head){\n    List tmp = head->next;\n    head->next = head->next->next;\n    printf(\"Delete No:%d\\n\", tmp->number);\n    free(tmp);\n    tmp = NULL;\n    return head;\n}\n\nList CreateCircle(int n){\n    List begin = (List)malloc(sizeof(linklist));\n    begin->next = NULL;\n    List p = begin;\n    for(int i=0;i<n;i++){\n        p->next = (List)malloc(sizeof(linklist));\n        p = p->next;\n        p->number = i+1;\n        scanf(\"%d\",&p->mydata);\n        p->next = NULL;\n    }\n    p->next = begin->next;\n    free(begin);\n    begin = NULL;\n    return p;\n}\n\nint KingOfMonkey(int n,List head){\n    int c = head->mydata;\n    for(int i=1;i<n;i++){\n        for(int j=1;j<c;j++){\n            head = head->next;\n        }\n        c = head->next->mydata;\n        DeleteNext(head);\n    }\n    return head->number;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘main’:\na.c:54:9: warning: unused variable ‘i’ [-Wunused-variable]\n   54 |     int i,n;\n      |         ^\na.c: In function ‘CreateCircle’:\na.c:30:9: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   30 |         scanf(\"%d\",&p->mydata);\n      |         ^~~~~~~~~~~~~~~~~~~~~~\na.c: In function ‘main’:\na.c:55:5: warning: ignoring return value of ‘scanf’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n   55 |     scanf(\"%d\",&n);\n      |     ^~~~~~~~~~~~~~",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 536576,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "problemSetProblemId": "1930572357785571332"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1926923630154801152",
+    "cause": "",
+    "id": "1930596603159228416",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1930572357785571332",
+    "submitAt": "2025-06-05T12:04:33Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 544768,
+    "previewSubmission": false,
+    "judgeAt": "2025-06-05T12:04:34Z"
+}
