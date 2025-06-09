@@ -1,0 +1,159 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1931740420786569219",
+            "codeCompletionSubmissionDetail": {
+                "program": "int CountWord(FILE *file){\n    int cnt = 0,inWord = 0;\n    char ch;\n    while ((ch = fgetc(file)) != EOF) {\n        isalpha(ch) ? (inWord ? 0 : (inWord = 1,cnt++)) : (inWord = 0);\n    }\n    return cnt;\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "codeCompletionJudgeResponseContent": {
+                "compilationResult": {
+                    "log": "a.c: In function ‘_gets_’:\na.c:25:9: warning: ‘gets’ is deprecated [-Wdeprecated-declarations]\n   25 |         return gets(str);\n      |         ^~~~~~\nIn file included from /usr/include/stdio.h:867,\n                 from a.c:1:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:235:1: note: declared here\n  235 | gets (char *__str)\n      | ^~~~\nIn function ‘gets’,\n    inlined from ‘_gets_’ at a.c:25:9:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:239:10: warning: call to ‘__gets_warn’ declared with attribute warning: please use fgets or getline instead, gets can't specify buffer size [-Wattribute-warning]\n  239 |   return __gets_warn (__str);\n      |          ^~~~~~~~~~~~~~~~~~~\n/usr/bin/ld: /tmp/cckhrqKn.o: in function `_gets_':\na.c:(.text+0x49): warning: the `gets' function is dangerous and should not be used.",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                },
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 311296,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 593920,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 376832,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.002,
+                        "memory": 540672,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 544768,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "5": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 585728,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "6": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.001,
+                        "memory": 585728,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                }
+            },
+            "status": "ACCEPTED",
+            "score": 14.0,
+            "problemSetProblemId": "1931740420786569219"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1931740420564271104",
+    "cause": "",
+    "id": "1932039495223164928",
+    "userId": "1849272780568821760",
+    "problemType": "CODE_COMPLETION",
+    "problemSetProblemId": "1931740420786569219",
+    "submitAt": "2025-06-09T11:38:05Z",
+    "status": "ACCEPTED",
+    "score": 14.0,
+    "compiler": "GCC",
+    "time": 0.002,
+    "memory": 593920,
+    "previewSubmission": false,
+    "judgeAt": "2025-06-09T11:38:06Z"
+}
