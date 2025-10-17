@@ -6,27 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>educoder content page</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./js/script.js"></script>
-    <script src="./js/page.js"></script>
+    <script src="./js/vue.global.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1></h1>
-        <nav>
+    <div id="app">
+        <app-header :title="pageTitle"></app-header>
+        <main>
+            <span id="back">
+                <p @click="goBack">返回上一级</p>
+            </span>
             <ul>
-                <li><a href=".">首页</a></li>
+                <li v-for="item in items" :key="item.id" @click="navigateToItem(item)">
+                    {{ item.label }}
+                </li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <span id="back"><p onclick="window.history.back()">返回上一级</p></span>
-        <ul></ul>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Web Page</p>
-    </footer>
+        </main>
+        <app-footer></app-footer>
+    </div>
 
+    <script src="./js/vue-content.js"></script>
 </body>
 
 </html>
