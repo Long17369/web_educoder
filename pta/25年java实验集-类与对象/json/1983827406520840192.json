@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1983827406520840192",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\nclass Rectangle {\n    private double length;\n    private double width;\n\n    public Rectangle() {\n        this.length = 0;\n        this.width = 0;\n    }\n\n    public void setXY(double a, double b) {\n        this.length = a;\n        this.width = b;\n    }\n\n    public double getArea() {\n        return length * width;\n    }\n\n    public double getPerimeter() {\n        return 2 * (length + width);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        Rectangle rect = new Rectangle();\n        if (scanner.hasNextDouble()) {\n            double l = scanner.nextDouble();\n            double w = scanner.nextDouble();\n            rect.setXY(l, w);\n            System.out.println(\"面积为\" + rect.getArea());\n            System.out.println(\"周长为\" + rect.getPerimeter());\n        }\n        scanner.close();\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.131,
+                        "memory": 19849216,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 20.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1983827406520840192"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1983823891069104128",
+    "cause": "",
+    "id": "1995462495467151360",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1983827406520840192",
+    "submitAt": "2025-12-01T11:58:27Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.131,
+    "memory": 19849216,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T11:58:27Z"
+}

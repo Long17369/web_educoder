@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1983826314340855808",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\nclass Person {\n    private String name;\n    private boolean gender;\n    private int age;\n    private int id;\n    private static int count = 0;\n\n    static {\n        System.out.println(\"This is static initialization block\");\n    }\n\n    {\n        this.id = count++;\n        System.out.println(\"This is initialization block, id is \" + this.id);\n    }\n\n    public Person() {\n        System.out.println(\"This is constructor\");\n        System.out.println(name + \",\" + age + \",\" + gender + \",\" + id);\n    }\n\n    public Person(String name, int age, boolean gender) {\n        this.name = name;\n        this.age = age;\n        this.gender = gender;\n    }\n\n    @Override\n    public String toString() {\n        return \"Person [name=\" + name + \", age=\" + age + \", gender=\" + gender + \", id=\" + id + \"]\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        if (scanner.hasNextInt()) {\n            int n = scanner.nextInt();\n            Person[] people = new Person[n];\n            for (int i = 0; i < n; i++) {\n                String name = scanner.next();\n                int age = scanner.nextInt();\n                boolean gender = scanner.nextBoolean();\n                people[i] = new Person(name, age, gender);\n            }\n            for (int i = n - 1; i >= 0; i--) {\n                System.out.println(people[i]);\n            }\n            Person p = new Person();\n            System.out.println(p);\n        }\n        scanner.close();\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.15,
+                        "memory": 21323776,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 20.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1983826314340855808"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1983823891069104128",
+    "cause": "",
+    "id": "1995461912127561728",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1983826314340855808",
+    "submitAt": "2025-12-01T11:56:08Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.15,
+    "memory": 21323776,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T11:56:08Z"
+}

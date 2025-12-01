@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1983826091614892032",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\nclass BankBusiness {\n    public static String bankName = \"中国银行\";\n    private String name;\n    private String password;\n    private double balance;\n\n    public static void welcome() {\n        System.out.println(bankName + \"欢迎您的到来！\");\n    }\n\n    public static void welcomeNext() {\n        System.out.println(\"请收好您的证件和物品，欢迎您下次光临！\");\n    }\n\n    public BankBusiness(String name, String password) {\n        this.name = name;\n        this.password = password;\n        this.balance = 0;\n    }\n\n    public void deposit(String pwd, double amount) {\n        if (!this.password.equals(pwd)) {\n            System.out.println(\"您的密码错误！\");\n        } else {\n            this.balance += amount;\n            System.out.println(\"您的余额有\" + this.balance + \"元。\");\n        }\n    }\n\n    public void withdraw(String pwd, double amount) {\n        if (!this.password.equals(pwd)) {\n            System.out.println(\"您的密码错误！\");\n        } else if (amount > this.balance) {\n            System.out.println(\"您的余额不足！\");\n        } else {\n            this.balance -= amount;\n            System.out.println(\"请取走钞票，您的余额还有\" + this.balance + \"元。\");\n        }\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        BankBusiness.welcome();\n\n        String name = scanner.next();\n        String password = scanner.next();\n        BankBusiness account = new BankBusiness(name, password);\n\n        String pwd = scanner.next();\n        double amount = scanner.nextDouble();\n        account.deposit(pwd, amount);\n\n        pwd = scanner.next();\n        amount = scanner.nextDouble();\n        account.withdraw(pwd, amount);\n\n        pwd = scanner.next();\n        amount = scanner.nextDouble();\n        account.withdraw(pwd, amount);\n\n        pwd = scanner.next();\n        amount = scanner.nextDouble();\n        account.withdraw(pwd, amount);\n\n        BankBusiness.welcomeNext();\n        \n        scanner.close();\n    }\n}\n\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.137,
+                        "memory": 20815872,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 20.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1983826091614892032"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1983823891069104128",
+    "cause": "",
+    "id": "1995391489911570432",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1983826091614892032",
+    "submitAt": "2025-12-01T07:16:18Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.137,
+    "memory": 20815872,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T07:16:18Z"
+}
