@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1995343815781928960",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String input = sc.nextLine();\n        int lowercaseCount = 0;\n        int uppercaseCount = 0;\n        int digitCount = 0;\n        int otherCount = 0;\n        for (char ch : input.toCharArray()) {\n            if (Character.isLowerCase(ch)) {\n                lowercaseCount++;\n            } else if (Character.isUpperCase(ch)) {\n                uppercaseCount++;\n            } else if (Character.isDigit(ch)) {\n                digitCount++;\n            } else {\n                otherCount++;\n            }\n        }\n        System.out.println(\"小写字母有: \" + lowercaseCount + \"个\");\n        System.out.println(\"大写字母有: \" + uppercaseCount + \"个\");\n        System.out.println(\"数字有: \" + digitCount + \"个\");\n        System.out.println(\"其他字符有: \" + otherCount + \"个\");\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.112,
+                        "memory": 19173376,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "test2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.112,
+                        "memory": 19062784,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1995343815781928960"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1995341665912655872",
+    "cause": "",
+    "id": "1995387860081180672",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1995343815781928960",
+    "submitAt": "2025-12-01T07:01:53Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.112,
+    "memory": 19173376,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T07:01:53Z"
+}

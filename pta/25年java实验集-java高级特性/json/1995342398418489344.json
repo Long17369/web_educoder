@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1995342398418489344",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int n = scanner.nextInt();\n        Animal[] animals = new Animal[n];\n        for (int i = 0; i < n; i++) {\n            int type = scanner.nextInt();\n            String name = scanner.next();\n            int age = scanner.nextInt();\n            switch (type) {\n                case 1:\n                    int leg = scanner.nextInt();\n                    animals[i] = new Dog(name, age, leg);\n                    break;\n                default:\n                    animals[i] = new Bird(name, age);\n                    break;\n            }\n        }\n        System.out.println(Arrays.toString(animals));\n        String searchName = scanner.next();\n        scanner.close();\n        int cnt = 0;\n        for (Animal animal : animals) {\n            if (animal.getName().equals(searchName)) {\n                System.out.println(animal.getClass().getSimpleName());\n                System.out.println(animal);\n                cnt++;\n            }\n        }\n        if (cnt == 0) {\n            System.out.println(\"no this one\");\n        }\n    }\n}\n\nabstract class Animal {\n    private String name;\n    private int age;\n\n    public Animal(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    @Override\n    public String toString() {\n        return \"Animal[name=\" + name + \", age=\" + age + \"]\";\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public void setAge(int age) {\n        this.age = age;\n    }\n}\n\nclass Bird extends Animal {\n    Bird(String name, int age) {\n        super(name, age);\n    }\n\n    @Override\n    public String toString() {\n        return \"Bird[name=\" + getName() + \", age=\" + getAge() + \"]\";\n    }\n}\n\nclass Dog extends Animal {\n    private int leg;\n\n    public Dog(String name, int age, int leg) {\n        super(name, age);\n        this.leg = leg;\n    }\n\n    public int getLeg() {\n        return leg;\n    }\n\n    public void setLeg(int leg) {\n        this.leg = leg;\n    }\n\n    @Override\n    public String toString() {\n        return \"Dog[leg=\" + leg + \", name=\" + getName() + \", age=\" + getAge() + \"]\";\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.165,
+                        "memory": 21012480,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "test2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.166,
+                        "memory": 21184512,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1995342398418489344"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1995341665912655872",
+    "cause": "",
+    "id": "1995378758605094912",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1995342398418489344",
+    "submitAt": "2025-12-01T06:25:43Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.166,
+    "memory": 21184512,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T06:25:43Z"
+}

@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1995343815781928961",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        MyDate d = new MyDate(sc.nextInt(), sc.nextInt(), sc.nextInt());\n        d.addDays(sc.nextInt());\n        sc.close();\n        System.out.println(d);\n    }\n}\n\nclass MyDate {\n    private int year;\n    private int month;\n    private int day;\n    private static final int[] DAYS = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };\n\n    public MyDate(int year, int month, int day) {\n        this.year = year;\n        this.month = month;\n        this.day = day;\n    }\n\n    public void addDays(int days) {\n        this.day += days;\n        while (this.day > getDaysInMonth(this.year, this.month)) {\n            this.day -= getDaysInMonth(this.year, this.month);\n            this.month++;\n            if (this.month > 12) {\n                this.month = 1;\n                this.year++;\n            }\n        }\n    }\n\n    private int getDaysInMonth(int year, int month) {\n        if (month == 2 && isLeapYear(year)) {\n            return 29;\n        }\n        return DAYS[month];\n    }\n\n    private boolean isLeapYear(int year) {\n        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);\n    }\n\n    @Override\n    public String toString() {\n        return String.format(\"%04d年%02d月%02d日\", year, month, day);\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.101,
+                        "memory": 19083264,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 7.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "test2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.099,
+                        "memory": 18690048,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 13.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1995343815781928961"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1995341665912655872",
+    "cause": "",
+    "id": "1995390115189301248",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1995343815781928961",
+    "submitAt": "2025-12-01T07:10:50Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.101,
+    "memory": 19083264,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T07:10:51Z"
+}

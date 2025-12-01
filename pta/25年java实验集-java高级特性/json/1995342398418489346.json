@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1995342398418489346",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, Student> studentMap = new HashMap<>();\n        List<String> ids = new ArrayList<>();\n        Scanner sc = new Scanner(System.in);\n        String id = sc.next();\n        while (!id.equals(\"end\")) {\n            ids.add(id);\n            String name = sc.next();\n            int score = sc.nextInt();\n            Student student = new Student(id, name, score);\n            studentMap.put(id, student);\n            id = sc.next();\n        }\n        sc.close();\n        ids.sort((a, b) -> b.compareTo(a));\n        for (String ID : ids) {\n            Student student = studentMap.get(ID);\n            System.out.println(student.id + \" \" + student.name + \" \" + student.score);\n        }\n    }\n}\n\nclass Student {\n    String id;\n    String name;\n    int score;\n\n    public Student(String id, String name, int score) {\n        this.id = id;\n        this.name = name;\n        this.score = score;\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "case1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.136,
+                        "memory": 20803584,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 7.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "case2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.14,
+                        "memory": 20848640,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 7.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "case3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.138,
+                        "memory": 20959232,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 6.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1995342398418489346"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1995341665912655872",
+    "cause": "",
+    "id": "1995386982962765824",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1995342398418489346",
+    "submitAt": "2025-12-01T06:58:23Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.14,
+    "memory": 20959232,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T06:58:24Z"
+}
