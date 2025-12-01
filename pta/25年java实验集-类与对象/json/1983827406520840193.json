@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1983827406520840193",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String sid1 = sc.next();\n        String name1 = sc.next();\n        int age1 = sc.nextInt();\n        String major1 = sc.next();\n        Student student1 = new Student();\n        student1.setSid(sid1);\n        student1.setName(name1);\n        student1.setAge(age1);\n        student1.setMajor(major1);\n        String sid2 = sc.next();\n        String name2 = sc.next();\n        int age2 = sc.nextInt();\n        String major2 = sc.next();\n        sc.close();\n        Student student2 = new Student(sid2, name2, age2, major2);\n        student1.print();\n        student2.print();\n    }\n}\n\nclass Student {\n    private String sid;\n    private String name;\n    private int age;\n    private String major;\n\n    public Student() {\n    }\n\n    public Student(String sid, String name, int age, String major) {\n        this.sid = sid;\n        this.name = name;\n        if (age > 0) {\n            this.age = age;\n        }\n        this.major = major;\n    }\n\n    public void print() {\n        System.out.println(\"学号：\" + sid + \"，姓名：\" + name + \"，年龄：\" + age + \"，专业：\" + major);\n    }\n\n    public String getSid() {\n        return sid;\n    }\n\n    public void setSid(String sid) {\n        this.sid = sid;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public void setAge(int age) {\n        if (age > 0) {\n            this.age = age;\n        }\n    }\n\n    public String getMajor() {\n        return major;\n    }\n\n    public void setMajor(String major) {\n        this.major = major;\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "testcase1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.146,
+                        "memory": 20983808,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 20.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1983827406520840193"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1983823891069104128",
+    "cause": "",
+    "id": "1995463777238065152",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1983827406520840193",
+    "submitAt": "2025-12-01T12:03:33Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.146,
+    "memory": 20983808,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T12:03:33Z"
+}

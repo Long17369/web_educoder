@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1983826091614892033",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\nclass Student {\n    private String name;\n    private String sex;\n    private String studentID;\n    private int age;\n    private String major;\n\n    public Student() {\n    }\n\n    public Student(String name, String sex, String studentID, int age, String major) {\n        this.name = name;\n        this.sex = sex;\n        this.studentID = studentID;\n        this.age = age;\n        this.major = major;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getSex() {\n        return sex;\n    }\n\n    public void setSex(String sex) {\n        this.sex = sex;\n    }\n\n    public String getStudentID() {\n        return studentID;\n    }\n\n    public void setStudentID(String studentID) {\n        this.studentID = studentID;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public void setAge(int age) {\n        this.age = age;\n    }\n\n    public String getMajor() {\n        return major;\n    }\n\n    public void setMajor(String major) {\n        this.major = major;\n    }\n\n    public String toString() {\n        return \"姓名：\" + name + \"，性别：\" + sex + \"，学号：\" + studentID + \",年龄：\" + age + \",专业：\" + major;\n    }\n\n    public void printInfo() {\n        System.out.println(this.toString());\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        if (scanner.hasNext()) {\n            String name = scanner.next();\n            String sex = scanner.next();\n            if (scanner.hasNextInt()) {\n                int age = scanner.nextInt();\n                String major = scanner.next();\n                String studentID = scanner.next();\n                Student student = new Student(name, sex, studentID, age, major);\n                student.printInfo();\n            }\n        }\n        scanner.close();\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "input": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.164,
+                        "memory": 20975616,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 20.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1983826091614892033"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1983823891069104128",
+    "cause": "",
+    "id": "1995395814757720064",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1983826091614892033",
+    "submitAt": "2025-12-01T07:33:29Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.164,
+    "memory": 20975616,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T07:33:30Z"
+}
