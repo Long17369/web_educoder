@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1995342398418489345",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        List<MobilePhone> phones = new ArrayList<>();\n        for (int i = 0; i < 3; i++) {\n            String type = sc.next();\n            int price = sc.nextInt();\n            phones.add(new MobilePhone(type, price));\n        }\n        System.out.println(\"排序前，链表中的数据：\");\n        for (MobilePhone phone : phones) {\n            System.out.println(phone.getInfo());\n        }\n        phones.sort((p1, p2) -> p1.compareTo(p2));\n        System.out.println(\"排序后，链表中的数据：\");\n        for (MobilePhone phone : phones) {\n            System.out.println(phone.getInfo());\n        }\n        String type = sc.next();\n        int price = sc.nextInt();\n        sc.close();\n        MobilePhone newPhone = new MobilePhone(type, price);\n        for (MobilePhone phone : phones) {\n            if (phone.compareTo(newPhone) == 0) {\n                System.out.println(newPhone.type + \"与链表中的\" + phone.type + \"价格相同\");\n                return;\n            }\n        }\n        System.out.println(\"链表中的对象，没有一个与\" + newPhone.type + \"价格相同的\");\n    }\n}\n\nclass MobilePhone implements Cloneable {\n    public String type;\n    public int price;\n\n    public MobilePhone(String type, int price) {\n        this.type = type;\n        this.price = price;\n    }\n\n    public int compareTo(MobilePhone mp) {\n        return this.price - mp.price;\n    }\n\n    public String getInfo() {\n        return \"型号：\" + type + \"，价格：\" + price;\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.142,
+                        "memory": 20824064,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "test2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.136,
+                        "memory": 21004288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1995342398418489345"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1995341665912655872",
+    "cause": "",
+    "id": "1995382173782204416",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1995342398418489345",
+    "submitAt": "2025-12-01T06:39:17Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.142,
+    "memory": 21004288,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-01T06:39:17Z"
+}
