@@ -22,55 +22,48 @@
     <script>
         hljs.registerLanguage('in', function (hljs) {
             return {
-                keywords: { keyword: '' }, // 定义关键词
+                keywords: { keyword: '' },
                 contains: [
-                    hljs.C_LINE_COMMENT_MODE, // 单行注释模式
-                    hljs.QUOTE_STRING_MODE    // 字符串模式
+                    hljs.C_LINE_COMMENT_MODE,
+                    hljs.QUOTE_STRING_MODE
                 ]
             };
-        }); hljs.registerLanguage('out', function (hljs) {
+        }); 
+        hljs.registerLanguage('out', function (hljs) {
             return {
-                keywords: { keyword: '' }, // 定义关键词
+                keywords: { keyword: '' },
                 contains: [
-                    hljs.C_LINE_COMMENT_MODE, // 单行注释模式
-                    hljs.QUOTE_STRING_MODE    // 字符串模式
+                    hljs.C_LINE_COMMENT_MODE,
+                    hljs.QUOTE_STRING_MODE
                 ]
             };
         });
         hljs.addPlugin(new CopyButtonPlugin());
     </script>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/vue.global.js"></script>
     <script src="./js/marked.min.js"></script>
-    <script src="./js/code.js"></script>
-
-
 </head>
 
 <body>
-    <header>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li><a href=".">首页</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="code">
-        <span id="back">
-            <p onclick="window.history.back()">返回上一级</p>
-        </span>
-        <div class="sdajopj">
-            <div id="asdsada">
-                <h1>代码</h1>
-                <div id="code"></div>
+    <div id="app">
+        <app-header :title="pageTitle"></app-header>
+        <main class="code">
+            <span id="back">
+                <p @click="goBack">返回上一级</p>
+            </span>
+            <div class="sdajopj">
+                <div id="asdsada">
+                    <h1>代码</h1>
+                    <div id="code" v-html="codeContent"></div>
+                </div>
+                <div id="pro" v-html="problemContent"></div>
             </div>
-            <div id="pro"></div>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Web Page</p>
-    </footer>
+        </main>
+        <app-footer></app-footer>
+    </div>
+    
+    <script src="./js/vue-code.js"></script>
 </body>
 
 </html>
