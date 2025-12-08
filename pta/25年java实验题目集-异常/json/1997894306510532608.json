@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894306510532608",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        try {\n            while (sc.hasNext()) {\n                String cmd = sc.next();\n                if (!\"new\".equals(cmd)) {\n                    break;\n                }\n                String line = sc.nextLine();\n                if (line.trim().isEmpty()) {\n                    if (sc.hasNextLine()) {\n                        line = sc.nextLine();\n                    } else {\n                        break;\n                    }\n                }\n                Scanner lineSc = new Scanner(line);\n                try {\n                    String name = lineSc.next();\n                    int scoreToAdd = lineSc.nextInt();\n                    Student s = new Student();\n                    s.setName(name);\n                    s.addScore(scoreToAdd);\n                    System.out.println(s);\n                } catch (IllegalNameException e) {\n                    System.out.println(e);\n                } catch (IllegalScoreException e) {\n                    System.out.println(e);\n                } catch (Exception e) {\n                    System.out.println(e);\n                } finally {\n                    lineSc.close();\n                }\n            }\n        } finally {\n            sc.close();\n            System.out.println(\"scanner closed\");\n        }\n    }\n}\n\nclass IllegalNameException extends RuntimeException {\n    public IllegalNameException(String message) {\n        super(message);\n    }\n}\n\nclass IllegalScoreException extends Exception {\n    public IllegalScoreException(String message) {\n        super(message);\n    }\n}\n\nclass Student {\n    private String name;\n    private int score;\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        if (name != null && !name.isEmpty() && Character.isDigit(name.charAt(0))) {\n            throw new IllegalNameException(\"the first char of name must not be digit, name=\" + name);\n        }\n        this.name = name;\n    }\n\n    public int getScore() {\n        return score;\n    }\n\n    public void setScore(int score) {\n        this.score = score;\n    }\n\n    public int addScore(int score) throws IllegalScoreException {\n        int newScore = this.score + score;\n        if (newScore < 0 || newScore > 100) {\n            throw new IllegalScoreException(\"score out of range, score=\" + newScore);\n        }\n        this.score = newScore;\n        return this.score;\n    }\n\n    @Override\n    public String toString() {\n        return \"Student [name=\" + name + \", score=\" + score + \"]\";\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.135,
+                        "memory": 20819968,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.144,
+                        "memory": 21127168,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894306510532608"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997891167891877888",
+    "cause": "",
+    "id": "1997918695860486144",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894306510532608",
+    "submitAt": "2025-12-08T06:38:31Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.144,
+    "memory": 21127168,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T06:38:31Z"
+}

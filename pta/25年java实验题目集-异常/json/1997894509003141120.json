@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894509003141120",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) {\n            arr[i] = sc.nextInt();\n        }\n        int m = sc.nextInt();\n        int begin;\n        int end;\n        for (int i = 0; i < m; i++) {\n            begin = sc.nextInt();\n            end = sc.nextInt();\n            try {\n                int max = ArrayUtil.findMax(arr, begin, end);\n                System.out.println(max);\n            } catch (IllegalArgumentException e) {\n                System.out.println(e);\n            }\n        }\n        sc.close();\n    }\n}\n\nclass ArrayUtil {\n    public static int findMax(int[] arr, int begin, int end) throws IllegalArgumentException {\n        if (begin < 0) {\n            throw new IllegalArgumentException(\"begin:\" + begin + \" < 0\");\n        }\n        if (end > arr.length) {\n            throw new IllegalArgumentException(\"end:\" + end + \" > arr.length\");\n        }\n        if (begin >= end) {\n            throw new IllegalArgumentException(\"begin:\" + begin + \" >= end:\" + end);\n        }\n        int max = arr[begin];\n        for (int i = begin + 1; i < end; i++) {\n            if (arr[i] > max) {\n                max = arr[i];\n            }\n        }\n        return max;\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.127,
+                        "memory": 20533248,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.132,
+                        "memory": 20557824,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894509003141120"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997891167891877888",
+    "cause": "",
+    "id": "1997929147168477184",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894509003141120",
+    "submitAt": "2025-12-08T07:20:03Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.132,
+    "memory": 20557824,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T07:20:03Z"
+}

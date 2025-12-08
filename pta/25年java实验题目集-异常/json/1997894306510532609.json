@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894306510532609",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\nimport java.util.Date;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n        while (input.hasNext()) {\n            double AIR = input.nextDouble();\n            int NOY = input.nextInt();\n            double LA = input.nextDouble();\n            try {\n                Loan m = new Loan(AIR, NOY, LA);\n                System.out.printf(\"%.3f\\n\", m.getTotalPayment());\n            } catch (Exception ex) {\n                System.out.println(ex);\n            }\n        }\n        input.close();\n    }\n}\n\nclass Loan {\n    private double annualInterestRate = 2.5;\n    private int numberOfYears = 1;\n    private double loanAmount = 100;\n    private Date loanDate = new Date();\n\n    public Loan() {\n    }\n\n    public Loan(double annualInterestRate, int numberOfYears, double loanAmount) {\n        if (annualInterestRate <= 0)\n            throw new IllegalArgumentException(\"Annual interest rate must be positive\");\n        if (numberOfYears <= 0)\n            throw new IllegalArgumentException(\"Number of years must be positive\");\n        if (loanAmount <= 0)\n            throw new IllegalArgumentException(\"Loan amount must be positive\");\n        this.annualInterestRate = annualInterestRate;\n        this.numberOfYears = numberOfYears;\n        this.loanAmount = loanAmount;\n    }\n\n    public double getAnnualInterestRate() {\n        return annualInterestRate;\n    }\n\n    public void setAnnualInterestRate(double annualInterestRate) {\n        if (annualInterestRate <= 0)\n            throw new IllegalArgumentException(\"Annual interest rate must be positive\");\n        this.annualInterestRate = annualInterestRate;\n    }\n\n    public int getNumberOfYears() {\n        return numberOfYears;\n    }\n\n    public void setNumberOfYears(int numberOfYears) {\n        if (numberOfYears <= 0)\n            throw new IllegalArgumentException(\"Number of years must be positive\");\n        this.numberOfYears = numberOfYears;\n    }\n\n    public double getLoanAmount() {\n        return loanAmount;\n    }\n\n    public void setLoanAmount(double loanAmount) {\n        if (loanAmount <= 0)\n            throw new IllegalArgumentException(\"Loan amount must be positive\");\n        this.loanAmount = loanAmount;\n    }\n\n    public Date getLoanDate() {\n        return loanDate;\n    }\n\n    public double getMonthlyPayment() {\n        double monthlyInterestRate = annualInterestRate / 1200.0;\n        return loanAmount * monthlyInterestRate /\n                (1 - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12));\n    }\n\n    public double getTotalPayment() {\n        return getMonthlyPayment() * numberOfYears * 12;\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.138,
+                        "memory": 19546112,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.126,
+                        "memory": 18833408,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.139,
+                        "memory": 19562496,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894306510532609"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997891167891877888",
+    "cause": "",
+    "id": "1997921337739370496",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894306510532609",
+    "submitAt": "2025-12-08T06:49:01Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.139,
+    "memory": 19562496,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T06:49:01Z"
+}
