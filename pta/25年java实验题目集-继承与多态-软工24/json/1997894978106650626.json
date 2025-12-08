@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894978106650626",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String plateNo = scanner.next();\n        int wheelbase = scanner.nextInt();\n        Vehicle vehicle = new Vehicle(plateNo, wheelbase);\n        plateNo = scanner.next();\n        wheelbase = scanner.nextInt();\n        int passengers = scanner.nextInt();\n        Bus bus = new Bus(plateNo, wheelbase, passengers);\n        vehicle.show();\n        bus.show();\n        scanner.close();\n    }\n}\n\nclass Vehicle {\n    private String plateNo;\n    private int wheelbase;\n\n    Vehicle() {\n    }\n\n    Vehicle(String plateNo, int wheelbase) {\n        this.plateNo = plateNo;\n        this.wheelbase = wheelbase;\n    }\n\n    public void showInfo() {\n        System.out.println(\"车牌号：\" + plateNo);\n        System.out.println(\"轴距：\" + wheelbase);\n    }\n\n    public void show() {\n        System.out.println(\"车辆信息如下：\");\n        showInfo();\n    }\n}\n\nclass Bus extends Vehicle {\n    private int passengers;\n\n    Bus() {\n    }\n\n    Bus(String plateNo, int wheelbase, int passengers) {\n        super(plateNo, wheelbase);\n        this.passengers = passengers;\n    }\n\n    @Override\n    public void showInfo() {\n        super.showInfo();\n        System.out.println(\"限载人数：\" + passengers);\n    }\n\n    @Override\n    public void show() {\n        System.out.println(\"客车信息如下：\");\n        showInfo();\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.118,
+                        "memory": 18808832,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 20.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894978106650626"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997894978089873408",
+    "cause": "",
+    "id": "1997994874105860096",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894978106650626",
+    "submitAt": "2025-12-08T11:41:13Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.118,
+    "memory": 18808832,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T11:41:14Z"
+}

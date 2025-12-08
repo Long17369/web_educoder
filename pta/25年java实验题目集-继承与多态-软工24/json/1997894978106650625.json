@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894978106650625",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "public class Main {\n    public static void main(String[] args) {\n        Coach c = new Coach();\n        c.check();\n    }\n}\n\ninterface Performable {\n    void play();\n}\n\nclass Monkey implements Performable {\n    @Override\n    public void play() {\n        System.out.println(\"Monkey翻跟头\");\n    }\n}\n\nclass Lion implements Performable {\n    @Override\n    public void play() {\n        System.out.println(\"Lion唱摇滚\");\n    }\n}\n\nclass Coach {\n    public void check() {\n        Monkey m = new Monkey();\n        m.play();\n        Lion l = new Lion();\n        l.play();\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.059,
+                        "memory": 17260544,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 20.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894978106650625"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997894978089873408",
+    "cause": "",
+    "id": "1997936584197189632",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894978106650625",
+    "submitAt": "2025-12-08T07:49:36Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.059,
+    "memory": 17260544,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T07:49:36Z"
+}
