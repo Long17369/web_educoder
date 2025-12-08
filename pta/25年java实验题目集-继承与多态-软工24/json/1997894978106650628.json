@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894978106650628",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int n = scanner.nextInt();\n        Container[] containers = new Container[n];\n        for (int i = 0; i < containers.length; i++) {\n            String type = scanner.next();\n            if (type.equals(\"cube\")) {\n                double side = scanner.nextDouble();\n                containers[i] = new Cube(side);\n            } else if (type.equals(\"cylinder\")) {\n                double radius = scanner.nextDouble();\n                double height = scanner.nextDouble();\n                containers[i] = new Cylinder(radius, height);\n            }\n        }\n        System.out.printf(\"%.2f\\n\", Container.sumofArea(containers));\n        System.out.printf(\"%.2f\\n\", Container.sumofVolume(containers));\n        scanner.close();\n    }\n}\n\nclass Cube implements Container {\n    private double side;\n\n    public Cube(double side) {\n        this.side = side;\n    }\n\n    @Override\n    public double area() {\n        return 6 * side * side;\n    }\n\n    @Override\n    public double volume() {\n        return side * side * side;\n    }\n}\n\nclass Cylinder implements Container {\n    private double radius;\n    private double height;\n\n    public Cylinder(double radius, double height) {\n        this.radius = radius;\n        this.height = height;\n    }\n\n    @Override\n    public double area() {\n        return 2 * Container.pi * radius * (radius + height);\n    }\n\n    @Override\n    public double volume() {\n        return Container.pi * radius * radius * height;\n    }\n}\n\ninterface Container {\n    public static final double pi = 3.1415926;\n\n    public abstract double area();\n\n    public abstract double volume();\n\n    static double sumofArea(Container c[]) {\n        double sum = 0;\n        for (Container container : c) {\n            sum += container.area();\n        }\n        return sum;\n    }\n\n    static double sumofVolume(Container c[]) {\n        double sum = 0;\n        for (Container container : c) {\n            sum += container.volume();\n        }\n        return sum;\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.119,
+                        "memory": 19644416,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 15.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.115,
+                        "memory": 19390464,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894978106650628"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997894978089873408",
+    "cause": "",
+    "id": "1998008707410432000",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894978106650628",
+    "submitAt": "2025-12-08T12:36:11Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.119,
+    "memory": 19644416,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T12:36:12Z"
+}

@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894978106650627",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String bankType = scanner.next();\n        double amount = scanner.nextDouble();\n        Customer customer = new Customer();\n        IBank bank;\n        if (bankType.equals(\"ABC\")) {\n            bank = new ABC();\n        } else if (bankType.equals(\"ICBC\")) {\n            bank = new ICBC();\n        } else {\n            scanner.close();\n            return;\n        }\n        double money = customer.getMoneyFromBank(bank, amount);\n        System.out.printf(\"%.1f\", money);\n        scanner.close();\n    }\n}\n\nclass Customer {\n    Customer() {\n    }\n\n    public double getMoneyFromBank(IBank bank, double money) {\n        return bank.withdraw(money);\n    }\n}\n\nclass ABC implements IBank {\n    @Override\n    public double withdraw(double money) {\n        return money * 1.002;\n    }\n}\n\nclass ICBC implements IBank {\n    @Override\n    public double withdraw(double money) {\n        return money * 1.001;\n    }\n}\n\ninterface IBank {\n    double withdraw(double money);\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.134,
+                        "memory": 19402752,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.132,
+                        "memory": 19550208,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894978106650627"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997894978089873408",
+    "cause": "",
+    "id": "1998005450089533440",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894978106650627",
+    "submitAt": "2025-12-08T12:23:15Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.134,
+    "memory": 19550208,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T12:23:15Z"
+}
