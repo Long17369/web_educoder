@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "1997894306510532611",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int[] data = new int[5];\n        System.out.println(\"请输入5个数：\");\n        for (int i = 0; i < data.length; i++) {\n            data[i] = sc.nextInt();\n        }\n        for (int i = 0; i < data.length; i++) {\n            try {\n                int result = mod(data[i]);\n                System.out.println(\"余数结果是\" + result);\n            } catch (MyException e) {\n                System.out.println(e.getMessage());\n            }\n        }\n        sc.close();\n    }\n\n    static int mod(int n) throws MyException {\n        if (n == 0) {\n            throw new MyException(\"/ by zero\");\n        }\n        return 100 % n;\n    }\n}\n\nclass MyException extends Exception {\n    public MyException(String message) {\n        super(message);\n    }\n}\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.114,
+                        "memory": 19046400,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "test2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.116,
+                        "memory": 19308544,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "1997894306510532611"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "1997891167891877888",
+    "cause": "",
+    "id": "1997924207284326400",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "1997894306510532611",
+    "submitAt": "2025-12-08T07:00:25Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.116,
+    "memory": 19308544,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-08T07:00:25Z"
+}
