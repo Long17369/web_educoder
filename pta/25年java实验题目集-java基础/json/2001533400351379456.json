@@ -1,0 +1,144 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "2001533400351379456",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String line = sc.nextLine();\n        sc.close();\n        String[] parts = line.split(\",\");\n        Score[] arr = new Score[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            String[] subparts = parts[i].split(\" \");\n            arr[i] = new Score(subparts[0], 0);\n            for (int j = 1; j < subparts.length; j++) {\n                arr[i].addScore(subparts[j]);\n            }\n        }\n        for (int i = 0; i < arr.length; i++) {\n            if (i != 0) {\n                System.out.print(\",\");\n            }\n            System.out.print(arr[i].name + \" \" + arr[i].score);\n        }\n    }\n}\n\nclass Score {\n    public String name;\n    public int score;\n\n    public Score(String name, int score) {\n        this.name = name;\n        this.score = score;\n    }\n\n    public void addScore(String grade) {\n        if (grade.equals(\"A\")) {\n            this.score += 5;\n        } else if (grade.equals(\"B\")) {\n            this.score += 4;\n        } else if (grade.equals(\"C\")) {\n            this.score += 3;\n        } else if (grade.equals(\"D\")) {\n            this.score += 2;\n        } else if (grade.equals(\"E\")) {\n            this.score += 1;\n        }\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.119,
+                        "memory": 19169280,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.122,
+                        "memory": 19177472,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.122,
+                        "memory": 19423232,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.121,
+                        "memory": 19308544,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 3.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.123,
+                        "memory": 19144704,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "5": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.122,
+                        "memory": 19103744,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2001533400351379456"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "2001531681858134016",
+    "cause": "",
+    "id": "2001826348452392960",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2001533400351379456",
+    "submitAt": "2025-12-19T01:26:08Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.123,
+    "memory": 19423232,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-19T01:26:08Z"
+}

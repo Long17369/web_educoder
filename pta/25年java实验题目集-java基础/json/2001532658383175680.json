@@ -1,0 +1,144 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "2001532658383175680",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int m = 0, n = 0;\n        int r = 0;\n        try {\n            m = sc.nextInt();\n            n = sc.nextInt();\n            r = sc.nextInt();\n        } catch (Exception e) {\n            System.out.println(\"data type error\");\n            sc.close();\n            return;\n        }\n        if (r != 90 && r != 180 && r != -90) {\n            System.out.println(\"angle data error\");\n            sc.close();\n            return;\n        }\n        int[][] matrix = new int[m][n];\n        try {\n            for (int i = 0; i < m; i++) {\n                for (int j = 0; j < n; j++) {\n                    matrix[i][j] = sc.nextInt();\n                    if (matrix[i][j] < 0 || matrix[i][j] > 255) {\n                        System.out.println(\"matrix data error\");\n                        sc.close();\n                        return;\n                    }\n                }\n            }\n        } catch (Exception e) {\n            System.out.println(\"data type error\");\n            return;\n        }\n        sc.close();\n        int[][] resultMatrix = null;\n        if (r == 90) {\n            resultMatrix = rotate90(matrix, m, n);\n        } else if (r == -90) {\n            resultMatrix = rotateMinus90(matrix, m, n);\n        } else if (r == 180) {\n            resultMatrix = rotate180(matrix, m, n);\n        }\n        for (int i = 0; i < resultMatrix.length; i++) {\n            for (int j = 0; j < resultMatrix[i].length; j++) {\n                System.out.print(resultMatrix[i][j]);\n                if (j != resultMatrix[i].length - 1) {\n                    System.out.print(\" \");\n                }\n            }\n            System.out.println();\n        }\n    }\n\n    public static int[][] rotateMinus90(int[][] matrix, int m, int n) {\n        int[][] result = new int[n][m];\n        for (int i = 0; i < m; i++) {\n            for (int j = 0; j < n; j++) {\n                result[j][m - 1 - i] = matrix[i][j];\n            }\n        }\n        return result;\n    }\n\n    public static int[][] rotate90(int[][] matrix, int m, int n) {\n        int[][] result = new int[n][m];\n        for (int i = 0; i < m; i++) {\n            for (int j = 0; j < n; j++) {\n                result[n - 1 - j][i] = matrix[i][j];\n            }\n        }\n        return result;\n    }\n\n    public static int[][] rotate180(int[][] matrix, int m, int n) {\n        int[][] result = new int[m][n];\n        for (int i = 0; i < m; i++) {\n            for (int j = 0; j < n; j++) {\n                result[m - 1 - i][n - 1 - j] = matrix[i][j];\n            }\n        }\n        return result;\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.102,
+                        "memory": 18444288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.102,
+                        "memory": 18632704,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.101,
+                        "memory": 18857984,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.101,
+                        "memory": 18636800,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.103,
+                        "memory": 18583552,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "5": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.103,
+                        "memory": 18423808,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 4.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2001532658383175680"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "2001531681858134016",
+    "cause": "",
+    "id": "2001557939751858176",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2001532658383175680",
+    "submitAt": "2025-12-18T07:39:34Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.103,
+    "memory": 18857984,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-18T07:39:35Z"
+}

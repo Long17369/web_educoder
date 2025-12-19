@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "2001583511610896384",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        while (sc.hasNext()) {\n            int n = sc.nextInt();\n            String[][] s = new String[n][];\n            for (int i = 1; i <= n; i++) {\n                s[i - 1] = new String[i];\n                for (int j = 1; j <= i; j++) {\n                    s[i - 1][j - 1] = i + \"*\" + j + \"=\" + (i * j);\n                    if (j == i) {\n                        System.out.print(s[i - 1][j - 1]);\n                    } else {\n                        System.out.printf(\"%-7s\", s[i - 1][j - 1]);\n                    }\n                }\n                System.out.println();\n            }\n            System.out.println(Arrays.deepToString(s));\n        }\n        sc.close();\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 25.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.127,
+                        "memory": 20746240,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 25.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2001583511610896384"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "2001581433765302272",
+    "cause": "",
+    "id": "2001812682248130560",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2001583511610896384",
+    "submitAt": "2025-12-19T00:31:49Z",
+    "status": "ACCEPTED",
+    "score": 25.0,
+    "compiler": "JAVAC",
+    "time": 0.127,
+    "memory": 20746240,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-19T00:31:50Z"
+}
