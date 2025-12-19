@@ -1,0 +1,96 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "2001583511610896385",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int row = sc.nextInt();\n        int min_num = Integer.MAX_VALUE;\n        int[][] nums = new int[row][];\n        for (int i = 0; i < row; i++) {\n            int col = sc.nextInt();\n            nums[i] = new int[col];\n            for (int j = 0; j < col; j++) {\n                nums[i][j] = sc.nextInt();\n                min_num = Math.min(min_num, nums[i][j]);\n            }\n        }\n        for (int[] is : nums) {\n            for (int i = 0; i < is.length; i++) {\n                is[i] -= min_num;\n                System.out.print(is[i]);\n                if (i != is.length - 1) {\n                    System.out.print(\" \");\n                } else {\n                    System.out.println();\n                }\n            }\n        }\n        sc.close();\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 25.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.098,
+                        "memory": 18796544,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 5.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.097,
+                        "memory": 18685952,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 1.125,
+                        "memory": 45572096,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2001583511610896385"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "2001581433765302272",
+    "cause": "",
+    "id": "2001815829020512256",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2001583511610896385",
+    "submitAt": "2025-12-19T00:44:20Z",
+    "status": "ACCEPTED",
+    "score": 25.0,
+    "compiler": "JAVAC",
+    "time": 1.125,
+    "memory": 45572096,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-19T00:44:20Z"
+}

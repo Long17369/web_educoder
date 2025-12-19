@@ -1,0 +1,80 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "2001532402154373120",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int n = scanner.nextInt();\n        int[][] matrix = new int[n][n];\n        int top = 0, bottom = n - 1, left = 0, right = n - 1;\n        int num = 1;\n        while (num <= n * n) {\n            for (int i = left; i <= right; i++) {\n                matrix[top][i] = num++;\n            }\n            top++;\n            for (int i = top; i <= bottom; i++) {\n                matrix[i][right] = num++;\n            }\n            right--;\n            if (top <= bottom) {\n                for (int i = right; i >= left; i--) {\n                    matrix[bottom][i] = num++;\n                }\n                bottom--;\n            }\n            if (left <= right) {\n                for (int i = bottom; i >= top; i--) {\n                    matrix[i][left] = num++;\n                }\n                left++;\n            }\n        }\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                System.out.printf(\" %3d\", matrix[i][j]);\n            }\n            System.out.println();\n        }\n        scanner.close();\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 20.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "test": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.103,
+                        "memory": 18530304,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "test02": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.105,
+                        "memory": 18530304,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 10.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2001532402154373120"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "2001531681858134016",
+    "cause": "",
+    "id": "2001552809486987264",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2001532402154373120",
+    "submitAt": "2025-12-18T07:19:11Z",
+    "status": "ACCEPTED",
+    "score": 20.0,
+    "compiler": "JAVAC",
+    "time": 0.105,
+    "memory": 18530304,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-18T07:19:11Z"
+}

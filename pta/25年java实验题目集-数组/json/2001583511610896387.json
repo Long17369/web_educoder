@@ -1,0 +1,64 @@
+{
+    "submissionDetails": [
+        {
+            "problemSetProblemId": "2001583511610896387",
+            "programmingSubmissionDetail": {
+                "compiler": "JAVAC",
+                "program": "public class Main {\n    public static void main(String[] args) {\n        Student[] stu = new Student[2];\n        stu[0] = new Student(\"张三\", 18, \"男\");\n        stu[1] = new Student();\n        stu[1].setName(\"李四\");\n        stu[1].setAge(19);\n        stu[1].setSex(\"女\");\n        for (int i = 0; i < stu.length; i++) {\n            System.out.println(stu[i]);\n        }\n        Student[][] s = new Student[3][];\n        s[0] = new Student[2];\n        s[0][0] = new Student(\"Tom\", 80, \"male\");\n        s[0][1] = new Student(\"Jerry\", 80, \"M\");\n        s[1] = new Student[1];\n        s[1][0] = new Student();\n        s[2] = new Student[3];\n        s[2][0] = new Student(\"小王\", 20, \"F\");\n        s[2][1] = new Student(\"老赵\", 21, \"m\");\n        s[2][2] = new Student();\n        s[2][2].setName(\"钱总\");\n        s[2][2].setAge(22);\n        s[2][2].setSex(\"femal\");\n        for (int i = 0; i < s.length; i++) {\n            for (int j = 0; j < s[i].length; j++) {\n                System.out.println(s[i][j]);\n            }\n        }\n    }\n}\n\nclass Student {\n    private String name;\n    private int age;\n    private String sex;\n\n    public Student() {\n\n    }\n\n    public Student(String name, int age, String sex) {\n        super();\n        this.name = name;\n        this.age = age;\n        this.sex = sex;\n    }\n\n    @Override\n    public String toString() {\n        return \"Student [name=\" + name + \", age=\" + age + \", sex=\" + sex + \"]\";\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public void setAge(int age) {\n        this.age = age;\n    }\n\n    public String getSex() {\n        return sex;\n    }\n\n    public void setSex(String sex) {\n        this.sex = sex;\n    }\n}"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "status": "ACCEPTED",
+            "score": 25.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.101,
+                        "memory": 19468288,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 25.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2001583511610896387"
+        }
+    ],
+    "hints": {},
+    "problemSetId": "2001581433765302272",
+    "cause": "",
+    "id": "2001819756851998720",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2001583511610896387",
+    "submitAt": "2025-12-19T00:59:56Z",
+    "status": "ACCEPTED",
+    "score": 25.0,
+    "compiler": "JAVAC",
+    "time": 0.101,
+    "memory": 19468288,
+    "previewSubmission": false,
+    "judgeAt": "2025-12-19T00:59:57Z"
+}
