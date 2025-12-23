@@ -4,29 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>educoder code page</title>
+    <title>404 - Page Not Found</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./js/script.js"></script>
-
-
+    <script src="./js/vue.global.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li><a href=".">首页</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="code">
-        <p>404 Not Found</p>
-        <span id="back"><p onclick="window.history.back()">返回上一级</p></span>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Web Page</p>
-    </footer>
+    <div id="app">
+        <app-header title="404 Not Found"></app-header>
+        <main class="code">
+            <p>404 Not Found</p>
+            <span id="back">
+                <p @click="goBack">返回上一级</p>
+            </span>
+        </main>
+        <app-footer></app-footer>
+    </div>
+    
+    <script src="./js/vue-404.js"></script>
 </body>
 
 </html>

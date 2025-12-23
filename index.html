@@ -5,29 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>educoder</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./js/script.js"></script>
-    <script src="./js/marked.min.js"></script>
-
-
+    <script src="./js/vue.global.js"></script>
 </head>
 <body>
-    <header>
-        <h1>欢迎访问educoder!</h1>
-        <nav>
+    <div id="app">
+        <app-header title="欢迎访问educoder!"></app-header>
+        <main>
             <ul>
-                <li><a href=".">首页</a></li>
+                <li v-for="item in menuItems" :key="item.id">
+                    <p :id="item.id" @click="gotoPage(item.type)">{{ item.label }}</p>
+                </li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <ul>
-            <li><p id="educoder" onclick="gotopage('type=头歌')">头歌</p></li>
-            <li><p id="pta" onclick="gotopage('type=pta')">PTA</p></li>
-        </ul>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Web Page</p>
-    </footer>
+        </main>
+        <app-footer></app-footer>
+    </div>
 
+    <script src="./js/vue-app.js"></script>
 </body>
 </html>
