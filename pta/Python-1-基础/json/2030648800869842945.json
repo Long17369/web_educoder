@@ -1,0 +1,130 @@
+{
+    "hints": {},
+    "id": "2031641886728765440",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2030648800869842945",
+    "submitAt": "2026-03-11T08:02:26Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "PYTHON3",
+    "time": 0.017,
+    "memory": 3186688,
+    "previewSubmission": false,
+    "judgeAt": "2026-03-11T08:02:27Z",
+    "submissionDetails": [
+        {
+            "other": {},
+            "problemSetProblemId": "2030648800869842945",
+            "programmingSubmissionDetail": {
+                "compiler": "PYTHON3",
+                "program": "digits = [\"零\", \"一\", \"二\", \"三\", \"四\", \"五\", \"六\", \"七\", \"八\", \"九\"]\nunits = [\"千\", \"百\", \"十\", \"\"]\ngroup_units = [\"\", \"万\", \"亿\"]\n\n\ndef read_group(val: int, is_highest: bool) -> str:\n    if val == 0:\n        return \"\"\n    d = [0, 0, 0, 0]\n    tmp = val\n    for i in range(3, -1, -1):\n        d[i] = tmp % 10\n        tmp //= 10\n    res = []\n    prev_zero = False\n    for idx in range(4):\n        cur = d[idx]\n        if cur == 0:\n            prev_zero = True\n            continue\n        if prev_zero and res:\n            res.append(\"零\")\n        if idx == 2 and cur == 1 and is_highest and d[0] == 0 and d[1] == 0:\n            res.append(\"十\")\n        else:\n            res.append(digits[cur] + units[idx])\n        prev_zero = False\n    return \"\".join(res)\n\n\ndef convert(s: str) -> str:\n    s = s.lstrip(\"0\") or \"0\"\n    if s == \"0\":\n        return \"零\"\n    parts = []\n    while s:\n        parts.append(int(s[-4:]))\n        s = s[:-4]\n    highest = -1\n    for i in range(len(parts) - 1, -1, -1):\n        if parts[i] != 0:\n            highest = i\n            break\n    if highest == -1:\n        return \"零\"\n    out = []\n    zero_between = False\n    for i in range(highest, -1, -1):\n        g = parts[i]\n        if g == 0:\n            zero_between = True\n            continue\n        if zero_between or g < 1000:\n            out.append(\"零\")\n            zero_between = False\n        grp = read_group(g, is_highest=(i == highest))\n        out.append(grp + (group_units[i] if i < len(group_units) else \"\"))\n    return \"\".join(out).lstrip(\"零\")\n\n\nn = int(input())\nfor _ in range(n):\n    s = input()\n    print(convert(s))\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "other": {},
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.015,
+                        "memory": 3072000,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.017,
+                        "memory": 3112960,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.016,
+                        "memory": 3063808,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.016,
+                        "memory": 3117056,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.015,
+                        "memory": 3186688,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2030648800869842945"
+        }
+    ],
+    "problemSetId": "2030646312838070272",
+    "cause": ""
+}
