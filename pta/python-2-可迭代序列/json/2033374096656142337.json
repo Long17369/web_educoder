@@ -1,0 +1,130 @@
+{
+    "hints": {},
+    "id": "2033432806742671360",
+    "userId": "1849272780568821760",
+    "problemType": "PROGRAMMING",
+    "problemSetProblemId": "2033374096656142337",
+    "submitAt": "2026-03-16T06:38:55Z",
+    "status": "ACCEPTED",
+    "score": 10.0,
+    "compiler": "PYTHON3",
+    "time": 0.015,
+    "memory": 3108864,
+    "previewSubmission": false,
+    "judgeAt": "2026-03-16T06:38:55Z",
+    "submissionDetails": [
+        {
+            "other": {},
+            "problemSetProblemId": "2033374096656142337",
+            "programmingSubmissionDetail": {
+                "compiler": "PYTHON3",
+                "program": "N = int(input())\n\nfor i in range(N):\n    try:\n        x = input().split(\".\",3)\n        assert all(str(int(i)) == i for i in x)\n        x1,x2,x3,x4 = map(int,x)\n        if x1 == 0:\n            assert x2 == 0 and x3 == 0 and x4 == 0\n        else:\n            assert x1 in range(256) and x2 in range(256) and x3 in range(256) and x4 in range(256)\n    except Exception:\n        print(\"NO\")\n    else:\n        print(\"YES\")\n"
+            },
+            "problemId": "0"
+        }
+    ],
+    "judgeResponseContents": [
+        {
+            "other": {},
+            "status": "ACCEPTED",
+            "score": 10.0,
+            "programmingJudgeResponseContent": {
+                "testcaseJudgeResults": {
+                    "0": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.015,
+                        "memory": 2940928,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "1": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.015,
+                        "memory": 2875392,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "2": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.014,
+                        "memory": 3108864,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "3": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.014,
+                        "memory": 3035136,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    },
+                    "4": {
+                        "result": "ACCEPTED",
+                        "exceed": "UNKNOWN_TESTCASE_EXCEED",
+                        "time": 0.014,
+                        "memory": 3055616,
+                        "exitcode": 0,
+                        "termsig": 0,
+                        "error": "",
+                        "stdout": "",
+                        "stderr": "",
+                        "checkerOutput": "",
+                        "testcaseScore": 2.0,
+                        "stdoutTruncated": false,
+                        "stderrTruncated": false,
+                        "showOutput": false
+                    }
+                },
+                "compilationResult": {
+                    "log": "",
+                    "success": true,
+                    "error": ""
+                },
+                "checkerCompilationResult": {
+                    "log": "",
+                    "success": false,
+                    "error": ""
+                }
+            },
+            "problemSetProblemId": "2033374096656142337"
+        }
+    ],
+    "problemSetId": "2033372421820223488",
+    "cause": ""
+}
