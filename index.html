@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-CN"> 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>educoder</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./js/script.js"></script>
-    <script src="./js/marked.min.js"></script>
-
-
-</head>
-<body>
-    <header>
-        <h1>欢迎访问educoder!</h1>
-        <nav>
-            <ul>
-                <li><a href=".">首页</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <ul>
-            <li><p id="educoder" onclick="gotopage('type=头歌')">头歌</p></li>
-            <li><p id="pta" onclick="gotopage('type=pta')">PTA</p></li>
-        </ul>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Web Page</p>
-    </footer>
-
-</body>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
