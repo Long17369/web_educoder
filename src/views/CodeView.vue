@@ -21,6 +21,7 @@ import { marked } from 'marked'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+// Legacy markdown uses ```in / ```out fences for sample IO; register no-op languages to avoid warnings.
 hljs.registerLanguage('in', () => ({ name: 'in', contains: [] }))
 hljs.registerLanguage('out', () => ({ name: 'out', contains: [] }))
 
