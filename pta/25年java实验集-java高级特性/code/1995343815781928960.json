@@ -1,0 +1,10 @@
+{
+  "title": "统计字符串中字符的个数",
+  "description": "# 统计字符串中字符的个数\n输入一个字符串，分别统计字符串中出现的大写字母、小写字母个数，以及出现的数字字符以及其他字符的个数。\n\n### 输入格式:\n\n输入一个字符串。\n\n### 输出格式:\n\n输出字符串中大写字母、小写字母个数，以及出现的数字字符以及其他字符的个数。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\naBc3#d?>2D\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n小写字母有: 3个\n大写字母有: 2个\n数字有: 2个\n其他字符有: 3个\n```\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        String input = sc.nextLine();\n        int lowercaseCount = 0;\n        int uppercaseCount = 0;\n        int digitCount = 0;\n        int otherCount = 0;\n        for (char ch : input.toCharArray()) {\n            if (Character.isLowerCase(ch)) {\n                lowercaseCount++;\n            } else if (Character.isUpperCase(ch)) {\n                uppercaseCount++;\n            } else if (Character.isDigit(ch)) {\n                digitCount++;\n            } else {\n                otherCount++;\n            }\n        }\n        System.out.println(\"小写字母有: \" + lowercaseCount + \"个\");\n        System.out.println(\"大写字母有: \" + uppercaseCount + \"个\");\n        System.out.println(\"数字有: \" + digitCount + \"个\");\n        System.out.println(\"其他字符有: \" + otherCount + \"个\");\n    }\n}"
+    }
+  ]
+}

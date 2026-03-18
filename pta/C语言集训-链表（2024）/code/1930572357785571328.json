@@ -1,0 +1,10 @@
+{
+  "title": "两个有序链表序列的合并",
+  "description": "# 两个有序链表序列的合并\n本题要求实现一个函数，将两个链表表示的递增整数序列合并为一个非递减的整数序列。\n\n### 函数接口定义：\n```c++\nList Merge( List L1, List L2 );\n```\n\n其中`List`结构定义如下：\n```c++\ntypedef struct Node *PtrToNode;\nstruct Node {\n    ElementType Data; /* 存储结点数据 */\n    PtrToNode   Next; /* 指向下一个结点的指针 */\n};\ntypedef PtrToNode List; /* 定义单链表类型 */\n```\n`L1`和`L2`是给定的带头结点的单链表，其结点存储的数据是递增有序的；函数`Merge`要将`L1`和`L2`合并为一个非递减的整数序列。应直接使用原序列中的结点，返回归并后的带头结点的链表头指针。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n#include <stdlib.h>\n\ntypedef int ElementType;\ntypedef struct Node *PtrToNode;\nstruct Node {\n    ElementType Data;\n    PtrToNode   Next;\n};\ntypedef PtrToNode List;\n\nList Read(); /* 细节在此不表 */\nvoid Print( List L ); /* 细节在此不表；空链表将输出NULL */\n\nList Merge( List L1, List L2 );\n\nint main()\n{\n    List L1, L2, L;\n    L1 = Read();\n    L2 = Read();\n    L = Merge(L1, L2);\n    Print(L);\n    Print(L1);\n    Print(L2);\n    return 0;\n}\n\n/* 你的代码将被嵌在这里 */\n```\n\n### 输入样例：\n```in\n3\n1 3 5\n5\n2 4 6 8 10\n```\n\n### 输出样例：\n```out\n1 2 3 4 5 6 8 10 \nNULL\nNULL\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void insert(List L, List X){\n    List tmp = L->Next;\n    L->Next = X->Next;\n    X->Next = X->Next->Next;\n    L->Next->Next = tmp;\n}\n\nList Merge(List L1, List L2){\n    List begin = (List)malloc(sizeof(struct Node));\n    begin->Next = NULL;\n    List p = begin;\n    while(L1->Next!=NULL && L2->Next != NULL){\n        if(L1->Next->Data < L2->Next->Data) insert(p,L1);\n        else insert(p,L2);\n        p = p->Next;\n    }\n    while(L1->Next!=NULL){\n        insert(p,L1);\n        p = p->Next;\n    }\n    while(L2->Next!=NULL){\n        insert(p,L2);\n        p = p->Next;\n    }\n    return begin;\n}"
+    }
+  ]
+}

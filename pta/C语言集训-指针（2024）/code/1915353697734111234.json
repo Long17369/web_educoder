@@ -1,0 +1,10 @@
+{
+  "title": "找密码",
+  "description": "# 找密码\n在一个古堡的大门上有5行字符。其中隐藏着打开大门的密码。密码共有4位数字（0到9）。小明发现了一种找密码的方法：最后一行中的字符在第一行字符中出现的总次数是密码的第一个数字，依此类推。输入数据保证每行得到的数字在0到9之间。\n请编写一个函数 decode帮助小明找出密码。\n\n### 函数接口定义：\n```c\nint decode(char**s);\n```\n\n通过参数s向函数传递5行字符串，函数返回密码值。\n\n### 裁判测试程序样例：\n```c\n#include <stdio.h>\n#include <stdlib.h>\n#define N 100\n#define M 5\nint decode(char**s);\nint main()\n{\n\n    char *s[M];\n    int i;\n    int key;\n    for(i=0; i<M; i++){\n        s[i] = (char *)malloc((N+1)*sizeof(char));\n        gets(s[i]);\n    }\n\n\n    key = decode(s);\n    printf(\"%04d\",key);\n    for(i=0; i<M; i++){\n        free(s[i]);\n    }\n    \n    return 0;\n}\n/* 您提交的代码将放置在这里 */\n```\n\n### 输入样例：\n```in\n1111\n222\n33\n41\n2341\n```\n\n### 输出样例：\n```out\n4322\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "int decode(char**s){\n\n    int map[256] = {0};\n\n    {\n\n        char *p = s[4];\n\n        while(*p!='\\0'){\n\n            map[*p]++;\n\n            p++;\n\n        }\n\n    }\n\n    int ret = 0;\n\n    int cnt;\n\n    for(int i=0;i<4;i++){\n\n        cnt = 0;\n\n        char *p = s[i];\n\n        while(*p!='\\0'){\n\n            cnt += map[*p]?1:0;\n\n            p++;\n\n        }\n\n        ret *= 10;\n\n        ret += cnt%10;\n\n    }\n\n    return ret;\n\n}"
+    }
+  ]
+}

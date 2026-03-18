@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "给定一个长度为n的数组a和一个整数size，请你编写一个函数，void reverse(int a[], int size)，实现将数组a中的前size个数翻转。\n\n输出翻转后的数组a。\n\n### 输入格式:\n\n第一行包含两个整数n和size。1≤size≤n≤1000\n\n第二行包含n个整数，表示数组a。\n\n### 输出格式:\n\n共一行，包含n个整数，表示翻转后的数组a。\n### 输入样例:\n\n```in\n5 3\n1 2 3 4 5\n```\n\n### 输出样例:\n\n```out\n3 2 1 4 5 \n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nvoid reverse(int a[], int size){\n    int l=0,r=size-1;\n    while(l<r){\n        a[l]^=a[r];\n        a[r]^=a[l];\n        a[l]^=a[r];\n        l++;r--;\n    }\n}\n\nint main(){\n    int n,size;\n    int a[1005];\n    scanf(\"%d %d\",&n,&size);\n    for(int i=0;i<n;i++){\n        scanf(\"%d\",a+i);\n    }\n    reverse(a,size);\n    for(int i=0;i<n;i++)printf(\"%d \",a[i]);\n    return 0;\n}"
+    }
+  ]
+}

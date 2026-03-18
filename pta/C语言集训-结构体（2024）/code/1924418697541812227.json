@@ -1,0 +1,10 @@
+{
+  "title": "时间换算",
+  "description": "# 时间换算\n输入一个正整数 repeat (0<repeat<10)，做 repeat 次下列运算：\n\n输入一个时间数值，再输入秒数 n，输出该时间再过 n 秒后的时间值，时间的表示形式为时:分:秒，超过 24 时从 0 时重新开始计时。\n\n输出格式： printf(\"time: %d:%d:%d\\n\", );\n\n输入输出示例：括号内为说明，无需输入输出\n\n### 输入样例:\n```in\n3\t   (repeat=3)\n0:0:1\n59\t   (秒数n=59)\n11:59:40   \n30\t   (秒数n=30)\n23:59:40   \n301\t   (秒数n=301)\n```\n\n### 输出样例:\n```out\ntime: 0:1:0\t   (0:0:01加上59秒的新时间)   \ntime: 12:0:10\t   (11:59:40加上30秒的新时间)\ntime: 0:4:41\t   (23:59:40加上301秒的新时间)\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include <stdio.h>\n\ntypedef struct a {\n    int hour;\n    int minute;\n    int second;\n} Time;\n\nint main(){\n    int n;\n    scanf(\"%d\", &n);\n    for(int i = 0; i < n; i++){\n        Time t;\n        int s;\n        scanf(\"%d:%d:%d %d\", &t.hour, &t.minute, &t.second, &s);\n        t.second += s;\n        if(t.second >= 60){\n            t.minute += t.second / 60;\n            t.second %= 60;\n        }\n        if(t.minute >= 60){\n            t.hour += t.minute / 60;\n            t.minute %= 60;\n        }\n        if(t.hour >= 24){\n            t.hour %= 24;\n        }\n        printf(\"time: %d:%d:%d\\n\", t.hour, t.minute, t.second);\n    }\n    return 0;\n}"
+    }
+  ]
+}

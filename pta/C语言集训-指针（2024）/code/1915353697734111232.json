@@ -1,0 +1,10 @@
+{
+  "title": "每个单词的最后一个字母改成大写",
+  "description": "# 每个单词的最后一个字母改成大写\n函数fun的功能是：将p所指字符串中每个单词的最后一个字母改成大写。（这里的“单词”是指由空格隔开的字符串）。\n\n### 函数接口定义：\n```c++\nvoid fun( char *p );\n```\n\n其中 `p` 是用户传入的参数。函数将 `p `所指字符串中每个单词的最后一个字母改成大写。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\nvoid fun( char *p );\nint main()\n{\n char chrstr[64];  int d ;\n  gets(chrstr);\n  d=strlen(chrstr) ;\n  chrstr[d] = ' ' ;\n  chrstr[d+1] = 0 ;\n  fun(chrstr);\n  printf(\"\\nAfter changing:   %s\\n\", chrstr);\nreturn 0;\n}\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n```in\nmy friend is happy\n```\n\n### 输出样例：\n```out\nAfter changing:   mY frienD iS happY\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void fun( char *p ){\n\n    char *q =p;\n\n    while(*q != '\\0'){\n\n        if(*q ==' '){\n\n            *(q-1) += 'A'-'a';\n\n        }\n\n        q++;\n\n    }\n\n}"
+    }
+  ]
+}

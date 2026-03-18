@@ -1,0 +1,10 @@
+{
+  "title": "字符串排序",
+  "description": "# 字符串排序\n本题将5个字符串从小到大排序后输出（用指针数组实现）。\n\n### 函数接口定义：\n```c++\nvoid fsort(char *color[ ], int n);\n```\n\n其中 color为指针数组首地址，n是字符串个数。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n#include <string.h>\nvoid fsort(char *color[ ], int n);\n\nint main(void )\n{\n    int i;\n    char *pcolor[ ] = {\"red\", \"blue\", \"yellow\", \"green\", \"black\"};\n    void fsort(char *color[ ], int n);\n\n    fsort(pcolor, 5);   /* 调用函数 */\n    for(i = 0; i < 5; i++) \n        printf(\"%s \", pcolor[i]);\n    printf(\"\\n\");\n    return 0;\n}    \n\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n\n```\n\n```\n### 输出样例：\n\n```out\nblack blue green red yellow \n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdlib.h>\nint cmp(const void*a,const void*b){\n    return strcmp(*(char **)a,*(char**)b);\n}\n\nvoid fsort(char *color[ ], int n){\n    qsort(color,n,sizeof(color[0]),cmp);\n}"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "计算最长的字符串长度",
+  "description": "# 计算最长的字符串长度\n本题要求实现一个函数，用于计算有n个元素的指针数组s中最长的字符串的长度。\n\n### 函数接口定义：\n```c++\nint max_len( char *s[], int n );\n```\n其中`n`个字符串存储在`s[]`中，函数`max_len`应返回其中最长字符串的长度。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\n#define MAXN 10\n#define MAXS 20\n\nint max_len( char *s[], int n );\n\nint main()\n{\n    int i, n;\n    char *string[MAXN] = {NULL};\n    \n    scanf(\"%d\", &n);\n    for(i = 0; i < n; i++) {\n        string[i] = (char *)malloc(sizeof(char)*MAXS);\n        scanf(\"%s\", string[i]);\n    }\n    printf(\"%d\\n\", max_len(string, n));\n\n    return 0;\n}\n\n/* 你的代码将被嵌在这里 */\n```\n\n### 输入样例：\n```in\n4\nblue\nyellow\nred\ngreen\n```\n\n### 输出样例：\n```out\n6\n\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "int max_len( char *s[], int n ){\n    int ma = 0,len;\n    for(int i=0;i<n;i++){\n        if(ma < (len = strlen(s[i]))){\n            ma = len;\n        }\n    }\n    return ma;\n}"
+    }
+  ]
+}

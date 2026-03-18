@@ -1,0 +1,10 @@
+{
+  "title": "数组指针与二维数组的关系",
+  "description": "# 数组指针与二维数组的关系\n利用数组指针p将main函数中输入的二维数组a的所有元素输出， 要求先按行的顺序输出，然后再以列的顺序输出， 其中输出整型格式用 \"%3d\",  (测试用数据大小不要超过2位数）。\n\n### 函数接口定义：\n```c++\nvoid reOut(int (*p)[3]);\n```\n\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\nint main()\n{\n\tvoid reOut(int (*p)[3]);\n\tint i, j, a[2][3], (*p)[3];\n\tfor (i = 0; i < 2; i++)\n\t\tfor (j = 0; j < 3; j++)\n\t\tscanf(\"%d\", &a[i][j]);\n\tp= a;\n\treOut(p); \n}\n\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n\n在这里给出一组输入。例如：\n\n```in\n1 2 3\n4 5 6\n```\n\n### 输出样例：\n\n```out\n  1  2  3\n  4  5  6\n  1  4\n  2  5\n  3  6\n```\n\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void reOut(int (*p)[3]){\n    for(int i=0;i<2;i++){\n        for(int j=0;j<3;j++){\n            printf(\"%3d\",p[i][j]);\n        }\n        printf(\"\\n\");\n    }\n    for(int i=0;i<3;i++){\n        for(int j=0;j<2;j++){\n            printf(\"%3d\",p[j][i]);\n        }\n        printf(\"\\n\");\n    }\n}"
+    }
+  ]
+}

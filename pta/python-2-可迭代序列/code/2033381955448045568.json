@@ -1,0 +1,10 @@
+{
+  "title": "生成字符地图的子地图",
+  "description": "# 生成字符地图的子地图\n\n\n\n![image.png](~/07c8a6ce-6063-4b02-bc06-f31085c05b42.png)\n\n这是一幅黑白绘制地图，如果将白色部分用英文句号圆点“.”表示。黑色部分用英文大写字母“X”表示。则这幅地图可以被表示为字符地图：\n\n.X..\n....\nXX..\n....\n现在要求读入任意字符地图，求出它的右下角的一级子地图。\n输入第一行表示正方形地图大小，比如4就代表4行4列。中间是字符地图数据，最后以0结尾就表示输入结束。\n\n### 输入格式:\n\n4\n.X..\n....\nXX..\n....\n0\n\n### 输出格式:\n\n...\nX..\n...\n\n\n### 输入样例1:\n\n在这里给出一组输入。例如：\n\n```in\n2\nXX\n.X\n0\n```\n\n### 输出样例1:\n\n在这里给出相应的输出。例如：\n\n```out\nX\n```\n\n### 输入样例2:\n\n在这里给出一组输入。例如：\n\n```in\n3\n.X.\nX.X\n.X.\n3\n...\n.XX\n.XX\n4\n....\n....\n....\n....\n0\n\n```\n\n### 输出样例2:\n\n在这里给出相应的输出。例如：\n\n```out\n.X\nX.\nXX\nXX\n...\n...\n...\n```\n\n\n",
+  "files": [
+    {
+      "language": "python3",
+      "code": "def main():\n    N = int(input())\n    assert N != 0\n    input()\n    data = [input()[1:] for i in range(1,N)]\n    print(\"\\n\".join(data))\n\n\nif __name__ == '__main__':\n    try:\n        while(True):\n            main()\n    except Exception:\n        pass"
+    }
+  ]
+}

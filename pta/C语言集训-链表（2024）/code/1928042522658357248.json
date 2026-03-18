@@ -1,0 +1,10 @@
+{
+  "title": "删除单链表的第i个结点。",
+  "description": "# 删除单链表的第i个结点。\n本题要求实现一个函数，删除单链表的第i个结点。\n\n### 函数接口定义：\n```\nNode *deletelink(Node *head, int i)\n```\n\n在这里，head是单链表的头指针，i是待删除的结点编号。函数不需要处理单链表为空的情况。如果删除位置错误，输出\"error\"。\n### 裁判测试程序样例：\n```\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\ntypedef struct ListNode {\n    int num;\n    struct ListNode *next;\n}Node;\n\nNode *createlist(); /*根据用户输入的整数n，创建具有n个结点的单链表。裁判实现，细节不表*/\nNode *deletelink(Node *head, int i);\nvoid display(Node *head);/*输出链表结点的数据域。裁判实现，细节不表*/\n\nint main(void)\n{\n    Node  *head;\n\t int i;\n    head = createlist();\n\t scanf(\"%d\",&i);\n    head = deletelink(head, i);\n    display(head);\n    return 0;\n}\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例1：\n```in\n5\n10 5 4 8 7\n2\n```\n### 输出样例1：\n```out\n10 4 8 7\n\n```\n### 输入样例2：\n```in\n5\n10 5 4 8 7\n6\n```\n### 输出样例2：\n```out\nerror\n10 5 4 8 7\n\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "Node *deletelink(Node *head, int i){\n    if(head == NULL || i < 1)return head;\n    if(i == 1){\n        Node*next = head->next;\n        free(head);\n        head = NULL;\n        return next;\n    }\n    Node *p = head, *prev = NULL;\n    int count = 1;\n    while(p != NULL && count < i) {\n        prev = p;\n        p = p->next;\n        count++;\n    }\n    if(p == NULL){\n        printf(\"error\\n\");\n        return head;\n    }\n    prev->next = p->next;\n    free(p);\n    p = NULL;\n    return head;\n}"
+    }
+  ]
+}

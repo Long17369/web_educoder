@@ -1,0 +1,10 @@
+{
+  "title": "链表逆置",
+  "description": "# 链表逆置\n本题要求实现一个函数，将给定单向链表逆置，即表头置为表尾，表尾置为表头。链表结点定义如下：\n\n```\nstruct ListNode {\n    int data;\n    struct ListNode *next;\n};\n```\n\n### 函数接口定义：\n```c++\nstruct ListNode *reverse( struct ListNode *head );\n```\n其中`head`是用户传入的链表的头指针；函数`reverse`将链表`head`逆置，并返回结果链表的头指针。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n#include <stdlib.h>\n\nstruct ListNode {\n    int data;\n    struct ListNode *next;\n};\n\nstruct ListNode *createlist(); /*裁判实现，细节不表*/\nstruct ListNode *reverse( struct ListNode *head );\nvoid printlist( struct ListNode *head )\n{\n     struct ListNode *p = head;\n     while (p) {\n           printf(\"%d \", p->data);\n           p = p->next;\n     }\n     printf(\"\\n\");\n}\n\nint main()\n{\n    struct ListNode  *head;\n\n    head = createlist();\n    head = reverse(head);\n    printlist(head);\n\t\n    return 0;\n}\n\n/* 你的代码将被嵌在这里 */\n```\n\n### 输入样例：\n```in\n1 2 3 4 5 6 -1\n```\n\n### 输出样例：\n```out\n6 5 4 3 2 1 \n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "typedef struct ListNode *List;\n\nList reverse(List head){\n    List begin = (List)malloc(sizeof(struct ListNode));\n    begin->next = NULL;\n    while(head!=NULL){\n        List tmp = begin->next;\n        begin->next = head;\n        head = begin->next->next;\n        begin->next->next = tmp;\n    }\n    return begin->next;\n}"
+    }
+  ]
+}

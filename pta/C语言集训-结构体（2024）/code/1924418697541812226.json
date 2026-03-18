@@ -1,0 +1,10 @@
+{
+  "title": "小明的晚饭",
+  "description": "# 小明的晚饭\n小明最近很用功学习，所以经常忘记吃饭。小明决定给自己放个假去大吃一顿，到了吃饭的地方后，小明陷入了沉思，因为他很纠结不知道吃什么,所以他全都要。小明的食量是无限的并且是个贪心的人，所以他想吃完自己支付范围内所有最贵的饭。他从最贵的饭店开始吃，若剩下的钱不足以吃当前最贵的饭店，则往下寻找较贵的饭店。直到钱财为空或者已经吃不起最便宜的饭了。当然小明是个有原则的人，他绝对不会重复吃已经吃过的餐厅。但是他学完习思考不出来该吃啥了，需要你的帮助\n(Hint:小明不做其他选择，只要贵的，即使贵的饭吃的少而便宜的饭能吃的多，他也会选择最贵的)\n\n### 输入格式:\n\n输入一个p表示小明拥有的钱(1<=n<=10000)，在输入一个n表示小明有n(1<=n<=100)种选择，接下来的n行，每一行包含一个字符串表示饭店店名和在该饭店吃饭的价格。字符串长度不超过20。\n\n### 输出格式:\n\n输出小明能够吃到的饭，如果小明什么都吃不起，则输出“chitu”。\n\n### 输入样例:\n\n\n```in\n10 5\nMcDonald's 2\nKFC 6\nYifan 1\nErfan 3\nSanfan 4\n```\n\n### 输出样例:\n\n```out\nKFC\nSanfan\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n#include<string.h>\n#include<stdlib.h>\n\ntypedef struct a {\n    char name[20];\n    int cost;\n} Food;\n\nint cmp(const void* a, const void* b) {\n    Food* A = (Food*)a;\n    Food* B = (Food*)b;\n    if (A->cost < B->cost) return 1;\n    else if (A->cost > B->cost) return -1;\n    else return 0;\n}\n\nint main(){\n    int n,m;\n    scanf(\"%d %d\", &m, &n);\n    Food* foods = (Food*)malloc(n * sizeof(Food));\n    for (int i = 0; i < n; i++){\n        scanf(\"%s %d\", foods[i].name, &foods[i].cost);\n    }\n    qsort(foods, n, sizeof(Food), cmp);\n    int sum = 0;\n    for (int i = 0; i < n; i++){\n        if (sum + foods[i].cost > m) continue;\n        sum += foods[i].cost;\n        printf(\"%s\\n\", foods[i].name);\n    }\n    if(sum == 0) printf(\"chitu\\n\");\n    return 0;\n}"
+    }
+  ]
+}

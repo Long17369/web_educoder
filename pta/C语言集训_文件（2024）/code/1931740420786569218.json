@@ -1,0 +1,10 @@
+{
+  "title": "有结构文件的读写1",
+  "description": "# 有结构文件的读写1\n学生类型：ST的类型定义如下：\n\ntypedef struct student{ char name[10],id[10]; int gender; int age; double scored; } ST; 编写函数，从指定的文件上读入若干字符串，每行字符串是一个学生的信息（姓名，学号，性别，年龄，分数）的字符串表示，数据间以`空格`分隔，将学生们的信息存储于一个结构体中，并利用output()函数输出到指定文件中。\n\n### 函数接口定义：\n```c\nvoid fun(FILE *fin,FILE *fout);\n```\n其中 `fin `和 `fout` 都是用户传入的参数。 前者是已正常打开的可读文件，而后者是已正常打开的可写文件。\n\n### 裁判测试程序样例：\n```c\n在这里给出函数被调用进行测试的例子。例如：\n#include <stdio.h>\n#include <stdlib.h>\ntypedef struct student{\n    char name[10],id[10];\n    int gender;\n    int age;\n    double scored;\n} ST;\nvoid output(ST *d,FILE *fout){//测试程序，输出到文件调用此函数完成\n\tif(d==NULL) {printf(\"null\\n\");return;}\n\tfprintf(fout,\"%s,%s,%d,%d,%4.2f\\n\",d->name,d->id,d->gender,d->age,d->scored);\n}\n\nvoid fun(FILE *fin,FILE *fout);//<--需要完成的函数（包括读入字符串，转换成对应的结构体，并利用函数（output（））输出到指定文件中，输入输出文件不用考虑\n\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n从固定文件中读取：文件内容：\n```in\naaa   123   0 18 88.88\nbbb 456   1 19  99.99\nccc 789 1 18 66.66\nddd   356   0 18  67.89\n\n```\n\n### 输出样例：\n输出到指定文件中，文件内容：\n```out\naaa,123,0,18,88.88\nbbb,456,1,19,99.99\nccc,789,1,18,66.66\nddd,356,0,18,67.89\n\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "int scan(FILE *fin, ST *d){\n    return fscanf(fin,\"%s %s %d %d %lf\", d->name, d->id, &d->gender, &d->age, &d->scored)==5;\n}\n\nvoid fun(FILE *fin,FILE *fout){\n    ST d;\n    while(scan(fin, &d)){\n        output(&d, fout);\n    }\n}"
+    }
+  ]
+}

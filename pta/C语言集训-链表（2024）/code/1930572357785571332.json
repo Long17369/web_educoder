@@ -1,0 +1,10 @@
+{
+  "title": "用单向循环链表实现猴子选大王",
+  "description": "# 用单向循环链表实现猴子选大王\n一群猴子要选新猴王。新猴王的选择方法是：让n只候选猴子围成一圈，从某位置起顺序编号为1~n号。每只猴子预先设定一个数（或称定数），用最后一只猴子的定数d，从第一只猴子开始报数，报到d的猴子即退出圈子；当某只猴子退出时，就用它的定数决定它后面的第几只猴子将在下次退出。如此不断循环，最后剩下的一只猴子就选为猴王。请输出猴子退出圈子的次序以及当选的猴王编号。\n\n\n### 函数接口定义：\n```c++\n\nint KingOfMonkey(int n,linklist *head);\n```\n\n\n### 裁判测试程序样例：\n```c++\n\n#include <stdio.h>\n#include <stdlib.h>\ntypedef struct node        /*这个结构类型包括三个域 */\n{\tint number;        /*猴子的编号*/\n\tint mydata;        /* 猴子的定数 */\n\tstruct node *next; /* 指向下一只猴子的指针 */\n} linklist;\nlinklist *CreateCircle( int n );\nlinklist *DeleteNext(linklist *p);   /* 删除单循环链表的p所指的下一个结点 */\n\n/* 提示： 你所有的代码将由系统插入在此处 */\n\nint main()\n{\n    linklist *head;\n    int i,n;\n    scanf(\"%d\",&n); \n    head = CreateCircle(n); /*创建单向循环链表，返回最后一个结点的指针 */\n    printf(\"The king is monkey[%d].\\n\", KingOfMonkey(n,head));\n    return 0;\n}\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n\n在这里给出一组输入。例如：\n\n```in\n5\n3 2 1 4 3\n```\n\n### 输出样例：\n\n在这里给出相应的输出。例如：\n\n```out\nDelete No:3\nDelete No:4\nDelete No:5\nDelete No:1\nThe king is monkey[2].\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "typedef linklist *List;\n\nList DeleteNext(List head){\n    List tmp = head->next;\n    head->next = head->next->next;\n    printf(\"Delete No:%d\\n\", tmp->number);\n    free(tmp);\n    tmp = NULL;\n    return head;\n}\n\nList CreateCircle(int n){\n    List begin = (List)malloc(sizeof(linklist));\n    begin->next = NULL;\n    List p = begin;\n    for(int i=0;i<n;i++){\n        p->next = (List)malloc(sizeof(linklist));\n        p = p->next;\n        p->number = i+1;\n        scanf(\"%d\",&p->mydata);\n        p->next = NULL;\n    }\n    p->next = begin->next;\n    free(begin);\n    begin = NULL;\n    return p;\n}\n\nint KingOfMonkey(int n,List head){\n    int c = head->mydata;\n    for(int i=1;i<n;i++){\n        for(int j=1;j<c;j++){\n            head = head->next;\n        }\n        c = head->next->mydata;\n        DeleteNext(head);\n    }\n    return head->number;\n}"
+    }
+  ]
+}

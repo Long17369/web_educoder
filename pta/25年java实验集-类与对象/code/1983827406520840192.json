@@ -1,0 +1,10 @@
+{
+  "title": "设计一个矩形类Rectangle",
+  "description": "# 设计一个矩形类Rectangle\n 编写一个Java应用程序，该程序包含两个类，类的定义如下：\n \n(1) 一个有关计算矩形面积的类`Rectangle`，定义如下成员：\n    ① 两个私有的成员变量：`length`（长，double类型）、`width`（宽，double类型）；\n    ② 一个公有的无参数的构造方法，该构造方法将所有成员变量初始化为零；\n    ③ 一个公有的有参数的方法`void setXY(double a, double b)`，该方法用于设置矩形的属性length与width；\n    ④ 一个公有的无参数的方法`double getArea( )`，该方法计算并返回矩形的面积;\n\t\t⑤一个公有的无参数的方法`double getPerimeter( )`，该方法计算并返回矩形的周长;\n\t\t\n(2) 一个测试类`Main`，在main方法中声明1个Rectangle类的对象`rect`，通过setXY方法给rect的属性length和width进行赋值（从键盘输入），通过getArea方法来计算rect的面积，通过getPerimeter方法来计算rect的周长，然后输出其面积与周长。\n\n### 输入格式:\n\n输入两个数，作为矩形的长、宽。\n\n### 输出格式:\n\n第一行输出矩形的面积。\n第二行输出矩形的周长。\n\n### 输入样例:\n\n```in\n3.5  2\n```\n\n### 输出样例:\n\n```out\n面积为7.0\n周长为11.0\n```\n\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.Scanner;\n\nclass Rectangle {\n    private double length;\n    private double width;\n\n    public Rectangle() {\n        this.length = 0;\n        this.width = 0;\n    }\n\n    public void setXY(double a, double b) {\n        this.length = a;\n        this.width = b;\n    }\n\n    public double getArea() {\n        return length * width;\n    }\n\n    public double getPerimeter() {\n        return 2 * (length + width);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        Rectangle rect = new Rectangle();\n        if (scanner.hasNextDouble()) {\n            double l = scanner.nextDouble();\n            double w = scanner.nextDouble();\n            rect.setXY(l, w);\n            System.out.println(\"面积为\" + rect.getArea());\n            System.out.println(\"周长为\" + rect.getPerimeter());\n        }\n        scanner.close();\n    }\n}"
+    }
+  ]
+}

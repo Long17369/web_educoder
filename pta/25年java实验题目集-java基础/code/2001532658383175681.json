@@ -1,0 +1,10 @@
+{
+  "title": "正整数倒排",
+  "description": "# 正整数倒排\n正整数倒排。\n\n给定一个整数，把它的各位数字倒排过来形成一个新的整数。\n\n### 输入格式:\n\n一个正整数，例如：234\n\n### 输出格式:\n\n将输入的正整数每个位上的数字倒过来形成一个新的整数，例如：输入：234，输出：432；输入：5680，输出：865。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n234\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n倒排后为：432\n```\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        sc.close();\n        int result = 0;\n        while (n != 0) {\n            result = result * 10 + n % 10;\n            n /= 10;\n        }\n        System.out.println(\"倒排后为：\" + result);\n    }\n}"
+    }
+  ]
+}
