@@ -1,0 +1,10 @@
+{
+  "title": "使用接口完成银行取钱。",
+  "description": "# 使用接口完成银行取钱。\n利用面向接口编程思想实现一个银行取钱程序。\n（1）定义一个接口银行IBank，包含抽象方法取钱double withdraw(double money);定义两个实现类：工商银行ICBC、农业银行ABC，钱在银行的利息不同，工商银行利息是千分之一，农业银行利息是千分之二。\n（2）定义一个类客户Customer，包含方法从银行取钱double getMoneyFromBank(IBank bank,double money)，通过接口回调从不同银行取钱。\n（3）编写main方法，根据输入的银行和取款数，输出从不同银行取钱时实际取得的金额。\n\n### 输入格式:\n\n给出银行名字和取款数。\n\n### 输出格式:\n\n取出的实际金额。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\nABC 1000\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n1002.0\n```\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\nICBC 1000\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n1001.0\n```\n\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        String bankType = scanner.next();\n        double amount = scanner.nextDouble();\n        Customer customer = new Customer();\n        IBank bank;\n        if (bankType.equals(\"ABC\")) {\n            bank = new ABC();\n        } else if (bankType.equals(\"ICBC\")) {\n            bank = new ICBC();\n        } else {\n            scanner.close();\n            return;\n        }\n        double money = customer.getMoneyFromBank(bank, amount);\n        System.out.printf(\"%.1f\", money);\n        scanner.close();\n    }\n}\n\nclass Customer {\n    Customer() {\n    }\n\n    public double getMoneyFromBank(IBank bank, double money) {\n        return bank.withdraw(money);\n    }\n}\n\nclass ABC implements IBank {\n    @Override\n    public double withdraw(double money) {\n        return money * 1.002;\n    }\n}\n\nclass ICBC implements IBank {\n    @Override\n    public double withdraw(double money) {\n        return money * 1.001;\n    }\n}\n\ninterface IBank {\n    double withdraw(double money);\n}"
+    }
+  ]
+}

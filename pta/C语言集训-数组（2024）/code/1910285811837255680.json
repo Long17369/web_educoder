@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "请编写程序输出前$$n$$个正整数的全排列（$$n<10$$），并通过9个测试用例（即$$n$$从1到9）观察$$n$$逐步增大时程序的运行时间。\n\n### 输入格式:\n\n输入给出正整数$$n$$（$$<10$$）。 \n\n### 输出格式:\n\n输出1到$$n$$的全排列。每种排列占一行，数字间无空格。排列的输出顺序为字典序，即序列$${ a_1, a_2, \\cdots, a_n }$$排在序列$${ b_1, b_2, \\cdots, b_n }$$之前，如果存在$$k$$使得$$a_1=b_1, \\cdots, a_k=b_k$$ 并且 $$a_{k+1}<b_{k+1}$$。\n\n### 输入样例：\n```in\n3\n```\n\n### 输出样例：\n```out\n123\n132\n213\n231\n312\n321\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n#include<stdbool.h>\n#include<string.h>\n\nvoid q(bool a[12],int put[12],int cnt[12],int n,int k){\n    if(k==1){\n        for(int i=1;i<=n;i++){\n            if(a[i]){\n                put[1]=i;\n                break;\n            }\n        }\n        for(int i=n;i>0;i--)printf(\"%d\",put[i]);\n        putchar('\\n');\n        return;\n    }\n    int c;\n    while(1){\n        c=-1;\n        for(int j=1;j<=n;j++){\n            if(a[j])c++;\n            if(c==cnt[k]){\n                a[j]=0;\n                put[k]=j;\n                break;\n            }\n        }\n        q(a,put,cnt,n,k-1);\n        a[put[k]]=1;\n        cnt[k]++;\n        if(cnt[k]==k)break;\n    }\n    cnt[k]=0;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    int cnt[12],put[12];\n    bool a[12];\n    memset(cnt,0,sizeof(cnt));\n    memset(a,1,sizeof(a));\n    q(a,put,cnt,n,n);\n}"
+    }
+  ]
+}

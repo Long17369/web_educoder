@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "计算一个N×N（2<=N<=10）整型矩阵的主对角线元素及副对角线元素之和。注意：若某数组元素既在主对角线上又在副对角线上，则只加一次。\n\n### 输入格式:\n\n输入第一行给出一个正整数N，要求2<=N<=10。随后N行，每行输入N个整数，其间以空格分隔。\n\n### 输出格式:\n\n输出矩阵主、副对角线元素之和。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n3\n1 3 5\n6 7 9\n2 4 8\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n23\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    int t;\n    int sum = 0;\n    for(int i=0;i<n;i++){\n        for(int j=0;j<n;j++){\n            scanf(\"%d\",&t);\n            if(i==j||i+j==n-1){\n                sum += t;\n            }\n        }\n    }\n    printf(\"%d\",sum);\n}"
+    }
+  ]
+}

@@ -7,8 +7,9 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: '/', name: 'home', component: HomeView },
-    { path: '/content', name: 'content', component: ContentView },
-    { path: '/code', name: 'code', component: CodeView },
+    { path: '/content/:type', name: 'content', component: ContentView },
+    { path: '/content/:type/:problems', name: 'problem-set', component: ContentView },
+    { path: '/code/:type/:problems/:problem/:title?', name: 'code', component: CodeView },
   ],
 })
 

@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "本题要求你帮助某网站的用户注册模块写一个密码合法性检查的小功能。该网站要求用户设置的密码必须由不少于6个字符组成，并且只能有英文字母、数字和小数点 `.`，还必须既有字母也有数字。\n\n\n### 输入格式：\n\n输入第一行给出一个正整数 N（$$\\le$$ 100），随后 N 行，每行给出一个用户设置的密码，为不超过 80 个字符的非空字符串，以回车结束。\n\n**注意：** 题目保证不存在只有小数点的输入。\n\n### 输出格式：\n\n对每个用户的密码，在一行中输出系统反馈信息，分以下5种：\n\n- 如果密码合法，输出`Your password is wan mei.`；\n- 如果密码太短，不论合法与否，都输出`Your password is tai duan le.`；\n- 如果密码长度合法，但存在不合法字符，则输出`Your password is tai luan le.`；\n- 如果密码长度合法，但只有字母没有数字，则输出`Your password needs shu zi.`；\n- 如果密码长度合法，但只有数字没有字母，则输出`Your password needs zi mu.`。\n\n### 输入样例：\n```in\n5\n123s\nzheshi.wodepw\n1234.5678\nWanMei23333\npass*word.6\n\n```\n\n### 输出样例：\n```out\nYour password is tai duan le.\nYour password needs shu zi.\nYour password needs zi mu.\nYour password is wan mei.\nYour password is tai luan le.\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n#include<string.h>\n\nint check(char* password){\n    int len = strlen(password);\n    if(len<=6)return 1;\n    int zimu=0;\n    int shuzi=0;\n    for(int i=0;i<len-1;i++){\n        if('0'<=password[i]&&password[i]<='9')shuzi=1;\n        else if('a'<=password[i]&&password[i]<='z')zimu = 1;\n        else if('A'<=password[i]&&password[i]<='Z')zimu = 1;\n        else if(password[i] == '.');\n        else return 2;\n    }\n    if(zimu==0 && shuzi)return 4;\n    if(shuzi ==0 &&zimu)return 3;\n    return 0;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    char password[85];\n    while(getchar()!='\\n');\n    while(n--){\n        fgets(password,85,stdin);\n        switch(check(password)){\n            case 0:\n                puts(\"Your password is wan mei.\");\n                break;\n            case 1:\n                puts(\"Your password is tai duan le.\");\n                break;\n            case 2:\n                puts(\"Your password is tai luan le.\");\n                break;\n            case 3:\n                puts(\"Your password needs shu zi.\");\n                break;\n            case 4:\n                puts(\"Your password needs zi mu.\");\n                break;\n            default:break;\n        }\n    }\n}"
+    }
+  ]
+}

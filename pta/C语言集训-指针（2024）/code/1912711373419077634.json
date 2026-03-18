@@ -1,0 +1,10 @@
+{
+  "title": "计算两数的和与差",
+  "description": "# 计算两数的和与差\n本题要求实现一个计算输入的两数的和与差的简单函数。\n\n### 函数接口定义：\n```c++\nvoid sum_diff( float op1, float op2, float *psum, float *pdiff );\n```\n其中`op1`和`op2`是输入的两个实数，`*psum`和`*pdiff`是计算得出的和与差。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n\nvoid sum_diff( float op1, float op2, float *psum, float *pdiff );\n\nint main()\n{\n    float a, b, sum, diff;\n\n    scanf(\"%f %f\", &a, &b);\n    sum_diff(a, b, &sum, &diff);\n    printf(\"The sum is %.2f\\nThe diff is %.2f\\n\", sum, diff);\n\t\n    return 0; \n}\n\n/* 你的代码将被嵌在这里 */\n```\n\n### 输入样例：\n```in\n4 6\n```\n\n### 输出样例：\n```out\nThe sum is 10.00\nThe diff is -2.00\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void sum_diff( float op1, float op2, float *psum, float *pdiff ){\n    *psum = op1+op2;\n    *pdiff = op1-op2;\n}"
+    }
+  ]
+}

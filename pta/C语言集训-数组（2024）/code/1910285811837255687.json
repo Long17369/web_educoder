@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "本题要求编写程序，读入5个字符串，按由小到大的顺序输出。\n\n### 输入格式：\n\n输入为由空格分隔的5个非空字符串，每个字符串不包括空格、制表符、换行符等空白字符，长度小于80。\n\n### 输出格式：\n\n按照以下格式输出排序后的结果：\n```\nAfter sorted:\n每行一个字符串\n```\n\n### 输入样例：\n```in\nred yellow blue black white\n```\n\n### 输出样例：\n```out\nAfter sorted:\nblack\nblue\nred\nwhite\nyellow\n```\n\n**鸣谢贵州民族大学张玉全老师修正数据！**\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n#include<stdlib.h>\n#include<string.h>\n\nint cmp(const void *a,const void *b){\n    return strcmp((char*)a,(char*)b);\n}\n\nint main(){\n    char str[5][85];\n    for(int i=0;i<5;i++){\n        scanf(\"%s\",str[i]);\n    }\n    qsort(str,5,sizeof(str[0]),cmp);\n    printf(\"After sorted:\\n\");\n    for(int i=0;i<5;i++){\n        printf(\"%s\\n\",str[i]);\n    }\n}"
+    }
+  ]
+}

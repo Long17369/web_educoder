@@ -1,0 +1,10 @@
+{
+  "title": "求n×n方阵四边元素之和",
+  "description": "# 求n×n方阵四边元素之和\n给定一个$$n\\times n$$的方阵($$1\\leqslant n\\leqslant 10$$)，本题要求计算该方阵四个边上元素之和。   \n### 要求:\n编写函数按照题意计算元素之和。\n\n### 函数接口定义：\n```c++\nint sumMatrix(int (*a)[N],int n);  \n```\n指针`a`指向了一个10×10的方阵,`n`为a指向的矩阵的阶数\n### 裁判测试程序样例：\n```c++\n#include<stdio.h>\n#define N 10\nvoid createMatrix(int (*a)[N],int n)\n{\n    for(int i=0; i<n; i++)\n    {\n        for(int j=0; j<n; j++)\n        {\n            scanf(\"%d\",&a[i][j]);\n        }\n    }\n}\n\n/* 请在这里填写答案 */\n\nint main()\n{\n    int a[N][N];\n    createMatrix(a);\n    printf(\"%d\\n\",sumMatrix(a));\n    return 0;\n}\n```\n### 输入格式：\n在第一行给出方阵的阶数$$n$$,随后给出$$n$$行数，每行$$n$$个数，表示方阵中的元素。\n### 输出格式:\n输出求和结果\n### 输入样例：\n\n```in\n10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10 \n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n```\n### 输出样例：\n\n```out\n198\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "int sumMatrix(int (*a)[N],int n){\n    if(n==1){\n        return a[0][0];\n    }\n    int sum = 0;\n    for(int i=0;i<n;i++){\n        sum += a[i][0];\n        sum += a[i][n-1];\n    }\n    for(int i=1;i<n-1;i++){\n        sum += a[0][i];\n        sum += a[n-1][i];\n    }\n    return sum;\n}"
+    }
+  ]
+}

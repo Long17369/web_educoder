@@ -1,0 +1,10 @@
+{
+  "title": "从结构体数组中查找指定信息的元素",
+  "description": "# 从结构体数组中查找指定信息的元素\n本题要求实现一个函数，可从一个结构体数组`data`域中查找一个给定的数据元素`x`，查找成功，返回该元素所在位置的指针；否则，返回`NULL`。\n\n### 函数接口定义：\n```c\nINFO *SearchIn ( INFO *p,  int n, int x );\n```\n\n其中 `p` 、`n`和 `x` 都是用户传入的参数。 `p` 是一个`INFO`类型的指针；`n`是数组元素个数， `x` 是要查找的数据元素。函数返回 `x` 在 `p`所指的数组中具体位置。\n\n### 裁判测试程序样例：\n```c\n#include <stdio.h>\ntypedef struct _INFO {\n\tint data;\n\tchar name[20];\n} INFO;\n\nINFO *SearchIn ( INFO *p, int n, int x );\n\nint main()\n{\n\tint i, n, x;\n\tINFO info[10], *p;\n\t\n\tscanf(\"%d\", &n);\n\tfor (i = 0; i < n; i++)\n\t\tscanf(\"%d %s\", &info[i].data, info[i].name);\n\t\n\tscanf(\"%d\", &x);\n\tp = SearchIn ( info, n, x );\n\t\n\tif (p != NULL)\n\t\tprintf(\"%s %d\\n\", p->name, p->data);\n\telse \n\t\tprintf(\"Not Found!\\n\");\n\t\n\treturn 0;\n}\n```\n\n### 输入样例1：\n```in\n3\n351 Windows\n278 iOS\n224 Andriod\n278\n```\n\n### 输出样例1：\n```out\niOS 278\n```\n### 输入样例2：\n```in\n3\n351 Windows\n278 iOS\n224 Andriod\n235\n```\n\n### 输出样例2：\n```out\nNot Found!\n```\n\n\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "INFO *SearchIn(INFO *p,int n,int x){\n    for(int i=0;i<n;i++){\n        if(p[i].data == x)return p+i;\n    }\n    return NULL;\n}"
+    }
+  ]
+}

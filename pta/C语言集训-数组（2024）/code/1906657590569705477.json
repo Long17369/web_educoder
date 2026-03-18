@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "一个工厂，为了利益最大化，员工轮休。每人每周休2天，现在让每位员工登记自己想休息的时间，以备轮休排班时参考。每位员工输入两个不大于7的数字，逗号分隔，表示自己希望星期几休息，用一个n行7列的矩阵来存储数据，每行表达一名员工，每列表达一天，编程读入数据，建立初始矩阵,每人的休息日对应位置为1，否则为0。\n\n### 输入格式:\n\n第一行输入员工人数n(小于20）\n后边输入n行数据，每行两个数，表示两个休息日是周几\n\n### 输出格式:\n\n输出n行7列矩阵，例如3号员工星期2休息，则第3行的第2列数据为1，否则为0\n\n### 输入样例:\n\n\n\n```in\n5\n6,5\n2,3\n1,3\n6,7\n5,6\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n0000110\n0110000\n1010000\n0000011\n0000110\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nvoid swap(int* a,int* b){\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    int a[25][2];\n    for(int i=0;i<n;i++){\n        scanf(\"%d,%d\",a[i],a[i]+1);\n        if(a[i][0]>a[i][1])swap(a[i],a[i]+1);\n    }\n    for(int i=0;i<n;i++){\n        int j=1;\n        for(;j<a[i][0];j++){\n            putchar('0');\n        }\n        putchar('1');j++;\n        for(;j<a[i][1];j++){\n            putchar('0');\n        }\n        putchar('1');j++;\n        for(;j<=7;j++)putchar('0');\n        putchar('\\n');\n    }\n}"
+    }
+  ]
+}

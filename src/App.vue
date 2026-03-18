@@ -24,10 +24,10 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 const route = useRoute()
 const title = computed(() => {
   if (route.name === 'home') return '欢迎访问educoder!'
-  const titleQuery = route.query.title
-  const problems = route.query.problems
-  const type = route.query.type
-  if (typeof titleQuery === 'string' && titleQuery.length > 0) return titleQuery
+  const titleParam = route.params.title
+  const problems = route.params.problems
+  const type = route.params.type
+  if (typeof titleParam === 'string' && titleParam.length > 0) return titleParam
   if (typeof problems === 'string' && problems.length > 0) return problems
   if (typeof type === 'string' && type.length > 0) return type
   return 'educoder'

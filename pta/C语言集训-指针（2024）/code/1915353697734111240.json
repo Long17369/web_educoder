@@ -1,0 +1,10 @@
+{
+  "title": "字符串串动变化",
+  "description": "# 字符串串动变化\n下列程序中，函数fun的功能是：在字符串str中找出ASCII码值最大的字符，将该字符前的所有字符向后顺序移动一个位置，然后将该字符放到第一个位置上。\n\n### 函数接口定义：\n```c++\nvoid fun(char *p);\n```\n\n其中` p` 是用户传入的参数。函数找出 `p `指针所指的字符串中ASCII码值最大的字符，将该字符前的所有字符向后顺序移动一个位置，然后将该字符放到第一个位置上。\n\n### 裁判测试程序样例：\n```c++\n#include<stdio.h>\nvoid fun(char *p);\nint main()\n{ char str[80];\n  gets(str);\n  fun(str);\n  printf(\"The string after moving:\");puts(str);\n  return 0;\n  }\n\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n```in\n在这里填写一组输入\nABCDeFG\n```\n\n### 输出样例：\n```out\nThe string after moving:eABCDFG\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void swap(char *a,char *b){\n    char t = *a;\n    *a = *b;\n    *b = t;\n}\n\nvoid fun(char *p){\n    char *max_ch = \"\\0\";\n    char *q = p;\n    while(*q!='\\0'){\n        if(*max_ch < *q){\n            max_ch = q;\n        }\n        q++;\n    }\n    while(max_ch!=p){\n        swap(max_ch,max_ch-1);\n        max_ch--;\n    }\n}"
+    }
+  ]
+}

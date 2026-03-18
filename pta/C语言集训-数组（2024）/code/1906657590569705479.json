@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "我国使用的手机号码为11位，其中各段有不同的编码方向：前3位是网络识别号；第4-7位为地区编码；第8-11位表示用户号码。\n\n本题要求你实现一个程序，自动统计指定地区编码的手机号码的个数。\n### 输入格式:\n\n输入第一行为待查询的地区编码，随后每行都是11位数字组成的手机号码，当读到某一行只有一个英文句点 . 时，输入结束。\n\n### 输出格式:\n首先在第一行中输出手机号码的总个数。然后统计指定地区编码的手机号码有多少个。第二行首先输出第一次出现该地区编码的手机号码是第几个（从 1 开始计数，没有输出0），然后输出该地区编码手机号码的总个数（没有输出0），其间以一个空格分隔。题目保证输出的所有数字不超过10$$^9$$。\n\n### 输入样例:\n\n\n```in\n0549\n13563910168\n13505490199\n18853905089\n13705390115\n.\n```\n\n### 输出样例:\n\n\n```out\n4\n2 1\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nint check(char*goal,char*num){\n    for(int i=0;i<4;i++){\n        if(goal[i]!=num[i+3])return 0;\n    }\n    return 1;\n}\n\nint main(){\n    char goal[10],num[20];\n    int cnt=0,idx=0,all=0;\n    scanf(\"%s\",&goal);\n    while(1){\n        scanf(\"%s\",num);\n        if(num[0]=='.')break;\n        all++;\n        if(check(goal,num)){\n            if(idx==0)idx = all;\n            cnt++;\n        }\n    }\n    printf(\"%d\\n%d %d\",all,idx,cnt);\n}"
+    }
+  ]
+}

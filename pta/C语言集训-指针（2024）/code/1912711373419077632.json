@@ -1,0 +1,10 @@
+{
+  "title": "移动字母",
+  "description": "# 移动字母\n本题要求编写函数，将输入字符串的前3个字符移到最后。\n\n### 函数接口定义：\n```c++\nvoid Shift( char s[] );\n```\n其中`char s[]`是用户传入的字符串，题目保证其长度不小于3；函数`Shift`须将按照要求变换后的字符串仍然存在`s[]`里。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n#include <string.h>\n\n#define MAXS 10\n\nvoid Shift( char s[] );\n\nvoid GetString( char s[] ); /* 实现细节在此不表 */\n\nint main()\n{\n    char s[MAXS];\n\n    GetString(s);\n    Shift(s);\n    printf(\"%s\\n\", s);\n\t\n    return 0; \n}\n\n/* 你的代码将被嵌在这里 */\n```\n\n### 输入样例：\n```in\nabcdef\n\n```\n\n### 输出样例：\n```out\ndefabc\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void Shift(char s[]){\n    int len = strlen(s);\n    char tmp[3];\n    tmp[0] = s[0];\n    tmp[1] = s[1];\n    tmp[2] = s[2];\n    for(int i=3;i<len;i++){\n        s[i-3] = s[i];\n    }\n    s[len-3] = tmp[0];\n    s[len-2] = tmp[1];\n    s[len-1] = tmp[2];\n}"
+    }
+  ]
+}

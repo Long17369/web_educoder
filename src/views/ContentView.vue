@@ -6,8 +6,8 @@
     <p v-else-if="loading">加载中...</p>
 
     <ul v-else>
-      <li v-for="item in items" :key="item.value">
-        <button type="button" @click="goNext(item.value)">{{ item.label }}</button>
+      <li v-for="item in items" :key="item.id">
+        <button type="button" @click="goNext(item.id)">{{ item.label }}</button>
       </li>
     </ul>
   </section>
@@ -20,7 +20,8 @@ import type { ProblemSetData } from '../utils/types'
 
 interface ListItem {
   label: string
-  value: string
+  id: string
+  title?: string
 }
 
 const route = useRoute()
@@ -30,8 +31,8 @@ const loading = ref(false)
 const error = ref('')
 
 async function loadData() {
-  const type = typeof route.query.type === 'string' ? route.query.type : ''
-  const problems = typeof route.query.problems === 'string' ? route.query.problems : ''
+  const type = typeof route.params.type === 'string' ? route.params.type : ''
+  const problems = typeof route.params.problems === 'string' ? route.params.problems : ''
 
   if (!type) {
     router.replace({ name: 'home' })
@@ -46,14 +47,15 @@ async function loadData() {
       const res = await fetch(`/${type}/data.json`)
       if (!res.ok) throw new Error('加载目录失败')
       const data = (await res.json()) as string[]
-      items.value = data.map((name) => ({ label: name, value: name }))
+      items.value = data.map((name) => ({ label: name, id: name }))
     } else {
       const res = await fetch(`/${type}/${problems}/data.json`)
       if (!res.ok) throw new Error('加载题目失败')
       const data = (await res.json()) as ProblemSetData
       items.value = data.content.map((problem) => ({
         label: `${problem.proid}.${problem.title}`,
-        value: `${problem.id}::${problem.title}`,
+        id: problem.id,
+        title: problem.title,
       }))
     }
   } catch (e) {
@@ -65,23 +67,18 @@ async function loadData() {
 }
 
 function goNext(value: string) {
-  const type = typeof route.query.type === 'string' ? route.query.type : ''
-  const problems = typeof route.query.problems === 'string' ? route.query.problems : ''
+  const type = typeof route.params.type === 'string' ? route.params.type : ''
+  const problems = typeof route.params.problems === 'string' ? route.params.problems : ''
 
   if (!problems) {
-    router.push({ name: 'content', query: { type, problems: value } })
+    router.push({ name: 'problem-set', params: { type, problems: value } })
     return
   }
 
-  const [problem, title] = value.split('::')
+  const problemItem = items.value.find((item) => item.id === value)
   router.push({
     name: 'code',
-    query: {
-      type,
-      problems,
-      problem,
-      title,
-    },
+    params: { type, problems, problem: value, title: problemItem?.title },
   })
 }
 

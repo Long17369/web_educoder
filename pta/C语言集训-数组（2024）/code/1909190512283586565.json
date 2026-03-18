@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "本题要求编写程序，统计并输出某给定字符在给定字符串中出现的次数。\n\n### 输入格式：\n\n输入第一行给出一个以回车结束的字符串（少于80个字符）；第二行输入一个字符。\n\n### 输出格式：\n\n在一行中输出给定字符在给定字符串中出现的次数。\n\n### 输入样例：\n```in\nprogramming is More fun!\nm\n```\n\n### 输出样例：\n```out\n2\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nint main(){\n    int cnt[256]={0};\n    char ch;\n    while((ch = getchar())!='\\n'){\n        cnt[ch]++;\n    }\n    ch = getchar();\n    printf(\"%d\",cnt[ch]);\n}"
+    }
+  ]
+}

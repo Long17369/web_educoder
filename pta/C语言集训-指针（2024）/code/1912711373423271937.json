@@ -1,0 +1,10 @@
+{
+  "title": "查找子串",
+  "description": "# 查找子串\n本题要求实现一个字符串查找的简单函数。\n\n### 函数接口定义：\n```c++\nchar *search( char *s, char *t );\n```\n函数`search`在字符串`s`中查找子串`t`，返回子串t在`s`中的首地址。若未找到，则返回NULL。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n#define MAXS 30\n\nchar *search(char *s, char *t);\nvoid ReadString( char s[] ); /* 裁判提供，细节不表 */\n\nint main()\n{\n    char s[MAXS], t[MAXS], *pos;\n    \n    ReadString(s);\n    ReadString(t);\n    pos = search(s, t);\n    if ( pos != NULL )\n        printf(\"%d\\n\", pos - s);\n    else\n        printf(\"-1\\n\");\n\n    return 0;\n}\n\n/* 你的代码将被嵌在这里 */\n```\n\n### 输入样例1：\n```in\nThe C Programming Language\nram\n\n```\n\n### 输出样例1：\n```out\n10\n```\n\n### 输入样例2：\n```in\nThe C Programming Language\nbored\n\n```\n\n### 输出样例2：\n```out\n-1\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "char *search( char *s, char *t ){\n    char *p1=s,*p2=s,*p3=t;\n    while(*p1!='\\0'){\n        while(*p2==*p3 && *p2!='\\0' && *p3!='\\0'){\n            p2++,p3++;\n        }\n        if(*p3=='\\0')return p1;\n        p3 = t;\n        p1++;\n        p2 = p1;\n    }\n    return NULL;\n}"
+    }
+  ]
+}
