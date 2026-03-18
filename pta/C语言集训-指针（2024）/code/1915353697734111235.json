@@ -1,0 +1,10 @@
+{
+  "title": "万能的排序函数",
+  "description": "# 万能的排序函数\n有n个整数，需要对他们进行各种排序：升序排序、降序排序、按个位数升序排序、按十位数降序排序，为了提高代码的重用性，可以用指向函数的指针作排序函数的参数。<br>\n程序输入n+2个整数：<br>\n第一行是整数n，表示后面有n个整数需要排序<br>\n第二行是待排序的n个整数<br>\n第三行是排序需求，分别是1-4，依次表示升序排序、降序排序、按个位数升序排序、按十位数降序排序<br>\n程序的输出是排好序的n个整数，两个整数之间用空格隔开\n\n### 函数接口定义：\n需要实现以下函数：\n```c++\nvoid sort(int *p, int (*compare)(int a,int b), int N)；\nint  Descending(int a, int b)；\nint bit1_Des(int a, int b)；\n```\n\n其中 `p` 是数据的首地址， `N` 是需要排序的数据个数， `compare` 是指向函数的指针。`sort`函数用选择法进行排序\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\nvoid sort(int *p, int (*compare)(int a,int b), int N)；\n\nint  Ascending(int a, int b);\nint  Descending(int a, int b);\nint bit0_Asc(int a, int b);\nint bit1_Des(int a, int b);\n\nint main()\n{  int n=10,k;\n   int *s,*p;\n   int (*fun)(int,int);\n   scanf(\"%d\",&n);\n   p=(int*)malloc(n*sizeof(int));\n   for(s=p; s<p+n; s++)\n    scanf(\"%d\",s);\n   scanf(\"%d\",&k);\n   switch(k)\n   {\n       case 1:fun=Ascending; break;\n       case 2:fun=Descending; break;\n       case 3:fun=bit0_Asc; break;\n       case 4:fun=bit1_Des; break;\n   }\n   sort(p,fun,n);\n   for(s=p; s<p+n-1; s++)\n    printf(\"%d \",*s);\n   printf(\"%d\\n\",*s);\n   return 0;\n}\n\nint  Ascending(int a, int b)\n{ return a>b;\n}\nint bit0_Asc(int a, int b)\n{\n    return a%10>b%10;\n}\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n```in\n11\n886 461 856 581 514 272 197 182 564 121 894\n3\n```\n\n### 输出样例：\n```out\n461 581 121 272 182 514 564 894 856 886 197\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdlib.h>\n\nint  Descending(int a, int b){\n    return a < b; \n}\n\nint bit1_Des(int a, int b){\n    return a/10%10 < b/10%10;\n}\n\nvoid sort(int *p, int (*compare)(int a,int b), int N){\n    int i,j,k,t;\n    for(i=0;i<N-1;i++){\n        k = i;\n        for(j = i+1;j < N;j++){\n            if((*compare)(*(p+k),*(p+j))) k = j;\n        }\n        if(k!=i){\n            t = *(p+i);\n            *(p+i) = *(p+k);\n            *(p+k) = t;\n        }\n    }\n}"
+    }
+  ]
+}

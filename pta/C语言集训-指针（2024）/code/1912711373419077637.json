@@ -1,0 +1,10 @@
+{
+  "title": "字符定位（最后一次找到的字符）",
+  "description": "# 字符定位（最后一次找到的字符）\n本题要求定义一个函数，在字符串中查找字符，并定位在最后一次找到的位置。\n\n### 函数接口定义：\n```c++\nchar * match(char *s, char ch);\n```\n\n其中s是字符串首地址，ch是要查找的字符。要求函数在字符串s中查找字符ch，如果找到，返回最后一次找到的该字符在字符串中的位置（地址）；否则，返回空指针NULL。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h> \nchar *match(char *s, char ch); \n\nint main(void )\n{\n    char ch, str[80], *p = NULL;\n\n    scanf(\"%s\", str);\n    getchar();         \t\t/* 跳过输入字符串和输入字符之间的分隔符 */\n    ch = getchar();  \t\t/* 输入一个字符 */\n    p = match(str, ch); \t/* 调用函数match() */\n    if( p != NULL ){    \t/* 找到字符ch */\n        printf(\"%s\\n\", p);\n    }else{ \n        printf(\"Not Found.\\n\");\n    }\n\n    return 0;\n}\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例1：\n```in\nprogram\nr\n```\n\n### 输出样例1：\n```out\nram\n```\n\n### 输入样例2：\n```in\nprogram\nx\n```\n\n### 输出样例2：\n```out\nNot Found.\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "char * match(char *s, char ch){\n    char *p = s;\n    while(*p!='\\0')p++;\n    p--;\n    while(*p!=ch&&p>=s)p--;\n    if(p>=s)return p;\n    return NULL;\n}"
+    }
+  ]
+}

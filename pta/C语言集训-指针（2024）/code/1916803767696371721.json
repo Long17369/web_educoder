@@ -1,0 +1,10 @@
+{
+  "title": "解密英文藏头诗",
+  "description": "# 解密英文藏头诗\n本题要求编写一个解密英文藏头诗的程序。建议使用动态内存分配方法处理字符串的输入。\n\n### 输入格式:\n\n输入为一首英文藏头诗，每句一行，小于20行，每行不超过80个字符，以#作为藏头诗的输入结束标志。\n\n### 输出格式:\n\n取出每句的第一个字符，连接在一起形成一个字符串并输出。\n\n### 输入样例:\n\n```in\nI come into a dream\nLeaves fall down but spring\nover a lake birds flying\nvillage have its nice morning\neverywhere can feel happiness\nYears have never been\nowners don't need anything\nuntil the sun bring another wind\n#\n```\n\n### 输出样例:\n\n```out\nILoveYou\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nint p(){\n    char str[100];\n    fgets(str,100,stdin);\n    if(str[0]=='#')return 0;\n    putchar(str[0]);\n    return 1;\n}\n\nint main(){\n    while(p());\n}"
+    }
+  ]
+}

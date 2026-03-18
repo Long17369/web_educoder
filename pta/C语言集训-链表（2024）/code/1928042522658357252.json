@@ -1,0 +1,10 @@
+{
+  "title": "链表分区",
+  "description": "# 链表分区\n本题要求实现一个函数，将给定的整数链表，按指定的值分成前后两部分，前边的比指定的值小，后边的指定的值不小，且保持各组数据在原链表中的相对位置不变。\n### 链表结点结构：\n```c\nstruct ListNode{\n    int data;\n    struct ListNode *next;\n};\n```\n\n### 函数接口定义：\n```c\nstruct ListNode* partition(struct ListNode* head, int x);\n```\n\n### 输入样例：\n第一行两个整数：链表中整数个数及指定整数，第二行是空格分隔的若干个整数。\n链表构造与显示由测试程序完成，你只需要将链表进行分区（分成小和不小两部分，返回首地址）。\n```in\n8 5\n5 8 9 3 1 6 8 0\n```\n### 输出样例：\n分区后的新链表值。你只需要进行分区，输出由测试程序完成。\n\n```out\n{3}{1}{0}{5}{8}{9}{6}{8}\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "typedef struct ListNode Node;\n\nNode* newNode(){\n    Node* p = (Node*)malloc(sizeof(Node));\n    p->next = NULL;\n    return p;\n}\n\nNode* partition(Node* head, int x){\n    Node* h = newNode();\n    Node* l = newNode();\n    Node* p = head, * ph = h, * pl = l;\n    while (p != NULL) {\n        if (p->data < x) {\n            ph->next = p;\n            ph = p;\n        }\n        else {\n            pl->next = p;\n            pl = p;\n        }\n        p = p->next;\n    }\n    pl->next = NULL;\n    ph->next = l->next;\n    return h->next;\n}"
+    }
+  ]
+}

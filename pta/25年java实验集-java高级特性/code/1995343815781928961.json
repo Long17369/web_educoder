@@ -1,0 +1,10 @@
+{
+  "title": "计算n天后的日期",
+  "description": "# 计算n天后的日期\n输入一个日期date1（包括年、月、日）和天数n，计算date1加上n天的日期date2，将日期date2格式化成XXXX年XX月XX日的格式并输出。\n\n### 输入格式:\n\n输入两行：\n\n年  月  日\n\n天数\n\n### 输出格式:\n\n按XXXX年XX月XX日的格式输出date2。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n2023 10 21\n15\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n2023年11月05日\n```\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        MyDate d = new MyDate(sc.nextInt(), sc.nextInt(), sc.nextInt());\n        d.addDays(sc.nextInt());\n        sc.close();\n        System.out.println(d);\n    }\n}\n\nclass MyDate {\n    private int year;\n    private int month;\n    private int day;\n    private static final int[] DAYS = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };\n\n    public MyDate(int year, int month, int day) {\n        this.year = year;\n        this.month = month;\n        this.day = day;\n    }\n\n    public void addDays(int days) {\n        this.day += days;\n        while (this.day > getDaysInMonth(this.year, this.month)) {\n            this.day -= getDaysInMonth(this.year, this.month);\n            this.month++;\n            if (this.month > 12) {\n                this.month = 1;\n                this.year++;\n            }\n        }\n    }\n\n    private int getDaysInMonth(int year, int month) {\n        if (month == 2 && isLeapYear(year)) {\n            return 29;\n        }\n        return DAYS[month];\n    }\n\n    private boolean isLeapYear(int year) {\n        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);\n    }\n\n    @Override\n    public String toString() {\n        return String.format(\"%04d年%02d月%02d日\", year, month, day);\n    }\n}"
+    }
+  ]
+}

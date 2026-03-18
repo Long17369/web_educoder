@@ -1,0 +1,10 @@
+{
+  "title": "螺旋方阵(二维数组存储)",
+  "description": "# 螺旋方阵(二维数组存储)\n输出螺旋方阵，采用二维数组存储。螺旋方阵将从1开始的自然数由方阵的最外圈向内螺旋方式地顺序排列。例如，4阶螺旋方阵有以下两种排列方式，方向不同。\n\n### 输入格式:\n\n螺旋方阵的阶数\n\n### 输出格式:\n\n   1       2      3       4\n\n 12     13    14      5\n\n 11     16    15      6\n\n 10       9      8      7\n\n### 输入样例:\n\n```in\n4\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n   1   2   3   4\n  12  13  14   5\n  11  16  15   6\n  10   9   8   7\n```\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int n = scanner.nextInt();\n        int[][] matrix = new int[n][n];\n        int top = 0, bottom = n - 1, left = 0, right = n - 1;\n        int num = 1;\n        while (num <= n * n) {\n            for (int i = left; i <= right; i++) {\n                matrix[top][i] = num++;\n            }\n            top++;\n            for (int i = top; i <= bottom; i++) {\n                matrix[i][right] = num++;\n            }\n            right--;\n            if (top <= bottom) {\n                for (int i = right; i >= left; i--) {\n                    matrix[bottom][i] = num++;\n                }\n                bottom--;\n            }\n            if (left <= right) {\n                for (int i = bottom; i >= top; i--) {\n                    matrix[i][left] = num++;\n                }\n                left++;\n            }\n        }\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                System.out.printf(\" %3d\", matrix[i][j]);\n            }\n            System.out.println();\n        }\n        scanner.close();\n    }\n}"
+    }
+  ]
+}

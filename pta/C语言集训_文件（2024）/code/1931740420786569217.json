@@ -1,0 +1,10 @@
+{
+  "title": "写字母",
+  "description": "# 写字母\n请编写函数，将大写字母写入文件中。\n\n#### 函数原型\n\n```c\nvoid WriteLetter(FILE *f, int n);\n```\n\n说明：参数 f 为文件指针，n 为字母数目(1 ≤ n ≤ 26)。函数将前 n 个大写英文字母写入 f 所指示的文件中。\n\n#### 裁判程序\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\nvoid WriteLetter(FILE *f, int n);\n\nint main()\n{\n    FILE *f;\n    int n;\n    f = fopen(\"Letter.txt\", \"w\");\n    if (!f)\n    {\n        puts(\"文件无法打开!\");\n        exit(1);\n    }\n\n    scanf(\"%d\", &n);\n    WriteLetter(f, n);\n\n    if (fclose(f))\n    {\n        puts(\"文件无法关闭!\");\n        exit(1);\n    }\n    puts(\"文件保存成功!\");\n    return 0;\n}\n\n/* 你提交的代码将被嵌在这里 */\n```\n\n#### 样例输入\n\n```in\n3\n```\n\n#### 输出样例\n\n```\n文件保存成功!\n```\n\n打开“Letter.txt”文件，查看文件内容：\n\n*Letter.txt*\n\n```out\nABC\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void WriteLetter(FILE *f, int n){\n    char ch = 'A';\n    for (int i = 0; i < n; i++, ch++){\n        fputc(ch, f);\n    }\n}"
+    }
+  ]
+}

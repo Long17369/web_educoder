@@ -1,0 +1,10 @@
+{
+  "title": "容器-HashMap-排序",
+  "description": "# 容器-HashMap-排序\n输入多个学生的成绩信息，包括：学号、姓名、成绩。\n\n学号是每个学生的唯一识别号，互不相同。\n\n姓名可能会存在重复。\n\n要求：使用HashMap存储学生信息。<br>\n\n### 输入格式:\n\n输入多个学生的成绩信息，每个学生的成绩信息格式：学号+英文空格+姓名+英文空格+成绩\n\n以“end”为输入结束标志\n\n### 输出格式:\n\n按学号从大到小的顺序输出所有学生信息，每个学生信息的输出格式：学号+英文空格+姓名+英文空格+成绩\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n20201124 张少军 83\n20201136 李四 78\n20201118 郑觉先 80\nend\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n20201136 李四 78\n20201124 张少军 83\n20201118 郑觉先 80\n```\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, Student> studentMap = new HashMap<>();\n        List<String> ids = new ArrayList<>();\n        Scanner sc = new Scanner(System.in);\n        String id = sc.next();\n        while (!id.equals(\"end\")) {\n            ids.add(id);\n            String name = sc.next();\n            int score = sc.nextInt();\n            Student student = new Student(id, name, score);\n            studentMap.put(id, student);\n            id = sc.next();\n        }\n        sc.close();\n        ids.sort((a, b) -> b.compareTo(a));\n        for (String ID : ids) {\n            Student student = studentMap.get(ID);\n            System.out.println(student.id + \" \" + student.name + \" \" + student.score);\n        }\n    }\n}\n\nclass Student {\n    String id;\n    String name;\n    int score;\n\n    public Student(String id, String name, int score) {\n        this.id = id;\n        this.name = name;\n        this.score = score;\n    }\n}"
+    }
+  ]
+}

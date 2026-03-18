@@ -1,0 +1,10 @@
+{
+  "title": "输出学生成绩",
+  "description": "# 输出学生成绩\n本题要求编写程序，根据输入学生的成绩，统计并输出学生的平均成绩、最高成绩和最低成绩。建议使用动态内存分配来实现。\n\n### 输入格式：\n\n输入第一行首先给出一个正整数N，表示学生的个数。接下来一行给出N个学生的成绩，数字间以空格分隔。\n\n### 输出格式：\n\n按照以下格式输出：\n```\naverage = 平均成绩\nmax = 最高成绩\nmin = 最低成绩\n```\n结果均保留两位小数。\n\n### 输入样例：\n```in\n3\n85 90 95\n```\n\n### 输出样例：\n```out\naverage = 90.00\nmax = 95.00\nmin = 85.00\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n#include<stdlib.h>\n\nint main(){\n    int N;\n    scanf(\"%d\",&N);\n    int *a = (int*)malloc(sizeof(int)*N);\n    for(int i=0;i<N;i++){\n        scanf(\"%d\",a+i);\n    }\n    int*min=a,*max=a;\n    int sum = 0;\n    for(int*p=a+N-1;p>=a;p--){\n        if(*p>*max)max=p;\n        if(*p<*min)min=p;\n        sum+=*p;\n    }\n    printf(\"average = %.2f\\n\",(float)sum/N);\n    printf(\"max = %.2f\\n\",(float)*max);\n    printf(\"min = %.2f\",(float)*min);\n    return 0;\n}"
+    }
+  ]
+}

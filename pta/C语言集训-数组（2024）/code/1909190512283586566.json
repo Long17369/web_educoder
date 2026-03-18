@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "本题要求编写程序，针对输入的N个字符串，输出其中最长的字符串。\n\n### 输入格式：\n\n输入第一行给出正整数N；随后N行，每行给出一个长度小于80的非空字符串，其中不会出现换行符，空格，制表符。\n\n### 输出格式：\n\n在一行中用以下格式输出最长的字符串：\n```\nThe longest is: 最长的字符串\n```\n如果字符串的长度相同，则输出先输入的字符串。\n\n### 输入样例：\n```in\n5\nli\nwang\nzhang\njin\nxiang\n```\n\n### 输出样例：\n```out\nThe longest is: zhang\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n#include<string.h>\n\nint main(){\n    int n;\n    scanf(\"%d\",&n);\n    char* l_str;\n    int max_len = 0;\n    char*str[n];\n    while(n--){\n        str[n] = (char*)malloc(85*sizeof(char));\n        scanf(\"%s\",str[n]);\n        if(strlen(str[n])>max_len){\n            l_str = str[n];\n            max_len = strlen(str[n]);\n        }\n    }\n    printf(\"The longest is: %s\",l_str);\n}"
+    }
+  ]
+}

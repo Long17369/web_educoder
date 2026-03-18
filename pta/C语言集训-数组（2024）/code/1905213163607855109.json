@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "#### 任务描述\n编程读入10个整数存入数组中，正序输出后，将数组元素逆序重置后再输出。\n#### 输入样例:\n```in\n42  75  29  66  79  55  53  43  27  41\n```\n#### 输出样例:\n```out\n42,75,29,66,79,55,53,43,27,41\n41,27,43,53,55,79,66,29,75,42\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nvoid putarr(int a[],int size){\n    for(int i=0;i<size;i++){\n        if(i)putchar(',');\n        printf(\"%d\",a[i]);\n    }\n}\n\nvoid reverse(int a[], int size){\n    int l=0,r=size-1;\n    while(l<r){\n        a[l]^=a[r];\n        a[r]^=a[l];\n        a[l]^=a[r];\n        l++;r--;\n    }\n}\n\nint main(){\n    int a[10];\n    for(int i=0;i<10;i++){\n        scanf(\"%d\",a+i);\n    }\n    putarr(a,10);\n    reverse(a,10);\n    putchar('\\n');\n    putarr(a,10);\n    return 0;\n}"
+    }
+  ]
+}

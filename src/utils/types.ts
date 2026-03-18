@@ -9,3 +9,15 @@ export interface ProblemSetData {
   id: string
   content: ProblemItem[]
 }
+
+export interface ProblemSourceFile {
+  filename?: string
+  language?: string
+  code: string
+}
+
+export interface ProblemPageData {
+  title?: string
+  description: string
+  files: ProblemSourceFile[]
+}

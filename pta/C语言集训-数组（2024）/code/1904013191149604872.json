@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "### 任务描述\n给定一个只包含小写字母的字符串，请你找到第一个仅出现一次的字符。如果没有，输出no。\n### 输入格式:\n一个字符串，长度小于100000。\n### 输出格式:\n输出第一个仅出现一次的字符，若没有则输出no。\n### 输入样例:\n```in\nabcabd\n```\n### 输出样例:\n```out\nc\n```\n### 题目来源\n注：该题目选自OpenJudge网站，在线网址：http://noi.openjudge.cn/ch0107/02/\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nint main(){\n    char str[100050];\n    scanf(\"%s\",str);\n    int len = strlen(str);\n    int cnt[26];\n    for(int i=0;i<len;i++){\n        cnt[str[i]-'a']++;\n    }\n    for(int i=0;i<len;i++){\n        if(cnt[str[i]-'a']==1){\n            putchar(str[i]);\n            return 0;\n        }\n    }\n    puts(\"no\");\n    return 0;\n}"
+    }
+  ]
+}

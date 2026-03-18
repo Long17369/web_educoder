@@ -1,0 +1,10 @@
+{
+  "title": "利用“选择排序算法“对结构体数组进行排序",
+  "description": "# 利用“选择排序算法“对结构体数组进行排序\n本题：补充函数 sortByChoose（）的剩余部分，其要求是利用选择排序算法根据学生成绩（score)实现对结构体数组元素降序排序。\n\n### 函数接口定义：\n```c++\nvoid sortByChoose(struct Student *pData,int n)；\n```\n\n### 裁判测试程序样例：\n```c++\n#include<stdio.h>\n#include<stdlib.h>\n#define N 10\nstruct Student\n{\n\tint num;\n\tint score;\n};\t\n\nvoid sortByChoose(struct Student *pData,int n);\n\nint main(void)\n{\t\n\tstruct Student data[10],*p;\n\tint i;\n\n\tfor(p=data,i=0;i<N;i++)\n\t{\n\t\tscanf(\"%d %d\",&p->num,&p->score);\n\t\tp++;\n\t}\n\tsortByChoose(data,N);\n\tfor (p=data,i=0;i<N;i++)\n\t{\n\t\tprintf(\"%2d-%-5d\", p->num, p->score);\n\t\tp++;\n\t}\n\n\treturn 0;\n}\n\nvoid sortByChoose(struct Student *pData,int n)\n{\n\tstruct Student *p1,*p2,*p;\n\tint num, score,i,j;\n\tfor(p1=pData;p1<pData+n-1;p1++) \n\t{\n\t/* 请在这里填写答案 */\n   \t}\n}\n```\n\n### 输入样例：\n\n```in\n29 90\n15 80\n87 55\n65 84\n35 80\n33 55\n44 79\n99 80\n89 80\n41 55\n```\n\n### 输出样例：\n\n```out\n29-90   65-84   15-80   35-80   99-80   89-80   44-79   87-55   33-55   41-55\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "\n        score = p1->score;\n        p = p1;\n        for(p2=p1;p2<pData+n;p2++){\n            if(p2->score > score){\n                score = p2->score;\n                p = p2;\n            }\n        }\n        if(p != p1){\n            struct Student tmp = *p1;\n            *p1 = *p;\n            *p = tmp;\n        }"
+    }
+  ]
+}

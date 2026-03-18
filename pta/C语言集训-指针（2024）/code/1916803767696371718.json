@@ -1,0 +1,10 @@
+{
+  "title": "整理药名",
+  "description": "# 整理药名\n### 问题描述\n医生在书写药品名的时候经常不注意大小写，格式比较混乱。现要求你写一个程序将医生书写混乱的药品名整理成统一规范的格式，即药品名的第一个字符如果是字母要大写，其他字母小写。如将ASPIRIN、aspirin整理成Aspirin。\n### 输入描述\n第一行一个数字n，表示有n个药品名要整理，n不超过100。\n接下来n行，每行一个单词，长度不超过20，表示医生手书的药品名。药品名由字母、数字和-组成。\n### 输出描述\nn行，每行一个单词，对应输入的药品名的规范写法。\n### 样例输入\n```in\n4\nAspiRin\ncisapride\n2-PENICILLIN\nCefradine-6\n```\n### 样例输出\n```out\nAspirin\nCisapride\n2-penicillin\nCefradine-6\n```\n### 题目来源\nhttp://noi.openjudge.cn/ch0107/15/\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nvoid fo(char *s){\n    if('a' <= *s && *s <= 'z')*s += 'A'-'a';\n    s++;\n    while(*s!='\\0'){\n        if('A' <= *s && *s <= 'Z')*s-='A'-'a';\n        s++;\n    }\n}\n\nint main(){\n    int T;\n    char str[105];\n    scanf(\"%d\",&T);\n    while(T--){\n        scanf(\"%s\",str);\n        fo(str);\n        printf(\"%s\\n\",str);\n    }\n}"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "使用函数实现字符串部分复制",
+  "description": "# 使用函数实现字符串部分复制\n本题要求编写函数，将输入字符串$$t$$中从第$$m$$个字符开始的全部字符复制到字符串$$s$$中。\n\n### 函数接口定义：\n```c++\nvoid strmcpy( char *t, int m, char *s );\n```\n函数`strmcpy`将输入字符串`char *t`中从第`m`个字符开始的全部字符复制到字符串`char *s`中。若`m`超过输入字符串的长度，则结果字符串应为空串。\n\n### 裁判测试程序样例：\n```c++\n#include <stdio.h>\n#define MAXN 20\n\nvoid strmcpy( char *t, int m, char *s );\nvoid ReadString( char s[] ); /* 由裁判实现，略去不表 */\n\nint main()\n{\n    char t[MAXN], s[MAXN];\n    int m;\n    \n    scanf(\"%d\\n\", &m);\n    ReadString(t);\n    strmcpy( t, m, s );\n    printf(\"%s\\n\", s);\n\n    return 0;\n}\n\n/* 你的代码将被嵌在这里 */\n```\n\n### 输入样例：\n```in\n7\nhappy new year\n\n```\n\n### 输出样例：\n```out\nnew year\n\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "void strmcpy( char *t, int m, char *s ){\n    char *p = t+m-1;\n    while(*t != '\\0')t++;\n    if(t<p){\n        *s='\\0';\n    }\n    while(p<=t){\n        *(s++) = *(p++);\n    }\n}"
+    }
+  ]
+}

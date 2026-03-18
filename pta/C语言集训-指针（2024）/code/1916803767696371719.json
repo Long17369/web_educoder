@@ -1,0 +1,10 @@
+{
+  "title": "删除字符串中指定字母",
+  "description": "# 删除字符串中指定字母\n请使用指针的方法编写程序，程序的功能是从键盘输入一个字符串(字符串长度小于100)，删除其中的字母a后输出。例如，输入字符串abcaca，输出bcc。\n\n### 输入样例:\n\n```in\nabcaca\n```\n\n### 输出样例:\n\n```out\nbcc\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nint main(){\n    char ch;\n    while((ch = getchar())!=-1){\n        if(ch=='a')continue;\n        putchar(ch);\n    }\n}"
+    }
+  ]
+}

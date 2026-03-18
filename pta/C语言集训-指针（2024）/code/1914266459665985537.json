@@ -1,0 +1,10 @@
+{
+  "title": "有3个学生，每个学生有4门课程的成绩，根据学号求学生全部成绩",
+  "description": "# 有3个学生，每个学生有4门课程的成绩，根据学号求学生全部成绩\n有3个学生，每个学生有4门课程的成绩。要求用户输入学生序号以后，能输出该学生的全部成绩。\n\n用指针函数来实现，学号分别为0、1、2 ，成绩则为{ 60,70,80,90 }, { 56,89,67,88 }, { 34,78,90,66 }。如果输入0，就是要求学号为0的学生的成绩，这样应该把数组{60，70，80，90}的首元素地址返回。\n\n### 函数接口定义：\n```c++\nfloat  *search(float(*pointer)[4], int n);\n```\n\n其中 `pointer` 和 `n` 都是用户传入的参数。 `pointer` 指向3行4列数组的首行，`n`为学号。 函数返回第n个学生所在行的首元素地址。\n\n### 裁判测试程序样例：\n```c++\n在这里给出函数被调用进行测试的例子。例如：\n#include <stdio.h>\nfloat  *search(float(*pointer)[4], int n);\nint main() {\n\tfloat score[][4] = { {60,70,80,90},{56,89,67,88},{34,78,90,66} };\n\t\n\tfloat  *p;\n\tint i, k;\n\tscanf(\"%d\", &k);\n\tp = search(score, k);\n\tfor (i = 0; i < 4; i++)\n\t\tprintf(\"%.2f \", *(p + i));\n\tprintf(\"\\n\");\n\treturn 0;\n}\n\n/* 请在这里填写答案 */\n```\n\n### 输入样例：\n\n在这里给出一组输入。例如：\n\n```in\n0\n```\n\n### 输出样例：\n\n在这里给出相应的输出。例如：\n\n```out\n60.00 70.00 80.00 90.00 \n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "float  *search(float(*pointer)[4], int n){\n    return pointer[n];\n}"
+    }
+  ]
+}

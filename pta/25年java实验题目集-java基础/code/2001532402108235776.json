@@ -1,0 +1,10 @@
+{
+  "title": "给出一个月的总天数",
+  "description": "# 给出一个月的总天数\n编写程序，提示用户输入月份和年份，然后显示这个月的天数。\n\n### 输入格式:\n\n输入任意符合范围（1月~12月）的月份和（1900年~9999年）年份，且两个值之间空格分隔。\n\n### 输出格式:\n\n输出给定年份和月份的天数。\n\n### 输入样例:\n\n```in\n2 2000\n```\n\n### 输出样例:\n\n```out\n29\n```\n\n",
+  "files": [
+    {
+      "language": "java",
+      "code": "import java.util.Scanner;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        int month = scanner.nextInt();\n        int year = scanner.nextInt();\n\n        System.out.println(getDaysInMonth(month, year));\n    }\n\n    public static boolean isLeapYear(int year) {\n        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {\n            return true;\n        }\n        return false;\n    }\n\n    public static int getDaysInMonth(int month, int year) {\n        switch (month) {\n            case 1:\n            case 3:\n            case 5:\n            case 7:\n            case 8:\n            case 10:\n            case 12:\n                return 31;\n            case 4:\n            case 6:\n            case 9:\n            case 11:\n                return 30;\n            case 2:\n                if (isLeapYear(year)) {\n                    return 29;\n                } else {\n                    return 28;\n                }\n            default:\n                return 0;\n        }\n    }\n}"
+    }
+  ]
+}

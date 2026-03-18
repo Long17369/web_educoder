@@ -15,6 +15,6 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function goType(type: string) {
-  router.push({ name: 'content', query: { type } })
+  router.push({ name: 'content', params: { type } })
 }
 </script>

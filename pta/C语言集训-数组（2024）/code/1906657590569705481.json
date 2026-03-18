@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "养牛场有n间牛棚，从1到n顺序编号，每间牛棚前面都安装了一盏灯，目前已经点亮了K盏灯。为了保证夜间照明，要求每个连续的r间牛棚至少有两盏灯被点亮，则至少还要点亮多少盏灯？\n### 输入格式:\n\n输入第一行为三个整数n,k,r(2=<n<=100000,0=<k<=n,0=<r<=n)，分别代表牛棚个数，已经点亮的灯的盏数，题目要求的连续牛棚间数；随后k行，每行一个整数，代表点亮的k盏灯所处的牛棚编号。\n\n### 输出格式:\n\n输出为了保证连续的r间牛棚至少有两盏灯被点亮，至少还需要点亮的灯的盏数。\n\n### 输入样例:\n\n\n\n```in\n15 5 4\n2\n5\n7\n10\n13\n\n```\n\n### 输出样例:\n\n\n\n```out\n3\n```\n\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n#include<stdlib.h>\n#include<stdbool.h>\n\nint n, k, r;\nint x, cnt, ans, c[100010];\nint main() {\n    scanf(\"%d %d %d\", &n, &k, &r);\n    for (int i = 1;i <= k;i++) {\n        scanf(\"%d\", &x);\n        c[x] = 1;\n    }\n    for (int i = 1;i <= r;i++) {\n        cnt += c[i];\n    }\n    for (int i = r; i >= 1 && cnt < 2;i--) {\n        if (!c[i]) {\n            c[i] = 1;\n            cnt += c[i];\n            ans++;\n        }\n    }\n    for (int i = 2; i <= n - r + 1; i++) {\n        cnt += c[i + r - 1];\n        cnt -= c[i - 1];\n        for (int j = i + r - 1; j >= 1 && cnt < 2; j--) {\n            if (!c[j]) {\n                c[j] = 1;\n                cnt += c[j];\n                ans++;\n            }\n        }\n    }\n    printf(\"%d\",ans);\n    return 0;\n}"
+    }
+  ]
+}

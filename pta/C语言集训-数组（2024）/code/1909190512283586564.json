@@ -1,0 +1,10 @@
+{
+  "title": "",
+  "description": "本题要求提取一个字符串中的所有数字字符（'0'……'9'），将其转换为一个整数输出。\n\n### 输入格式：\n\n输入在一行中给出一个不超过80个字符且以回车结束的字符串。\n\n### 输出格式：\n\n在一行中输出转换后的整数。题目保证输出不超过长整型范围。\n\n### 输入样例：\n```in\nfree82jeep5\n```\n\n### 输出样例：\n```out\n825\n```\n",
+  "files": [
+    {
+      "language": "c",
+      "code": "#include<stdio.h>\n\nint main(){\n    long long res = 0;\n    char ch;\n    while((ch=getchar())!=-1){\n        if('0'<=ch && ch<='9'){\n            res*=10;\n            res+=ch-'0';\n        }\n    }\n    printf(\"%lld\",res);\n}"
+    }
+  ]
+}
