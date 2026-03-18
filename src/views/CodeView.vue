@@ -5,23 +5,23 @@
     <p v-if="error" class="error">{{ error }}</p>
     <p v-else-if="loading">加载中...</p>
 
-  <div v-else class="code-layout">
-    <div>
-      <h2>代码</h2>
-      <div v-if="codeFiles.length === 0">暂无源码</div>
-      <div v-else class="code-files">
-        <div v-for="file in codeFiles" :key="file.key" class="code-file">
-          <div class="code-file-header">
-            <span class="code-file-name">{{ file.filename }}</span>
-            <span class="code-file-language">{{ file.language }}</span>
+    <div v-else class="code-layout">
+      <div>
+        <h2>代码</h2>
+        <div v-if="codeFiles.length === 0">暂无源码</div>
+        <div v-else class="code-files">
+          <div v-for="file in codeFiles" :key="file.key" class="code-file">
+            <div class="code-file-header">
+              <span class="code-file-name">{{ file.filename }}</span>
+              <span class="code-file-language">{{ file.language }}</span>
+            </div>
+            <pre><code class="hljs" v-html="file.highlighted"></code></pre>
           </div>
-          <pre><code class="hljs" v-html="file.highlighted"></code></pre>
         </div>
       </div>
+      <div class="markdown" v-html="problemHtml"></div>
     </div>
-    <div class="markdown" v-html="problemHtml"></div>
-  </div>
-</section>
+  </section>
 </template>
 
 <script setup lang="ts">
