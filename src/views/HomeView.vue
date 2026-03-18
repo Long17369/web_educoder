@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li>
-      <button type="button" @click="goType('头歌')">头歌</button>
+      <button type="button" @click="goType('educoder')">头歌</button>
     </li>
     <li>
       <button type="button" @click="goType('pta')">PTA</button>

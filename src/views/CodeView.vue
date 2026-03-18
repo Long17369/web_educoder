@@ -159,7 +159,7 @@ async function loadCodePage() {
   error.value = ''
 
   try {
-    const res = await fetch(`/${type}/${problems}/code/${problem}.json`)
+    const res = await fetch(`/pages/${type}/${problems}/code/${problem}.json`)
     if (!res.ok) throw new Error('题目内容不存在')
     const data = (await res.json()) as ProblemPageData
     problemHtml.value = renderMarkdown(

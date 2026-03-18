@@ -44,12 +44,12 @@ async function loadData() {
 
   try {
     if (!problems) {
-      const res = await fetch(`/${type}/data.json`)
+      const res = await fetch(`/pages/${type}/data.json`)
       if (!res.ok) throw new Error('加载目录失败')
       const data = (await res.json()) as string[]
       items.value = data.map((name) => ({ label: name, id: name }))
     } else {
-      const res = await fetch(`/${type}/${problems}/data.json`)
+      const res = await fetch(`/pages/${type}/${problems}/data.json`)
       if (!res.ok) throw new Error('加载题目失败')
       const data = (await res.json()) as ProblemSetData
       items.value = data.content.map((problem) => ({

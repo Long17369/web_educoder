@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" -- && cp -r pta dist/pta",
+    "build": "run-p type-check \"build-only {@}\" -- && cp -r pages dist/pages",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
