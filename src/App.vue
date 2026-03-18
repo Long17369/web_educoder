@@ -12,7 +12,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 My Web Page</p>
+      <p>&copy; 2026 My Web Page</p>
     </footer>
   </div>
 </template>

@@ -100,6 +100,8 @@ function getLanguageExtension(language?: string) {
       return 'html'
     case 'css':
       return 'css'
+    case 'c':
+      return 'c'
     default:
       return 'txt'
   }

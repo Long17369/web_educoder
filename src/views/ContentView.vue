@@ -5,9 +5,9 @@
     <p v-if="error" class="error">{{ error }}</p>
     <p v-else-if="loading">加载中...</p>
 
-    <ul v-else>
-      <li v-for="item in items" :key="item.id">
-        <button type="button" @click="goNext(item.id)">{{ item.label }}</button>
+    <ul v-else class="content-items">
+      <li v-for="item in items" :key="item.id" @click="goNext(item.id)" class="content-item">
+        {{ item.label }}
       </li>
     </ul>
   </section>

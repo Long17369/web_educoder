@@ -8,3 +8,5 @@ output/*/json
 node_modules/
 dist/
 tmp/
+
+.vite/
