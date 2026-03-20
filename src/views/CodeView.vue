@@ -6,20 +6,28 @@
     <p v-else-if="loading">加载中...</p>
 
     <div v-else class="code-layout">
-      <div>
-        <h2>代码</h2>
-        <div v-if="codeFiles.length === 0">暂无源码</div>
+      <div class="markdown-container">
+        <h2 class="section-title">题目描述</h2>
+        <div class="markdown markdown-body" v-html="problemHtml"></div>
+      </div>
+      <div class="code-container">
+        <h2 class="section-title">代码</h2>
+        <div v-if="codeFiles.length === 0" class="empty-state">暂无源码</div>
         <div v-else class="code-files">
           <div v-for="file in codeFiles" :key="file.key" class="code-file">
             <div class="code-file-header">
               <span class="code-file-name">{{ file.filename }}</span>
-              <span class="code-file-language">{{ file.language }}</span>
+              <div class="code-file-header-right">
+                <span class="code-file-language">{{ file.language }}</span>
+                <button class="copy-btn" @click="copyCode(file)">
+                  {{ file.copied ? '已复制!' : '复制' }}
+                </button>
+              </div>
             </div>
             <pre><code class="hljs" v-html="file.highlighted"></code></pre>
           </div>
         </div>
       </div>
-      <div class="markdown" v-html="problemHtml"></div>
     </div>
   </section>
 </template>
@@ -32,8 +40,12 @@ import javascript from 'highlight.js/lib/languages/javascript'
 import python from 'highlight.js/lib/languages/python'
 import xml from 'highlight.js/lib/languages/xml'
 import { marked } from 'marked'
-import { onMounted, ref, watch } from 'vue'
+import markedKatex from 'marked-katex-extension'
+import { onMounted, ref } from 'vue'
 import type { Problem, ProblemSourceFile } from '@/utils/types'
+
+import 'katex/dist/katex.min.css'
+import 'github-markdown-css/github-markdown-light.css'
 
 interface Prop {
   data: Problem
@@ -57,6 +69,14 @@ marked.setOptions({
   breaks: false,
 })
 
+marked.use(
+  markedKatex({
+    throwOnError: false,
+    displayMode: false,
+    nonStandard: true,
+  }),
+)
+
 const loading = ref(false)
 const error = ref('')
 const problemHtml = ref('')
@@ -66,8 +86,22 @@ const codeFiles = ref<
     filename: string
     language: string
     highlighted: string
+    rawCode: string
+    copied: boolean
   }[]
 >([])
+
+async function copyCode(file: { rawCode: string; copied: boolean }) {
+  try {
+    await navigator.clipboard.writeText(file.rawCode)
+    file.copied = true
+    setTimeout(() => {
+      file.copied = false
+    }, 2000)
+  } catch (err) {
+    console.error('Failed to copy text: ', err)
+  }
+}
 
 function renderMarkdown(md: string) {
   const html = marked.parse(md, { async: false }) as string
@@ -141,21 +175,19 @@ function buildCodeFiles(files: ProblemSourceFile[]) {
       filename,
       language: formatLanguageLabel(file.language),
       highlighted: highlightCode(content, file.language),
+      rawCode: content,
+      copied: false,
     }
   })
 }
 
 async function loadCodePage() {
-  problemHtml.value = renderMarkdown(
-    props.data.description ?? '',
-  )
+  problemHtml.value = renderMarkdown(props.data.description ?? '')
   const files = props.data.content
   codeFiles.value = buildCodeFiles(files)
 }
 
-onMounted(
-  () => {
-    loadCodePage()
-  },
-)
+onMounted(() => {
+  loadCodePage()
+})
 </script>
