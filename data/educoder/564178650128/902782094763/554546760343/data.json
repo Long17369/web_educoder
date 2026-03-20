@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表单元素——disabled 属性",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    难度系数:<br>\n    <!-- ********* Begin ********* -->\n    <p><input type=\"radio\" name=\"degree\"/>简单</p>\n    <p><input type=\"radio\" name=\"degree\"/>中等</p>\n    <p><input type=\"radio\" name=\"degree\" disabled/>困难</p>\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一组单选框，`type`属性值为`radio`，`name`属性值为`degree`，禁用难度系数为**困难**的选项。\n\n要求：对每一个选项使用`<p>`标签进行换行。\n\n效果如下：\n\n难度系数：<br>\n<p><input type=\"radio\" name=\"degree\"/>简单</p>\n<p><input type=\"radio\" name=\"degree\"/>中等</p>\n<p><input type=\"radio\" name=\"degree\" disabled=\"disabled\"/>困难</p>\n\n#### 相关知识 \n\n**`disabled`属性**\n\n在选择选修课时，热门课程很快就会被选完，后面选课的同学就不能选这门课了。这个该怎么实现呢？\n\n这里在多选框里添加`disabled`属性即可，它会禁用该`input`元素，其默认值为`disabled`。\n\n例子如下：\n\n```\n<input type=\"checkbox\" name=\"course\" disabled=\"disabled\">影视鉴赏  <br>\n<input type=\"checkbox\" name=\"course\">中国语言文学<br>\n<input type=\"checkbox\" name=\"course\">心理学\n```\n\n效果如下：\n\n<input type=\"checkbox\" name=\"course\" disabled=\"disabled\">影视鉴赏  <br><input type=\"checkbox\" name=\"course\">中国语言文学<br><input type=\"checkbox\" name=\"course\">心理学\n\n\n需要注意的是：\n\n- 只要有`disabled`属性就会被禁用，不管它的值是什么；\n\n- 不想被禁用，不添加`disabled`属性就可以了。\n\n为了规范书写，一般添加`disabled=\"disabled\"`就可以了。\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一组单选框的创建任务。\n\n####测试说明：\n\n由于测试需要，请在标准格式下加上`/`，如下：\n```\n<input type=\"checkbox\" name=\"course\" disabled=\"disabled\"/>影视鉴赏  <br>\n```\n注意：本地环境下，两种格式都能正确显示。本关是为了方便测评同学们的代码，所以要求写成带`/`的模式。\n\n---\n赶快试一下吧！！！"
+}

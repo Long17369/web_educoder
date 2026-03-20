@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "创建 p 标签",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <!-- ********* Begin ********* -->\n\n<p>我是一个段落</p>\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n本关任务:创建一个`p`标签，文本内容为`我是一个段落`。\n\n实现的效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/207783\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 相关知识 \n\n`p`元素通常用来表示一个段落。\n\n你可以这样创建一个`p`标签，`<p> p标签表示一个段落。</p>`\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成第一个`p`标签的创建。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n\n\n---\n\n赶快试一下吧！！！"
+}

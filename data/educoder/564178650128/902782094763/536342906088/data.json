@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表单元素——提交按钮",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n\n    <label for=\"user\">用户：</label><input type=\"text\" id=\"user\" name=\"user\"/><br>\n    <label for=\"pwd\">密码：</label><input type=\"password\" id=\"pwd\" name=\"password\" style=\"margin-bottom: 10px;\"/><br>\n\n    <!-- ********* Begin ********* -->\n    <input type=\"submit\" value=\"submit\" />\n\n\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一个**提交**按钮，其`value`值为`submit`。\n\n效果如下：\n\n<label for=\"user\">用户：</label><input type=\"text\" id=\"user\" name=\"user\"/><br><label for=\"pwd\">密码：</label><input type=\"password\" id=\"pwd\" name=\"password\" style=\"margin-bottom: 10px;\"/><br><input type=\"submit\" value=\"submit\"/>\n\n#### 相关知识 \n\n你可以使用`<input type=\"submit\"/>`来创建一个提交按钮，用于向服务器端发送数据。\n\n\n例子如下：\n\n```\n<input type=\"submit\" value=\"提交按钮\"/>\n```\n\n效果如下：\n\n<input type=\"submit\" value=\"提交按钮\" style=\"padding: 3px; margin-bottom: 10px;\"/>\n\n因为这里没有提交数据，所以这里没有效果，这里先简单的创建一下提交按钮。\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一个`input`标签的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n---\n赶快试一下吧！！！"
+}

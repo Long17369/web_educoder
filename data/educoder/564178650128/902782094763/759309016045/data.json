@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表单元素——checked属性",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    婚姻状况:<br>\n    <!-- ********* Begin ********* -->\n    <p><input type=\"radio\" name=\"marry\" checked/>未婚</p>\n    <p><input type=\"radio\" name=\"marry\"/>已婚</p>\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一组单选框，`name`属性值为`marry`，默认选中`未婚`。\n\n要求：对每一个选项使用`<p>`标签进行换行。\n\n效果如下：\n\n婚姻状况：<br>\n<p><input type=\"radio\" name=\"marry\" checked=\"checked\"/>未婚</p>\n <p><input type=\"radio\" name=\"marry\"/>已婚</p>\n\n\n#### 相关知识 \n\n**`checked`属性**\n\n在填写兴趣爱好时，男生基本都喜欢篮球，这时就可以在多选框里默认选择篮球，方便信息的填写，不喜欢的可以不选。\n\n这里在需要添加默认选中的多选框里添加`checked`属性即可，其默认值为`checked`。\n\n例子如下：\n\n```\n<input type=\"checkbox\" name=\"hobby\" />足球  <br>\n<input type=\"checkbox\" name=\"hobby\" checked=\"checked\"/>篮球   <br>\n<input type=\"checkbox\" name=\"hobby\"/>乒乓球\n```\n\n效果如下：\n\n<input type=\"checkbox\" name=\"hobby\" />足球  <br><input type=\"checkbox\" name=\"hobby\" checked=\"checked\"/>篮球 <br><input type=\"checkbox\" name=\"hobby\"/>乒乓球\n\n\n需要注意的是：\n\n- 只要有`checked`属性就会被默认选中，不管它的值是什么；\n\n- 不想被默认选中，不添加`checked`属性就可以了。\n\n下面这三种情况都会被选中。\n\n```\n<input type=\"checkbox\" name=\"hobby\" checked=\"checked\"/>足球  <br>\n<input type=\"checkbox\" name=\"hobby\" checked=\"false\"/>篮球   <br>\n<input type=\"checkbox\" name=\"hobby\" checked/>乒乓球\n```\n效果如下：\n\n<input type=\"checkbox\" name=\"hobby\" checked=\"checked\">足球  <br><input type=\"checkbox\" name=\"hobby\" checked=\"false\">篮球   <br><input type=\"checkbox\" name=\"hobby\" checked>乒乓球\n\n为了规范书写，一般添加`checked=\"checked\"`就可以了。\n\n`checked` 属性 与 `<input type=\"checkbox\"/>` 或 `<input type=\"radio\"/>` 一起配合使用。\n\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一组单选框的创建任务并设置单选框默认选择为`未婚`。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n---\n赶快试一下吧！！！"
+}

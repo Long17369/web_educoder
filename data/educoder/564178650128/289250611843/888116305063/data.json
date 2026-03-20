@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表格的基本构成",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <!-- ********* Begin ********* -->\n<table border=\"5\">\n    <tr>\n        <td>姓名</td>\n        <td>语文</td>\n        <td>数学</td>\n    </tr>\n    <tr>\n        <td>李四</td>\n        <td>90</td>\n        <td>95</td>\n    </tr>\n</table>\n\n\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建你的第一个表格，它的边框宽度为`5px`，内容和效果图展示的一样。\n\n实现的效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209297\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 相关知识 \n\n大家都知道，表格由行和列组成，这里我们就用HTML标签写一个表格。\n\n`<table>`标签用来创建表格，`<tr>`标签用来创建行，`<td>`标签用来创建列。这里先创建一个两行两列的表格。代码如下：\n\n```\n<table border=\"2\">\n\t<tr>\n\t\t<td>姓名</td>\n\t\t<td>年龄</td>\n\t</tr>\n\t<tr>\n\t\t<td>张三</td>\n\t\t<td>18</td>\n\t</tr>\n</table>\n\n```\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209162\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n上面`border`属性表示给表格添加边框，它的值`2`表示边框的宽度为`2px`。\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成第一个表格的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n\n\n---\n\n赶快试一下吧！！！"
+}

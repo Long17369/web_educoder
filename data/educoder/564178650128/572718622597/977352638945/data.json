@@ -1,0 +1,17 @@
+{
+    "type": "problem",
+    "title": "确定盒模型元素大小",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <title>盒模型——确定元素大小</title>\n    <style type=\"text/css\">\n        .content-box { \n            width: 160px;\n            height: 80px;\n            padding: 20px;\n            border: 8px solid red;\n            background: yellow;\n            box-sizing: content-box; \n             /* Total width: 160px + (2 * 20px) + (2 * 8px) = 216px\n             Total height: 80px + (2 * 20px) + (2 * 8px) = 136px\n             Content box width: 160px\n             Content box height: 80px */\n        }\n        .border-box { \n            /***************** BEGIN *****************/\n            height:136px;\n            width:216px;\n            /***************** END *****************/\n            padding: 20px;\n            border: 8px solid red;\n            background: yellow;\n             box-sizing: border-box;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"content-box\">Content box</div>\n    <br>\n    <div class=\"border-box\">Border box</div>\n</body>\n</html>\n",
+            "filename": "index2.html",
+            "language": "html"
+        },
+        {
+            "code": "import os,sys\nsys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))\nfrom util2 import *\n\nhtml_content = getPrasedHtml()\nhtml = html_content\ndoc = pq(html)\ntag = input()\n\nresult = 'false'\nif tag == 'body':\n    result = 'body元素设置失败'\n    style = doc(tag).attr('style')\n    if style == 'margin:0; padding:20px; border:10px solid lightsalmon':\n        result = 'body元素设置成功'\nif tag == '.border-box':\n    result = 'border-box元素设置失败'\n    style = doc(tag).attr('style')\n    if style == 'background:yellow; border:8px solid red; box-sizing:border-box; height:136px; padding:20px; width:216px':\n        result = 'border-box元素设置成功'\n\n\ncheckHTMLGrammar()\ncheckCSSGrammar()\n\nprint(result,end=\"\")\n",
+            "filename": "step2.py",
+            "language": "python"
+        }
+    ],
+    "description": "## 确定元素大小\r\n\r\n在 CSS 的默认盒子模型中，当我们指定一个CSS元素的高度与宽度时，只是指定了内容的宽度和高度。一个元素的大小，还包括其外边距、内边距和边框。通过`box-sizing` 属性可以更改计算元素宽度和高度的默认的 CSS 盒子模型。\r\n\r\n#### box-sizing\r\n\r\n`box-sizing` 属性值可以 设置为 `content-box` 或者 `border-box`。\r\n\r\n\t/* 关键字 值 */\r\n\tbox-sizing: content-box;\r\n\tbox-sizing: border-box;\r\n\r\n其分别含义如下：\r\n\r\n#### content-box\r\n\r\n如果设置 `content-box` 的 宽度为 `width`，高度为 `height`，元素实际布局占得宽度为 `Width`，高度为 `Height`。元素布局的实际大小，需要加上`padding`和`border`的大小。\r\n\r\n所以，\r\n\r\n元素布局所占宽度`Width`计算方法为：\r\n\r\n\tWidth = width + padding-left + padding-right + border-left + border-right\r\n\r\n元素布局所占高度`Height`计算方法为:\r\n\r\n\tHeight = height + padding-top + padding-bottom + border-top + border-bottom\r\n\r\n\r\n#### border-box\r\n\r\n如何设置 `border-box` 的 宽度为 `width`，高度为 `height`，元素实际布局占得宽度为 `Width`，高度为 `Height`。元素布局的实际大小和 `border-box` 设置相同。\r\n\r\n所以：\r\n\r\n布局所占宽度 `Width`计算方法为：\r\n\r\n\tWidth = width(包含padding-left + padding-right + border-left + border-right)\r\n\r\n布局所占高度 `Height`计算方法为:\r\n\r\n\tHeight = height(包含padding-top + padding-bottom + border-top + border-bottom)\r\n\r\n修改bix-sizing中width和height属性，使得box-sizing类的元素内容大小与content-sizing的内容大小相同。\r\n\r\n\r\n## 内外边距重叠\r\n\r\n"
+}

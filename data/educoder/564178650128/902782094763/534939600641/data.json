@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表单元素——label 标签",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <!-- ********* Begin ********* -->\n    <p>\n        <label for=\"user\">用户：</label>\n        <input id=\"user\" name=\"user\"/>\n    </p>\n    <p>\n        <label for=\"pwd\">密码：</label>\n        <input type=\"password\" id=\"pwd\" name=\"password\"/>\n    </p>\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：实现当点击`<label>`元素内的文本时，焦点会自动定位到与`<label>`标签绑定的表单元素上，要求如下：\n\n- `<label>`标签的`for`属性值为`user`，创建一个文本框，`name`属性的值为`user`；\n\n- `<label>`标签的`for`属性值为`pwd`，创建一个密码框，`name`属性的值为`password`。\n\n`input`标签的`id`注意要和`label`标签的`for`属性值一致哦。\n\n注： 属性的先后顺序为：`type -- id -- name` 。\n\n\n效果如下：\n\n<label for=\"user\">用户：</label><input type=\"text\" id=\"user\" name=\"user\"/><br>\n\n<label for=\"pwd\">密码：</label><input type=\"password\" id=\"pwd\" name=\"password\"/>\n\n\n#### 相关知识 \n\n`<label>`标签的作用主要是提高用户体验性。当点击`<label>`元素内的文本时，焦点会自动定位到与`<label>`标签绑定的表单元素上。通俗地说，就是点击文本也能选择表单元素。\n\n需要注意的是：`<label>`标签的`for`属性的值要和相应表单元素的`id`的值相同。这样才能把`<label>`标签和表单元素绑定到一起。\n\n例子如下：\n\n```\nQQ空间状态：\n<label for=\"secret\">保密：</label>\t\n<input type=\"radio\" id=\"secret\" name=\"state\"  /> <br>\n<label for=\"open\">公开：</label>\n<input type=\"radio\" id=\"open\" name=\"state\"  />\n```\n\n效果如下：\n\n<div style=\"overflow:hidden; margin-top:-40px;\">\n<div style=\"float: left;\">\n<p>有label标签</p><label for=\"male\">保密：</label><input type=\"radio\" id=\"male\" name=\"sex\" > <br>\n<label for=\"female\">公开：</label><input type=\"radio\" id=\"female\" name=\"sex\" ><br>\n</div>\n\n<div style=\"float: left; margin-left: 60px\">\n<p>没有label标签</p>保密：<input type=\"radio\" name=\"sexi\" > <br>\n公开：<input type=\"radio\" name=\"sexi\" ><br>\n</div>\n</div>\n\n上面列举了有`<label>`标签和没有`<label>`标签的情况。你可以感受一下它们哪种体验性好。\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成本关任务。\n\n\n####测试说明\n\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n---\n赶快试一下吧！！！"
+}

@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表格——<td>标签的colspan属性",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <table border=\"2\" cellspacing=\"0\" width=\"200\">\n    <!-- ********* Begin ********* -->\n\n        <tr>\n            <td>商品</td>\n            <td>数量</td>\n            <td>单价</td>\n        </tr>\n        <tr>\n            <td>短袖</td>\n            <td>70</td>\n            <td>30</td>\n        </tr>\n        <tr>\n            <td>裤子</td>\n            <td>50</td>\n            <td>30</td>\n        </tr>\n        <tr>\n            <td>合计</td>\n            <td colspan=\"2\">3600</td>\n        </tr>\n\n    <!-- ********* End ********* -->\n    </table>\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：结合前几关的知识，完成以下表格的创建任务。\n\n实现的效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209387\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 相关知识\n\n先看一个例子。如下所示：\n\n```\n<table border=\"2\" cellspacing=\"0\" width=\"200\">\n\t<tr>\n\t\t<td>科目</td>\n\t\t<td>科目</td>\n\t\t<td>科目</td>\n\t</tr>\n\t<tr>\n\t    <td>语文</td>\n\t \t<td>数学</td>\n\t\t<td>英语</td>\n\t</tr>\n\t<tr>\n\t    <td>70</td>\n\t \t<td>80</td>\n\t\t<td>75</td>\n\t</tr>\n</table>\n```\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209384\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n很明显，科目是包括语文、数学、英语的，这个在表格中怎么表示呢？\n\n你可以用`<td>`标签的`colspan`属性来实现，它规定了单元格可横跨的**列数**。\n\n代码如下：\n\n```\n<table border=\"2\" cellspacing=\"0\" width=\"200\">\n\t<tr>\n\t\t <td colspan=\"3\">科目 </td>\n\t</tr>\n\t<tr>\n\t    <td>语文</td>\n\t \t<td>数学</td>\n\t\t<td>英语</td>\n\t</tr>\n\t<tr>\n\t    <td>70</td>\n\t \t<td>80</td>\n\t\t<td>75</td>\n\t</tr>\n</table>\n```\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209385\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n这里分析一下代码，第一行第一列的` <td colspan=\"3\">科目</td>`表示科目横跨了`3`列，所以第二列和第三列就不写了，其他的不变。\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一个表格的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n---\n\n赶快试一下吧！！！"
+}

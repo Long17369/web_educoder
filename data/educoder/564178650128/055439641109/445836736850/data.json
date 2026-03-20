@@ -1,0 +1,17 @@
+{
+    "type": "problem",
+    "title": "背景颜色",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n\n<head>\n    <meta charset=\"utf-8\">\n    <title>Hello World</title>\n    <link rel=\"stylesheet\" href=\"step1/CSS/style.css\">\n</head>\n\n<body>\n    <h1>CSS让网页样式更丰富</h1>\n    <p>使用CSS(Cascading Style Sheets)，可以使网页样式更加的丰富多彩，它解决内容与表现分离的问题，提高了工作效率。</p>\n</body>\n\n</html>",
+            "filename": "index.html",
+            "language": "html"
+        },
+        {
+            "code": "/* ********** BEGIN ********** */\n      \nbody {\n    background-color: ivory;\n}\n\n/* ********** END ********** */\n\nh1 {\n    font-size: 40px;\n    text-align: center;\n}\n\np {\n    font-size: 18px;\n    color: grey;\n    /* ********** BEGIN ********** */\n    background-color: lightblue;\n    /* ********** END ********** */\n}",
+            "filename": "style.css",
+            "language": "css"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n#### 任务描述\n\n本关任务：在本关中，我们将学习如何使用`CSS`去更改`HTML`元素的背景属性。\n\n本关任务完成之后的效果图如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/211182\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 相关知识\n\n为了完成本关任务，请大家认真阅读以下内容。\n\n##### 背景色\n\n我们可以使用`background-color`为元素设置背景色，通常属性值为颜色名称或颜色编码。\n\n因为`HTML`文档中`body`元素包含了`HTML`文档的所有内容，所以如果要改变整个页面的背景颜色，只需要设置`body`元素的`background-color`属性。\n\n例如：\n\n```\n<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <title>Hello World</title>\n  <style type=\"text/css\">\n    body {\n       background-color: lightyellow;\n    }\n    h1 {\n      color: gray;\n      background-color: palegreen;\n    }\n\n    p {\n      background-color: lightgray;\n    }\n  </style>\n</head>\n\n<body>\n  <div>\n    <h1>CSS让网页样式更丰富</h1>\n    <p>这是一个段落</p>\n  </div>\n</body>\n\n</html>\n```\n\n显示效果如图：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/210904\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n#### 编程要求\n学会了基本设置背景颜色的方式，现在让我们来实践一下吧。请在右侧的编辑框中修改`style.css`文件，完成如下要求：\n\n- 设置`body`的背景颜色(`background`)为象牙色(`ivory`)；\n\n- 设置段落`p`的背景颜色(`background`)为浅蓝色(`lightblue`)。\n\n####测试说明\n\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；\n\n\n---\n\n开始你的任务吧，祝你成功！"
+}
