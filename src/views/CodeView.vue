@@ -33,8 +33,14 @@ import python from 'highlight.js/lib/languages/python'
 import xml from 'highlight.js/lib/languages/xml'
 import { marked } from 'marked'
 import { onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import type { ProblemPageData, ProblemSourceFile } from '../utils/types'
+import type { Problem, ProblemSourceFile } from '@/utils/types'
+
+interface Prop {
+  data: Problem
+  goBack: () => void
+}
+
+const props = defineProps<Prop>()
 
 // Legacy markdown uses ```in / ```out fences for sample IO; register no-op languages to avoid warnings.
 hljs.registerLanguage('in', () => ({ name: 'in', contains: [] }))
@@ -51,8 +57,6 @@ marked.setOptions({
   breaks: false,
 })
 
-const route = useRoute()
-const router = useRouter()
 const loading = ref(false)
 const error = ref('')
 const problemHtml = ref('')
@@ -73,10 +77,6 @@ function renderMarkdown(md: string) {
     hljs.highlightElement(el as HTMLElement)
   })
   return wrapper.innerHTML
-}
-
-function getRouteParam(value: string | string[] | undefined) {
-  return typeof value === 'string' ? value : ''
 }
 
 function normalizeLanguage(language?: string) {
@@ -146,50 +146,15 @@ function buildCodeFiles(files: ProblemSourceFile[]) {
 }
 
 async function loadCodePage() {
-  const type = getRouteParam(route.params.type)
-  const problems = getRouteParam(route.params.problems)
-  const problem = getRouteParam(route.params.problem)
-
-  if (!type || !problems || !problem) {
-    router.replace({ name: 'home' })
-    return
-  }
-
-  loading.value = true
-  error.value = ''
-
-  try {
-    const res = await fetch(`/pages/${type}/${problems}/code/${problem}.json`)
-    if (!res.ok) throw new Error('题目内容不存在')
-    const data = (await res.json()) as ProblemPageData
-    problemHtml.value = renderMarkdown(
-      (data.description ?? '').replaceAll('$$\\le$$', '≤').replaceAll('$$<$$', '<'),
-    )
-    const files = Array.isArray(data.files) ? data.files : []
-    codeFiles.value = buildCodeFiles(files)
-
-    if (!getRouteParam(route.params.title) && data.title) {
-      router.replace({
-        name: 'code',
-        params: { type, problems, problem, title: data.title },
-      })
-    }
-  } catch (e) {
-    problemHtml.value = ''
-    codeFiles.value = []
-    error.value = e instanceof Error ? e.message : '加载失败'
-  } finally {
-    loading.value = false
-  }
+  problemHtml.value = renderMarkdown(
+    (props.data.description ?? '').replaceAll('$$\\le$$', '≤').replaceAll('$$<$$', '<'),
+  )
+  const files = props.data.content
+  codeFiles.value = buildCodeFiles(files)
 }
 
-function goBack() {
-  router.back()
-}
-
-onMounted(loadCodePage)
 watch(
-  () => route.fullPath,
+  () => props.data,
   () => {
     loadCodePage()
   },

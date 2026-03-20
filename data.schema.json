@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": [
+                "problemSet"
+            ]
+        },
+        "title": {
+            "type": "string"
+        },
+        "content": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "title",
+                            "id"
+                        ],
+                        "additionalProperties": false
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "filename": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "code",
+                            "language"
+                        ],
+                        "additionalProperties": false
+                    }
+                ]
+            }
+        },
+        "description": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "type",
+        "title",
+        "content"
+    ],
+    "additionalProperties": false
+}
