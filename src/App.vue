@@ -1,14 +1,28 @@
 <template>
   <div class="page">
     <header>
-      <h1>{{ title }}</h1>
+      <h1>{{ data.title }}</h1>
       <nav>
         <RouterLink to="/">首页</RouterLink>
       </nav>
     </header>
 
-    <main>
-      <RouterView />
+    <main v-if="loading === true">加载中</main>
+
+    <main v-else>
+      <ContentView
+        v-if="data.type === 'problemSet'"
+        :data="data"
+        :go-back="goBack"
+        :add-path="addPath"
+        :key="data.title + '@ProblemSet'"
+      />
+      <CodeView
+        v-else-if="data.type === 'problem'"
+        :data="data"
+        :go-back="goBack"
+        :key="data.title + '@Problem'"
+      />
     </main>
 
     <footer>
@@ -18,18 +32,63 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { computed, ref, watch, customRef } from 'vue'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { fetchData } from './fetchData'
+import type { DataFile } from './utils/types'
+import ContentView from './views/ContentView.vue'
+import CodeView from './views/CodeView.vue'
 
 const route = useRoute()
-const title = computed(() => {
-  if (route.name === 'home') return '欢迎访问educoder!'
-  const titleParam = route.params.title
-  const problems = route.params.problems
-  const type = route.params.type
-  if (typeof titleParam === 'string' && titleParam.length > 0) return titleParam
-  if (typeof problems === 'string' && problems.length > 0) return problems
-  if (typeof type === 'string' && type.length > 0) return type
-  return 'educoder'
+const router = useRouter()
+
+const _loading = ref<boolean>(false)
+let _loadingTimer: number | null = null
+
+const loading = computed({
+  get() {
+    return _loading.value
+  },
+  set(value) {
+    if (_loadingTimer !== null) {
+      clearTimeout(_loadingTimer)
+      _loadingTimer = null
+    }
+    if (value === false) {
+      _loading.value = false
+      return
+    }
+    _loadingTimer = setTimeout(() => {
+      _loading.value = value
+    }, 300)
+  },
+})
+
+async function loadData() {
+  loading.value = true
+  data.value = await fetchData(route.path.split('/'))
+  loading.value = false
+}
+
+async function addPath(id: string) {
+  const newPath = [...route.path.split('/').filter((p) => p), id].join('/')
+  router.push('/' + newPath)
+}
+
+async function goBack() {
+  const paths = route.path.split('/').filter((p) => p)
+  if (paths.length === 0) return
+  const newPath = paths.slice(0, -1).join('/')
+  router.push('/' + newPath)
+}
+
+const data = ref<DataFile>({
+  type: 'problemSet',
+  title: 'home',
+  content: [],
+})
+
+watch(route, async () => {
+  loadData()
 })
 </script>

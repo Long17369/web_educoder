@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "DataFile",
+    "description": "联合类型，通过 'type' 字段区分 Problem 或 ProblemSet",
+    "type": "object",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/Problem"
+        },
+        {
+            "$ref": "#/definitions/ProblemSet"
+        }
+    ],
+    "definitions": {
+        "ProblemSourceFile": {
+            "type": "object",
+            "properties": {
+                "filename": {
+                    "type": "string",
+                    "description": "源文件的文件名（可选）"
+                },
+                "language": {
+                    "type": "string",
+                    "description": "代码的编程语言"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "源代码内容"
+                }
+            },
+            "required": [
+                "code"
+            ],
+            "additionalProperties": false
+        },
+        "FileInfo": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "唯一标识符(文件夹名, 使用数字字符串)"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "标题"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ],
+            "additionalProperties": false
+        },
+        "Problem": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "problem",
+                    "description": "判别器：指示这是一个 Problem"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "题目的标题"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "题目的描述（可选）"
+                },
+                "content": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProblemSourceFile"
+                    },
+                    "description": "构成题目的源文件列表"
+                }
+            },
+            "required": [
+                "type",
+                "title",
+                "content"
+            ],
+            "additionalProperties": false
+        },
+        "ProblemSet": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "problemSet",
+                    "description": "判别器：指示这是一个 ProblemSet"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "题集的标题"
+                },
+                "content": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FileInfo"
+                    },
+                    "description": "题集中的文件引用列表（包含 id 和 title）"
+                }
+            },
+            "required": [
+                "type",
+                "title",
+                "content"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

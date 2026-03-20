@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "合法IP",
+    "content": [
+        {
+            "code": "N = int(input())\n\nfor i in range(N):\n    try:\n        x = input().split(\".\",3)\n        assert all(str(int(i)) == i for i in x)\n        x1,x2,x3,x4 = map(int,x)\n        if x1 == 0:\n            assert x2 == 0 and x3 == 0 and x4 == 0\n        else:\n            assert x1 in range(256) and x2 in range(256) and x3 in range(256) and x4 in range(256)\n    except Exception:\n        print(\"NO\")\n    else:\n        print(\"YES\")\n",
+            "language": "python"
+        }
+    ],
+    "description": "这是一个编程题模板。\n\n请在这里写题目描述。例如：本题目要求读入2个整数A和B，然后输出它们的和。\n\n### 输入格式:\n\n请在这里写输入格式。例如：输入在一行中给出2个绝对值不超过1000的整数A和B。\n\n### 输出格式:\n\n请在这里描述输出格式。例如：对每一组输入，在一行中输出A+B的值。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n18 -299\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n-281\n```\n"
+}

@@ -1,0 +1,17 @@
+{
+    "type": "problem",
+    "title": "背景图片",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n\n<head>\n    <meta charset=\"utf-8\">\n    <title>Hello World</title>\n    <link rel=\"stylesheet\" href=\"step2/CSS/style.css\">\n</head>\n\n<body>\n    <div>\n      <h1>CSS让网页样式更丰富</h1>\n      <p>这是一个段落</p>\n    </div>\n</body>\n\n</html>",
+            "filename": "index.html",
+            "language": "html"
+        },
+        {
+            "code": "body {\n    /* ********** BEGIN ********** */\n    /*设置背景图片*/\n    background-image: url(\"https://educoder.net/api/attachments/Rk9MdEZnbXhETFJDS3RvcEgyejZqUT09\");\n\n    /* ********** END ********** */\n}\n\ndiv {\n    width: 90%;\n    height: 100%;\n    margin: auto;\n}",
+            "filename": "style.css",
+            "language": "css"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n#### 任务描述\n\n本关任务：在本关中，我们将学习如何使用`CSS`去更改网页的背景图片。\n\n本关任务完成之后的效果图如下：\n\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/211184\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n#### 相关知识\n\n##### 背景图片\n\n######设置背景图片\n\n我们可以使用`background-image`属性设置元素的背景属性，常见的网页背景图就是这样设置的。其中，属性值通过`url`指定图片链接。\n\n书写格式：\n```\n\tbackground-image: url(\"图片链接\")\n```\n例如：\n```\n\t<head>\n\t    <meta charset=\"utf-8\">\n\t    <title>Hello World</title>\n\t    <style type=\"text/css\">\n\t    body {\n\t      /*设置背景图片*/\n\t      background-image: url(\"./Assert/memphis-colorful.png\")\n\t    }\n\t    div {\n\t      width:90%;\n\t      height: 100%;\n\t      margin: auto;\n\t      background-color: #FCFDF8;\n\t    }\n\t    </style>\n\t</head>\n```\n显示效果如图：\n\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/174509\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n本例设置了`body`背景图像。\n\n###### 平铺背景图像\n\n指定了背景图像之后，默认背景图是平铺重复显示。如果想要设置图像在水平方向、垂直方向平铺或其他方式，可以设置`background-repeat`属性。\n\n具体属性值设置如下：\n\n| 样式 | 属性值 |\n| --- | --- |\n| 水平平铺重复 | repeat-x |\n| 垂直平铺重复 | repeat-y |\n| 不重复平铺|no-repeat|\n\n例如：\n\n1. 默认平铺\n```html\n\tbody {\n\t\t/*设置背景图片*/\n\t\tbackground-image:url(\"./Assert/sun.jpg\");\n\t}\n```\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/174510\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n2. `repeat-x`\n```html\n\tbody {\n\t\t/*设置背景图片*/\n\t\tbackground-image:url(\"./Assert/sun.jpg\");\n\t\tbackground-repeat: repeat-x;\n\t}\n```\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/174511\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n3. `repeat-y`\n\n```html\n\tbody {\n\t\t/*设置背景图片*/\n\t\tbackground-image:url(\"./Assert/sun.jpg\");\n\t\tbackground-repeat: repeat-y;\n\t}\n```\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/174513\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n4. `no-repeat`\n\n```html\n\tbody {\n\t\t/*设置背景图片*/\n\t\tbackground-image:url(\"./Assert/sun.jpg\"); \n\t\tbackground-repeat: no-repeat;\n\t}\n```\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/174514\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 任务要求\n\n请在右侧的编辑框中修改`style.css`文件，完成如下要求：\n\n- 设置背景图片，图标`url`地址为`https://educoder.net/api/attachments/211106`。\n\n\n\n\n####测试说明\n\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；\n\n---\n\n开始你的任务吧，祝你成功！"
+}

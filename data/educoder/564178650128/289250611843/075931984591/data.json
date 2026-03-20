@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表格的属性——cellspacing",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <!-- ********* Begin ********* -->\n\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n    <tr>\n        <td>姓名</td>\n        <td>语文</td>\n        <td>数学</td>\n        <td>英语</td>\n        <td>合计</td>\n    </tr>\n    <tr>\n        <td>李四</td>\n        <td>90</td>\n        <td>95</td>\n        <td>80</td>\n        <td>265</td>\n    </tr>\n</table>\n        \n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一个表格，它的边框宽度为`1px`，`cellpadding`值为`10`，`cellspacing`值为`0`，内容和效果图展示的一样。\n\n实现的效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209322\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 相关知识 \n\n前面表格看起来就好像有两个边框一样，怎么让它变成一条边框呢？\n\n这里用到了表格的另一个属性`cellspacing`，它规定了单元格之间的空间。\n\n这里用图来说明，如图所示：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209215\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n双箭头的大小表示`cellspacing`属性的值。\n\n只需把`cellspacing`的值设为`0`就可以实现上面的效果。\n\n代码如下：\n\n```\n<table border=\"2\" cellspacing=\"0\" cellpadding=\"10\">\n\t<tr>\n\t\t<td>姓名</td>\n\t\t<td>年龄</td>\n\t</tr>\n\t<tr>\n\t\t<td>张三</td>\n\t\t<td>18</td>\n\t</tr>\n</table>\n\n```\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209234\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一个表格的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n\n---\n\n赶快试一下吧！！！"
+}

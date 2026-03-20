@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表单元素——下拉列表",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    选择版块：\n    <!-- ********* Begin ********* -->\n    <select>\n        <option>问答</option>\n        <option>分享</option>\n        <option>招聘</option>\n        <option selected=\"selected\">客户端测试</option>\n    </select>\n\t<!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一个下拉列表，默认选中**客户端测试**，没有`value`值 。\n\n效果如下：\n\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/276704\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n#### 相关知识\n\n你可以使用`<select>`标签用来创建下拉列表，`<option>`标签定义列表中的可用选项。\n\n例子如下：\n\n```\n<select>\n\t<option value=\"apple\">苹果</option>\n\t<option value=\"banana\">香蕉</option>\n\t<option value=\"pear\">梨</option>\n\t<option value=\"apple\">菠萝</option>\n</select>\n```\n\n效果如下：\n\n<select>\n\t<option value=\"apple\">苹果</option>\n\t<option value=\"banana\">香蕉</option>\n\t<option value=\"pear\">梨</option>\n\t<option value=\"apple\">菠萝</option>\n</select>\n\n<div style=\"margin-top:20px;\"></div>\n\n\n可以发现： 显示的是第一个`<option>`标签里面的内容。如果想默认显示第三个`<option>`里的内容呢？\n\n在要默认显示的`<option>`里添加`selected`属性就可以了。\n\n例子如下：\n\n```\n<select>\n\t<option value=\"apple\">苹果</option>\n\t<option value=\"banana\">香蕉</option>\n\t<option value=\"pear\" selected=\"selected\">梨</option>\n\t<option value=\"apple\">菠萝</option>\n</select>\n```\n\n效果如下：\n\n<select>\n\t<option value=\"apple\">苹果</option>\n\t<option value=\"banana\">香蕉</option>\n\t<option value=\"pear\" selected=\"selected\">梨</option>\n\t<option value=\"apple\">菠萝</option>\n</select>\n\n<div style=\"margin-top:20px;\"></div>\n\n`selected`属性的用法和前面介绍的`checked`属性一样。\n\n为了规范书写，一般添加`selected=\"selected\"`就可以了。\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一个下拉列表的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n\n---\n赶快试一下吧！！！"
+}

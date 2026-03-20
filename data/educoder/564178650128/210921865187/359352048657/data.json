@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "创建 a 标签",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <!-- ********* Begin ********* -->\n<a href=\"https://www.educoder.net\">Educoder平台</a>\n\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一个`a`标签， 跳转的地址是`https://www.educoder.net`，文本内容是`Educoder平台`。\n\n#### 相关知识\n\n`a`标签通常用来定义一个链接。`href`属性的值就是链接的地址。\n\n你可以这样创建一个`a`标签，`<a href=\"http://www.baidu.com\">百度</a>`。当你点击这个链接时，它就会跳转到百度首页。\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成第一个`a`标签， 跳转的地址是`https://www.educoder.net`，文本内容是`Educoder平台`的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n---\n赶快试一下吧！！！"
+}

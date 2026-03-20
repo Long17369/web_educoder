@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "jmu-python-生日悖论",
+    "content": [
+        {
+            "code": "from random import randint,seed\nx,n = map(int,input().split())\nseed(x)\ncnt = 0\nfor i in range(n):\n    l = [randint(1,365) for i in range(23)]\n    if(len(set(l)) == 23):\n        continue\n    cnt += 1\n\nrate = cnt / n\nprint(f\"{rate=:.2f}\")",
+            "language": "python"
+        }
+    ],
+    "description": "生日悖论，指如果一个房间里有23个或23个以上的人，那么至少有两个人的生日相同的概率要大于50%。尝试编程验证。\n  \n**验证方法提示：**使用从1到365的整数代表生日。测试n次，每次生成23个随机数，随机数的范围从1到365(包括365)。  \n然后查看有无重复的生日。  \n最后算出重复的比率。\n\n### 输入格式:\n随机数种子x 测试次数n\n\n注意：需将x转换为整数型再进行设置。\n\n### 输出格式:\n`rate=算出的比率`，比率保留2位小数\n\n### 输入样例:\n\n```in\n3 1000\n\n```\n\n### 输出样例:\n\n```out\nrate=0.54\n\n```"
+}

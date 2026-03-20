@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表单元素——单选框 ",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    1. HTML是什么语言？(单选题)<br>\n    <!-- ********* Begin ********* -->\n    <p><input type=\"radio\" name=\"question\"/>A：高级文本语言</p>\n    <p><input type=\"radio\" name=\"question\"/>B：超文本标记语言</p>\n    <p><input type=\"radio\" name=\"question\"/>C：扩展标记语言</p>\n    <p><input type=\"radio\" name=\"question\"/>D：图形化标记语言</p>\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一组单选框，`name`属性值为`question`。\n\n要求：对每一个选项使用`<p>`标签进行换行。\n\n注：这里及后面遇到的文本都是中文符号，比如`：`，是中文符号的`：`。\n\n效果如下：\n\n1. HTML是什么语言？(单选题)<br>\n<p><input type=\"radio\" name=\"question\"/>A：高级文本语言</p>\n<p><input type=\"radio\" name=\"question\"/>B：超文本标记语言</p>\n<p><input type=\"radio\" name=\"question\"/>C：扩展标记语言</p>\n<p><input type=\"radio\" name=\"question\"/>D：图形化标记语言</p>\n\n\n\n#### 相关知识 \n\n一般在填写个人信息的时候，都会选择性别，只能选择男或女，这里就用到了单选框 。\n\n\n你可以使用`<input type=\"radio\"/>`来创建一个单选框，需要注意的是：**同一组单选框的`name`属性的值要一样**。\n\n例子如下：\n\n```\n男：<input type=\"radio\" name=\"sex\"/>\n女：<input type=\"radio\" name=\"sex\"/>\n```\n\n效果如下：\n\n男：<input type=\"radio\" name=\"sex\"/>  女：<input type=\"radio\" name=\"sex\"/>\n\n这里`type=\"radio\"`，表示单选框。\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一组单选框的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n\n\n\n---\n赶快试一下吧！！！"
+}

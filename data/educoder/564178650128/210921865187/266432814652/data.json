@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "创建 img 标签",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <!-- ********* Begin ********* -->\n<img alt=\"小狗走路\"  src=\"https://data.educoder.net/api/attachments/WlY3UDlRd3RQdXlvZ0JXNG1XZzduZz09\"/>\n\n    <!-- ********* End ********* -->\n\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一个`img`标签， 图片的地址是`https://www.educoder.net/attachments/download/ZTZaUEp2Y0ltSElvcnBxelNJTXYyUT09`，提示文字是`小狗走路`。\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/ZTZaUEp2Y0ltSElvcnBxelNJTXYyUT09\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n\n#### 相关知识 \n\n`img`标签通常用来表示一个图片。`src`属性的值就是图片的地址，`alt`属性的值是当图片没有展现出来时提示的文字 。\n\n你可以这样创建一个`img`标签，\n`<img src=\"https://www.educoder.net/attachments/download/c0ZNRzRLSTVDYmREZVVJOXFoNjZLdz09\" alt=\"风景画\"/>`。\n\n这样图片就显示出来了。效果如下所示：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/aWhFZEl1MWM1NW9tOWU3OEpSN0dYUT09\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n当图片没有展示出来时，或者图片地址是错的，就会显示提示文字。效果如下所示：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/OG9hdXRqNXBES01LdnRmZVphMm13UT09\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n注意：`img`标签是以`/>`结尾的， 不是 `</img>`结尾的。\n\n\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成第一个标签`img`标签， 图片的地址是`https://www.educoder.net/api/attachments/WlY3UDlRd3RQdXlvZ0JXNG1XZzduZz09`，提示文字是`小狗走路`的创建任务。\n\n\n####测试说明\n\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n---\n赶快试一下吧！！！"
+}

@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "创建 div 标签",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <h2>我是h2标签</h2>\n    <p>我是p标签</p>\n    <!-- ********* Begin ********* -->\n<div>我是div标签</div>\n\n\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一个`div`标签， 文本内容是`我是div标签`。\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/207821\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 相关知识 \n\n`div`标签可以把文档分割为独立的、不同的部分。它没有实际的意义，仅仅表示创建了一个块级元素。\n\n你可以这样创建一个`div`标签，`<div>创建div标签</div>`。\n\n可以发现：它和 `<h1>-<h6>`，`<p>`标签的创建是一样的，只不过它没有实际的意义。\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成第一个标签`div`标签， 文本内容是`我是div标签`的创建任务。\n\n\n####测试说明\n\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n---\n赶快试一下吧！！！"
+}

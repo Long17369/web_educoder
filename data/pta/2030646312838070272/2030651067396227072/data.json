@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "优秀的拆分",
+    "content": [
+        {
+            "code": "num = int(input())\nif num%2==1:\n    print(-1)\nelse:\n    out = []\n    idx = 1\n    while num:\n        num //= 2\n        if num%2 == 1:\n            out.append(idx)\n        idx += 1\n    for i in out[:0:-1]:\n        print(1<<i,end=' ')\n    print(1<<out[0])",
+            "language": "python"
+        }
+    ]
+}

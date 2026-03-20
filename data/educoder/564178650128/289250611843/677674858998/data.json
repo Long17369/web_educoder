@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表格的标题",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\n        <!-- ********* Begin ********* -->\n\n        <caption>科目成绩</caption>\n\n        <!-- ********* End ********* -->\n        <tr>\n            <td>姓名</td>\n            <td>语文</td>\n            <td>数学</td>\n            <td>英语</td>\n            <td>合计</td>\n        </tr>\n        <tr>\n            <td>李四</td>\n            <td>90</td>\n            <td>95</td>\n            <td>80</td>\n            <td>265</td>\n       </tr>\n    </table>\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：添加一个表格标题，内容为**科目成绩**。\n\n实现的效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209328\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n#### 相关知识 \n\n表格一般都有标题来说明这个表格具体是做什么的。\n\n你可以用`<caption>`标签来创建表格标题，需要注意的是它的位置：**紧随`<table>`标签之后**。\n\n例子如下：\n\n```\n<table border=\"2\" cellspacing=\"0\" cellpadding=\"10\">\n    <caption>班级成绩</caption>\n\t<tr>\n\t\t<td>姓名</td>\n\t\t<td>年龄</td>\n\t</tr>\n\t<tr>\n\t\t<td>张三</td>\n\t\t<td>18</td>\n\t</tr>\n</table>\n\n```\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/209326\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成任务描述中表格标题的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n---\n\n赶快试一下吧！！！"
+}

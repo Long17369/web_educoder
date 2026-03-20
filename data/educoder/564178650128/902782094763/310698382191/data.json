@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "表单元素——文本域",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <!-- ********* Begin ********* -->\n    <style>\n        textarea {\n            width:200px;\n            height:120px;\n        }\n    </style>\n</head>\n<body>\n\n    用一句话描述自己的特点：\n    <textarea maxlength=\"15\"></textarea>\n    <!-- ********* End ********* -->\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n\n本关任务：创建一个文本域，最多能输入的字符数为`15`。\n在`<style></style>`标签里设置宽度为`200px`，高度为`120px`。\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/207981\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n\n#### 相关知识 \n\n`<textarea>`标签可以定义多行的文本输入框。用宽（`width`）和高（`height`）来定义输入框的大小，用`maxlength`来定义文本区域最大能输入的字符数。\n\n\n例子如下：\n\n```\n个人描述：<textarea maxlength=\"10\"></textarea>\n```\n\n效果如下：\n\n<p align=\"center\" >\n<img  style=\"border: 2px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/207946\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n\n如何添加宽、高呢？用`<style></style>`标签包裹，里面填写样式即可。\n\n例子如下：\n\n```\n<style>\ntextarea{\n  width:160px; \n  height:100px;\n}\n</style>\n\n个人描述：<textarea maxlength=\"10\"></textarea>\n\n```\n\n效果如下：\n![](/api/attachments/207945)\n\n\n\n####编程要求\n\n请仔细阅读右侧代码，结合相关知识，在` Begin-End` 区域内进行代码补充，完成一个文本域的创建任务。\n\n\n####测试说明\n平台会对你的代码进行运行测试，如果实际输出结果与预期结果相同，则通关；反之，则 `GameOver`。\n\n\n---\n赶快试一下吧！！！"
+}

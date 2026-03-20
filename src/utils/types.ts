@@ -1,23 +1,26 @@
-export interface ProblemItem {
-  title: string
-  id: string
-  proid: string
-}
-
-export interface ProblemSetData {
-  title: string
-  id: string
-  content: ProblemItem[]
-}
-
 export interface ProblemSourceFile {
   filename?: string
-  language?: string
+  language: string
   code: string
 }
 
-export interface ProblemPageData {
-  title?: string
-  description: string
-  files: ProblemSourceFile[]
+export interface Problem {
+  type: 'problem'
+  title: string
+  description?: string
+  content: ProblemSourceFile[]
 }
+
+export interface ProblemSet {
+  type: 'problemSet'
+  title: string
+  content: FileInfo[]
+}
+
+export interface FileInfo {
+  id: string
+  title: string
+}
+
+export type DataFileType = 'problem' | 'problemSet'
+export type DataFile = Problem | ProblemSet
