@@ -147,14 +147,13 @@ function buildCodeFiles(files: ProblemSourceFile[]) {
 
 async function loadCodePage() {
   problemHtml.value = renderMarkdown(
-    (props.data.description ?? '').replaceAll('$$\\le$$', '≤').replaceAll('$$<$$', '<'),
+    props.data.description ?? '',
   )
   const files = props.data.content
   codeFiles.value = buildCodeFiles(files)
 }
 
-watch(
-  () => props.data,
+onMounted(
   () => {
     loadCodePage()
   },

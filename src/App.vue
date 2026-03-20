@@ -15,8 +15,14 @@
         :data="data"
         :go-back="goBack"
         :add-path="addPath"
+        :key="data.title + '@ProblemSet'"
       />
-      <CodeView v-else-if="data.type === 'problem'" :data="data" :go-back="goBack" />
+      <CodeView
+        v-else-if="data.type === 'problem'"
+        :data="data"
+        :go-back="goBack"
+        :key="data.title + '@Problem'"
+      />
     </main>
 
     <footer>
