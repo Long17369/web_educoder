@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "用电量预测误差",
+    "content": [
+        {
+            "code": "print(max(map(lambda k:abs(int(k[0])-int(k[1])),zip(input().split(),input().split()))))",
+            "language": "python"
+        }
+    ],
+    "description": "这是一个编程题模板。\n\n请在这里写题目描述。例如：本题目要求读入2个整数A和B，然后输出它们的和。\n\n### 输入格式:\n\n请在这里写输入格式。例如：输入在一行中给出2个绝对值不超过1000的整数A和B。\n\n### 输出格式:\n\n请在这里描述输出格式。例如：对每一组输入，在一行中输出A+B的值。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n18 -299\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n-281\n```\n"
+}

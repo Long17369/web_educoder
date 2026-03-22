@@ -1,0 +1,6 @@
+{
+    "type": "problem",
+    "title": "瀑布流布局：图片浏览页面",
+    "content": [],
+    "description": "[TOC]\n<hr>\n\n# 任务描述\n在本关中，你的任务是理解瀑布流布局，以展示多张图片。瀑布流布局使得图片能够按照设定的列数依次排列，每列的高度会根据图片的高度自动调整，以实现整齐的展示效果。\n\n瀑布流布局基本页面效果如下：\n![ 瀑布流布局 ]( /api/attachments/6128845 \"瀑布流布局\" )\n\n<hr>\n\n# 相关知识\n## HTML(HyperText Markup Language)\n使用HTML中的 `<img>` 元素来插入图片，通过设置图片的 `src` 属性指定图片来源，`alt` 属性提供图片的替代文本，以确保良好的可访问性。HTML页面代码如下：\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n\n</head>\n<body>\n\n  <div class=\"gallery\">\n    <img src=\"1.jpeg\" alt=\"Image 1\">\n    <img src=\"2.jpeg\" alt=\"Image 2\">\n    <img src=\"3.jpeg\" alt=\"Image 3\">\n    <img src=\"4.jpeg\" alt=\"Image 4\">\n    <!-- Add more images as needed -->\n  </div>\n\n</body>\n</html>\n```\n\n\n## 瀑布流布局：\n瀑布流布局是一种动态排列方式，其中每个元素（这里是图片）按照设定的列数依次排列，每列的高度会根据元素的高度动态调整，以实现整齐的展示效果。使用CSS样式属性如 column-count 和 column-gap 来设置瀑布流布局的列数和列间距。具体代码如下所示\n```css\n  <style>\n    .gallery {\n      column-count: 2; \t/*用于设置列数*/\n      column-gap: 20px;\t /*用于设置列间距*/\n    }\n\n    .gallery img {\n    \t/*将图片的宽度设置为其父元素（.gallery）的100%。\n        意味着图片将填满其父元素的宽度，这里是瀑布流列的宽度。\n        这样做可以确保图片在列中铺满宽度，使其适应不同屏幕尺寸或不同列数的布局。*/\n      width: 100%;\n      /*设置了图片的底部外边距为20像素。*/\n      margin-bottom: 20px;\n    }\n  </style>\n```\n\n考虑不同屏幕尺寸，使用响应式设计原则确保瀑布流布局能在不同设备上呈现良好的效果，比如通过设置图片宽度为百分比值或者自适应列数。\n\n\n# 测试说明\n请在右侧完成相关选择题。\n<hr>\n开始你的任务吧，祝你成功！"
+}

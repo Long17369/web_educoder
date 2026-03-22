@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "Just Monika",
+    "content": [
+        {
+            "code": "#include<iostream>\n#include<vector>\n#include<queue>\n#include<array>\n#include<string>\n#include<algorithm>\nusing namespace std;\n\n\nint main(){\n    int n,m;\n    cin >> n >> m;\n    vector<vector<array<int,3>>> par(n,{m,{0,0,0}});\n    vector<vector<int>> map(n,vector<int>(m));\n    for(auto& x:map){\n        for(auto& y:x){\n            cin >> y;\n        }\n    }\n    bool ans = false;\n    queue<array<int,2>> q;\n    q.push({0,0});\n    map[0][0] = 0;\n    while(!q.empty()){\n        auto [x,y] = q.front();\n        q.pop();\n        if(x == n-1 && y == m-1){\n            ans = true;\n            break;\n        }\n        if (x-1 >= 0 && map[x-1][y] == 1){\n            map[x-1][y] = 0;\n            par[x-1][y] = {x,y,1};\n            q.push({x-1,y});\n        }\n        if (x+1 < n && map[x+1][y] == 1){\n            map[x+1][y] = 0;\n            par[x+1][y] = {x,y,2};\n            q.push({x+1,y});\n        }\n        if (y-1 >= 0 && map[x][y-1] == 1){\n            map[x][y-1] = 0;\n            par[x][y-1] = {x,y,3};\n            q.push({x,y-1});\n        }\n        if (y+1 < m && map[x][y+1] == 1){\n            map[x][y+1] = 0;\n            par[x][y+1] = {x,y,4};\n            q.push({x,y+1});\n        }\n    }\n    if(ans){\n        string path = \"\";\n        int x = n-1, y = m-1;\n        while(x != 0 || y != 0){\n            auto [px,py,d] = par[x][y];\n            path += to_string(d);\n            x = px;\n            y = py;\n        }\n        reverse(path.begin(),path.end());\n        cout << path << endl;\n        cout << path.size() << endl;\n    }else{\n        cout << \"Just Monika\" << endl;\n    }\n}"
+        }
+    ],
+    "description": "这是一个编程题模板。\n\n请在这里写题目描述。例如：本题目要求读入2个整数A和B，然后输出它们的和。\n\n### 输入格式:\n\n请在这里写输入格式。例如：输入在一行中给出2个绝对值不超过1000的整数A和B。\n\n### 输出格式:\n\n请在这里描述输出格式。例如：对每一组输入，在一行中输出A+B的值。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n18 -299\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n-281\n```\n"
+}
