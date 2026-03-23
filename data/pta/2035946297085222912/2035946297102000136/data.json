@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "A3-3查找产品表中最低的单价",
+    "content": [
+        {
+            "code": "select min(UnitPrice) minUnitPrice\nfrom products\n;"
+        }
+    ],
+    "description": "在```产品表(products)```中查询最低的```单价(UnitPrice)```，并重命名为```minUnitPrice```\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n\n|列名|数据类型|长度|主码|说明|\n|---|---|---|---|---|\n|ProductID|int|11|√|产品编号|\n|ProductName|varchar|40||产品名称|\n|SupplierID|int|11||供应商编号|\n|CategoryID|int|11||种类编号|\n|QuantityPerUnit|varchar|20||数量|\n|UnitPrice|decimal|10,4||单价|\n|UnitsInStock|smallint|2||库存数量|\n|UnitsOnOrder|smallint|2||订购数量|\n|ReorderLevel|smallint|2||再次订购量|\n|Discontinued|bit|1||中止|\n\n\n### 表样例\n\n\n```products```表：\n\n|ProductID|ProductName|SupplierID|CategoryID|QuantityPerUnit|UnitPrice|UnitsInStock|UnitsOnOrder|ReorderLevel|Discontinued|\n|---|---|---|---|---|---|---|---|---|---|\n|1|Chai|1|1|10 boxes x 20 bags|18|39|0|10| |\n|2|Chang|1|1|24 - 12 oz bottles|19|17|40|25| |\n|3|Aniseed Syrup|1|2|12 - 550 ml bottles|10|13|70|25| |\n|4|Chef Anton's Cajun Seasoning|2|2|48 - 6 oz jars|22|53|0|0| |\n|5|Chef Anton's Gumbo Mix|2|2|36 boxes|21.35|0|0|0|\u0001|\n|6|Grandma's Boysenberry Spread|3|2|12 - 8 oz jars|25|120|0|25| |\n|7|Uncle Bob's Organic Dried Pears|3|7|12 - 1 lb pkgs.|30|15|0|10| |\n|8|Northwoods Cranberry Sauce|3|2|12 - 12 oz jars|40|6|0|0| |\n|9|Mishi Kobe Niku|4|6|18 - 500 g pkgs.|97|29|0|0|\u0001|\n|10|Ikura|4|8|12 - 200 ml jars|31|31|0|0| |\n\n### 输出样例:\n\n|minUnitPrice|\n|---|\n|10|\n"
+}

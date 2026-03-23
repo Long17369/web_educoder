@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询姓‘李’的学生记录",
+    "content": [
+        {
+            "code": "select sno \"学号\", sname \"姓名\", sex \"性别\", mno \"专业\", birdate \"出生日期\", memo \"备注\" from stu \nwhere sname like '李%';"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n检索出```stu```表中所有姓‘李’的学生记录。\n\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `stu` (\n  `sno` char(4) NOT NULL,\n  `sname` char(8) NOT NULL,\n  `sex` tinyint(1) DEFAULT NULL,\n  `mno` char(2) DEFAULT NULL,\n  `birdate` datetime DEFAULT NULL,\n  `memo` text,\n  PRIMARY KEY (`sno`)\n);\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n``` stu```表：\n\n\n![stu.JPG](~/6dbdbffc-31b3-42db-bee7-c6527b6d93df.JPG)\n\n\n\n### 输出样例:\n\n请在这里给出输出样例。例如：\n\n![l26.JPG](~/88eced27-39c5-4e45-9e40-ff71fcd63269.JPG)\n\n"
+}

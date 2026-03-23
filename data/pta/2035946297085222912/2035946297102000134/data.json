@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询未登记成绩的学生",
+    "content": [
+        {
+            "code": "select sno\nfrom sc\nwhere cno = 'C001' and grade is NULL;"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n检索出```sc```表中‘C001’课程未登记成绩的学生学号\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `sc` (\n  `sno` char(4) NOT NULL,  -- 学号\n  `cno` char(4) NOT NULL,  -- 课程号\n  `grade` decimal(6,1) DEFAULT NULL,  -- 成绩 \n  PRIMARY KEY (`sno`,`cno`)\n);\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n``` sc```表：\n\n\n![sc.JPG](~/dd328402-aa50-4b29-8b39-8c9eee07f766.JPG)\n\n\n\n### 输出样例:\n\n请在这里给出输出样例。例如：\n\n\n![l211.JPG](~/74c5c21f-0e7d-4f3f-869c-68ef5351921d.JPG)\n\n"
+}

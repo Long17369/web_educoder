@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "A1-3查询顾客表中所有不重复的城市",
+    "content": [
+        {
+            "code": "select distinct City\nfrom customers\n;"
+        }
+    ],
+    "description": "查询出```顾客表(customers)```中所有不重复的```所在城市(City)```\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n|列名|数据类型|长度|主码|说明|\n|---|---|---|---|---|\n|CustomerID|varchar|5|√|顾客编号|\n|CompanyName|varchar|40||公司名称|\n|ContactName|varchar|30||联系姓名|\n|ContactTitle|varchar|30||联系头衔|\n|Address|varchar|60||地址|\n|City|varchar|15||城市|\n|Region|varchar|15||区域|\n|PostalCode|varchar|10||邮政编码|\n|Country|varchar|15||国家|\n|Phone|varchar|24||电话|\n|Fax|varchar|24||传真|\n\n\n### 表样例\n\n```customers```表：\n\n|CustomerID|CompanyName|City|\n|---|---|---|\n|ANATR|Ana Trujillo Emparedados y helados|Mxico D.F.|\n|ANTON|Antonio Moreno Taquera|Mxico D.F.|\n|AROUT|Around the Horn|London|\n|BERGS|Berglunds snabbkp|Lule|\n|BLAUS|Blauer See Delikatessen|Mannheim|\n|BLONP|Blondesddsl pre et fils|Strasbourg|\n|BOLID|Blido Comidas preparadas|Madrid|\n|BONAP|Bon app'|Marseille|\n|BOTTM|Bottom-Dollar Markets|Tsawassen|\n\n### 输出样例:\n\n\n|City|\n|---|\n|Berlin|\n|Mxico D.F.|\n|London|\n|Lule|\n|Mannheim|\n|Strasbourg|\n|Madrid|\n|Marseille|\n|Tsawassen|\n"
+}
