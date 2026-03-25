@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "建立数据库",
+    "content": [
+        {
+            "code": " #代码开始\ncreate database jwxt;\nshow databases;\n #代码结束",
+            "filename": "step1.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：建立数据库\n为了完成本关任务，你需要掌握：\n\n如何创建数据库，显示已经建立的数据库\n\n### 相关知识\n\n#####创建数据库\n\n创建数据库是在系统磁盘上划分一块区域用于数据的存储和管理。\n命令格式：\nCREATE DATABASE database_name;\n\n创建完数据库之后我们可以通过`show databases;`命令查看`MySQL`中已存在的所有数据库。\n\n### 任务要求\n\n建立jwxt数据库\n并显示所有数据库\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "建立成绩数据表",
+    "content": [
+        {
+            "code": "#代码开始\nuse jwxt;\ncreate table score(\n    studentid varchar(12),\n    courseid varchar(4),\n    session year default '0000',\n    score decimal(4,1),\n    primary key(studentid, courseid, session)\n);\ndescribe score;\n #代码结束",
+            "filename": "step32.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n### 任务要求\n\n切换到教务系统（jwxt)数据库\n创建成绩数据表(score)数据表\n查看数据表的详细结构\n数据表结构如下：\n![,](/api/attachments/8632219?type=image/png)\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

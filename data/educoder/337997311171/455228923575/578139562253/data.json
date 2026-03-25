@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "修改数据表的字段名称",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\nalter table course change coursename kcmc varchar(10);\n #代码结束\n describe course;",
+            "filename": "step5.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：修改课程数据表course的课程名称字段coursename,改名为kcmc,该字段为varchar类型，宽度为10\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：如何修改字段的名称\n\n#### 修改字段的名称\n\nALTER TABLE <表名> CHANGE <旧字段名> <新字段名> <数据类型>； \n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

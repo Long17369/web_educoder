@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "删除数据表的字段",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\n alter table student drop address;\n #代码结束\n describe student;",
+            "filename": "step7.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：删除学生student数据表的地址字段address\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：1.如何删除数据表的字段\n\n#### 删除数据表的字段\n\nALTER TABLE <表名> DROP <字段名>\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}
