@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "删除数据表",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\ndrop table student;\n show tables;\n #代码结束",
+            "filename": "step8.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：删除学生（student)数据表，显示数据库中所有的数据表\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：1.如何删除数据表\n2.查看数据库的所有数据表\n\n#### 删除数据表\n删除数据表\ndrop table 数据表名\n\n#### 查看数据表\n查看数据库的所有数据表\nSHOW TABLES;\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

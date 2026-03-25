@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "在数据表中添加字段",
+    "content": [
+        {
+            "code": " use jwxt;\n#代码开始\nalter table student add address varchar(30);\n \n \n #代码结束\n describe student;",
+            "filename": "step4.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：在student学生数据表中增加一个address地址字段，存储30位地址。\n### 相关知识\n为了完成本关任务，你需要掌握：1.如何在数据表添加字段，2.字段类型的设置规则\n#### 如何在数据表添加字段\n添加新的字段\n```sql\nALTER TABLE <表名> ADD <新字段名> <数据类型> \n[约束条件] [FIRST | AFTER 已存在字段名] \n```\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

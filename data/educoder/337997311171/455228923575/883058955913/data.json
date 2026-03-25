@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "修改数据表的字段类型",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\nalter table course modify introduce text;\n#代码结束\ndescribe course;",
+            "filename": "step6.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：修改course数据表的课程介绍(introduce)字段为text类型\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：1.如何修改数据表的字段\n\n#### 获取修改数据表的字段\n修改字段\nALTER TABLE <表名> MODIFY <字段名>  <数据类型>；\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

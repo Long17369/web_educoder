@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "建立学生数据表",
+    "content": [
+        {
+            "code": " #代码开始\nuse jwxt;\ncreate table student(\n    studentid char(12) primary key,\n    name varchar(10),\n    birthday date,\n    sex enum('男','女') default '男',\n    nativeplace varchar(3),\n    political enum('党员','团员','群众') default '群众',\n    interest set('运动','旅游','阅读','写作','音乐','影视','电子竞技','其他'),\n    resume text,\n    photo varchar(20) \n);\ndescribe student;\n\n #代码结束",
+            "filename": "step2.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：建立数据表\n为了完成本关任务，你需要掌握：\n如何选择数据库\n如何创建数据表\n设置数据表的原则\n如何显示数据表的结构\n\n### 相关知识\n\n#####选择数据库\n命令格式：\nuse 数据库名\n选择数据库为当前数据库\n\n#####创建数据表\n创建数据表的命令格式：\nCREATE TABLE  表名\n　　( 列名1　　　数据类型 字段属性,\n    列名2　　　 数据类型 字段属性,\n   \t  …\n    列名n　　　 数据类型 字段属性\n　　  )\n常用的数据类型如下\n![ 常用数据类型 ]( /api/attachments/cHlYQkdsTDNXWXZxOG90S25DUG5XQT09 \"常用数据类型\" )\n枚举型和集合型\n![ 枚举集合 ]( /api/attachments/OE4wMFBqVks3UjQya0V4R0ZnZTBPdz09 \"枚举集合\" )\n\n在字段类型选择的时候，\n对于数值类型，ZEROFILL 表示前导零填充数值类型值以达到列的显示宽度。\nauto_increment表示对于数值型字段自动增加\nnot null表示不允许该字段值为null\n\n在建立数据表的时候，。主键约束(Primary Key constraint)要求主键列的数据唯一，并且不允许为空。\n在建立数据表的时候，字段名 数据类型 PRIMARY KEY\n\n#####显示数据表结构\ndescribe 数据表名；\n查看数据表的基本结构\n\n\n### 任务要求\n\n切换到教务系统（jwxt)数据库\n创建学生数据表(student)数据表\n查看数据表的详细结构\n数据表结构如下：\n<img width=\"100%\" src=\"/api/attachments/SFVJakp4TWkwUXJsLzYzdks1elFUdz09?type=image/png)\" alt=\"\" />\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "删除数据库",
+    "content": [
+        {
+            "code": " #代码开始\n drop database jwxt;\n show databases;\n #代码结束",
+            "filename": "step9.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：删除jwxt数据库\n显示所有的数据库\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：1.如何删除数据库\n\n#### 删除数据库\n删除数据库 \ndrop database 数据库名\n删除数据库是将已经存在的数据库从磁盘空间上清除，清除之后，数据库中的所有数据也将一同被删除。\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

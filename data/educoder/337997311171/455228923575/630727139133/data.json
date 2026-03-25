@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "修改数据表名字",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\nalter table student rename to xs;\n \n \n #代码结束\n describe xs;\n",
+            "filename": "step3.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：修改数据表student的名字为xs\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：如何修改数据表的名字\n\n#### 修改数据表的名字\n修改表名\n```sql\n ALTER TABLE   <旧表名> RENAME 【TO】  <新表名> ;\n\n```\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}
