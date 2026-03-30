@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询选修了101号课程的学生的学号及其成绩，查询结果按分数降序排列",
+    "content": [
+        {
+            "code": "select sno, grade\nfrom xs_kc\nwhere cno = '101'\norder by grade desc;"
+        }
+    ],
+    "description": "查询选修了101号课程的学生的学号及其成绩，查询结果按分数降序排列；\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\ncreate table xs_kc\n(sno  char(7) not null,\ncno  char(5) not null,\n grade int null,\nprimary key(sno,cno)\n)\n\n\n### 表样例\n\n![选课表.PNG](~/77fabb6c-d140-481f-b10d-c43ba2e0987b.PNG)\n\n### 输出样例:\n![6_1.PNG](~/5fe9ae01-eee8-4bf4-80e2-d5fc07dd9ce5.PNG)\n\n"
+}

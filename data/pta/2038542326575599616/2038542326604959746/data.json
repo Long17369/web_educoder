@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "SQL查询所有选课“大学计算机”的学号、姓名及成绩，按成绩降序排序。",
+    "content": [
+        {
+            "code": "select student.XH, XM, sc.CJ\nfrom student, sc\nwhere student.XH = sc.XH and\n      KCH in (\n        select KCH\n        from course\n        where KCM = '大学计算机'\n      )\norder by CJ desc\n;"
+        }
+    ],
+    "description": "数据库包括3张表：\n1. 学生表（student）的列包括：XH（学号）、XM（姓名）、XB（性别）、CSRQ（出生日期）、ZXF（总学分）；\n1. 课程表（course）的列包括：KCH（课程号）、KCM（课程名）、XS（学时）、XF（学分）；\n1. 选课表（sc）的列包括：XH（学号）、KCH（课程号）、CJ（成绩）。\n\n本题目要求编写SQL语句：检索出所有选课“大学计算机”的学号、姓名及成绩，按成绩降序排序。\n\n### 表数据样例\n\n\n![student-course-sc表数据.png](~/061157db-b0ed-47f2-97cb-7dcdacea5ac3.png)\n\n### 输出样例:\n\n![查询“大学计算机”的学号、姓名、成绩结果.png](~/347f4c7e-b120-4644-9f36-ea9834aa322d.png)\n"
+}

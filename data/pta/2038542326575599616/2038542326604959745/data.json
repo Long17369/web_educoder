@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询商品表，先按商品分类升序排列，再按商品价格降序排列",
+    "content": [
+        {
+            "code": "select name, category_id, price\nfrom sh_goods\n\norder by category_id, price desc;"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，查询`sh_goods`表，先按商品分类`category_id`升序排列，对于相同分类的商品再按商品价格`price`降序排列 。\n\n提示：请使用`SELECT`语句作答。\n\n### 表结构:\n\n```\nCREATE TABLE sh_goods (\n  id INT  PRIMARY KEY,                         --商品id\n  category_id INT  NOT NULL DEFAULT 0 ,        -- 商品分类id\n  name VARCHAR(120) NOT NULL,                  --商品名称\n  keyword VARCHAR(255) NOT NULL,               -- 关键词编号\n  content TEXT NOT NULL ,                      --商品详情\n  price DECIMAL(10, 2)  NOT NULL DEFAULT 0 ,   --价格\n  stock INT  NOT NULL DEFAULT 0,               -- 库存\n  score DECIMAL(3, 2)  NOT NULL DEFAULT 0 ,    -- 用户评分\n  comment_count INT  NOT NULL DEFAULT 0        -- 评论数量\n) ;\n```\n\n### 表样例\n\n`sh_goods`表：\n\n\n![sh_goods表数据.PNG](~/17e69781-c3b6-424e-89ec-48dc00ba3d79.PNG)\n\n\n### 输出样例:\n\n![答案.PNG](~/5072deec-3bb6-42f1-8b32-89b1cb0bc7f4.PNG)\n"
+}
