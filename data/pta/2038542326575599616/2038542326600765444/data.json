@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "A2-3查询产品表中单价不在范围内的的产品信息",
+    "content": [
+        {
+            "code": "select ProductID, ProductName, CategoryID\nfrom products\nwhere UnitPrice < 15 or\n      UnitPrice > 45\n;"
+        }
+    ],
+    "description": "在```产品表(products)```中查询```单价(UnitPrice)```小于```15```或大于```45```的产品的```产品编号（ProductID）```，```产品名称（ProductName）```和```种类编号（CategoryID）```\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n\n|列名|数据类型|长度|主码|说明|\n|---|---|---|---|---|\n|ProductID|int|11|√|产品编号|\n|ProductName|varchar|40||产品名称|\n|SupplierID|int|11||供应商编号|\n|CategoryID|int|11||种类编号|\n|QuantityPerUnit|varchar|20||数量|\n|UnitPrice|decimal|10,4||单价|\n|UnitsInStock|smallint|2||库存数量|\n|UnitsOnOrder|smallint|2||订购数量|\n|ReorderLevel|smallint|2||再次订购量|\n|Discontinued|bit|1||中止|\n\n\n### 表样例\n\n\n```products```表：\n\n|ProductID|ProductName|CategoryID|UnitPrice|\n|---|---|---|---|\n|1|Chai|1|18.0000|\n|2|Chang|1|19.0000|\n|3|Aniseed Syrup|2|10.0000|\n|4|Chef Anton's Cajun Seasoning|2|22.0000|\n|5|Chef Anton's Gumbo Mix|2|21.3500|\n|6|Grandma's Boysenberry Spread|2|25.0000|\n|7|Uncle Bob's Organic Dried Pears|7|30.0000|\n|8|Northwoods Cranberry Sauce|2|40.0000|\n|9|Mishi Kobe Niku|6|97.0000|\n|10|Ikura|8|31.0000|\n\n### 输出样例:\n\n|ProductID|ProductName|CategoryID|\n|---|---|---|\n|3|Aniseed Syrup|2|\n|9|Mishi Kobe Niku|6|\n\n"
+}

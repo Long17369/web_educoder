@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询所在城市为‘上海’或‘杭州’的仓库编号",
+    "content": [
+        {
+            "code": "select Wno\nfrom warehouse\nwhere City in ('上海', '杭州')\n;"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n检索出```warehouse```表中``所在城市为‘上海’或‘杭州’的仓库编号```的记录。\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n\n```\nCREATE TABLE `warehouse` (\n  `Wno` varchar(10),   --仓库编号\n  `City` varchar(20),  --所在城市\n  `Size` int(11),      --面积\n);\n```\n\n### 表样例\n\n```warehouse```表：\n\n| Wno  | City | Size |\n| ---- | ---- | ---- |\n| A01  | 杭州 | 15000 |\n| A02  | 建德 | 5000  |\n| B01  | 宁波 | 1200  |\n| B02  | 奉化 | 7500  |\n| C01  | 温州 | 10000 |\n| C02  | 乐清 | 8000  |\n| D01  | 绍兴 | 11000 |\n\n### 输出样例:\n\n| Wno  |\n| ---- |\n| A01  |"
+}

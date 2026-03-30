@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "A3-2查询国家为Mexico、Germany的客户数量",
+    "content": [
+        {
+            "code": ""
+        }
+    ],
+    "description": "查询出```顾客表(customers)```中查询```国家（Country）```为```Mexico```、```Germany```的客户数量，并重命名为```custCount```\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n|列名|数据类型|长度|主码|说明|\n|---|---|---|---|---|\n|CustomerID|varchar|5|√|顾客编号|\n|CompanyName|varchar|40||公司名称|\n|ContactName|varchar|30||联系姓名|\n|ContactTitle|varchar|30||联系头衔|\n|Address|varchar|60||地址|\n|City|varchar|15||城市|\n|Region|varchar|15||区域|\n|PostalCode|varchar|10||邮政编码|\n|Country|varchar|15||国家|\n|Phone|varchar|24||电话|\n|Fax|varchar|24||传真|\n\n\n### 表样例\n\n```customers```表：\n\n|CustomerID|CompanyName|ContactName|ContactTitle|Address|City|Region|PostalCode|Country|Phone|Fax|\n|---|---|---|---|---|---|---|---|---|---|\n|ALFKI|Alfreds Futterkiste|Maria Anders|Sales Representative|Obere Str. 57|Berlin||12209|Germany|030-0074321|030-0076545|\n|ANATR|Ana Trujillo Emparedados y helados|Ana Trujillo|Owner|Avda. de la Constitucin 2222|Mxico D.F.||05021|Mexico|(5) 555-4729|(5) 555-3745|\n|ANTON|Antonio Moreno Taquera|Antonio Moreno|Owner|Mataderos  2312|Mxico D.F.||05023|Mexico|(5) 555-3932||\n|AROUT|Around the Horn|Thomas Hardy|Sales Representative|120 Hanover Sq.|London||WA1 1DP|UK|(171) 555-7788|(171) 555-6750|\n|BERGS|Berglunds snabbkp|Christina Berglund|Order Administrator|Berguvsvgen  8|Lule||S-958 22|Sweden|0921-12 34 65|0921-12 34 67|\n|BLAUS|Blauer See Delikatessen|Hanna Moos|Sales Representative|Forsterstr. 57|Mannheim||68306|Germany|0621-08460|0621-08924|\n|BLONP|Blondesddsl pre et fils|Frdrique Citeaux|Marketing Manager|24, place Klber|Strasbourg||67000|France|88.60.15.31|88.60.15.32|\n|BOLID|Blido Comidas preparadas|Martn Sommer|Owner|C/ Araquil, 67|Madrid||28023|Spain|(91) 555 22 82|(91) 555 91 99|\n|BONAP|Bon app'|Laurence Lebihan|Owner|12, rue des Bouchers|Marseille||13008|France|91.24.45.40|91.24.45.41|\n|BOTTM|Bottom-Dollar Markets|Elizabeth Lincoln|Accounting Manager|23 Tsawassen Blvd.|Tsawassen|BC|T2F 8M4|Canada|(604) 555-4729|(604) 555-3745|\n\n\n### 输出样例:\n\n\n|custCount|\n|---|\n|4|\n\n"
+}
