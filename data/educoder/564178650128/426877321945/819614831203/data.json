@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "数组的创建、读写和长度",
+    "content": [
+        {
+            "code": "var array1 = [1,2,3,\"js\",4,true,\"hello\"];\nvar array2 = [true,true,\"java\",2.1];\nfunction mainJs(a) {\n\t//请在此处编写代码\n    /*********begin*********/\n    if (a == array1.length) return array1[array1.length - 1];\n    return array2[array2.length - 1];\n    /*********end*********/\n}",
+            "filename": "ArrayCreate.js",
+            "language": "javascript"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n[comment]: <> (“任务描述”部分需要把本关要让学生解决的问题描述讲清楚，最好加一个简单的例子来说明,类似下面这样)\n\n\n本关任务：掌握创建数组的方法，获取数组的元素和长度。\n\n####相关知识\n[comment]: <> (“相关知识”部分需要把解决本关需要用到的知识点在这里写清楚、完整。比如要解决学生绩点计算的问题，需要用到if-else控制结构，学习者需要首先知道if-else的语法，就需要在相关知识这里把if-else的语法介绍清楚，最好再对每一个知识点配上相应的一个示例点。这一部分的目标就是学生看完这个相关知识就能把本关任务做出来)\n\n数组的出现就是为了批量处理数据。\n\n##### 数组的创建\n创建数组有两种方法，一是使用数组字面量，简单来说就是在`[]`之中列出数组的所有元素：\n\n```js\nvar numberArray = [1,2,3,4,5];//数字数组\nvar stringArray = [\"java\",\"script\",\"edu\",\"coder\"];//字符串数组\nvar mixArray = [1,2,\"java\",true,6.6];//混合数组\n```\n\n如上，各元素之间用`,`隔开。`JavaScript`中数组的元素可以是不同的数据类型，如上面的第三个数组。\n\n创建数组的第二种方法是新建一个`Array`对象的实例，如：\n\n```js\nvar myArray = new Array();//创建一个初始为空的数组\nvar lengthMixArray = new Array(6);//创建一个长为6的数组\n```\n\n这种情况下可以设置数组的长度（即数组中元素的个数），也可以不设置。\n\n\n\n##### 数组元素的读取和写入\n数组元素的读取和写入在形式上相似，都是用赋值符号连接的两个表达式。\n\n读取时，存放读入值的变量在左边，数组元素在右边：\n\n```js\nvar readArray = [1,3,\"js\",true,2.22];\nvar read = readArray[0];//读取第一个元素到变量read中\n```\n\n写入时，数组元素在左边，待写值在右边：\n\n```js\nvar writeArray = [1,3,\"js\",true,2.22];\nwriteArray[0] = 2;//在第一个元素的位置写入2\nconsole.log(writeArray[0]);//原来的1已经被覆盖，输出2\n```\n\n##### 数组长度\n数组长度指数组中元素的个数，等于最大索引值加`1`，数组的`length`属性即数组的长度。\n\n```js\nvar arrayLength = [1,\"js\",true];\nconsole.log(arrayLength.length);//输出3\n```\n\n数组的长度也可以写入，当写入的值小于数组的实际长度时，数组会被删除一部分。大于实际长度时，数组会在尾部添加一些空的区域。\n\n```js\narrayLength.length = 2;\nconsole.log(arrayLength);//输出[1,\"js\"]\n```\n\n####编程要求\n[comment]: <> (“编程要求”部分说一下本关要解决的问题的具体要求，并给出相应代码的框架，以及要求学生填写的那一块)\n\n本关的编程任务是补全右侧代码片段中`begin`至`end`中间的代码，具体要求如下：\n\n- 已知两个数组`array1`和`array2`，参数`a`是一个整数，先判断`a`的值与数组`array1`的长度值相等，如果相等，返回数组`array1`的最后一个元素，反之，则返回数组`array2`的最后一个元素；\n\n* 具体请参见后续测试样例。\n\n####测试说明\n[comment]: <> (“测试说明”部分如果对测试运行有特别需要说明的可以在此处说明一下。重要的是，给出几组测试样例)\n\n测试过程：\n\n- 平台将读取用户补全后的`ArrayCreate.js`；\n\n- 调用其中的`mainJs()`方法，并输入若干组测试数据作为参数；\n\n- 接着根据测试的输出判断程序是否正确。\n\n以下是测试样例：\n\n测试输入：\n`7`\n预期输出：\n`hello`\n\n\n\n---\n海到无边天作岸，山登绝顶我为峰。 —— 林则徐\n\n\n如果你觉得这一关的内容对你有帮助，请你在下面点赞。"
+}

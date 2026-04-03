@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "函数的调用",
+    "content": [
+        {
+            "code": "//求最大值的函数\nfunction getMax(b,c) {\n    return b>c?b:c;\n}\n\n//求最小值的函数\nvar getMin = function(b,c) {\n    return b>c?c:b;\n}\n\n//对象中的求和函数\nvar myObject = {\n    id:1,\n    name:\"function\",\n    myFunc:function(b,c) {\n        return b+c;\n    }\n}\n\nfunction mainJs(a,b,c) {\n    a = parseInt(a);\n    b = parseInt(b);\n    c = parseInt(c);\n\t//请在此处编写代码\n\t/********** Begin **********/\n    if (a == 1) {\n        return getMax(b, c);\n    } else if (a == 2) {\n        return getMin(b, c);\n    } else if (a == 3) {\n        return myObject.myFunc(b, c);\n    }\n\n\t/********** End **********/\n}",
+            "filename": "FunctionCall.js",
+            "language": "javascript"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n[comment]: <> (“任务描述”部分需要把本关要让学生解决的问题描述的最好一句话描述清楚：)\n本关任务：根据要求调用不同的函数。\n\n\n####相关知识\n\n[comment]: <> (“相关知识”部分要把本关需要用到的知识点清晰，具体，简单生动的讲明白，要让学员，看得懂，记得住，能理解)\n\n##### 函数的调用\n在实训四中，我们曾经介绍过对象可以有自己的方法，当然这也是函数。这种函数的调用和前面两关定义的函数有细小的区别。\n\n```js\n//函数的定义：求三个数的最大值\nfunction max(a,b,c) {\n\tif(a > b) {\n\t\tif(a > c)\n\t\t\treturn a;\n\t\telse \n\t\t\treturn c;\n\t}\n\telse {\n\t\tif(b > c)\n\t\t\treturn b;\n\t\telse \n\t\t\treturn c;\n\t}\n}\n//调用该函数\nvar result = max(1,2,3);//result为3\nconsole.log(result);//输出3\n```\n调用函数的时候，需要传入和形参相同个数的的具体值，上面的函数有`3`个参数，所以下面调用的时候传入`3`个具体的值，`1`传给参数`a`，`2`传给参数`b`，`3`传给参数`c`。函数的返回值通过赋值符号`=`传给了变量`result`。如果函数体内没有`return`关键字，将返回`undefined`。\n\n再来看一下对象里定义的函数的调用：\n\n```js\nvar ob = {\n\tid:1,\n\tgetMax:function(a,b) {\n\t\treturn a>b?a:b;\n\t}\n};\nvar result = ob.getMax(2,1);//result值为2\nvar result1 = ob[\"getMax\"](2,1);//result1的值也是2\n```\n\n与上面的区别是，这里要定位到函数，需要使用`对象名.函数名`或者`对象名[\"函数名\"]`,其它相同。\n\n####编程要求\n[comment]: <> (“编程要求”部分说一下本关要解决的问题的具体要求，并给出相应代码的框架，以及要求学生填写的那一块)\n\n本关的编程任务是补全右侧代码片段中`Begin`至`End`中间的代码，具体要求如下：\n\n- `mainJs()`代码区上面定义了三个函数，从上到下分别编号为`1`、`2`和`3`；\n\n- `mainJs()`有三个参数`a`、`b`和`c`，根据`a`的值（函数的编号，可取的值是`1`、`2`和`3`）调用相应的函数（可选的函数分别是`getMax()`、`getMin()`和`getSum()`，具体请参考代码！），并传入参数`b`和`c`，返回得到的结果；\n\n- 比如`a`为`1`表示你需要调用函数`getMax()`；\n\n* 具体请参见后续测试样例。\n\n\n\n####测试说明\n[comment]: <> (“测试说明”部分如果对测试运行有特别需要说明的可以在此处说明一下。重要的是，给出几组测试样例)\n\n测试过程：\n\n- 平台将读取用户补全后的`FunctionCall.js`；\n\n- 调用其中的`mainJs()`方法，并输入若干组测试数据；\n\n- 接着根据测试结果输出判断程序是否正确。\n\n以下是测试样例：\n\n测试输入：\n`1,22,33`\n预期输出：\n`33`\n\n\n\n---\n海到无边天作岸，山登绝顶我为峰。 ——林则徐\n\n如果你觉得这一关的内容对你有帮助，请你在下面点赞。"
+}

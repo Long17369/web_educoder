@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "简单的小动画",
+    "content": [
+        {
+            "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Document\n\t</title>\n\t<style>\n     *{\n     \tmargin: 0;\n     \tpadding: 0;\n     }\n     p{\n     \tmargin: 100px;\n     \twidth: 100px;\n     \theight: 100px;\n     \tbackground: orange;\n     }\n     /************* Begin ************/   \n     /* 创建动画 */\n     @keyframes changeColor{\n         from {width:100px;}\n         to {width:400px;}\n     }\n     /*绑定元素*/\n    p:hover{\n        animation: changeColor 2s ease-in;\n    }\n    /************** End **************/   \n\n\n\t</style>\n</head>\n<body>\n\t<p></p>\n</body>\n</html>",
+            "filename": "test.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\r\n\r\n---\r\n\r\n####任务描述\r\n\r\n[comment]: <> (“任务描述”部分需要把本关要让学生解决的问题描述的最好一句话描述清楚：)\r\n本关任务：用 CSS3 实现简单的小动画。效果图如下：\r\n![](/api/attachments/207203)\r\n\r\n####相关知识\r\n\r\n[comment]: <> (“相关知识”部分要把本关需要用到的知识点清晰，具体，简单生动的讲明白，要让学员，看得懂，记得住，能理解)\r\n为了完成本关任务，你需要掌握：1.创建动画，2.绑定元素。\r\n\r\n#####创建动画\r\n\r\n用 `@keyframes`来创建一个动画，然后把这个动画绑定到一个元素上就有效果了。\r\n\r\n需要实现的效果图如下：\r\n\r\n![](/api/attachments/207202)\r\n\r\n基本的html结构如下：\r\n\r\n```\r\n<p>@keyframes</p>\r\n\r\np{ font-size: 14px}\r\n```\r\n\r\n效果图如下：\r\n\r\n![](/api/attachments/207201)\r\n\r\n\r\n先用`@keyframes`创建一个动画，这个动画表示字体会从`20px`变成`40px`。代码如下：\r\n\r\n```\r\n@keyframes bigfonts{\r\n  from { font-size: 20px;}\r\n   to  { font-size: 40px;}\r\n}\r\n```\r\n说明：\r\n- `@keyframes`表示创建动画，动画名称是 `bigfonts`；\r\n- `from`表示这个动画的开始，`to`表示这个动画的结束；\r\n- 动画发生的时间也可以用百分比来表示，`0%`是动画的开始，`100%`是动画的结束。`from`和`to`相当于`0%`和`100%`；\r\n\r\n\r\n\r\n##### 绑定元素\r\n\r\n然后将动画`bigfonts`绑定到`p`元素上就可以了。代码如下：\r\n\r\n```\r\np:hover{\r\n   animation: bigfonts 2s ease;  \r\n}\r\n```\r\n\r\n效果已经实现了。这里说明一下`animation`的属性值：\r\n\r\n- `bigfonts`是动画的名称；\r\n- `2s`是**动画一次**完成的时间；\r\n- `ease`表示动画的速度曲线，动画以低速开始，然后加快，在结束前变慢。默认也是`ease`；\r\n\r\n\r\n####编程要求\r\n[comment]: <> (“编程要求”部分介绍本关任务的具体要求，如实现步骤，规则等，最好能给出效果图)\r\n根据提示，在右侧编辑器补充代码，实现当**滑动到`p`元素上**时，宽度从`100px`变为`400px`的效果。要求如下：\r\n\r\n- 动画名称为`changeColor`；\r\n- 动画一次完成的时间为`2s`；\r\n- 动画的速度曲线为`ease-in`; \r\n- 这里动画的开始，结束用`from，to`；\r\n\r\n\r\n为了方便评测， CSS 都是需要以分号`;`结尾的。 \r\n\r\n效果如下：\r\n\r\n![](/api/attachments/207203)\r\n\r\n---\r\n开始你的任务吧，祝你成功！\r\n\r\n\r\n"
+}
