@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询’A01’仓库中的职工中比’A02’所有职工薪水都高的职工编号与姓名",
+    "content": [
+        {
+            "code": "select Eid, EName\nfrom employee\nwhere Wno = 'A01' and\n      Salary > all(\n        select Salary\n        from employee\n        where Wno = 'A02'\n    )\n;"
+        }
+    ],
+    "description": "本题目要求编写嵌套查询SQL语句，\n查询’A01’仓库中的职工中比’A02’所有职工薪水都高的职工编号与姓名。\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n\n\n```\nCREATE TABLE `employee` (\n  `Eid` varchar(10),   --职工编号\n  `EName` varchar(30), --职工姓名\n  `Wno` varchar(10),   --所在仓库\n  `Salary` int(11)     --职工工资\n);\n\n```\n\n### 表样例\n\n```employee```表：\n\n| Eid | EName | Wno  | Salary |\n| ---- | ---- | ---- | ------ |\n| 0010 | 张三  | A01  |  3600  |\n| 0011 | 刘勇  | A01  |  2700  |\n| 0012 | 张立  | A01  |  8500  |\n| 0021 | 刘靖  | A02  |  2500  |\n| 0022 | 王强  | A02  |  5600  |\n| 0023 | 李军  |      |  5000  |\n| 0031 | 王林  |      |  3500  |\n\n### 输出样例:\n\n| Eid | EName \n| ---- | ---- |\n| 0012 | 张立  |\n"
+}
