@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "用表达式定义函数",
+    "content": [
+        {
+            "code": "function mainJs(a) {\n    a = parseInt(a);\n\t//请在此处编写代码\n\t/********** Begin **********/\n    var myFunc = function (a) {\n        return Math.floor(a / 100) + Math.floor(a / 10) % 10 + a % 10;\n    }\n\t/********** End **********/\n    return myFunc(a);\n}",
+            "filename": "AnonymousFunctionCreate.js",
+            "language": "javascript"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n[comment]: <> (“任务描述”部分需要把本关要让学生解决的问题描述的最好一句话描述清楚：)\n本关任务：定义一个匿名函数。\n\n\n####相关知识\n\n[comment]: <> (“相关知识”部分要把本关需要用到的知识点清晰，具体，简单生动的讲明白，要让学员，看得懂，记得住，能理解)\n除了最直观的用函数语句定义函数之外，还可以用表达式定义函数。\n\n##### 用表达式定义\n用表达式的方式定义函数，就是用赋值表达式**把函数赋值给一个变量**，这其实就是把函数看成一个变量。这个时候函数可以有名字，也可以没有名字，没有名字的函数叫做**匿名函数**。\n\n- 带名字的；\n\n```js\nvar funct = function getMax(a,b) {\n    return a>b?a:b;\n};//注意这后面的分号不能少，因为我们定义的是一个变量!\n```\n\n和前一关不同的是，只能在**函数定义语句之后**调用该函数，且调用的时候只能用**变量名**`funct`，不能用函数名`getMax`，如：\n\n```js\nvar funct = function getMax(a,b) {\n\treturn a>b?a:b;\n};\nconsole.log(funct(1,2));//输出2\n```\n\n- 匿名函数；\n所谓匿名函数就是关键字`function`之后直接是参数列表：\n\n```js\nvar funct = function(a,b) {\n\treturn a>b?a:b;\n};\n```\n\n这个函数没有名字，它被赋值给了变量`funct`，所以叫匿名函数。同样，也只能在这一语句之后调用该函数。\n\n```js\nvar funct = function(a,b) {\n\treturn a>b?a:b;\n};\nconsole.log(funct(1,2));//输出2\n```\n\n####编程要求\n[comment]: <> (“编程要求”部分说一下本关要解决的问题的具体要求，并给出相应代码的框架，以及要求学生填写的那一块)\n\n本关的编程任务是补全右侧代码片段中`Begin`至`End`中间的代码，具体要求如下：\n\n- 定义一个匿名函数，将它赋值给变量`myFunc`；\n\n- 该函数实现求一个三位数的各个位上的数字之和，比如`123`各个位上的数字分别为`1`、`2`和`3`，和是`6`；\n\n\n* 具体请参见后续测试样例。\n\n\n\n####测试说明\n[comment]: <> (“测试说明”部分如果对测试运行有特别需要说明的可以在此处说明一下。重要的是，给出几组测试样例)\n\n测试过程：\n\n- 平台将读取用户补全后的`AnonymousFunctionCreate.js`；\n\n- 调用其中的`mainJs()`方法，并输入若干组测试数据；\n\n- 接着根据测试结果判断程序是否正确。\n\n以下是测试样例：\n\n测试输入：\n`123`\n预期输出：\n`6`\n\n\n\n---\n海到无边天作岸，山登绝顶我为峰。 ——林则徐\n\n如果你觉得这一关的内容对你有帮助，请你在下面点赞。"
+}

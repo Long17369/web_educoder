@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "未定义的实参",
+    "content": [
+        {
+            "code": "function mainJs(a,b,c,d) {\n\t//请在此处编写代码\n\t/********** Begin **********/\n    if (a === undefined) a = \"green\";\n    if (b === undefined) b = \"green\";\n    if (c === undefined) c = \"red\";\n    if (d === undefined) d = \"yellow\";\n    return [a, b, c, d].join(\"-\");\n\t/********** End **********/\n}\n",
+            "filename": "UndefinedArguments.js",
+            "language": "javascript"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n[comment]: <> (“任务描述”部分需要把本关要让学生解决的问题描述讲清楚，最好加一个简单的例子来说明,类似下面这样)\n`JavaScript`的实际参数的个数有时候是不确定的。\n\n本关任务：学习处理未定义的实参。\n\n####相关知识\n[comment]: <> (“相关知识”部分需要把解决本关需要用到的知识点在这里写清楚、完整。比如要解决学生绩点计算的问题，需要用到if-else控制结构，学习者需要首先知道if-else的语法，就需要在相关知识这里把if-else的语法介绍清楚，最好再对每一个知识点配上相应的一个示例点。这一部分的目标就是学生看完这个相关知识就能把本关任务做出来)\n\n函数的基本功能是对函数内的参数进行操作，其中，函数定义时的参数被称为形式参数，函数被调用时传入的参数被称为**实际参数**。\n\n\n##### 未定义的实参\n在大部分的编程语言里面，都会对调用函数时传入的实参个数和类型进行检查，而`JavaScript`既**不检查**实参的类型，也不检查实参的个数。\n`JavaScript`中的实参会按照顺序**从左到右**依次匹配上形参，例如：\n\n```\nfunction myFunction(a,b,c) {\n\tconsole.log(a);\n\tconsole.log(b);\n\tconsole.log(c);\n}\nmyFunction(1,2,3);\n```\n\n实参`1`传入形参`a`，实参`2`传入形参`b`，实参`3`传入形参`c`。\n当实参个数少于形参时，靠右的形参会被传入值`undefined`。如：\n\n```\nfunction myFunction(a,b,c) {\n\tconsole.log(a);\n\tconsole.log(b);\n\tconsole.log(c);\n}\nmyFunction(1,2);\n```\n\n实参`1`传入形参`a`，实参`2`传入形参`b`，`undefined`传入形参`c`。\n如果只想给右侧的参数传入数据，可以给前几个实参传入`undefined`。如：\n\n```\nfunction myFunction(a,b,c){\nconsole.log(a);\nconsole.log(b);\nconsole.log(c);\n}\nmyFunction(undefined,1,2);\n```\n\n上面这两种做法不够严谨，最佳实践是给可能被传入`undefined`值的形参设定一个**默认值**。如：\n\n```\nfunction getSum(a,b,c) {\n\tif(c === undefined) \n\t\tc = 0;\n\tconsole.log(a+b+c);\n}\nmyFunction(1,2);\n```\n\n####编程要求\n[comment]: <> (“编程要求”部分说一下本关要解决的问题的具体要求，并给出相应代码的框架，以及要求学生填写的那一块)\n\n本关的编程任务是补全右侧代码片段中`Begin`至`End`中间的代码，具体要求如下：\n\n- 路口有四个方向的红绿灯，其默认值分别是`green`、`green`\n、`red`和`yellow`；\n\n- 对于函数`mainJs(a,b,c,d)`的四个参数，要求在没有传入实参或者传入`undefined`时，其分别设置为上述默认值；\n\n- 最后返回四个字符串型参数的拼接结果，字符串中间用`-`符号隔开，如分别传入`red`、`red`、`yellow`和`undefined`时，返回`red-red-yellow-yellow`；\n\n* 具体请参见后续测试样例。\n\n\n\n####测试说明\n[comment]: <> (“测试说明”部分如果对测试运行有特别需要说明的可以在此处说明一下。重要的是，给出几组测试样例)\n\n测试过程：\n\n- 平台将读取用户补全后的`UndefinedArguments.js`；\n\n- 调用其中的`mainJs()`方法，并输入若干组测试数据；\n\n- 接着根据测试结果判断程序是否正确。\n\n以下是测试样例：\n\n测试输入：\n`red,red,red`\n预期输出：\n`red-red-red-yellow`\n\n\n\n---\n海到无边天作岸，山登绝顶我为峰。 ——林则徐\n\n如果你觉得这一关的内容对你有帮助，请你在下面点赞。"
+}
