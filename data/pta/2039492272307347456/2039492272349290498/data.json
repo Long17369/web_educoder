@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "B1-1查找职员信息及其直接上级的相关信息",
+    "content": [
+        {
+            "code": "select e.LastName, e.FirstName, l.EmployeeID, l.Title\nfrom employees as e, \n     employees as l\nwhere e.ReportsTo = l.EmployeeID\n;"
+        }
+    ],
+    "description": "这是一个SQL编程题模板。请在这里写题目描述。例如：本题目要求编写SQL语句，\n检索出```Student```表中所有符合```id > 50```的记录。\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n\n查询所有的职员的```姓（LastName）```和```名（FirstName）```以及他的直接上级的```员工编号（EmployeeID）```和```职务（Title）```\n\n提示：请使用SELECT语句作答。\n\n### 表结构:\n\n|列名|数据类型|长度|主码|说明|\n|---|---|---|---|---|\n|EmployeeID| int|11|√|员工编号|\n|LastName| varchar|20||姓|\n|FirstName| varchar|10||名|\n|Title| varchar|30||职务|\n|TitleOfCourtesy| varchar|25||礼貌称号|\n|BirthDate| datetime,|||出生日期|\n|HireDate| datetime,|||入职日期|\n|Address| varchar|60||地址|\n|City| varchar|15||城市|\n|Region| varchar|15||区域|\n|PostalCode| varchar|10||邮政编码|\n|Country| varchar|15||国家|\n|HomePhone| varchar|24||住宅电话|\n|Extension| varchar|4||范围|\n|Photo| longblob,|||照片|\n|ReportsTo| int|11||直接上级|\n|PhotoPath| varchar|255||照片|\n\n\n\n### 表样例\n\n\n```employees```表：\n\n|EmployeeID|LastName|FirstName|Title|TitleOfCourtesy|BirthDate|HireDate|Address|City|Region|PostalCode|Country|HomePhone|Extension|ReportsTo|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n|1|Davolio|Nancy|Sales Representative|Ms.|1948/12/8 00:00:00|1992/5/1 00:00:00|507 - 20th Ave. E.Apt. 2A|Seattle|WA|98122|USA|(206) 555-9857|5467|2|\n|2|Fuller|Andrew|Vice President, Sales|Dr.|1952/2/19 00:00:00|1992/8/14 00:00:00|908 W. Capital Way|Tacoma|WA|98401|USA|(206) 555-9482|3457||\n|3|Leverling|Janet|Sales Representative|Ms.|1963/8/30 00:00:00|1992/4/1 00:00:00|722 Moss Bay Blvd.|Kirkland|WA|98033|USA|(206) 555-3412|3355|2|\n\n\n### 输出样例:\n\n|LastName|FirstName|EmployeeID|Title|\n|---|---|---|---|\n|Davolio|Nancy|2|Vice President, Sales|\n|Leverling|Janet|2|Vice President, Sales|\n\n"
+}

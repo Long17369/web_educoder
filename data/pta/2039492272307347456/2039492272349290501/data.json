@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "显示总评平均成绩75分以上的课程名称与总评成绩平均分",
+    "content": [
+        {
+            "code": "select CName, avg_SCScore\nfrom course\ninner join (\n        select CId, Avg(SCScore) avg_SCScore\n        from sc\n        group by CId\n        having avg(SCScore) >= 75\n    ) as a on course.CId = a.CId\n;"
+        }
+    ],
+    "description": "显示总评平均成绩75分以上的课程名称与总评成绩的平均分\n提示：请使用SELECT语句作答。\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\n-- 创建course表\nCREATE TABLE course (  \nCId CHAR(4) NOT NULL PRIMARY KEY, -- 课程序号，主键  \nPCId CHAR(4) NULL, -- 先修课  \nDId CHAR(2) NULL, -- 开课系编号  \nCName CHAR(20) NOT NULL, -- 课程名称  \nCCredit INT NOT NULL, -- 学分  \nCHour INT NOT NULL, -- 学时  \nCAttr CHAR(6) NOT NULL, -- 课程类型  \nCNum INT NOT NULL\n);  \n\n\n\n-- 创建选课表  \nCREATE TABLE sc (  \nSCId INT NOT NULL, -- 选课序号，主键  \nCId CHAR(4) NOT NULL, -- 课程编号  \nSId CHAR(9) NOT NULL, -- 学号  \nSCTerm CHAR(12) NULL, -- 开课学年/学期  \nSCScore1 FLOAT NULL ,-- 平时成绩  \nSCScore2 FLOAT NULL, -- 期中成绩  \nSCScore3 FLOAT NULL, -- 期末成绩  \nSCScore FLOAT NULL ,-- 总评成绩  \nPRIMARY KEY (SCId)\n);\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n```course```表：\n![image.png](~/8aec1d6a-bf8a-4e7f-8c13-5bf46416c95a.png)\n\n```sc```表：\n![image.png](~/6f6399c0-c0f7-4275-ad05-af5fea8ab153.png)\n\n### 查询结果输出样例:\n![image.png](~/85c2c2d1-be5a-48bc-9e5a-a7cdba0686fa.png)"
+}

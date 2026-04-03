@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询同专业的学生",
+    "content": [
+        {
+            "code": "select sno 学号, sname 姓名\nfrom stu \nwhere mno in (\n    select mno\n    from  stu\n    where sname = '张三'\n) and\nsname != '张三'\n;"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n检索```Student```表中与‘张三’在同一个专业的学生记录。\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `stu` (\n  `sno` char(4) NOT NULL,  -- 学号\n  `sname` char(8) NOT NULL,  -- 姓名\n  `sex` tinyint(1) DEFAULT NULL,  -- 性别\n  `mno` char(2) DEFAULT NULL,  -- 专业号\n  `birdate` datetime DEFAULT NULL,  -- 出生日期\n  `memo` text,  -- 备注\n  PRIMARY KEY (`sno`)\n);\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n``` stu```表：\n\n\n![stu.JPG](~/95a25a51-79b0-4386-9f0d-27b270de9dad.JPG)\n\n\n### 输出样例:\n\n请在这里给出输出样例。例如：\n\n![l215.JPG](~/c257f604-55c5-42f9-9811-9978594d4b51.JPG)\n\n"
+}

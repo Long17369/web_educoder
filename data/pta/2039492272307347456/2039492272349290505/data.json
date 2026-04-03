@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "77.显示指导过两个班级以上的班导的姓名、所指导的班级名称",
+    "content": [
+        {
+            "code": "select TName, GName\nfrom grade\njoin teacher on grade.TId = teacher.TId\nwhere grade.TId in (\n        select TId\n        from grade\n        group by TId\n        having Count(*) > 2\n    )\n;"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，查询显示指导过两个班级以上的班导的姓名、所指导的班级名称。\n#### 现有教务管理系统的关系描述如下：\n* 每个院系（部门）有多个班级和多名教师，每名教师各自开设有多门课程。\n* 每位教师管理多个班级（班主任），每个班级只能被一位老师管理。\n* 每名学生属于一个班级，可以选修多门课程。\n* 每门课程可被多位老师讲授，并且有些课程具有先导课程，每门课程的成绩由平时成绩、期中成绩、期末成绩组成，最终计算总评成绩。\n* 课程信息表供教师和学生查询，包含课程信息、任课教师、上课班级、上课教室、上课日期（周几）、上课时间（第几节课）、上课学期学年等信息。\n\n##### 1.学生表：student\n######  表结构\n![student-1.png](~/83dc7b69-e20f-4437-9153-044b5dcc1c41.png)\n######  表数据\n![student-2.png](~/f3303887-0bd5-4f59-b9c3-dd36cccb788a.png)\n##### 2.课程表：course\n######  表结构\n![course-1.png](~/1cece186-1ba6-4c0d-9542-9f84279fe164.png)\n######  表数据\n![course-2.png](~/6f7c9fc0-e3ae-4544-b971-bcff6e76471b.png)\n##### 3.选课表：sc\n######  表结构\n![sc-1.png](~/5053c0e1-61b9-4a7e-a906-32d4ffac3223.png)\n######  表数据\n![sc-2.png](~/16ba66d5-0702-4fad-87f6-dea6f3abd027.png)\n##### 4.班级表：grade\n######  表结构\n![grade-1.png](~/dc6c85ff-e918-48c9-9031-cea2ad25ea1e.png)\n######  表数据\n![grade-2.png](~/f9e60987-4722-423c-aa38-0e2d1eca476a.png)\n##### 5.院系（部门）表：dept\n######  表结构\n![dept-1.png](~/6e3ef9fc-32d5-4224-bb06-c91eac8e4fb1.png)\n######  表数据\n![dept-2.png](~/e6ada31e-a48b-42f2-8935-d30de5752837.png)\n##### 6.教师表：teacher\n######  表结构\n![teacher-1.png](~/2bc0e800-33ee-4d46-8862-94665df10f29.png)\n######  表数据\n![teacher-2.png](~/90a97cff-6ab9-447c-8f6f-7fb91b1594b0.png)\n##### 7.课程信息表：information\n######  表结构\n![information-1.png](~/5175cef4-10c9-4620-9798-5fa3e369b19d.png)\n######  表数据\n![information-2.png](~/b03e14b2-06ed-4bbe-9828-944d2afaebfa.png)\n##### ===>样例输出：\n![77.png](~/b345211a-1780-46fc-9a23-c5b6be5a78e0.png)\n\n"
+}
