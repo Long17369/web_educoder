@@ -8,7 +8,7 @@
     <div v-else class="code-layout">
       <div class="markdown-container">
         <h2 class="section-title">题目描述</h2>
-        <div class="markdown markdown-body" v-html="problemHtml"></div>
+        <div class="markdown markdown-body" v-html="problemHtmlWithNoReferrer"></div>
       </div>
       <div class="code-container">
         <h2 class="section-title">代码</h2>
@@ -41,7 +41,7 @@ import python from 'highlight.js/lib/languages/python'
 import xml from 'highlight.js/lib/languages/xml'
 import { marked } from 'marked'
 import markedKatex from 'marked-katex-extension'
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import type { Problem, ProblemSourceFile } from '@/utils/types'
 
 import 'katex/dist/katex.min.css'
@@ -90,6 +90,23 @@ const codeFiles = ref<
     copied: boolean
   }[]
 >([])
+
+const problemHtmlWithNoReferrer = computed(() => {
+  if (!problemHtml.value) return problemHtml.value
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(problemHtml.value, 'text/html')
+  const images = doc.querySelectorAll('img')
+  images.forEach((img) => {
+    if (!img.hasAttribute('referrerpolicy')) {
+      img.setAttribute('referrerpolicy', 'no-referrer')
+    }
+    const url = img.getAttribute('src') || ''
+    if (url.startsWith('~/')) {
+      img.setAttribute('src', `https://images.ptausercontent.com/${url.slice(1)}`)
+    }
+  })
+  return doc.documentElement.outerHTML
+})
 
 async function copyCode(file: { rawCode: string; copied: boolean }) {
   try {
