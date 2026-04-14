@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "jmu-python-判断是否构成三角形",
+    "content": [
+        {
+            "code": "e = list(map(int,input().split()))\nprint('yes' if sum(e) - 2 * max(e) > 0 else 'no')\n",
+            "language": "python"
+        }
+    ],
+    "description": "输入三角形的三边，判断是否能构成三角形。若能构成输出yes，否则输出no。\n\n### 输入格式:\n\n在一行中直接输入3个整数，3个整数之间各用一个空格间隔，没有其他任何附加字符。\n\n### 输出格式:\n\n直接输出yes或no，没有其他任何附加字符。\n\n### 输入样例1:\n\n```in\n3 4 5\n```\n\n### 输出样例1:\n\n```out\nyes\n```\n\n### 输入样例2:\n\n```in\n1 2 3\n```\n\n### 输出样例2:\n\n```out\nno\n```"
+}

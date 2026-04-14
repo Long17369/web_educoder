@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "游程编码",
+    "content": [
+        {
+            "code": "s = input()\ncnt = 0\nnums = set(map(str,range(10)))\nfor i in s:\n    if i in nums:\n        cnt *= 10\n        cnt += int(i)\n    else:\n        print(i*cnt,end='')\n        cnt = 0\n",
+            "language": "python"
+        }
+    ],
+    "description": "游程编码是一种比较简单的压缩算法，其基本思想是将重复且连续出现多次的字符使用（连续出现次数，某个字符）来描述。\n\n比如一个字符串：`AAAAABBBBCCC`，使用游程编码可以将其描述为：`5A4B3C`，其中 `5A` 表示有5个连续的`A`；同理，`4B`表示有4个连续的`B`，`3C`表示有3个连续的`C`，其它情况以此类推。\n\n现在要根据编码后字符串解码，输出编码前的字符串。\n\n### 输入格式:\n\n输入一行仅包含大小写字母和数字的字符串，长度不超过 $100$，保证是数字+字母的合法形式，不可能出现连续两个字母的情况，但可能出现连续的数字，并最多不超过两个。\n\n### 输出格式:\n\n输出一行字符串，表示编码前的字符串（注意，长度可能超过输入的字符串）。\n\n### 输入样例:\n\n```in\n5A4B3C\n```\n\n### 输出样例:\n\n```out\nAAAAABBBBCCC\n\n```\n"
+}

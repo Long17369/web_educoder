@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "删除没有销售过的产品",
+    "content": [
+        {
+            "code": "delete from product\nwhere not exists(\n    select *\n    from orders\n    where Pid = product.Pid\n);"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n删除没有销售过的产品。\n\n\n### 表结构:\n\n```\nCREATE TABLE `product` (\n  `Pid` varchar(20),   --商品编号\n  `PName` varchar(50), --商品名称\n  `Weight` decimal(10, 3)    --重量\n);\nCREATE TABLE `orders` (\n  `OrdNo` int(11),   --订单编号\n  `Sid` varchar(10), --供应商编号\n  `Eid` varchar(10), --职工编号\n  `Pid` varchar(20), --商品编号\n  `Price` decimal(10,2), --价格\n  `QTY` int(11),     --订购数量\n  `ordDate` date    --订单日期\n);\n```\n\n### 表样例\n\n```product```表：\n\n| Pid  | PName   | Weight |\n| ---- | ------- | ------ |\n| P01  | M6螺栓  | 30     |\n| P02  | M8螺栓  | 40     |\n| P03  | M16螺栓 | 140    |\n| P04  | 螺帽    | 30     |\n| P05  | 螺母    | 45     |\n| P06  | 垫片    | 10     |\n| P07  | 铰链    | 70     |\n\n```orders```表：\n\n| OrdNo | Sid  | Eid  | Pid  | Price | QTY  | ordDate    |\n| ----- | ---- | ---- | ---- | ----- | ---- | ---------- |\n| 1     | S01  | 0011 | P01  | 11    | 23   | 2022-02-13 |\n| 2     | S02  | 0012 | P05  | 12    | 25   | 2022-02-14 |\n| 3     | S03  | 0012 | P03  | 60    | 55   | 2022-02-14 |\n\n### 输出样例:\n\n\n| Pid  | PName   | Weight |\n| ---- | ------- | ------ |\n| P01  | M6螺栓  | 30     |\n| P03  | M16螺栓 | 140    |\n| P05  | 螺母    | 45     |\n"
+}

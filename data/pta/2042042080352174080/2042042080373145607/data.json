@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "插入学生总学分表",
+    "content": [
+        {
+            "code": "insert into totalcredit \nselect stu.sno,\n       coalesce(sum(credit), 0) totalcredit\nfrom stu\nleft join sc on stu.sno = sc.sno and sc.grade >= 60\nleft join cou on cou.cno = sc.cno\ngroup by stu.sno;\n"
+        }
+    ],
+    "description": "本题目要求编写Insert语句，\n计算每位同学获得的总学分，并将所有学生的总学分按学号升序排序后一起插入到```totalcredit```表中。\n\n注意：\n\n1）当某门课程成绩在60分以上时才能合计计入总学分\n\n2）如果某学生尚未选修任何课程时，总学分计为0，并插入到```totalcredit```表中。\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `cou` (\n  `cno` char(4) NOT NULL,  -- 课程号\n  `cname` varchar(30) NOT NULL,  -- 课程名\n  `credit` smallint(6) DEFAULT NULL,  -- 学分\n  `ptime` char(5) DEFAULT NULL,\n  `teacher` char(10) DEFAULT NULL,\n  PRIMARY KEY (`cno`)\n);\nCREATE TABLE `stu` (\n  `sno` char(4) NOT NULL,\n  `sname` char(8) NOT NULL,\n  `sex` tinyint(1) DEFAULT NULL,\n  `mno` char(2) DEFAULT NULL,\n  `birdate` datetime DEFAULT NULL,\n  `memo` text,\n  PRIMARY KEY (`sno`)\n);\n\nCREATE TABLE `sc` (\n  `sno` char(4) NOT NULL,\n  `cno` char(4) NOT NULL,\n  `grade` decimal(6,1) DEFAULT NULL,\n  PRIMARY KEY (`sno`,`cno`),\n  CONSTRAINT `fk_sc_cno` FOREIGN KEY (`cno`) REFERENCES `cou` (`cno`),\n\tCONSTRAINT `fk_sc_sno` FOREIGN KEY (`sno`) REFERENCES `stu` (`sno`)\n);\nCREATE TABLE `totalcredit` (\n  `sno` char(4) NOT NULL,\n  `totalcredit` smallint(6) DEFAULT '0'\n);\n\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n```cou```表：\n\n\n![cou.JPG](~/44557832-d171-4719-8509-bd2d7eec5657.JPG)\n\n``` stu```表：\n\n![stu.JPG](~/b0858ad0-b882-43e3-a5e6-3debd126fe6b.JPG)\n\n\n```sc```表：\n\n\n![sc.JPG](~/48f0761f-f757-4c2b-b2ef-2be6a55fabd8.JPG)\n\n\n### 输出样例:\n\n插入所有学生的总学分后，```totalcredit```表如下：\n\n\n\n\n![5.JPG](~/5dbb1eb2-5ad8-492a-b2ea-9f7d9e89bc9b.JPG)\n\n\n\n"
+}

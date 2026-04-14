@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "删除马齐的购物记录。",
+    "content": [
+        {
+            "code": "delete from recorder\nwhere cid in (\n    select cid from customer\n    where cname = '马齐'\n);"
+        }
+    ],
+    "description": "### 题干:\n删除马齐的购物记录。<br>\n提示：不是删除会员马齐，而是删除他的购物记录。\n\n### 表结构:\n\n定义表结构的SQL语句如下：<br>\nCREATE TABLE customer(<br>\ncid CHAR(4) PRIMARY KEY,<br>\ncname VARCHAR(20) NOT NULL,<br>\nsex CHAR(1) DEFAULT '女',<br>\nphone CHAR(11) UNIQUE<br>\n);<br>\nCREATE TABLE recorder(<br>\nid INT PRIMARY KEY  AUTO_INCREMENT,<br>\ncid CHAR(4),<br>\ngid CHAR(4),<br>\nquantity INT NOT NULL,<br>\nsale_date DATETIME,<br>\nCONSTRAINT recorder_cid_fk FOREIGN KEY (cid) REFERENCES customer(cid)<br>\n);<br>\n### 表样例\n上述表结构对应的表样例：\n\n```customer```表：\n\n![customer.png](~/299cde3c-e9da-4bb7-b1dd-13751d1cb158.png)\n\n```recorder```表：\n\n![recorder.png](~/65e3c654-8af3-49f2-9eaf-d07e3fa15199.png)\n\n\n### 输出样例:\n输出样例：\n\n![4-8.png](~/25dd2671-a29c-48f1-a39b-9b1beb967a41.png)\n"
+}

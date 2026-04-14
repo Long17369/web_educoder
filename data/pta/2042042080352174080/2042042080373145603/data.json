@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "删除没有员工的仓库",
+    "content": [
+        {
+            "code": "delete from warehouse\nwhere not exists(\n    select *\n    from employee\n    where warehouse.Wno = Wno\n);"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n删除没有员工的仓库。\n\n\n### 表结构:\n\n```\nCREATE TABLE `warehouse` (\n  `Wno` varchar(10),   --仓库编号\n  `City` varchar(20),  --所在城市\n  `Size` int(11),      --面积\n);\nCREATE TABLE `employee` (\n  `Eid` varchar(10),   --职工编号\n  `EName` varchar(30), --职工姓名\n  `Wno` varchar(10),   --所在仓库\n  `Salary` int(11)     --职工工资\n);\n```\n\n### 表样例\n\n```warehouse```表：\n\n| Wno  | City | Size |\n| ---- | ---- | ---- |\n| A01  | 杭州 | 15000 |\n| A02  | 建德 | 5000  |\n| B01  | 宁波 | 1200  |\n| B02  | 奉化 | 7500  |\n| C01  | 温州 | 10000 |\n| C02  | 乐清 | 8000  |\n\n```employee```表：\n\n| Eid | EName | Wno  | Salary |\n| ---- | ---- | ---- | ------ |\n| 0010 | 张三  | A01  |  3600  |\n| 0011 | 刘勇  | A02  |  2700  |\n| 0012 | 张立  | B01  |  8500  |\n| 0021 | 刘靖  | C02  |  2500  |\n\n### 输出样例:\n\n| Wno  | City | Size |\n| ---- | ---- | ---- |\n| A01  | 杭州 | 15000 |\n| A02  | 建德 | 5000  |\n| B01  | 宁波 | 1200  |\n| C02  | 乐清 | 8000  |"
+}
