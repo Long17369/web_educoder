@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "为商品表所有字段添加数据",
+    "content": [
+        {
+            "code": "insert into sh_goods\nvalues(2,3,'钢笔','001','练字必不可少',15,300,3.9,500);"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，为`sh_goods`表添加一行记录。\n\n提示：使用`INSERT`语句插入数据\n\n### 表结构:\n\n```\nCREATE TABLE sh_goods (\n  id INT  PRIMARY KEY,                         --商品id\n  category_id INT  NOT NULL DEFAULT 0 ,        -- 商品分类id\n  name VARCHAR(120) NOT NULL,                  --商品名称\n  keyword VARCHAR(255) NOT NULL,               -- 关键词编号\n  content TEXT NOT NULL ,                      --商品详情\n  price DECIMAL(10, 2)  NOT NULL DEFAULT 0 ,   --价格\n  stock INT  NOT NULL DEFAULT 0,               -- 库存\n  score DECIMAL(3, 2)  NOT NULL DEFAULT 0 ,    -- 用户评分\n  comment_count INT  NOT NULL DEFAULT 0        -- 评论数量\n) ;\n```\n\n### 插入新记录前查询结果\n\n\n![样例1.PNG](~/2c3a0c47-e05e-4f64-b0f2-34e46e74fcc1.PNG)\n\n\n### 插入新记录后查询结果:\n\n\n![样例2.PNG](~/1e5ac602-9464-496c-bff3-a33f291a859e.PNG)\n"
+}

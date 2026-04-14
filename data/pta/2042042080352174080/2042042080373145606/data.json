@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "批量插入学生记录",
+    "content": [
+        {
+            "code": "insert into softstu\nselect sno, sname\nfrom stu\nwhere mno = '02'\n;"
+        }
+    ],
+    "description": "本题目要求编写Insert语句，\n将```stu```表中的软件工程专业（专业号mno为'02'）的学生记录批量插入到一个学生简表```softstu表```中。\n\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `stu` (\n  `sno` char(4) NOT NULL,\n  `sname` char(8) NOT NULL,\n  `sex` tinyint(1) DEFAULT NULL,\n  `mno` char(2) DEFAULT NULL,  --专业号\n  `birdate` datetime DEFAULT NULL,\n  `memo` text,\n  PRIMARY KEY (`sno`),\n);\n\nCREATE TABLE `softstu` (\n  `sno` char(4) NOT NULL,\n  `sname` char(8) NOT NULL\n);\n\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n``` stu```表：\n\n![stu.JPG](~/bd933338-26a0-41e9-a907-fb8884629b43.JPG)\n\n\n### 输出样例:\n\n```softstu表```如下：\n\n![3.JPG](~/bcb7dc16-c4d1-4441-b2ad-e41dc95e96fc.JPG)\n\n"
+}

@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "添加学生成绩记录",
+    "content": [
+        {
+            "code": "insert into sc values('S012', 'C001', 90);\ninsert into sc values('S012', 'C002', null);"
+        }
+    ],
+    "description": "本题目要求编写insert语句，\n在```sc```表中，为学号为S012的学生添加以下学生选课成绩记录。\n选修C001课程，成绩为90。\n选修C002课程，成绩为空。\n\n注意：每条inser语句应以\"；\"结束。\n\n\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `sc` (\n  `sno` char(4) NOT NULL,\n  `cno` char(4) NOT NULL,\n  `grade` decimal(6,1) DEFAULT 0,\n  PRIMARY KEY (`sno`,`cno`)\n);\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n``` sc```表：\n\n\n![sc.JPG](~/f59b2354-182b-4121-921f-8f9edde7dcd0.JPG)\n\n\n### 输出样例:\n\n添加学生成绩记录后，```sc```表如下：\n\n\n\n\n![2.JPG](~/25dcf40f-719d-416d-96ce-312783a50973.JPG)\n\n\n"
+}
