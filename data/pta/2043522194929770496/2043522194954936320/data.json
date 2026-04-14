@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "修改高数不及格的学生成绩",
+    "content": [
+        {
+            "code": "update sc\nset grade = 60\nwhere grade < 60 and cno in (\n    select cno\n    from cou\n    where cname = '高等数学'\n)\n;"
+        }
+    ],
+    "description": "本题目要求编写UPDATE语句，\n将```sc```表中“高等数学”课程不及格的成绩全改为60分\n\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `cou` (\n  `cno` char(4) NOT NULL,\n  `cname` varchar(30) NOT NULL,\n  `credit` smallint(6) DEFAULT NULL,\n  `ptime` char(5) DEFAULT NULL,\n  `teacher` char(10) DEFAULT NULL,\n  PRIMARY KEY (`cno`)\n)\nCREATE TABLE `sc` (\n  `sno` char(4) NOT NULL,\n  `cno` char(4) NOT NULL,\n  `grade` decimal(6,1) DEFAULT NULL,\n  PRIMARY KEY (`sno`,`cno`),\n  CONSTRAINT `fk_sc_cno` FOREIGN KEY (`cno`) REFERENCES `cou` (`cno`)\n)\n\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n```cou```表：\n\n\n![cou.JPG](~/9cb5a144-fbe6-4cf7-87c2-4aacb53c6280.JPG)\n\n```sc```表：\n\n\n![u1.JPG](~/3dc111be-28b7-4512-abd8-854c41e17060.JPG)\n\n\n\n### 输出样例:\n\n请在这里给出输出样例。例如：\n\n\n![u2.JPG](~/7803263b-de65-4a21-a771-a8bf245dfa17.JPG)\n\n"
+}

@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "创建视图计算学生平均绩点",
+    "content": [
+        {
+            "code": "create view V_average_point as\nselect Sdept,\n       a.Sno,\n       Average_point\nfrom ( \n    select Sno, \n           avg(\n               case when Grade >= 60 then (Grade-50)/10\n               else 0 end\n           ) Average_point\n    from SC\n    group by Sno\n) as a\ninner join Student on Student.Sno = a.Sno\n;"
+        }
+    ],
+    "description": "现有一个学生数据库，内包含学生表（Student）、课程表（Course）和选修表（SC）。\n\n通常在学生毕业前，教务工作人员需要统计每位学生的课程平均绩点以检查其是否达到毕业条件和授位条件。由于数据库中只有课程百分制成绩，因此需要先将课程成绩转换为课程绩点后再计算其平均绩点。课程成绩与绩点之间的转换规则如下：\n\n![Grade.png](~/c80625d6-9d0f-419c-a7d8-0968579276c7.png)\n\n\n请设计一个视图V_average_point，计算学生平均绩点。\n\n提示：请使用CREATE VIEW语句作答，并请注意数据表名、列名大小写。\n\n### 表结构:\n\n学生表（Student）、课程表（Course）和选修表（SC）结构如下：\n\n```\nCREATE TABLE `Student` (\n  `Sno` varchar(20) NOT NULL,\n  `Sname` varchar(10) DEFAULT NULL,\n  `Ssex` varchar(2) DEFAULT NULL,\n  `Sage` int(3) DEFAULT NULL,\n  `Sdept` varchar(10) DEFAULT NULL,\n  PRIMARY KEY (`Sno`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8;\n\nCREATE TABLE `Course` (\n  `Cno` varchar(10) NOT NULL,\n  `Cname` varchar(20) DEFAULT NULL,\n  `Cpno` varchar(10) DEFAULT NULL,\n  `Ccredit` int(3) DEFAULT NULL,\n  PRIMARY KEY (`Cno`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8;\n\nCREATE TABLE `SC` (\n  `Sno` varchar(20) NOT NULL,\n  `Cno` varchar(10) NOT NULL,\n  `Grade` int(3) DEFAULT NULL,\n  PRIMARY KEY (`Sno`,`Cno`),\n  KEY `Cno` (`Cno`),\n  CONSTRAINT `sc_ibfk_1` FOREIGN KEY (`Sno`) REFERENCES `student` (`Sno`),\n  CONSTRAINT `sc_ibfk_2` FOREIGN KEY (`Cno`) REFERENCES `course` (`Cno`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8;\n```\n\n### 表样例\n\n```Student```表：\n\n\n![Student.PNG](~/aff56cd4-4108-4ff2-8ae8-3487b5cc5351.PNG)\n\n\n```Course```表：\n\n\n![Course.PNG](~/dc361c7d-3b67-426f-97e3-45394a1732cb.PNG)\n\n\n```SC```表：\n\n\n![SC.PNG](~/d478e62f-d896-412a-b85a-ae900e96c31a.PNG)\n\n\n### 输出样例:\n\n 视图```V_average_point```输出：\n\n\n![QQ截图20220419202249.png](~/09b93cdd-170e-4d96-b26c-e2db1d262427.png)\n"
+}

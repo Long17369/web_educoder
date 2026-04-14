@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "标识符判断",
+    "content": [
+        {
+            "code": "n = int(input())\nkeyword = [\"if\", \"else\", \"while\", \"for\", \"int\", \"float\", \"return\", \"break\", \"continue\"]\nfor i in range(n):\n    s = input()\n    if s not in keyword and set(s) <= set(\"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789_\") and s[0] not in set(\"0123456789\"):\n        print(\"Valid\")\n    else:\n        print(\"Invalid\")\n",
+            "language": "python"
+        }
+    ],
+    "description": "在程序设计语言中，标识符通常用于表示变量名、函数名等。一个合法的标识符需要满足以下规则：\n- 标识符只能由字母（a-z、A-Z）、数字（0-9）和下划线（_）组成；\n- 标识符的第一个字符不能是数字；\n- 标识符至少要有 1 个字符；\n- 标识符不能是保留字。为简化，本题设定以下保留字集合：\n\n    ` if, else, while, for, int, float, return, break, continue`\n\n你的任务是编写一个程序，判断输入的字符串是否为合法的标识符。\n\n### 输入格式\n第一行输入一个整数 $n(1 \\le n \\le 20)$，表示有多少组测试数据。\n接下来 $n$ 行，每行一个字符串，表示待检测的标识符（长度不超过20）。\n\n### 输出格式\n对于每一个输入的标识符，如果合法则输出：`Valid`；如果不合法则输出：`Invalid`。 \n\n### 样例输入\n```in\n5\nabc123\n123abc\nif\n_hello\nfloat\n```\n\n### 样例输出\n\n```out\nValid\nInvalid\nInvalid\nValid\nInvalid\n```"
+}

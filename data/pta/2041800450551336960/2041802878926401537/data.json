@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "单个身份证的校验 - 实验19 身份证校验 - 《Python编程基础及应用实验教程》 - 高教社",
+    "content": [
+        {
+            "code": "w = [7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2]\nM = [\"1\",'0','X',\"9\",'8','7','6','5','4','3','2']\n\ntry:\n    data = input()\n    p = sum(w[i]*int(j) for i,j in enumerate(data[:-1])) % 11\n    assert M[p] == data[-1]\nexcept:\n    print(\"错误\")\nelse:\n    print(\"正确\")\n",
+            "language": "python"
+        }
+    ],
+    "description": "一个合法的身份证号码由6位地区码、8位出生日期、3位顺序号加1位校验码组成。比如，在身份证号320124198808240056中，320124为地区码，19880824为出生日期，005则为顺序号，6则是根据前17数字生成的校验码。校验码可以帮助检查身份证号在转述，抄录的过程中是否出现错误。<br>\n校验码的计算规则如下：<br>\n1)\t对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；\n2)\t将加权和对11取模得到余数Z; \n3)\t按下述Z-M对应关系取得校验码M。\nZ: [0,1,2,3,4,5,6,7,8,9,10]\nM: [1,0,X,9,8,7,6,5,4,3,2]。\n\n\n### 输入格式:\n\n一个身份证字符串\n\n### 输出格式:\n\n正确/错误\n\n\n### 输入样例:\n\n```in\n320124198808240056\n```\n\n### 输出样例:\n```out\n正确\n```\n\n\n<br>**拼尽全力还是不会？参考B站习题讲解**<br>哔哩哔哩up主：[海洋饼干叔叔](https://space.bilibili.com/384177380) [Python课程](https://www.bilibili.com/video/BV1kt411R7uW/) [Python习题](https://www.bilibili.com/video/BV1iL411t7UZ/)[简洁的C和C++](https://www.bilibili.com/video/BV1it411d7zx/)作者每天分享一篇关于C/C++/Python的技术文章，学习编程不迷路。![image.png](~/7c4cfd2d-8e3e-40cd-826d-299d4200e600.png)\n\n"
+}
