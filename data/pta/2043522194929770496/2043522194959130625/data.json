@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "创建视图，包含拥有属性值个数大于1的商品信息",
+    "content": [
+        {
+            "code": "create view view_goods_2 as\nselect id, name\nfrom sh_goods\nwhere id in (\n    select goods_id from sh_goods_attr_value\n    group by goods_id\n    having count(*) > 1\n);"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n结合`sh_goods`表和`sh_goods_attr_value`表创建视图`view_goods_2`，包含拥有属性值的数量大于1个的商品对应的商品`id`和`name`。\n\n\n### 表结构:\n\n\n```\nCREATE TABLE sh_goods (\n  id INT  PRIMARY KEY,                         --商品id\n  category_id INT  NOT NULL DEFAULT 0 ,        -- 商品分类id\n  name VARCHAR(120) NOT NULL,                  --商品名称\n  keyword VARCHAR(255) NOT NULL,               -- 关键词编号\n  content TEXT NOT NULL ,                      --商品详情\n  price DECIMAL(10, 2)  NOT NULL DEFAULT 0 ,   --价格\n  stock INT  NOT NULL DEFAULT 0,               -- 库存\n  score DECIMAL(3, 2)  NOT NULL DEFAULT 0 ,    -- 用户评分\n  comment_count INT  NOT NULL DEFAULT 0        -- 评论数量\n) ;\n```\n\n```\nCREATE TABLE sh_goods_attr_value (\nid INT PRIMARY KEY ,-- 属性值id,\ngoods_id INT NOT NULL DEFAULT 0 , --商品id\nattr_id INT  NOT NULL DEFAULT 0 ,-- 属性id\nattr_value VARCHAR(80) NOT NULL  --属性值\n);\n```\n\n\n### 表样例\n\n\n`sh_goods`表：\n\n\n![sh_goods表数据.PNG](~/03ce283b-2e3b-4c5d-b937-27f0d9772011.PNG)\n\n\n`sh_goods_attr_value`表：\n\n\n![sh_goods_attr_value表数据.PNG](~/16c49e63-6387-4e90-913f-ccd5d410b29e.PNG)\n\n\n\n### 视图样例:\n\n![答案.PNG](~/7da2909f-0442-4e73-9e4a-672048a6a0c9.PNG)\n\n\n"
+}

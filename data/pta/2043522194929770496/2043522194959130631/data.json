@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "C2-4修改订货数量最少的产品单价",
+    "content": [
+        {
+            "code": "update orderdetails\njoin (\n    select ProductID\n    from orderdetails\n    group by ProductID\n    having sum(Quantity) = (\n        select min(t)\n        from (\n            select sum(Quantity) t\n            from orderdetails\n            group by ProductID\n        ) as a\n    )\n) as p on orderdetails.ProductID = p.ProductID\nset UnitPrice=UnitPrice-1;"
+        }
+    ],
+    "description": "对于```订单详情表（orderdetails）```中订货数量最少的产品，将其单价下调```1```元\n\n提示：请使用UPDATE语句作答。\n\n```Warning```：本题可能涉及mysql中有关```You can't specify target table for update in FROM clause```的错误，需要适当调整语句写法\n\n### 表结构:\n\n```orderdetails```表：\n\n|列名|数据类型|长度|主码|说明|\n|---|---|---|---|---|\n|OrderID| int|11|√|订单编号|\n|ProductID| int|11|√|产品编号|\n|UnitPrice| decimal|10,4||单位价格|\n|Quantity| smallint|2||数量|\n|Discount| double|8,0||折扣|\n\n\n\n\n### 表样例\n\n```orderdetails```表：\n\n|OrderID|ProductID|UnitPrice|Quantity|Discount|\n|---|---|---|---|---|\n|10248|11|14.0000|12|0|\n|10248|42|9.8000|10|0|\n|10248|72|34.8000|5|0|\n|10249|14|18.6000|9|0|\n|10249|51|42.4000|40|0|\n|10250|41|7.7000|10|0|\n|10250|51|42.4000|35|0|\n|10250|65|16.8000|15|0|\n|10251|22|16.8000|6|0|\n|10251|57|15.6000|15|0|\n\n\n\n### 输出样例:\n\n|OrderID|ProductID|UnitPrice|Quantity|Discount|\n|---|---|---|---|---|\n|10248|11|14.0000|12|0|\n|10248|42|9.8000|10|0|\n|10248|72|33.8000|5|0|\n|10249|14|18.6000|9|0|\n|10249|51|42.4000|40|0|\n|10250|41|7.7000|10|0|\n|10250|51|42.4000|35|0|\n|10250|65|16.8000|15|0|\n|10251|22|16.8000|6|0|\n|10251|57|15.6000|15|0|\n"
+}

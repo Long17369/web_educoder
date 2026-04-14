@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "建立供应商的销售记录视图vSupStatics",
+    "content": [
+        {
+            "code": "create view vSupStatics as\nselect Sid, count(*) ordcount, sum(price*QTY) ordtotalPrice\nfrom orders\ngroup by Sid;"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n建立供应商的销售记录视图vSupStatics，显示供应商号和订单数量，订单总价，分别表示为Sid，ordcount，ordTotalPrice。\n\n\n### 表结构:\n\n```\nCREATE TABLE `orders` (\n  `OrdNo` int(11),   --订单编号\n  `Sid` varchar(10), --供应商编号\n  `Eid` varchar(10), --职工编号\n  `Pid` varchar(20), --商品编号\n  `Price` decimal(10,2), --价格\n  `QTY` int(11),     --订购数量\n  `ordDate` date    --订单日期\n);\n```\n\n### 表样例\n\n```orders```表：\n\n| OrdNo | Sid  | Eid  | Pid  | Price | QTY  | ordDate    |\n| ----- | ---- | ---- | ---- | ----- | ---- | ---------- |\n| 1     | S01  | 0011 | P01  | 11    | 23   | 2022-02-13 |\n| 2     | S02  | 0012 | P01  | 12    | 25   | 2022-02-14 |\n| 3     | S03  | 0012 | P03  | 60    | 55   | 2022-02-14 |\n\n\n### 输出样例:\n\n```vSupStatics```\n\n|Sid  | ordcount  | ordtotalPrice |\n| ----- | ---- | ---- |\n|S01|\t1 | 253.00 |\n|S02| 1\t| 300.00 |\n|S03| 1 | 3300.00|\n"
+}

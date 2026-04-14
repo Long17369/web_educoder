@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "字符串循环移位",
+    "content": [
+        {
+            "code": "k = int(input())\n\ns = input()\nk %= len(s)\nprint(s[-k:] + s[:-k])\n",
+            "language": "python"
+        }
+    ],
+    "description": "输入一个字符串和整数 $k$，将字符串中所有字符全部向右循环移动 $k$ 位，输出移位后的字符串。\n\n### 输入格式:\n\n第一行一个整数 $k( 0 \\le k \\le 100)$；\n第二行一个字符串，长度不超过 $20$。\n\n### 输出格式:\n\n一行移位后的字符串。\n\n### 输入样例:\n\n```in\n2\nabc\n```\n\n### 输出样例:\n\n```out\nbca\n```\n"
+}

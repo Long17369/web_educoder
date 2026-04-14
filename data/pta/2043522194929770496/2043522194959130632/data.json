@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "修改杰克的购物记录。",
+    "content": [
+        {
+            "code": "update recorder\njoin (\n    select cid\n    from customer\n    where cname = '杰克'\n) as p on recorder.cid = p.cid\nset quantity = 1\nwhere gid = 'G006'\n"
+        }
+    ],
+    "description": "### 题干:\n修改杰克的购物记录，将他购买G006商品的数量改为1。<br>\n\n### 表结构:\n\n定义表结构的SQL语句如下：<br>\nCREATE TABLE customer(<br>\ncid CHAR(4) PRIMARY KEY,<br>\ncname VARCHAR(20) NOT NULL,<br>\nsex CHAR(1) DEFAULT '女',<br>\nphone CHAR(11) UNIQUE<br>\n);<br>\nCREATE TABLE recorder(<br>\nid INT PRIMARY KEY  AUTO_INCREMENT,<br>\ncid CHAR(4),<br>\ngid CHAR(4),<br>\nquantity INT NOT NULL,<br>\nsale_date DATETIME<br>\n);<br>\n### 表样例\n上述表结构对应的表样例：\n\n``customer```表：\n\n![customer.png](~/abb5f698-0d81-4c09-9c05-fb6ba121b137.png)\n\n```recorder```表：\n![recorder.png](~/65e3c654-8af3-49f2-9eaf-d07e3fa15199.png)\n\n\n\n### 输出样例:\n输出样例：\n\n![4-9.png](~/104b5937-63af-435a-baac-200682dd45b2.png)\n"
+}

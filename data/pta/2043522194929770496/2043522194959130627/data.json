@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "建立产品的销售记录视图vProductStatics",
+    "content": [
+        {
+            "code": "create view vProductStatics as\nselect Pid, sum(QTY) totalQTY, max(Price) maxPrice, min(Price) minPrice\nfrom orders\ngroup by Pid\n;\n"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n建立产品的销售记录视图vProductStatics，显示产品编号，销售总数量，最高价，最低价，分别表示为Pid，totalQTY，maxPrice，minPrice。\n\n\n### 表结构:\n\n```\nCREATE TABLE `orders` (\n  `OrdNo` int(11),   --订单编号\n  `Sid` varchar(10), --供应商编号\n  `Eid` varchar(10), --职工编号\n  `Pid` varchar(20), --商品编号\n  `Price` decimal(10,2), --价格\n  `QTY` int(11),     --订购数量\n  `ordDate` date    --订单日期\n);\n```\n\n### 表样例\n\n```orders```表：\n\n| OrdNo | Sid  | Eid  | Pid  | Price | QTY  | ordDate    |\n| ----- | ---- | ---- | ---- | ----- | ---- | ---------- |\n| 1     | S01  | 0011 | P01  | 11    | 23   | 2022-02-13 |\n| 2     | S02  | 0012 | P01  | 12    | 25   | 2022-02-14 |\n| 3     | S03  | 0012 | P03  | 60    | 55   | 2022-02-14 |\n\n\n### 输出样例:\n\n```vProductStatics```\n\n|Pid|totalQTY|maxPrice|minPrice|\n|--|--|--|--|\n|P01|48|12|11|\n|P03|55|60|60|\n"
+}

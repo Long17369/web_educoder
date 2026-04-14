@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "修改女生成绩",
+    "content": [
+        {
+            "code": "update sc\nset grade=grade*1.05\nwhere sno in (\n    select sno\n    from stu\n    where sex = 0\n) and grade < 75;"
+        }
+    ],
+    "description": "本题目要求编写UPDATE语句，\n把所有低于７５分的女生成绩提高5%;\n\n\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\n\nCREATE TABLE `stu` (\n  `sno` char(4) NOT NULL,\n  `sname` char(8) NOT NULL,\n  `sex` tinyint(1) DEFAULT NULL,\n  `mno` char(2) DEFAULT NULL,\n  `birdate` datetime DEFAULT NULL,\n  `memo` text,\n  PRIMARY KEY (`sno`)\n);\nCREATE TABLE `sc` (\n  `sno` char(4) NOT NULL,\n  `cno` char(4) NOT NULL,\n  `grade` decimal(6,1) DEFAULT NULL,\n  PRIMARY KEY (`sno`,`cno`),\n  CONSTRAINT `fk_sc_sno` FOREIGN KEY (`sno`) REFERENCES `stu` (`sno`)\n)\n\n\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n``` stu```表：\n\n\n![stu.JPG](~/d1009ca4-e96f-4400-81b7-aee761cf0861.JPG)\n\n\n``` sc```表：\n\n\n![sc.JPG](~/7c9724c4-82b9-4073-be6b-5a921d90c20a.JPG)\n\n### 输出样例:\n\n例如：\n修改女生成绩后的```sc```表如下：\n\n![u2b.JPG](~/507ca0d9-bb8b-497f-ba38-e9130b99471f.JPG)\n\n\n"
+}

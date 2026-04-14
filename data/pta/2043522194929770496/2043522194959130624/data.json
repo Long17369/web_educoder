@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "创建视图，包含商品打折前后的价格信息",
+    "content": [
+        {
+            "code": "create view view_goods as\nselect id, name, price old_price, price/2 new_price\nfrom sh_goods;\n"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n利用`sh_goods`表创建视图`view_goods`，包含商品打折前后的价格信息。视图中包含四列，分别为商品id，商品名称，商品原价格（`old_price`）和商品打五折后的价格（`new_price`）\n\n\n### 表结构:\n\n```\nCREATE TABLE sh_goods (\n  id INT  PRIMARY KEY,                         --商品id\n  category_id INT  NOT NULL DEFAULT 0 ,        -- 商品分类id\n  name VARCHAR(120) NOT NULL,                  --商品名称\n  keyword VARCHAR(255) NOT NULL,               -- 关键词编号\n  content TEXT NOT NULL ,                      --商品详情\n  price DECIMAL(10, 2)  NOT NULL DEFAULT 0 ,   --价格\n  stock INT  NOT NULL DEFAULT 0,               -- 库存\n  score DECIMAL(3, 2)  NOT NULL DEFAULT 0 ,    -- 用户评分\n  comment_count INT  NOT NULL DEFAULT 0        -- 评论数量\n) ;\n```\n\n### 表样例\n\n`sh_goods`表：\n\n\n![sh_goods表数据.PNG](~/29bedb7b-7a45-4439-90b1-91ff450c51b3.PNG)\n\n\n### 查询视图样例:\n\n\n![答案.PNG](~/d20f5001-d147-498e-8698-10a9a19207b8.PNG)\n\n"
+}

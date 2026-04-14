@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "字符串排序输出",
+    "content": [
+        {
+            "code": "n = int(input())\n\nfor i in range(n):\n    print(\" \".join(sorted(input())))\n\n",
+            "language": "python"
+        }
+    ],
+    "description": "本题目要求输入n个字符串，按照ASCII码值排序后，依次输出。\n\n### 输入格式:\n\n一行输入整数n，然后分行输入n个字符串（每行一个）\n\n### 输出格式:\n\n依次分行输出排序后的字符串，每个字符串空格间隔输出。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n4\nsdfjklasuejkfjklf\nas3847893q59r/*896\nasdjk3\n04395i\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\na d e f f f j j j k k k l l s s u\n* / 3 3 4 5 6 7 8 8 8 9 9 9 a q r s\n3 a d j k s\n0 3 4 5 9 i\n```"
+}
