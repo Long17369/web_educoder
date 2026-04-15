@@ -8,7 +8,7 @@
     <div v-else class="code-layout">
       <div class="markdown-container">
         <h2 class="section-title">题目描述</h2>
-        <div class="markdown markdown-body" v-html="problemHtmlWithNoReferrer"></div>
+        <div ref="problemDOM" class="markdown markdown-body"></div>
       </div>
       <div class="code-container">
         <h2 class="section-title">代码</h2>
@@ -33,16 +33,13 @@
 </template>
 
 <script setup lang="ts">
-import hljs from 'highlight.js/lib/core'
-import css from 'highlight.js/lib/languages/css'
-import java from 'highlight.js/lib/languages/java'
-import javascript from 'highlight.js/lib/languages/javascript'
-import python from 'highlight.js/lib/languages/python'
-import xml from 'highlight.js/lib/languages/xml'
-import { marked } from 'marked'
-import markedKatex from 'marked-katex-extension'
-import { computed, onMounted, ref } from 'vue'
-import type { Problem, ProblemSourceFile } from '@/utils/types'
+import MarkdownIt from 'markdown-it'
+import hljs from '../utils/hljs'
+// @ts-expect-error No types for markdown-it-katex
+import markdownItKatex from 'markdown-it-katex'
+import MarkdownItHighlight from 'markdown-it-highlightjs'
+import { computed, nextTick, ref, watch } from 'vue'
+import type { Problem } from '@/utils/types'
 
 import 'katex/dist/katex.min.css'
 import 'github-markdown-css/github-markdown-light.css'
@@ -54,48 +51,98 @@ interface Prop {
 
 const props = defineProps<Prop>()
 
-// Legacy markdown uses ```in / ```out fences for sample IO; register no-op languages to avoid warnings.
-hljs.registerLanguage('in', () => ({ name: 'in', contains: [] }))
-hljs.registerLanguage('out', () => ({ name: 'out', contains: [] }))
-hljs.registerLanguage('java', java)
-hljs.registerLanguage('python', python)
-hljs.registerLanguage('javascript', javascript)
-hljs.registerLanguage('css', css)
-hljs.registerLanguage('xml', xml)
-hljs.registerLanguage('html', xml)
-
-marked.setOptions({
-  gfm: true,
+const mdParser = new MarkdownIt({
+  html: true,
   breaks: false,
 })
 
-marked.use(
-  markedKatex({
-    throwOnError: false,
-    displayMode: false,
-    nonStandard: true,
-  }),
-)
+mdParser.use(markdownItKatex, {
+  throwOnError: false,
+})
+
+mdParser.use(MarkdownItHighlight, {
+  auto: false,
+  code: false,
+  hljs: hljs,
+})
 
 const loading = ref(false)
 const error = ref('')
-const problemHtml = ref('')
-const codeFiles = ref<
-  {
-    key: string
-    filename: string
-    language: string
-    highlighted: string
-    rawCode: string
-    copied: boolean
-  }[]
->([])
 
-const problemHtmlWithNoReferrer = computed(() => {
-  if (!problemHtml.value) return problemHtml.value
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(problemHtml.value, 'text/html')
-  const images = doc.querySelectorAll('img')
+const codeFiles = computed(() => {
+  const files = props.data.content
+  return files.map((file, index) => {
+    const filename = formatFilename(file.filename, file.language)
+    const content = typeof file.code === 'string' ? file.code : ''
+    return {
+      key: `${index}-${filename}`,
+      filename,
+      language: formatLanguageLabel(file.language),
+      highlighted: highlightCode(content, file.language),
+      rawCode: content,
+      copied: false,
+    }
+  })
+})
+
+const problemDOM = ref<HTMLElement | null>(null)
+
+const handleText = ref<((arg0: string) => string)[]>([])
+function add_handle_text(handle: (arg0: string) => string) {
+  handleText.value.push(handle)
+}
+
+const handleDOM = ref<((arg0: HTMLElement) => HTMLElement | void)[]>([])
+function add_handle_DOM(handle: (arg0: HTMLElement) => HTMLElement | void) {
+  handleDOM.value.push(handle)
+}
+
+watch(
+  props.data,
+  async () => {
+    await nextTick()
+    console.log('Problem data changed, updating description...')
+    console.log(problemDOM.value)
+    if (problemDOM.value === null) throw new Error('problemDOM is null')
+    let description = props.data.description ?? ''
+    for (const handle of handleText.value) {
+      description = handle(description)
+    }
+    const html = mdParser.render(description)
+    const parser = new DOMParser()
+    const DOM = parser.parseFromString(html, 'text/html')
+    for (const handle of handleDOM.value) {
+      handle(DOM.documentElement)
+    }
+    if (problemDOM.value.children.length === 0) {
+      problemDOM.value.appendChild(DOM.body)
+    } else {
+      problemDOM.value.children[0].replaceWith(...DOM.body.children)
+    }
+  },
+  { immediate: true },
+)
+
+add_handle_text((text) => {
+  return text.replace(/^(#{1,6})([^#\s])/gm, '$1 $2')
+})
+
+add_handle_text((md) => {
+  return md.replace(
+    /(^|\n)([^\n]*\|[^\n]*\n)([^\n]*\|?[\-:][\|\-\s:]*)(?=\n|$)/g,
+    (match, nl, header, sep) => {
+      const headerCols = (header.match(/\|/g) || []).length - 1
+      const sepCols = (sep.match(/\|/g) || []).length - 1
+      if (headerCols > sepCols) {
+        return nl + header + sep.trimEnd() + '-|'.repeat(headerCols - sepCols)
+      }
+      return match
+    },
+  )
+})
+
+add_handle_DOM((DOM) => {
+  const images = DOM.querySelectorAll('img')
   images.forEach((img) => {
     if (!img.hasAttribute('referrerpolicy')) {
       img.setAttribute('referrerpolicy', 'no-referrer')
@@ -105,7 +152,6 @@ const problemHtmlWithNoReferrer = computed(() => {
       img.setAttribute('src', `https://images.ptausercontent.com/${url.slice(1)}`)
     }
   })
-  return doc.documentElement.outerHTML
 })
 
 async function copyCode(file: { rawCode: string; copied: boolean }) {
@@ -118,16 +164,6 @@ async function copyCode(file: { rawCode: string; copied: boolean }) {
   } catch (err) {
     console.error('Failed to copy text: ', err)
   }
-}
-
-function renderMarkdown(md: string) {
-  const html = marked.parse(md, { async: false }) as string
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = html
-  wrapper.querySelectorAll('pre code').forEach((el) => {
-    hljs.highlightElement(el as HTMLElement)
-  })
-  return wrapper.innerHTML
 }
 
 function normalizeLanguage(language?: string) {
@@ -183,28 +219,5 @@ function highlightCode(content: string, language?: string) {
   return hljs.highlightAuto(content).value
 }
 
-function buildCodeFiles(files: ProblemSourceFile[]) {
-  return files.map((file, index) => {
-    const filename = formatFilename(file.filename, file.language)
-    const content = typeof file.code === 'string' ? file.code : ''
-    return {
-      key: `${index}-${filename}`,
-      filename,
-      language: formatLanguageLabel(file.language),
-      highlighted: highlightCode(content, file.language),
-      rawCode: content,
-      copied: false,
-    }
-  })
-}
-
-async function loadCodePage() {
-  problemHtml.value = renderMarkdown(props.data.description ?? '')
-  const files = props.data.content
-  codeFiles.value = buildCodeFiles(files)
-}
-
-onMounted(() => {
-  loadCodePage()
-})
+console.log('table_open:', mdParser.renderer.rules.table_open)
 </script>
