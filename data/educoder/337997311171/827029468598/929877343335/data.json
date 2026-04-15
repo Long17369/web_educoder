@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "按条件查询单表",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\n #第一题\nselect studentid, name from student where sex = '男';\n #第二题\nselect name, nativeplace from student\nwhere nativeplace in ('湖南', '湖北');\n #第三题\n select name, birthday from student\nwhere 2025-year(birthday) in (28,29,30);\n #第四题\nselect * from student\nwhere sex = '男' and nativeplace = '湖南';\n #第五题\nselect * from student\n where sex = '男' or\n       nativeplace = '湖南';\n #代码结束",
+            "filename": "step1.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：按条件查询数据表\n为了完成本关任务，你需要掌握：\n\n如何查询数据表的所有字段\n\n\n### 相关知识\n\n#####查询数据表\n\n命令格式：\nselect * from 数据表 where 查询条件\n\n### 任务要求\n\n打开jwxt数据库\n第一题\n显示男生的学号、姓名\n第二题\n显示湖南湖北籍贯学生的姓名和籍贯\n第三题\n显示年龄在28到30岁的学生的姓名和生日（假设当前为2025年）\n第四题\n显示湖南的男学生的所有字段\n第五题\n显示所有湖南的学生和所有男学生的所有字段\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

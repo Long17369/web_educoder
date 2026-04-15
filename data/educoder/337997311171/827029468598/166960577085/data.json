@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "统计查询",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\n#第一题\nselect count(*) from student where sex = '女';\n#第二题\nselect avg(score) from score\nwhere studentid = '201221120201';\n#第三题\nselect max(score) 最高分, min(score) 最低分, avg(score) 平均分 from score\nwhere courseid = '0101';\n #代码结束\n",
+            "filename": "step3.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n本关任务：\n针对学生表\n显示女学生的人数\n针对成绩表（score)\n显示studentid为201221120201的平均分\n显示课程号0101的最高分、最低分、平均分\n成绩表有学号studentid、课程号courseid、学期session、教师号teacherid、分数score五个字段\n![,](/api/attachments/8912508?type=image/png)\n\n### 相关知识\n\n为了完成本关任务，你需要掌握：统计查询函数\n\n#### 统计查询函数\n  SUM\n  计算数值列的和\n  AVG \n  计算数值列的平均值\n  MAX\n  计算列（数值、日期、字符）的最大值\n  MIN\n  计算列（数值、日期、字符）的最小值\n  COUNT\n  计算查询结果的数目\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

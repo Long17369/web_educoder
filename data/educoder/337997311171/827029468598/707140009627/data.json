@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "查询唯一值",
+    "content": [
+        {
+            "code": "use jwxt\n #代码开始\n #第一题\nselect distinct nativeplace from student;\n\n #第二题\n select distinct year(birthday) from student;\n \n #代码结束",
+            "filename": "step2.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：\n根据student数据表\n第一题\n显示所有的籍贯\n第二题\n显示所有的出生年份\n\n为了完成本关任务，你需要掌握：\n1.唯一值distinct\n\n### 相关知识\n\n#####唯一值\n命令格式：\ndistinct  <字段名>\n去掉重复的查询结果\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

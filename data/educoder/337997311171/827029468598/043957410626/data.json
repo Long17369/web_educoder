@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "查询数据表的所有字段或指定字段及表达式",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\n #第一题\nselect * from student;\n #第二题\nselect name, birthday\nfrom student;\n #第三题\n select name, concat(month(birthday), '月', day(birthday), '日') 生日\n from student;\n #第四题\n select name, 2025-year(birthday) 年龄\n from student;\n #代码结束",
+            "filename": "step0.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：查询学生表的所有字段\n查询学生表的指定字段\n查询学生表的中字段相关的表达式\n\n\n为了完成本关任务，你需要掌握：\n\n如何查询数据表的所有字段或指定字段\n及如何查询与数据表的字段相关的表达式\n\n\n### 相关知识\n\n查询数据表的所有字段\n命令格式：\nselect * from 数据表 \n\n查询数据表的指定字段\n`select <字段名1>[,<字段名2>,……,<字段名n>] \nfrom  <数据表>`\n\n查询数据表中与字段相关的表达式\n`select    <字段名1>|<表达式1>[,……, <字段名n>|<表达式n>]  from     <数据表>`\nselect 后面也可以是表达式\n\n查询数据表的字段或表达式并指定列名\n`select   <字段名1>|<表达式1> as <列名1>[,……]\nfrom     <数据表>`\n对查询的字段或表达式指定一个列名\n\n### 任务要求\n\n打开jwxt数据库\n第一题\n查询学生数据表（student)的所有字段\n\n第二题\n查询学生表的姓名及生日\n\n第三题\n查询学生表的姓名及生日的日期（格式`*月*日`），列名为生日\n提示：month（日期）返回日期的月份\nday(日期)返回日期的日号\nconcat(字符串1,字符串2,……)连接字符串\n\n第四题\n查询学生表的姓名及年龄（出生的年份减去2025年）,列名为年龄\n提示:year(日期)返回日期的年份\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n\n"
+}

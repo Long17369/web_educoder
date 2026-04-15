@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "分组查询1",
+    "content": [
+        {
+            "code": "use test;\n#代码开始\n#第一题\nselect name, avg(cj)\nfrom score\ngroup by name;\n\n#第二题\nselect course, avg(cj)\nfrom score\ngroup by course;\n\n\n#代码结束",
+            "filename": "step6.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：\n根据test数据库的score数据表统计\n统计每位学生的姓名(name)和平均分\n统计每门课程的名称(course)和平均分\ntest数据库的score数据表如图所示\n![,](/api/attachments/8912906?type=image/png)\n### 相关知识\n为了完成本关任务，你需要掌握：\n分组查询\n\n#### 如何分组查询\nselect 表达式列表 from 数据表 where 条件 group by 分组字段\n\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}
