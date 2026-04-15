@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "分组查询2",
+    "content": [
+        {
+            "code": " use jwxt;\n#代码开始\n#题目1\nselect studentid, avg(score) 平均分 from score group by studentid having 平均分 > 80;\n#题目2\nselect nativeplace, count(*) from student\nwhere sex = '男' group by nativeplace;\n#题目3\nselect nativeplace, count(*) from student\ngroup by nativeplace\nhaving count(*) > 2;\n#题目4\nselect nativeplace, count(*) from student where sex = '男'\ngroup by nativeplace having count(*) > 2;\n#题目5\n select sex, political, count(*) from student\n group by sex, political;\n #代码结束\n",
+            "filename": "step4.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：\n针对jwxt数据库的成绩score数据表和学生student数据表查询\n第一题\n查询成绩表中平均分大于80的学号和平均分\n第二题\n查询学生表中每个省份的男生的人数\n第三题\n查询学生表中哪些省份的人数大于2\n第四题\n查询学生表中哪些省份的男生人数大于2\n第五题\n查询不同性别和政治面貌的人数\n\n\n### 相关知识\n为了完成本关任务，你需要掌握：\n分组查询\n\n#### 如何对分组查询设置条件\ngroup by <字段名>\nhaving <分组后的条件>\nwhere<分组前的条件>\nhaving<分组后的条件>是分组后要满足的条件\nwhere<分组前的条件>是分组前要满足的条件\n注意分组条件和条件的区别\n\n#### 如何多字段分组\n`group by <字段名1>[,<字段名2>……]`\n根据字段名1分组，字段名1相同的再根据字段名2分组\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

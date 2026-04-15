@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "数据排序",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\n #第一题\nselect name, sex, birthday from student order by birthday desc;\n #第二题\nselect name, sex, birthday from student order by sex, birthday desc;\n\n #第三题\nselect name, nativeplace from student order by nativeplace;\n\n #第四题\n select name, sex, birthday from student order by birthday desc limit 3;\n #代码结束\n",
+            "filename": "step5.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：\n第一题\n显示学生的姓名、性别和出生日期，\n按年龄从小到大排列\n第二题\n显示学生的姓名、性别和出生日期，\n同一性别的排在一起，再按年龄从小到大排列\n第三题\n显示学生的姓名、籍贯，相同籍贯的排在一起\n第四题\n显示学生的姓名、性别和出生日期，按年龄从小到大排列，显示前3位\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：如何排序\n\n#### 排序数据\n \nOrder by <字段名1> ASC|DESC,\n       <字段名2> >ASC|DESC……\n首先按照<字段名1>的顺序排列记录\n若多条记录的<字段名1>值相同，则按<字段名2>的顺序排列\nASC升序 DESC降序 默认升序\n\n使用limit  位置偏移量 <行数> 指定查询结果的数量\n位置偏移量指示从第几行开始显示，0表示从第1行开始，若省略默认为0，<行数>指定返回的记录条数\n \n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}
