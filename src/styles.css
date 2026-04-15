@@ -99,9 +99,15 @@ footer {
 
 @media (min-width: 1024px) {
   .code-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     align-items: start;
+  }
+  .code-container,
+  .markdown-container {
+    overflow-x: scroll;
+    width: 50%;
+    scrollbar-width: none;
   }
 }
 
