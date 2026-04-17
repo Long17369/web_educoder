@@ -87,11 +87,13 @@ const codeFiles = computed(() => {
 
 const problemDOM = ref<HTMLElement | null>(null)
 
+// 处理文本的函数列表，允许外部注册函数来修改解析前的文本内容
 const handleText = ref<((arg0: string) => string)[]>([])
 function add_handle_text(handle: (arg0: string) => string) {
   handleText.value.push(handle)
 }
 
+// 处理 DOM 的函数列表，允许外部注册函数来修改解析后的 DOM 结构
 const handleDOM = ref<((arg0: HTMLElement) => HTMLElement | void)[]>([])
 function add_handle_DOM(handle: (arg0: HTMLElement) => HTMLElement | void) {
   handleDOM.value.push(handle)
@@ -100,20 +102,28 @@ function add_handle_DOM(handle: (arg0: HTMLElement) => HTMLElement | void) {
 watch(
   props.data,
   async () => {
+    // 等待 DOM 更新完成，确保 problemDOM 已经正确绑定到元素上
     await nextTick()
+
     console.log('Problem data changed, updating description...')
-    console.log(problemDOM.value)
     if (problemDOM.value === null) throw new Error('problemDOM is null')
     let description = props.data.description ?? ''
+
+    // 依次调用所有文本处理函数，允许它们修改描述文本
     for (const handle of handleText.value) {
       description = handle(description)
     }
+
+    // 将处理后的 Markdown 转换为 HTML，并解析成 DOM 结构
     const html = mdParser.render(description)
     const parser = new DOMParser()
     const DOM = parser.parseFromString(html, 'text/html')
+
+    // 依次调用所有 DOM 处理函数，允许它们修改解析后的 DOM 结构
     for (const handle of handleDOM.value) {
       handle(DOM.documentElement)
     }
+
     if (problemDOM.value.children.length === 0) {
       problemDOM.value.appendChild(DOM.body)
     } else {
@@ -123,10 +133,12 @@ watch(
   { immediate: true },
 )
 
+// 修复标题语法错误导致的渲染问题
 add_handle_text((text) => {
   return text.replace(/^(#{1,6})([^#\s])/gm, '$1 $2')
 })
 
+// 修复表格分隔行缺少列导致的渲染问题
 add_handle_text((md) => {
   return md.replace(
     /(^|\n)([^\n]*\|[^\n]*\n)([^\n]*\|?[\-:][\|\-\s:]*)(?=\n|$)/g,
@@ -141,6 +153,7 @@ add_handle_text((md) => {
   )
 })
 
+// 修复图片链接和添加 referrerpolicy 属性
 add_handle_DOM((DOM) => {
   const images = DOM.querySelectorAll('img')
   images.forEach((img) => {
