@@ -33,16 +33,10 @@
 </template>
 
 <script setup lang="ts">
-import MarkdownIt from 'markdown-it'
-import { hljs, formatFilename, formatLanguageLabel, highlightCode } from '../utils/hljs'
-// @ts-expect-error No types for markdown-it-katex
-import markdownItKatex from 'markdown-it-katex'
-import MarkdownItHighlight from 'markdown-it-highlightjs'
+import { formatFilename, formatLanguageLabel, highlightCode } from '../utils/hljs'
+import { mdParser } from '../utils/markdown'
 import { computed, nextTick, ref, watch } from 'vue'
 import type { Problem } from '@/utils/types'
-
-import 'katex/dist/katex.min.css'
-import 'github-markdown-css/github-markdown-light.css'
 
 interface Prop {
   data: Problem
@@ -50,21 +44,6 @@ interface Prop {
 }
 
 const props = defineProps<Prop>()
-
-const mdParser = new MarkdownIt({
-  html: true,
-  breaks: false,
-})
-
-mdParser.use(markdownItKatex, {
-  throwOnError: false,
-})
-
-mdParser.use(MarkdownItHighlight, {
-  auto: false,
-  code: false,
-  hljs: hljs,
-})
 
 const loading = ref(false)
 const error = ref('')
