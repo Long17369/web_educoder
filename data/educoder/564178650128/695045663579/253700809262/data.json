@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "删除节点",
+    "content": [
+        {
+            "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    <ol id=\"browser\">\n        <li id=\"chrome\">Chrome</li>\n        <li id=\"firefox\">Firefox</li>\n        <li id=\"opera\">Opera</li>\n        <li id=\"safari\">Safari</li>\n    </ol>\n    <script>\n    \t// <!-- 请在此处编写代码 -->\n        // <!---------Begin--------->\n        document.getElementById(\"browser\").removeChild(document.getElementById(\"opera\"));\n\n        // <!---------End--------->\n    </script>\n</body>\n</html>",
+            "filename": "DeleteNode.html",
+            "language": "html"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n####任务描述\n\n[comment]: <> (“任务描述”部分需要把本关要让学生解决的问题描述的最好一句话描述清楚：)\nol 标签在 html 中表示有序列表，`li`标签表示其中的列表项。\n\n本关任务：在有序列表中删除指定的列表项。\n\n\n####相关知识\n\n[comment]: <> (“相关知识”部分要把本关需要用到的知识点清晰，具体，简单生动的讲明白，要让学员，看得懂，记得住，能理解)\n这里的删除节点指的是：父元素删除自己的子元素。\n\n\n#####删除节点\n删除节点的方法是`removeChild()`，调用者是父节点，参数是子节点，作用是删除这个子节点。\n&nbsp;\n下面是一个无序列表的代码：\n```html\n<ul id=\"parent\">\n  <li>提子</li>\n  <li>车厘子</li>\n  <li id=\"child3\">荔枝</li>\n</ul>\n```\n\n用浏览器打开这个文件，效果如图一：\n\n<p align=\"center\" >\n<img  style=\"border: 1px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/202511\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n<center>图一</center>\n\n如果我们要删除第三行，可以这样操作：\n\n第一步：获取父节点，即 ul 节点：\n```js\nvar parentNode = document.getElementById(\"parent\");\n```\n\n第二步：获取待删除的子结点：\n```js\nvar childNode = document.getElementById(\"child3\");\n```\n\n第三步：父节点调用`removeChild()`方法删除子节点：\n```js\nparentNode.removeChild(childNode);\n```\n\n执行完这三个`js`语句后，再次用浏览器打开，结果为图二：\n\n<p align=\"center\" >\n<img  style=\"border: 1px solid #ddd;padding: 5px; background: #fff;\" src=\"/api/attachments/202512\" alt=\"\"  height=\"60%\" width=\"60%\"  />\n</p>\n<center>图二</center>\n\n\n####编程要求\n[comment]: <> (“编程要求”部分说一下本关要解决的问题的具体要求，并给出相应代码的框架，以及要求学生填写的那一块)\n\n本关的编程任务是补全右侧代码片段中 Begin 至 End 中间的代码，要求按照步骤进行：\n\n- 获取 `id` 为 `browser` 的节点，赋值给变量`parent`;\n\n- 获取 `id` 为 `opera` 的节点，赋值给变量`child`；\n\n- 通过`removeChild()`删除`child`节点；\n\n- 获取节点使用`getElementById`方法；\n\n- 字符串类型参数用`\"\"`包含在内。\n\n\n\n\n####测试说明\n[comment]: <> (“测试说明”部分如果对测试运行有特别需要说明的可以在此处说明一下。重要的是，给出几组测试样例)\n\n测试过程：\n\n- 平台将读取用户补全后的`deleteNode.html`；\n\n- 执行其中的 JavaScript 代码，查看指定列表项是否已经删除；\n\n- 删除成功输出`删除节点成功`，否则输出`删除节点失败`。\n\n以下是测试样例：\n\n测试输入：\n无\n预期输出：\n```\n删除节点成功\n```\n\n\n\n---\n海到无边天作岸，山登绝顶我为峰。 ——林则徐\n\n如果你觉得这一关的内容对你有帮助，请你在下面点赞。"
+}
