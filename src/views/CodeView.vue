@@ -37,6 +37,7 @@ import { formatFilename, formatLanguageLabel, highlightCode } from '../utils/hlj
 import { mdParser } from '../utils/markdown'
 import { computed, nextTick, ref, watch } from 'vue'
 import type { Problem } from '@/utils/types'
+import { useRoute } from 'vue-router'
 
 interface Prop {
   data: Problem
@@ -44,6 +45,7 @@ interface Prop {
 }
 
 const props = defineProps<Prop>()
+const route = useRoute()
 
 const loading = ref(false)
 const error = ref('')
@@ -142,6 +144,17 @@ add_handle_DOM((DOM) => {
     const url = img.getAttribute('src') || ''
     if (url.startsWith('~/')) {
       img.setAttribute('src', `https://images.ptausercontent.com/${url.slice(1)}`)
+    } else if (url.startsWith('/')) {
+      const problemSet = route.path.split('/')[1]
+      const mapperUrl = {
+        educoder: 'https://www.educoder.net',
+        pta: 'https://pintia.cn',
+      }
+      if (problemSet === 'educoder' || problemSet === 'pta') {
+        img.setAttribute('src', mapperUrl[problemSet] + url)
+      } else {
+        console.warn(`图片链接可能无法正确显示: ${url}`)
+      }
     }
   })
 })
