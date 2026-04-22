@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "多表查询及统计分组",
+    "content": [
+        {
+            "code": "use jwxt;\n #代码开始\n #第一题\nselect s.studentid, name, avg(score)\nfrom student s\njoin score on s.studentid = score.studentid\ngroup by s.studentid;\n #第二题\nselect s.studentid, name, avg(score)\nfrom student s\njoin score on s.studentid = score.studentid\ngroup by s.studentid\nhaving avg(score) > 80;\n \n \n #代码结束",
+            "filename": "step2.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n任务：\n根据数据表学生和成绩，实现多表查询及对查询分组统计\n\n为了完成本关任务，你需要掌握：\n第一题：\n查询显示所有的学号，姓名，平均成绩\n第二题\n查询平均成绩80以上的学号，姓名，平均成绩\n"
+}
