@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "多表查询",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\n #第一题\nselect s.studentid, name, courseid, score\nfrom student s\njoin score on s.studentid = score.studentid;\n #第二题\nselect s.studentid, name, courseid, score\nfrom student s\njoin score on s.studentid = score.studentid\nwhere name = '彭玉';\n #代码结束",
+            "filename": "step1.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：查询来自学生student、成绩score数据表的数据\n为了完成本关任务，你需要掌握：\n\n如何多表查询\n\n\n### 相关知识\n\n#####查询多个数据表\n在实际应用中，查询经常会涉及到几个数据表。\n基于多个相关联的数据表进行的查询称为连接查询。\n\n命令格式：\nselect * from 数据表 \nfrom 数据表1，数据表2 where 连接条件\n\n对于连接查询，在FROM短语后多个数据表的名称之间用逗号隔开，在WHERE短语中须指定数据表之间进行连接的条件\n在连接查询中引用两个表的公共字段时，必须在字段前添加表名作为前缀，否则系统会提示出错。\n对于只在一个数据表中出现的字段，则无需指定前缀。\n\n第二种方法\nfrom 数据表1 join  数据表2 on 连接条件\n数据表1和数据表2为需要连接的数据表\non后面是连接的条件 通常是关键字段的值相同\n\n三个表的查询\n如果要实现三个表的查询，可以\nFrom 数据表1 ,数据表2 ,数据表3 \nwhere 连接条件1 and 连接条件2\n\n\n### 任务要求\n\n打开jwxt数据库\n第一题\n根据学生数据表和成绩表，查询学号、姓名、课程号、成绩\n第二题\n查询显示彭玉的学号，姓名，课程编号，成绩\n\n\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

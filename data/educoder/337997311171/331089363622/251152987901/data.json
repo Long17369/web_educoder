@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "多表子查询2",
+    "content": [
+        {
+            "code": " use jwxt;\n#代码开始\n#题目1\nselect * from course\nwhere courseid in (\n    select distinct sc.courseid\n    from score sc\n);\n#题目2\nselect * from course\nwhere courseid not in (\n    select distinct courseid\n    from score sc\n);\n#题目3\nselect * from student\nwhere studentid not in (\n    select sc.studentid\n    from score sc\n    where sc.courseid in (\n        select distinct c.courseid\n        from course c\n        where c.coursename = '高等数学'\n    )\n);",
+            "filename": "step5.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：\n第一题\n查询课程表中已经有学生选择的课程信息\n第二题\n查询课程表中没经有学生选择的课程信息\n第三题\n查询学生表中没有学习高等数学课程的学生信息\n\n\n\n\n开始你的任务吧，祝你成功！\n\n\n"
+}

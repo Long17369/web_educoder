@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "多表子查询",
+    "content": [
+        {
+            "code": " use jwxt;\n#代码开始\n#题目1\nselect s.studentid, name, score\nfrom student s\njoin score sc on s.studentid = sc.studentid\nwhere courseid = '0101' and score > (\n    select avg(score)\n    from score\n    group by courseid\n    having courseid = '0101'\n);\n#题目2\nselect s.studentid, name, score\nfrom student s\njoin score sc on s.studentid = sc.studentid\nwhere sc.courseid in (\n    select courseid\n    from course\n    where coursename = '高等数学'\n) and score > (\n    select avg(score)\n    from score\n    group by courseid\n    having courseid in (\n        select courseid\n        from course\n        where coursename = '高等数学'\n    )\n);",
+            "filename": "step4.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：\n第一题\n查询score数据表中0101课程的成绩高于该课程的平均分的学生的学号、姓名和成绩\n\n第二题\n查询score数据表中高等数学课程的成绩高于该课程的平均分的学生的学号、姓名和成绩\n\n第三题\n查询score数据表中高等数学课程的成绩高于该课程的平均分的学生的学号、姓名和成绩\n\n\n开始你的任务吧，祝你成功！\n\n\n"
+}
