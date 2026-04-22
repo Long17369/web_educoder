@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "逆转裁判",
+    "content": [
+        {
+            "code": "s1 = input()\ns2 = input()\nans = s1.translate(str.maketrans({i:\"\" for i in s2}))\nif ans == \"\":\n    print(\"Objection!\")\nelse:\n    print(ans)",
+            "language": "python"
+        }
+    ],
+    "description": "<成步堂 龙一> 是一名律师。在法庭开庭时，他需要出示手中的证物来击破他的老对手，检察官 <御剑 怜侍> 询问的各个疑点，\n以此证明委托人（被告）的清白。\n检察官有一张询问清单 s1，s1是一个长度不超过1000的字符串，每个字符代表一个疑点。\n成步堂手上有一张证物清单s2, s2同样是一个长度不超过1000的字符串，每个字符代表一件证物。\n\n已知，与疑点字符相同的证物可以击破该疑点，并且一件证物可以使用多次。\n请问，成步堂能否击破检察官提出的所有疑点，完成大逆转？\n\n### 输入格式:\n\n第一行是一个字符串s1，代表询问清单。\n第二行是一个字符串s2，代表证物清单。\n\n### 输出格式:\n\n输出共一行。若能完成逆转，输出 \"Objection!\";\n否则，输出检查官剩余的疑问清单。\n### 输入样例1:\n\n```in\naaabbbcccabc\nabcdefabbc\n```\n\n### 输出样例1:\n\n```out\nObjection!\n```\n\n### 输入样例2:\n\n```in\naaabbbcccabc\n1234567a\n```\n\n### 输出样例2:\n\n```out\nbbbcccbc\n```\n"
+}

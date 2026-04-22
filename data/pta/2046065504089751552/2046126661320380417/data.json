@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "Z字形打印",
+    "content": [
+        {
+            "code": "n = int(input())\ndata = [list(map(int,input().split())) for _ in range(n)]\nfor i in range(n*n):\n    x,y = 0,0\n    d = 1\n    while i:\n        match i % 4:\n            case 0:\n                pass\n            case 1:\n                y += d\n            case 2:\n                x += d\n            case 3:\n                x += d\n                y += d\n        d *= 2\n        i //= 4\n    print(data[x][y], end=\" \")\n",
+            "language": "python"
+        }
+    ],
+    "description": "输入一个矩阵 $n \\times n$ 矩阵，按照Z字形顺序依次打印出每一个数字。\n\n![Zorder.jpg](~/694d4557-b4d9-4c73-b9fd-7e4a49b6f473.jpg)\n\n### 输入格式:\n\n第一行输入两个整数 $n(n∈[1,2,4,8,16])$，接下来 $n$ 行，每行输入 $n$ 个整数，每个整数之间 $a_{i,j}(0 \\le a_{i,j} \\le 255)$ 用一个空格分隔。\n\n### 输出格式:\n\n输出一行，$n \\times n$ 个整数，每个整数之间用一个空格分隔。\n\n### 输入样例:\n\n```in\n4\n1 2 5 6\n3 4 7 8\n9 10 13 14\n11 12 15 16\n```\n\n### 输出样例:\n\n```out\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 \n```\n"
+}
