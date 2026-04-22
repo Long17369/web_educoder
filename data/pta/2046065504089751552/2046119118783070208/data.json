@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "多数乘积（可变函数）",
+    "content": [
+        {
+            "code": "def func(a, b=None ,c=None ,d=None):\n    ret = a\n    if b is not None:\n        ret *= b\n    if c is not None:\n        ret *= c\n    if d is not None:\n        ret *= d\n    return ret\n\na,b,c,d = map(float,input().split(','))\nprint(f\"\"\"前两个数乘积为：{func(a,b):.01f}\n前三个数乘积为：{func(a,b,c):.01f}\n前四个数乘积为：{func(a,b,c,d):.01f}\"\"\")",
+            "language": "python"
+        }
+    ],
+    "description": "定义一个可变参数函数，返回参数的乘积。输入4个用逗号分割的数值，按照要求计算多个数的乘积，保留1位小数（四舍五入），并输出。\n\n### 输入格式:\n\n输入4个用逗号分隔的数值\n\n### 输出格式:\n\n输出前两个、三个、四个数的乘积。\n\n### 输入样例:\n\n```in\n12,78,96,54\n```\n\n### 输出样例:\n\n```out\n前两个数乘积为：936.0\n前三个数乘积为：89856.0\n前四个数乘积为：4852224.0\n```"
+}

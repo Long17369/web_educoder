@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "p094扑克排序",
+    "content": [
+        {
+            "code": "\n\n\ndef re(p:str) -> int:\n    mm = ['3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A', '2']\n    m = {i:j for j,i in enumerate(mm)}\n    hh = ['c', 'd', 's', 'h']\n    h = {i:j for j,i in enumerate(hh)}\n    return h[p[0]] + m[p[1:]] * 100\n\ntry:\n    while True:\n        print(\" \".join(sorted(input().split(), key=re, reverse=True)),end=\" \\n\")\nexcept Exception as e:\n    # print(e)\n    pass\n",
+            "language": "python"
+        }
+    ],
+    "description": "一副扑克牌有52张牌，分别是红桃，黑桃，方片，梅花各13张，不包含大小王，现在Alex抽到了n张牌，请将扑克牌按照牌面从大到小的顺序排序。牌的表示方法：  \n红桃(heart)用字母h表示   \n黑桃(spade)用字母s表示  \n方片(dianmond)用字母d表示  \n梅花(club)用字母c表示  \n2~10的牌面直接用2,3,4,5,6,7,8,9,10 表示，其余的分别为A，J，Q，K  \n比如方片J用dJ表示， 红桃A用hA表示  \n牌面大小：2>A>K>Q>J>10>9>……>4>3  \n相同牌面的按照花色（h>s>d>c）顺序排。  \n\n### 输入格式:\n\n多组数据。每组数据一行，表示当前摸到的n张牌（1<=n<=52）。\n\n### 输出格式:\n\n针对每组数据，输出一行，即排序后的结果，每张扑克后面有一个空格。\n\n### 输入样例:\n\n```in\nh7 c10 h4 s7 c5 cA dA c4 sJ h9 hQ d8 h2 s2 d9 sA dQ c6 hA\nh7 s8 s7 c5 c8 cK sQ d2 s3 hQ d8 s10 sA d5 h10 hA\n```\n\n### 输出样例:\n\n```out\nh2 s2 hA sA dA cA hQ dQ sJ c10 h9 d9 d8 h7 s7 c6 c5 h4 c4 \nd2 hA sA cK hQ sQ h10 s10 s8 d8 c8 h7 s7 d5 c5 s3 \n```\n"
+}

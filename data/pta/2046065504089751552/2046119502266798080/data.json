@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "lambda表达式的使用",
+    "content": [
+        {
+            "code": "n = int(input())\ndata = [input() for _ in range(n)]\nprint(\"\\n\".join(sorted(data, key=lambda x:sum(map(int,x.split()[1:])), reverse=True)))\n",
+            "language": "python"
+        }
+    ],
+    "description": " 输入若干学生数据，包括姓名，以及ds,db,c 三门课程的成绩，存放到序列中，然后按总成绩由高到低输出所有学生的信息，使用内置函数sorted及lambda表达式实现。\n\n### 输入格式:\n\n先输入学生数量n，再输入n行学生数据，每行一个学生的信息，包括：姓名，以及ds,db,c 三门课程的成绩。\n\n### 输出格式:\n\n按总成绩由高到低排序后的学生信息。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n2\n张三 70 75 80\n李四 80 80 85\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n李四 80 80 85\n张三 70 75 80\n```"
+}

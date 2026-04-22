@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "嵌套列表拆分",
+    "content": [
+        {
+            "code": "s = input()\na = eval(s)\n\ndef get(l):\n    ret = []\n    for i in l:\n        if type(i) == list:\n            ret += get(i)\n        else:\n            ret.append(i)\n    return ret\n\nprint(get(a))\n",
+            "language": "python"
+        }
+    ],
+    "description": "利用递归算法实现嵌套列表的拆分\n\n### 输入格式:\n\n输入一个嵌套的列表，例如：[1, 2, [3, 4], 5]\n\n### 输出格式:\n\n将嵌套列表进行拆分，并输出拆分后的列表，例如：[1, 2, 3, 4, 5]。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n[1,2,[3,4],5]\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n[1, 2, 3, 4, 5]\n```\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n[[[1,2],3],[[4,5,['a','b']],[[[[['c']]]]]]]\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n[1, 2, 3, 4, 5, 'a', 'b', 'c']\n```\n"
+}

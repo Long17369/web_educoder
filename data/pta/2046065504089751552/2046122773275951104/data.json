@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "计算某天距元旦的天数 ",
+    "content": [
+        {
+            "code": "from datetime import date\n\nn = int(input())\nfor _ in range(n):\n    try:\n        y,m,d = map(int,input().split())\n        dd = date(y,m,d)\n    except Exception as e:\n        print(\"ErrorInput\")\n    else:\n        print(\"Totaldays =\", (dd - date(y,1,1)).days + 1)\n",
+            "language": "python"
+        }
+    ],
+    "description": "输入年、月、日，要求输出该年份的元旦到该日期总共经过了多少天。（提示：闰年是指能被400 整除的年份或者能被4 整除但不能100 整除的年份）\n\n### 输入格式:\n\n输入n，代表接下来要输入n行的年、月、日。\n\n然后输入n行年、月、日，年、月、日之间的元素以空格相分隔，第1个数据为年，第2个数据为月，第3个数据为日。\n\n### 输出格式:\n\n如果输入年月日正确，则输出：Totaldays=天数\n\n如果输入年月日有错，则输出：ErrorInput\n\n### 输入样例:\n\n```in\n4\n2000 13 10\n2000 3 10\n2012 3 10\n2018 5 20\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\nErrorInput\nTotaldays = 70\nTotaldays = 70\nTotaldays = 140\n```\n"
+}
