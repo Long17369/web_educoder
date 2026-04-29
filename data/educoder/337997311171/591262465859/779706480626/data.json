@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "修改数据表的多条记录",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\nupdate course\nset period=period+5\nwhere required=1;\n#代码结束\nselect * from course;",
+            "filename": "step6.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：将课程course数据表中必修课requried的学时period增加5个\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：1.如何修改数据表的记录\n\n```sql\n UPDATE <表名>  SET<字段1>=<表达式1> [,<字段2>=<表达式1>……] [WHERE <条件>]\n\n```\n对于指定数据表中符合条件的记录，用指定的表达式的值来更新指定的字段。  \n使用UPDATE命令可以一次更新多个字段的值。\nWHERE <条件>用来指定更新的条件。\n当默认时，将更新数据表的所有记录。\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

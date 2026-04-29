@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "数据表中插入一条记录，对指定字段赋值",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\ninsert into student (studentid, name, birthday, sex) values ('2023120101', '李向', '2000-08-30', '男');\n \n \n #代码结束\n select * from student;",
+            "filename": "step3.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：在student数据表中插入一条数据\n学号2023120101, 姓名李向, 出生年月2000-08-30,性别男\n\n\n### 相关知识\n为了完成本关任务，你需要掌握：如何向数据表插入一条数据\n\n#### 数据表中插入一条数据\n\n```sql\nINSERT  INTO  <表名>  (<字段1>[,<字段2>…])\nVALUES (<表达式11>[,<表达式12>…])\n\n\n```\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}
