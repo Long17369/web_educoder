@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "删除数据表的多条记录",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\n delete from course\n where department = '新影院';\n #代码结束\n select * from course;",
+            "filename": "step8.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：\n删除课程数据表中开课学院department为新影院的课\n\n\n\n---\n开始你的任务吧，祝你成功！\n\n"
+}

@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "在数据表中修改单条数据记录的单个字段的值",
+    "content": [
+        {
+            "code": " use jwxt;\n#代码开始\nupdate course set credit=3\n where coursename = '计算机概论';\n \n #代码结束\n select * from course;",
+            "filename": "step4.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：将课程数据表的计算机概论的学分改为3\n![,](/api/attachments/8776054?type=image/png)\n### 相关知识\n为了完成本关任务，你需要掌握：1.如何在数据表修改数据记录\n#### 如何在数据表修改数据记录\n更新数据记录\n```sql\n UPDATE <表名>  SET<字段1>=<表达式1>  [,<字段2>=<表达式1>……]  [WHERE <条件>]\n```\n对于指定数据表中符合条件的记录，用指定的表达式的值来更新指定的字段。  \n使用UPDATE命令可以一次更新多个字段的值。\nWHERE <条件>用来指定更新的条件。\n当默认时，将更新数据表的所有记录。\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

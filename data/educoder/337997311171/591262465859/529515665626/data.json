@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "删除数据表的所有数据",
+    "content": [
+        {
+            "code": " use jwxt;\n #代码开始\n delete from course\n where 1=1;\n #代码结束\n select * from course;",
+            "filename": "step9.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：删除所有课程course\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}
