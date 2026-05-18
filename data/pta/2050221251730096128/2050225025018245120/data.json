@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "圆派生出圆柱体类",
+    "content": [
+        {
+            "code": "from math import pi\n\nclass Circle:\n    def __init__(self,radius):\n        self.__radius = radius\n\n    def get_radius(self):\n        return self.__radius\n\n    def getarea(self):\n        return pi * self.__radius ** 2\n\nclass Cylinder(Circle):\n    def __init__(self, radius, height):\n        super().__init__(radius)\n        self.__height = height\n\n    def getarea(self):\n        return pi * self.__height * 2 * self.get_radius() + 2 * super().getarea()\n\n    def getvolume(self):\n        return super().getarea() * self.__height\n\n    def __str__(self):\n        return (\n            f\"BasalArea:{super().getarea():.03f}\\n\"\n            f\"SupfaceArea:{self.getarea():.03f}\\n\"\n            f\"Volume:{self.getvolume():.03f}\"\n        )\n\ndef main():\n    r, h = map(float, input().split())\n    cy = Cylinder(r,h)\n    print(cy)\n\nmain()\n",
+            "language": "python"
+        }
+    ],
+    "description": "实现定义一个Circle圆类：私有数据域__radius（表示半径）， 方法有：__init__() 的特殊方法（构造方法）；取半径的方法getradius()；求圆面积的方法 getarea()。然后定义一个由Circle圆类派生出的Cylinder圆柱体派生类: 私有数据域__height（表示圆柱体的高度）， 方法有：__init__() 的特殊方法（构造方法）；求圆柱体表面积的方法 getarea()；求圆柱体体积的方法 getvolume()；__str__() 的特殊方法（将对象转化为适于人阅读的形式，以支持直接打印输出）.读入半径与高度，构造一个Cylinder圆柱体派生类对象 cy， 进行测试。\n例如：\n读入半径与高度\ncy=Cylinder(r,h)\nprint(cy)\n\n### 输入格式:\n\n输入在一行中给出2个实数r和h,中间用空格隔开。\n\n### 输出格式:\n\n分三行输出圆柱体的底面积，表面积，体积（结果保留3位小数）。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n1 2\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\nBasalArea:3.142\nSupfaceArea:18.850\nVolume:6.283\n```\n"
+}
