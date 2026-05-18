@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "根据多个数据表建立视图",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\n#第一题\nCREATE VIEW cj AS\nSELECT student.studentid, student.name, course.courseid, course.coursename, score.session, score.score\nFROM student\nJOIN score ON student.studentid = score.studentid\nJOIN course ON score.courseid = course.courseid;\n#第二题\n#代码结束\nselect * from cj;",
+            "filename": "step1.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：\n根据工作人员gzry、销售单xsd、顾客gk数据表建立视图\n为了完成本关任务，你需要掌握：\n\n如何建立视图\n\n\n### 相关知识\n\n#####建立视图\n视图是从数据库中一个或多个表中导出来的虚拟表。\n包含一系列有名称的数据列和若干数据行。\n建立视图的命令格式：\n```sql\n CREATE [OR REPLACE] \nVIEW view_name [(column_list)]\nAS SELECT_statement\n```\nview_name是视图的名称\n\n\n### 任务要求\n\n建立视图cj,显示基于Student和score、course数据表，每位学生的学号、姓名、课程名称、学期和成绩\n\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

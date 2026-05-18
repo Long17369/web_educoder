@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "建立基于单表的视图，在视图中插入、删除和修改记录",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\n#题目1\nCREATE VIEW ns AS\nSELECT * FROM student WHERE sex = '男'\nWITH CHECK OPTION;\n#题目2\nINSERT INTO ns(studentid, name, birthday, sex, nativeplace, political, interest)\nVALUES('201221120111', '刘刘', '1997-2-2', '男', '湖南', '团员', '旅游');\n#题目3\nDELETE FROM ns WHERE name = '王刚';\n#题目4\nUPDATE ns SET birthday = '1996-11-20' WHERE name = '何源王';\n#代码结束\nselect * from ns ;\n",
+            "filename": "step4.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：\n第一题\n建立视图ns,显示Student数据表所有男性的所有字段，并且保证所有对该视图的修改均符合性别男的条件\n第二题\n在视图ns中插入学号为201221120111,姓名为刘刘,出生日期1997-2-2,男性,籍贯湖南,政治面貌团员,爱好旅游\n第三题\n在视图ns中删除姓名为王刚的数据\n第四题\n将视图ns的姓名(name)为河源王的出生日期(birthday)改为1996-11-20\n\n提示：\n在数据来源于多表的视图中，不能插入和删除数据\n开始你的任务吧，祝你成功！\n\n\n"
+}

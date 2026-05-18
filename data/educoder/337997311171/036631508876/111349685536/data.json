@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "通过check设置域完整性",
+    "content": [
+        {
+            "code": " use library;\n #代码开始\n alter table book add constraint sjgd check (sj > 0 and sj <= 5000);\n #代码结束\n insert into book(txm,sm,sj) values(\"P0000099\",\"四库全书一\",8000);",
+            "filename": "step6.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：对数据表的字段设置check约束可以保证字段的值在有效范围之内，即数据的域完整性\n\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：\n\n#### 设置check约束\n对于已经存在的数据表，\nalter table <数据表名> add constraint <约束名> check <约束条件>\n可以设置数据表的域完整性\n\n### 本关任务\n\n对于图书数据表book（已经建立并插入记录），对于价格字段sj设置约束sjgd,要求价格必须大于0且小于等于5000\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "通过主索引设置实体完整性",
+    "content": [
+        {
+            "code": " use library;\n #代码开始\n alter table book add primary key (txm);\n #代码结束\n insert into book(txm,sm) values(\"P0000001\",\"苏东坡全集\");",
+            "filename": "step5.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n\n本关任务：建立主索引可以保证数据的实体完整性。\n即数据表的每行记录不与其他记录重复\n\n\n### 相关知识\n\n\n为了完成本关任务，你需要掌握：\n\n\n#### 获取建立主索引\n对于已经存在的数据表，通过alter table 命令建立主索引\nalter table <数据表名> add primary key 索引名(字段名)\n\n\n\n### 本关任务\n\n\n对于图书数据表book（已经建立并插入记录），根据条形码（txm)、建立一个主索引,保证数据表中每本书的条形码是唯一的，即实体完整性\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

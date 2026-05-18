@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "根据视图建立视图",
+    "content": [
+        {
+            "code": "use jwxt;\n #代码开始\n #第一题\ncreate view pjcj as\nselect student.studentid, name, avg(score) pjf\nfrom score\njoin student on student.studentid = score.studentid\ngroup by studentid;\n #第二题\ncreate view yx as\nselect *\nfrom pjcj\nwhere pjf >= 85\norder by pjf desc;\n #代码结束\n select * from pjcj order by pjf desc, studentid;\n select * from yx order by pjf desc, studentid;",
+            "filename": "step2.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n任务：\n\n为了完成本关任务，你需要掌握：\n第一题：\n基于视图cj建立视图pjcj,显示每位学生的学号、姓名和平均分（pjf)\n\n第二题：\n建立视图yx,根据pjcj视图查询平均分85及以上的学生的学号、姓名和平均成绩，按成绩降序排列\n\n\n\n\n\n\n\n\n"
+}

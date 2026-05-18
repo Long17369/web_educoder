@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "更新视图",
+    "content": [
+        {
+            "code": "use jwxt;\n#代码开始\nupdate cj\nset score = 90\nwhere name = '周晓阳' and coursename = 'c语言';\n #代码结束\nselect * from pjcj order by pjf desc, studentid;\nselect * from yx order by pjf desc, studentid;",
+            "filename": "step3.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：在视图中修改数据\n### 相关知识\n在视图中，可以通过update命令更新数据\n但是，如果是计算字段则无法更新。\n \n### 任务要求\n在视图cj中将周晓阳的c语言成绩改为90\n观察视图pjcj的变化\n\n\n\n\n\n\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}
