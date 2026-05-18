@@ -34,8 +34,7 @@
 
 <script setup lang="ts">
 import { formatFilename, formatLanguageLabel, highlightCode } from '../utils/hljs'
-import { mdParser } from '../utils/markdown'
-import { computed, nextTick, ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 import type { Problem } from '@/utils/types'
 import { useRoute } from 'vue-router'
 
@@ -44,27 +43,21 @@ interface Prop {
   goBack: () => void
 }
 
+interface CodeFile {
+  key: string
+  filename: string
+  language: string
+  highlighted: string
+  rawCode: string
+  copied: boolean
+}
+
 const props = defineProps<Prop>()
 const route = useRoute()
 
 const loading = ref(false)
 const error = ref('')
-
-const codeFiles = computed(() => {
-  const files = props.data.content
-  return files.map((file, index) => {
-    const filename = formatFilename(file.filename, file.language)
-    const content = typeof file.code === 'string' ? file.code : ''
-    return {
-      key: `${index}-${filename}`,
-      filename,
-      language: formatLanguageLabel(file.language),
-      highlighted: highlightCode(content, file.language),
-      rawCode: content,
-      copied: false,
-    }
-  })
-})
+const codeFiles = ref<CodeFile[]>([])
 
 const problemDOM = ref<HTMLElement | null>(null)
 
@@ -96,6 +89,7 @@ watch(
     }
 
     // 将处理后的 Markdown 转换为 HTML，并解析成 DOM 结构
+    const { mdParser } = await import('../utils/markdown')
     const html = mdParser.render(description)
     const parser = new DOMParser()
     const DOM = parser.parseFromString(html, 'text/html')
@@ -110,6 +104,25 @@ watch(
     } else {
       problemDOM.value.children[0].replaceWith(...DOM.body.children)
     }
+
+    // 按需加载语言包并高亮源码
+    const files = props.data.content
+    const highlighted: CodeFile[] = []
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i]
+      const filename = formatFilename(file.filename, file.language)
+      const content = typeof file.code === 'string' ? file.code : ''
+      const highlightedCode = await highlightCode(content, file.language)
+      highlighted.push({
+        key: `${i}-${filename}`,
+        filename,
+        language: formatLanguageLabel(file.language),
+        highlighted: highlightedCode,
+        rawCode: content,
+        copied: false,
+      })
+    }
+    codeFiles.value = highlighted
   },
   { immediate: true },
 )

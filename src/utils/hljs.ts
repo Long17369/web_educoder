@@ -1,21 +1,25 @@
-import hljs from 'highlight.js'
-import css from 'highlight.js/lib/languages/css'
-import java from 'highlight.js/lib/languages/java'
-import javascript from 'highlight.js/lib/languages/javascript'
-import python from 'highlight.js/lib/languages/python'
-import xml from 'highlight.js/lib/languages/xml'
-import sql from 'highlight.js/lib/languages/sql'
+import hljs from 'highlight.js/lib/core'
+import type { LanguageFn } from 'highlight.js'
 
 // Legacy markdown uses ```in / ```out fences for sample IO; register no-op languages to avoid warnings.
 hljs.registerLanguage('in', () => ({ name: 'in', contains: [] }))
 hljs.registerLanguage('out', () => ({ name: 'out', contains: [] }))
-hljs.registerLanguage('java', java)
-hljs.registerLanguage('python', python)
-hljs.registerLanguage('javascript', javascript)
-hljs.registerLanguage('css', css)
-hljs.registerLanguage('xml', xml)
-hljs.registerLanguage('html', xml)
-hljs.registerLanguage('sql', sql)
+
+// 语言名称 -> 动态 import 加载器（按需加载，减小初始包体积）
+const languageLoaders: Record<string, () => Promise<{ default: LanguageFn }>> = {
+  java: () => import('highlight.js/lib/languages/java'),
+  python: () => import('highlight.js/lib/languages/python'),
+  javascript: () => import('highlight.js/lib/languages/javascript'),
+  css: () => import('highlight.js/lib/languages/css'),
+  xml: () => import('highlight.js/lib/languages/xml'),
+  html: () => import('highlight.js/lib/languages/xml'),
+  sql: () => import('highlight.js/lib/languages/sql'),
+  c: () => import('highlight.js/lib/languages/c'),
+  cpp: () => import('highlight.js/lib/languages/cpp'),
+}
+
+// 已加载的语言缓存，避免重复 import
+const loadedLanguages = new Set<string>()
 
 function normalizeLanguage(language?: string) {
   if (!language) return ''
@@ -24,6 +28,26 @@ function normalizeLanguage(language?: string) {
   if (normalized === 'py') return 'python'
   if (normalized === 'htm') return 'html'
   return normalized
+}
+
+async function loadLanguage(language: string): Promise<boolean> {
+  const normalized = normalizeLanguage(language)
+  if (!normalized) return false
+  // 已注册则跳过
+  if (loadedLanguages.has(normalized) || hljs.getLanguage(normalized)) {
+    loadedLanguages.add(normalized)
+    return true
+  }
+  const loader = languageLoaders[normalized]
+  if (!loader) return false
+  try {
+    const mod = await loader()
+    hljs.registerLanguage(normalized, mod.default)
+    loadedLanguages.add(normalized)
+    return true
+  } catch {
+    return false
+  }
 }
 
 function getLanguageExtension(language?: string) {
@@ -62,12 +86,15 @@ function formatLanguageLabel(language: string | undefined) {
   return normalized
 }
 
-function highlightCode(content: string, language?: string) {
+async function highlightCode(content: string, language?: string) {
   const normalized = normalizeLanguage(language)
-  if (normalized && hljs.getLanguage(normalized)) {
-    return hljs.highlight(content, { language: normalized }).value
+  if (normalized) {
+    await loadLanguage(normalized)
+    if (hljs.getLanguage(normalized)) {
+      return hljs.highlight(content, { language: normalized }).value
+    }
   }
   return hljs.highlightAuto(content).value
 }
 
-export { hljs, formatFilename, formatLanguageLabel, highlightCode }
+export { hljs, formatFilename, formatLanguageLabel, highlightCode, loadLanguage }

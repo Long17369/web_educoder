@@ -1,7 +1,8 @@
 import MarkdownIt from 'markdown-it'
 // @ts-expect-error No types for markdown-it-katex
 import markdownItKatex from 'markdown-it-katex'
-import MarkdownItHighlight from 'markdown-it-highlightjs'
+// @ts-expect-error No types for markdown-it-highlightjs/core
+import MarkdownItHighlight from 'markdown-it-highlightjs/core'
 
 import 'katex/dist/katex.min.css'
 import 'github-markdown-css/github-markdown-light.css'
