@@ -32,12 +32,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, ref, watch } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { fetchData } from './fetchData'
 import type { DataFile } from './utils/types'
-import ContentView from './views/ContentView.vue'
-import CodeView from './views/CodeView.vue'
+
+const ContentView = defineAsyncComponent(() => import('./views/ContentView.vue'))
+const CodeView = defineAsyncComponent(() => import('./views/CodeView.vue'))
 
 const route = useRoute()
 const router = useRouter()

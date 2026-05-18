@@ -34,7 +34,6 @@
 
 <script setup lang="ts">
 import { formatFilename, formatLanguageLabel, highlightCode } from '../utils/hljs'
-import { mdParser } from '../utils/markdown'
 import { computed, nextTick, ref, watch } from 'vue'
 import type { Problem } from '@/utils/types'
 import { useRoute } from 'vue-router'
@@ -96,6 +95,7 @@ watch(
     }
 
     // 将处理后的 Markdown 转换为 HTML，并解析成 DOM 结构
+    const { mdParser } = await import('../utils/markdown')
     const html = mdParser.render(description)
     const parser = new DOMParser()
     const DOM = parser.parseFromString(html, 'text/html')
