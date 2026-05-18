@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "宿舍谁最高",
+    "content": [
+        {
+            "code": "class Student:\n    def __init__(self, no, name, height, weight):\n        self.no = no\n        self.name = name\n        self.height = int(height)\n        self.weight = int(weight)\n\n    def __str__(self):\n        return f\"{self.no} {self.name} {self.height} {self.weight}\"\n\ndef main():\n    n = int(input())\n    d = {}\n    students = [Student(*input().split()) for _ in range(n)]\n    for s in students:\n        if d.get(s.no) == None:\n            d[s.no] = s\n        elif d[s.no].height < s.height:\n            d[s.no] = s\n    for _, s in sorted(d.items()):\n        print(s)\n\nmain()\n",
+            "language": "python"
+        }
+    ],
+    "description": "学校选拔篮球队员，每间宿舍最多有4个人。现给出宿舍列表，请找出每个宿舍最高的同学。定义一个学生类Student,有身高height，体重weight等。\n\n### 输入格式:\n\n首先输入一个整型数n （1<=n<=1000000），表示n位同学。\n紧跟着n行输入,每一行格式为：宿舍号，name,height,weight。\n宿舍号的区间为[0,999999]， name 由字母组成，长度小于16，height，weight为正整数。\n\n### 输出格式:\n\n按宿舍号从小到大排序，输出每间宿舍身高最高的同学信息。题目保证每间宿舍只有一位身高最高的同学。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n7\n000000 Tom 175 120\n000001 Jack 180 130\n000001 Hale 160 140\n000000 Marry 160 120\n000000 Jerry 165 110\n000003 ETAF 183 145\n000001 Mickey 170 115\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n000000 Tom 175 120\n000001 Jack 180 130\n000003 ETAF 183 145\n```\n"
+}

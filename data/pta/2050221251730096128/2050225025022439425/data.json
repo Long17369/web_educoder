@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "设计一个发票类 Invoice",
+    "content": [
+        {
+            "code": "class Invoice:\n    def __init__(\n        self,\n        item_name: str,\n        unit_price: float,\n        quantity: int,\n        tax_rate: float\n    ):\n        self.item_name = item_name\n        self.unit_price = unit_price\n        self.quantity = quantity\n        self.tax_rate = tax_rate\n\n    def get_subtotal(self):\n        return self.unit_price * self.quantity\n\n    def get_tax(self):\n        return self.get_subtotal() * self.tax_rate\n\n    def get_total(self):\n        return self.get_subtotal() + self.get_tax()\n\n    def __str__(self):\n        return (\n            f\"Item: {self.item_name}\\n\"\n            f\"Subtotal: {self.get_subtotal():.02f}\\n\"\n            f\"Tax: {self.get_tax():.02f}\\n\"\n            f\"Total: {self.get_total():.02f}\"\n        )\n\ndef main():\n    item_name, unit_price, quantity, tax_rate = input().split()\n    unit_price = float(unit_price)\n    quantity = int(quantity)\n    tax_rate = float(tax_rate)\n    invoice = Invoice(item_name, unit_price, quantity, tax_rate)\n    print(invoice)\n\nmain()",
+            "language": "python"
+        }
+    ],
+    "description": "请设计一个名为 Invoice 的类，用于表示一张商品发票。每张发票包括以下属性：\n\n· 商品名称（item_name，字符串）\n\n· 单价（unit_price，浮点数）\n\n· 数量（quantity，整数）\n\n· 税率（tax_rate，浮点数，表示为小数形式，如 0.13 表示 13%）<br>（1）设计一个方法 get_subtotal()，返回不含税的小计（单价 × 数量）。<br>（2）设计一个方法 get_tax()，返回税额（小计 × 税率）。<br>（3）设计一个方法 get_total()，返回总价（含税）。<br>（4）设计 \\_*str*\\_() 方法，返回一张发票的文字描述，包括商品名称、小计、税额和总价。\n\n<br>编写一个测试程序，从输入中读取商品名称、单价、数量和税率，然后输出发票信息。\n\n### 输入格式:\n\n在一行中输入：<br>商品名称 单价 数量 税率<br>各项之间以空格分隔。\n\n### 输出格式:\n\n输出该发票的信息，包括商品名称、小计、税额和总价。所有金额保留 **2 位小数**，四舍五入。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\nLaptop 4999.99 2 0.13\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\nItem: Laptop\nSubtotal: 9999.98\nTax: 1300.00\nTotal: 11299.98\n```"
+}
