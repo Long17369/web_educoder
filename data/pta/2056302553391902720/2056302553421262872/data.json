@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "查询比“网络工程”专业所有学生年龄都小的学生姓名",
+    "content": [
+        {
+            "code": "select sname from stu\nwhere birdate > all(\n    select birdate\n    from stu\n    where mno = (\n        select mno\n        from major\n        where mname = '网络工程'\n    )\n);"
+        }
+    ],
+    "description": "本题目要求编写SQL语句，\n查询比“网络工程”专业所有学生年龄都小的学生姓名。\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `stu` (\n  `sno` char(4) NOT NULL,\n  `sname` char(8) NOT NULL,\n  `sex` tinyint(1) DEFAULT NULL,\n  `mno` char(2) DEFAULT NULL,\n  `birdate` datetime DEFAULT NULL,\n  `memo` text,\n  PRIMARY KEY (`sno`),\n  KEY `fk_stu_mno` (`mno`),\n  CONSTRAINT `fk_stu_mno` FOREIGN KEY (`mno`) REFERENCES `major` (`mno`)\n);\nCREATE TABLE `major` (\n  `mno` char(2) NOT NULL,\n  `mname` varchar(20) NOT NULL,\n  PRIMARY KEY (`mno`)\n)\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n```stu```表：\n\n![stu.JPG](~/c9ad805e-7792-4269-ba0a-4be483aaac81.JPG)\n\n```major```表：\n\n![major.JPG](~/e5b27180-f435-461d-b599-d857eabeeab1.JPG)\n\n\n### 输出样例:\n\n请在这里给出输出样例。例如：\n\n\n![midt01.JPG](~/37a7b467-6f08-410a-8dd8-b25906c81710.JPG)\n\n\n\n"
+}
