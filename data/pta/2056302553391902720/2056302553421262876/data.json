@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "创建带表达式的视图StuView。",
+    "content": [
+        {
+            "code": "create view StuView as\nselect sno No, sname Name, 2024 - year(birthdate) Age\nfrom Student;"
+        }
+    ],
+    "description": "已知学生表Student，创建学生信息的视图StuView，包括学生学号、姓名和年龄，在视图中的列名分别为No，Name和Age。 \n\nStudent 表结构:\n\n```\ncreate table  Student(\n  sno char(8)  primary key,\n  sname varchar(10) not null,\n  gender char(2) check(gender='男' or gender='女'),\n  birthdate  date,\n  major varchar(20)  default '软件工程'\n  );\n```\n\nStudent 表 数据样例：\n\n```Student```表：\n\n\n|sno|sname|gender|birthdate|major|\n|--------|--------|----|----------|--------------|\n|21012101|李勇|男|2005-10-20|计算机科学|\n|21012102|刘晨|男|2006-5-5|计算机科学|\n|21012103|王晓敏|女|2005-10-6|计算机科学|\n|21021101|李佳睿|男|2006-3-30|软件工程|\n|21021102|吴宾|男|2005-9-21|软件工程|\n|21021103|张海|男|2005-10-20|软件工程|\n|21031101|钱晓萍|女|2006-6-1|网络工程|\n|21031102|王大力|男|2005-11-15|网络工程|\n|21041101|于洋|男|2006-3-15|数据科学|\n|21041102|郭霖|男|2006-3-2|数据科学|\n\n### 输出样例:\n\n```StuView```视图：\n\n![图片.png](~/bcf71f1e-1545-4684-b745-f085799c443d.png)\n"
+}

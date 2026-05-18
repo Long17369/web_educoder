@@ -1,0 +1,10 @@
+{
+    "type": "problem",
+    "title": "删除成绩为空的学生选课记录",
+    "content": [
+        {
+            "code": "delete from sc\nwhere grade is null;"
+        }
+    ],
+    "description": "本题目要求编写DELETE语句，\n在```SC```表中删除成绩为NULL的学生选课记录。\n\n\n### 表结构:\n\n请在这里写定义表结构的SQL语句。例如：\n\n```\nCREATE TABLE `sc` (\n  `sno` char(4) NOT NULL,  -- 学生学号\n  `cno` char(4) NOT NULL,  -- 课程号\n  `grade` decimal(6,1) DEFAULT NULL,  --  成绩\n  PRIMARY KEY (`sno`,`cno`)\n)\n```\n\n### 表样例\n\n请在这里给出上述表结构对应的表样例。例如\n\n``` sc```表：\n\n\n![sc1.JPG](~/7c032d07-27e3-4ca3-b296-fe0abc33c65e.JPG)\n\n\n### 输出样例:\n\n删除记录后，```sc```表如下：\n\n\n![sc2.JPG](~/98fa60b3-6c59-4b92-9d7a-0a077d465693.JPG)\n\n"
+}
