@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "删除参照完整性",
+    "content": [
+        {
+            "code": " use library;\n \n#代码开始\nalter table borrow drop foreign key borrow_ibfk_1;\n \n #代码结束\n show create table borrow;\n",
+            "filename": "step4.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：\n删除借阅数据表和图书数据表的外键，名字为borrow_ibfk_1\n\n删除外键的命令为\nalter table <数据表名> drop foreign key <外键名>\n\n开始你的任务吧，祝你成功！\n\n\n"
+}

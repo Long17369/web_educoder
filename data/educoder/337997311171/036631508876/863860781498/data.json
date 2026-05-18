@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "建立数据表并设置参照完整性",
+    "content": [
+        {
+            "code": "use library;\n#代码开始\ncreate table qk(\n    qktxm varchar(10) key,\n    qkmc varchar(20),\n    kh varchar(10),\n    jh varchar(10),\n    cbdw varchar(20),\n    jg decimal(4,1)\n);\ncreate table qkjy(\n    dzzh tinyint(3) unsigned zerofill,\n    qktxm varchar(10),\n    jyrq date,\n    hsrq date,\n    foreign key (dzzh) references reader(dzzh)\n    on delete cascade\n    on update cascade,\n    foreign key (qktxm) references qk(qktxm)\n    on delete restrict\n    on update restrict\n);\n#代码结束\nshow create table qkjy;\n",
+            "filename": "step3.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n本关任务：建立数据表并设置参照完整性\n\n\n### 任务要求\n建立期刊qk数据表和期刊借阅qkjy数据表\n期刊qk数据表有6个字段，如下所示\n期刊条码qktxm varchar 10\n期刊名称qkmc varchar 20\n刊号kh varchar 10\n卷号jh varchar 10\n出版单位cbdw varchar 20\n价格jg decimal4,1字段\n期刊借阅qkjy数据表有4个字段，如下所示\n读者证号dzzh tinyint 3 unsigned zerofill\n期刊条码qktm varchar 10\n借阅日期jyrq date\n还书日期 hsrq date\n在建立期刊借阅数据表时，与读者表建立关联。\n当修改读者表的读者证号，借阅期刊表的相关会删除。当删除读者表的读者证号，借阅期刊表的相关记录会删除。\n在建立期刊借阅数据表时，同时与期刊表建立关联。不允许修改和删除期刊数据表的相关数据。\n注意：期刊数据表需要根据期刊号建立主索引\n\n---\n开始你的任务吧，祝你成功！\n\n\n"
+}

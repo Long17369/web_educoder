@@ -1,0 +1,12 @@
+{
+    "type": "problem",
+    "title": "设置借阅表和图书表的参照完整性",
+    "content": [
+        {
+            "code": "use library\n #代码开始\n alter table borrow add foreign key (txm) references book (txm)\n on delete restrict\n on update restrict;\n #代码结束\n delete from book where txm=\"P0000001\";",
+            "filename": "step2.sql",
+            "language": "sql"
+        }
+    ],
+    "description": "[TOC]\n\n---\n\n### 任务描述\n\n本关任务：\n在借阅表(borrow)和图书表(book)之间设置参照完整性\n\n为了完成本关任务，你需要掌握：\n如何在数据表之间设置参照完整性\n\n### 相关知识\n\n\n在数据表之间增加参照完整性的命令如下所示\n\n```python\nalter table <子表> add\n[CONSTRAINT <外键名>]\nFOREIGN KEY <字段名> \nREFERENCES <主表> <主键列>\non delete restrict|cascade|set null\non update delete restrict|cascade|set null\n\n```\n在设置参照完整性后，\n当主表中没有相关数据时，子表中无法插入对应的记录。\n如果delete设置为cascade,\n在删除主表数据的时候，子表的数据将同时被删除;\n如果delete设置为restrit,\n子表中存在数据时，主表的数据将无法删除\n如果delete设置为set null,\n在删除主表数据的时候，子表的数据被设置为null值\n(该列可以设置为null值的情况下)\n\n如果update设置为cascade,\n在修改主表的关键字段的值的时候，子表中相关数据的字段的值将同时被修改;\n如果update被设置为restrit,\n子表中存在数据时，主表的相关数据的关键字段的值将无法修改\n如果update设置为set null,\n在修改主表的关键字段的值的时候，子表中相关数据的字段的值将被设置为null\n(该列可以设置为null值的情况下)\n\n### 本关任务\n在借阅表和图书表设置参照完整性\n当借阅表有某个条形码的记录，就不能删除图书表中相关的图书，也不能修改图书表中相关图书的条形码。\n\n---\n开始你的任务吧，祝你成功！\n\n\n\n\n"
+}
