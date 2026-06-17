@@ -10,3 +10,4 @@ dist/
 tmp/
 
 .vite/
+public/search-index.json

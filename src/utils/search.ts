@@ -1,6 +1,3 @@
-import type { DataFile, FileInfo } from './types'
-import { fetchT } from '../fetchData'
-
 export interface SearchResult {
   title: string
   id: string
@@ -8,100 +5,29 @@ export interface SearchResult {
   titlePath: string // title 路径，如 'pta/Python-1-基础'
 }
 
-/** 缓存节点：存储已加载的目录数据 */
-interface CacheNode {
-  items: FileInfo[]
-  loaded: boolean
-}
+/** 全局搜索索引，页面加载时从预生成文件加载 */
+let searchIndex: SearchResult[] | null = null
+let loadPromise: Promise<void> | null = null
 
-/** 全局缓存：key 为 data 下的相对路径（如 'pta/2030646312838070272'） */
-const cache = new Map<string, CacheNode>()
+async function ensureIndex(): Promise<void> {
+  if (searchIndex) return
+  if (loadPromise) return loadPromise
 
-/** 清空所有缓存（仅在页面刷新时调用） */
-export function clearSearchCache(): void {
-  cache.clear()
-}
-
-/**
- * 递归搜索指定目录下的所有 problemSet
- * 优先使用缓存，未命中时请求并写入缓存
- */
-async function searchRecursive(
-  basePath: string[],
-  titlePrefix: string,
-  onResult: (result: SearchResult) => void,
-  onProgress: (ratio: number) => void,
-  weight: number,
-  abortSignal: () => boolean,
-): Promise<void> {
-  const cacheKey = basePath.join('/')
-
-  // 尝试从缓存获取
-  let node = cache.get(cacheKey)
-  if (!node) {
-    // 缓存未命中，请求数据
-    const url = `/${['data', ...basePath].join('/')}/data.json`
-    try {
-      const data = await fetchT<DataFile>(url)
-      if (abortSignal()) return
-
-      if (data.type === 'problemSet') {
-        node = { items: data.content, loaded: true }
-      } else {
-        // problem 类型，没有子项
-        node = { items: [], loaded: true }
-      }
-    } catch {
-      // 加载失败，缓存为空节点避免重复请求
-      node = { items: [], loaded: true }
-    }
-    cache.set(cacheKey, node)
-  }
-
-  if (abortSignal()) return
-
-  const items = node.items
-  if (items.length === 0) {
-    onProgress(weight)
-    return
-  }
-
-  const itemWeight = weight / items.length
-  let accumulated = 0
-
-  for (const item of items) {
-    if (abortSignal()) return
-
-    const titlePath = titlePrefix ? `${titlePrefix}/${item.title}` : item.title
-
-    // 立即回调当前结果
-    onResult({
-      title: item.title,
-      id: item.id,
-      path: [...basePath, item.id].join('/'),
-      titlePath,
+  loadPromise = fetch('/search-index.json')
+    .then((res) => res.json())
+    .then((data: SearchResult[]) => {
+      searchIndex = data
+    })
+    .catch(() => {
+      searchIndex = []
     })
 
-    // 递归搜索子目录
-    await searchRecursive(
-      [...basePath, item.id],
-      titlePath,
-      onResult,
-      (childRatio) => {
-        onProgress(accumulated + childRatio * itemWeight)
-      },
-      itemWeight,
-      abortSignal,
-    )
-
-    accumulated += itemWeight
-    onProgress(accumulated)
-  }
+  return loadPromise
 }
 
 /**
- * 搜索当前目录下的所有内容，边搜索边通过回调返回结果
- * 优先使用缓存，同时在搜索过程中构建缓存树
+ * 搜索当前目录下的所有内容
+ * 从预构建的搜索索引中过滤，纯内存操作，无网络请求
  */
 export async function searchAll(
   currentPath: string[],
@@ -109,5 +35,26 @@ export async function searchAll(
   onProgress: (ratio: number) => void,
   abortSignal: () => boolean,
 ): Promise<void> {
-  await searchRecursive(currentPath, '', onResult, onProgress, 1, abortSignal)
+  await ensureIndex()
+
+  if (!searchIndex || searchIndex.length === 0) {
+    onProgress(1)
+    return
+  }
+
+  const prefix = currentPath.join('/')
+  const total = searchIndex.length
+  let done = 0
+
+  for (const entry of searchIndex) {
+    if (abortSignal()) return
+
+    // 只返回当前目录下的结果
+    if (!prefix || entry.path.startsWith(prefix + '/') || entry.path.startsWith(prefix)) {
+      onResult(entry)
+    }
+
+    done++
+    onProgress(done / total)
+  }
 }
