@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "规范化句子长度，句子有相同数量的单词",
+    "content": [
+        {
+            "code": "s = input().split()\ncnt = int(input())\ns += [\"PAD\"]*cnt\nprint(*s[:cnt])",
+            "language": "python"
+        }
+    ],
+    "description": "规范化句子长度，使得句子有相同数量的单词。句子的单词用空格隔开。不足数量补单词PAD，超过进行截断。\n\n\n\n### 输入格式:\n\nI like china.\n5\n\n### 输出格式:\n\nI like china. PAD PAD\n\n\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\nI like china.\n5\n\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\nI like china. PAD PAD\n\n```\n"
+}

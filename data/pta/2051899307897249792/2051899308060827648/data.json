@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "任意个整数累积",
+    "content": [
+        {
+            "code": "a = 1\nfor i in input().split(','):\n    a *= int(i)\nprint(a)",
+            "language": "python"
+        }
+    ],
+    "description": "编写函数，计算任意个整数的累积。\n### 输入格式:\n\n输入多个整数。\n\n### 输出格式:\n\n输出累积。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n1,2,3,4,5,6,7,8,9,10\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n3628800\n```\n"
+}

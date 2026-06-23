@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "jmu-python-简单计算器",
+    "content": [
+        {
+            "code": "n = int(input())\n\nfor _ in range(n):\n    try:\n        print(f\"{eval(input()):.02f}\")\n    except Exception as e:\n        print(type(e).__name__)",
+            "language": "python"
+        }
+    ],
+    "description": "输入一个表达式字符串，计算其结果\n\n### 输入格式:\n\n- 行1：输入字符串数目\n- 下面分别输入要计算的表达式\n\n\n### 输出格式:\n\n输出计算结果，结果保留2位小数。对于异常数据能输出相应异常信息。\n\n### 输入样例1:\n\n```in\n4\n1+1\n56-23\n5/3\n5*3.5\n```\n\n### 输出样例1:\n\n```out\n2.00\n33.00\n1.67\n17.50\n```\n\n### 输入样例2:\n\n```in\n3\nab+23\n2/0\n23+36f\n```\n\n### 输出样例2:\n\n```out\nNameError\nZeroDivisionError\nSyntaxError\n```\n\n"
+}

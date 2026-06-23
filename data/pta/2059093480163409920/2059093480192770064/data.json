@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "鸣人(Naruto)类将继承忍者类",
+    "content": [
+        {
+            "code": "class Ninja:\n    def __init__(self, blood, chakra):\n        self.blood = blood\n        self.chakra = chakra\n\n    def katon(self):\n        print('Katon! Goukakyuu no Jutsu!')\n        self.chakra -= 20\n\n    def __str__(self):\n        return 'blood ' + str(self.blood) + '\\n' + 'chakra ' + str(self.chakra)\n\nclass Naruto(Ninja):\n    def shadow_clone(self):\n        print('Kage Bunshin no Jutsu!')\n        self.chakra -=  100\n\n    def rasengan(self):\n        print('Rasengan!')\n        self.chakra -= 500\n\nnaruto = Naruto(100, 2000)\nnaruto.shadow_clone()\nnaruto.rasengan()\nprint(naruto)\n\n",
+            "language": "python"
+        }
+    ],
+    "description": "已知忍者类如下：\n```\nclass Ninja:\n    def __init__(self, blood, chakra):\n        self.blood = blood\n        self.chakra = chakra\n    \n    def katon(self):\n        print('Katon! Goukakyuu no Jutsu!')\n        self.chakra -= 20\n\n    def __str__(self):\n        return 'blood ' + str(self.blood) + '\\n' + 'chakra ' + str(self.chakra)\n```\n请在此基础上创建一个鸣人(Naruto)类，\n它将继承忍者类并增加以下两个方法：\nshadow_clone() (多重影分身之术)\nrasengan() (螺旋丸)\n使用多重影分身之术的时候，会打印‘Kage Bunshin no Jutsu!’ 并减自身100查克拉；\n使用螺旋丸的时候，会打印‘Rasengan!’并减自身500查克拉。\n\n之后创建鸣人对象，其血量为100，查克拉为2000\n\n首先让鸣人使用多重影分身之术(naruto.shadow_clone())\n然后让鸣人使用螺旋丸(naruto.rasengan())\n然后显示鸣人的血量和查克拉\n\n\n### 输入样例：\n\n无输入\n\n```in\n\n```\n\n### 输出样例：\n\n```out\nKage Bunshin no Jutsu!\nRasengan!\nblood 100\nchakra 1400\n```\n"
+}

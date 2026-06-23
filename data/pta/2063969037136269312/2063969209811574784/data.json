@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "jmu-python-异常-学生成绩处理中级版",
+    "content": [
+        {
+            "code": "n = int(input())\nsum = 0\nhas_error = False\n\ndef inp():\n    try:\n        global sum\n        data = input().strip()\n        sum += int(data)\n    except:\n        print(f\"Error for data {data}! Reinput\")\n        global has_error\n        has_error = True\n        inp()\n\nfor _ in range(n):\n    inp()\n\nif has_error == False:\n    print(\"All OK\")\n\nprint(f\"avg grade = {sum / n:.2f}\")",
+            "language": "python"
+        }
+    ],
+    "description": "小明在帮老师处理数据，这些数据的第一行是n，代表有n行整数成绩需要统计。  \n接着连续输入n个成绩，如果中途输入错误（`非整数`）提示'Error! Reinput',  \n并输出错误的数据。然后重新输入，直到输入n个正确的成绩才退出。如果整个  \n输入过程中没有错误数据，提示'All OK'。最后输出所有学生的平均值，保留两  \n位小 \n数。  \n\n**注：**该程序可以适当处理小错误，比如对于有些数据如果左右包含空格，先去掉  \n空格再行处理。\n\n### 输入格式:\n第一行为n，代表接下来要输入的正确行数。  \n然后输入成绩，输入错误则提示重输，直到输入n行正确的数据为止。\n\n### 输出格式:\n如果输入过程中无异常，需输出`All OK`。  \n\n### 输入样例1:\n\n```in\n3\n1\n  2   \n    3   \n```\n\n### 输出样例1:\n\n```out\nAll OK\navg grade = 2.00\n```\n\n### 输入样例2:\n\n```in\n3\n1\n#\nb\n2\n3\n```\n\n### 输出样例2:\n\n```out\nError for data #! Reinput\nError for data b! Reinput\navg grade = 2.00\n```"
+}

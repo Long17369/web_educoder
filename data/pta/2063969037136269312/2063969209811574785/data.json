@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "jmu-python-数据异常处理",
+    "content": [
+        {
+            "code": "def end():\n    print(\"程序结束\")\n    exit()\n\ndef inp():\n    try:\n        return float(input())\n    except:\n        print(\"数值错误\")\n        end()\n\nn = int(input())\nsum = 0\nif n == 0:\n    print(\"除0错误，n不能等0\")\n    end()\n\nfor _ in range(n):\n    sum += inp()\n\nprint(\"正确\")\nprint(f\"avg={sum/n:.2f}\")\nend()\n",
+            "language": "python"
+        }
+    ],
+    "description": "输入一组数据，求平均值。要求：\n- 数据正确，正确计算。\n- 数据有错误，能异常处理，输出错误信息，不进行计算。\n\n\n### 输入格式:\n\n- 行1：n代表输入的数据个数\n- 接下来n行表示输入的数据\n\n\n### 输出格式:\n\n- 输入数据合法正确，则输出`正确`，并输出平均值。\n- 输入数据不正确，如果数值错误，输出`数值错误`\n- 除0错误，输出`除0错误，n不能等0`\n- 不管有没有异常，都输出`程序结束`\n\n\n### 输入样例1:\n\n```in\n3\n2\na\n```\n\n### 输出样例1:\n\n```out\n数值错误\n程序结束\n```\n\n### 输入样例2:\n\n```in\n0\n```\n\n### 输出样例2:\n\n```out\n除0错误，n不能等0\n程序结束\n```\n### 输入样例3:\n\n```in\n3\n5.6\n6.8\n9.4\n```\n\n### 输出样例3:\n\n```out\n正确\navg=7.27\n程序结束\n```"
+}

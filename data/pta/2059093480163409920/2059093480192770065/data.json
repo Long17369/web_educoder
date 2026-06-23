@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "银行账户BankAccount类",
+    "content": [
+        {
+            "code": "class BankAccount:\n    def __init__(self, balance: int):\n        self.__balance = balance\n\n    def getbalance(self):\n        return self.__balance\n\n    def withdraw(self, m:int):\n        if self.__balance < m:\n            print('Insufficient balance.', end='')\n        else:\n            self.__balance -= m\n\n    def deposit(self, m:int):\n        self.__balance += m\n\nbalance = int(input())\nbankAccount = BankAccount(balance)\nn = int(input())\nfor _ in range(n):\n    op, m = input().split()\n    m = int(m)\n    if op == 'w':\n        bankAccount.withdraw(m)\n    elif op == 'd':\n        bankAccount.deposit(m)\n    print('balance:', bankAccount.getbalance())",
+            "language": "python"
+        }
+    ],
+    "description": "定义银行账户BankAccount类。\n\n1. 私有数据成员：余额\\__balance（整型）。\n\n2. 公有成员方法：\\\n   带参构造方法BankAccount(m)：将账户余额初始化为指定的参数m。\\\n   getbalance() 方法：返回账户余额。\\\n   withdraw(m) 取款方法：从账户余额中提取m指定的款额，如果余额不足，给出” Insufficient balance.”。\\\n   deposit(m) 存款方法：将m指定的款项存到账户。\\\n   在主函数中构造银行账户，对其进行若干存取款操作。\\\n   其中操作类型为d表示存款，w表示取款，每次操作后打印账户余额。\n\n### 输入格式:\n\n账户余额\\\n存取款操作数\\\n操作类型 金额\n\n### 输出格式:\n\n操作后的账户余额。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n1000\n5\nw 400\nd 100\nw 500\nw 300\nw 100\n```\n\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\nbalance: 600\nbalance: 700\nbalance: 200\nInsufficient balance.balance: 200\nbalance: 100\n```"
+}

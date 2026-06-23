@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "字典翻转 ",
+    "content": [
+        {
+            "code": "try:\n    a = eval(input())\n    print({i:j for j,i in a.items()})\nexcept:\n    print(\"输入错误\")",
+            "language": "python"
+        }
+    ],
+    "description": "字典键值翻转输出。\n\n### 输入格式:\n\n用户输入一个字典类型的字符串，调换其中键值对，即“键”：值-- > 值：“键”。用户输入的字典格式的字符串，如果输入不正确，提示：输入错误。\n\n### 输出格式:\n\n输出调换后的字典。\n\n### 输入样例:\n\n在这里给出一组输入。例如：\n\n```in\n{\"A\":1,\"B\":2}\n```\n### 输出样例:\n\n在这里给出相应的输出。例如：\n\n```out\n{1: 'A', 2: 'B'}\n```\n"
+}

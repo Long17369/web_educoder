@@ -1,0 +1,11 @@
+{
+    "type": "problem",
+    "title": "jmu-python-异常-学生成绩处理专业版",
+    "content": [
+        {
+            "code": "n = int(input())\nsum = 0\nok = 0\nerror = 0\n\nfor i in range(n):\n    try:\n        data = input()\n        sum += int(data.strip())\n        ok += 1\n    except ValueError:\n        error += 1\n        print(f'line {i+1} error for input \"{data}\"')\n    except EOFError:\n        print(\"end of files\")\n        break\n\nprint(\"Total:\", error + ok)\nprint(\"OK:\", ok)\nprint(\"Error:\", error)\nprint(f\"avg grade = {sum/ok:.2f}\")\n",
+            "language": "python"
+        }
+    ],
+    "description": "小明在帮助老师统计成绩，老师给他的是一组数据。数据的第1行代表学生数n，后面  \n的n行代表每个学生的成绩。成绩是整数类型。小明编写了一个程序，该程序可以批量  \n处理数据，统计所有学生的平均分。当数据没有任何错误时，提示'All OK'，当数据有  \n一些错误(某行是浮点数、某行是非整数字符)时，可以提示哪些数据出错，并最后提示  \n第几行出错，出错的原因，共出错多少行。对于另一些小错误，如某行虽然是整数，但  \n是左右有多余的空格，可以将空格去除掉进行正常统计。\n\n**在最后输出：**  \n共处理多少行数据，几行正确，几行错误，平均成绩(保留两位小数)。\n \n**进阶要求：**  \n有可能碰到要求输入n行，后面的数据却小于n行。要求处理这种情况。碰到这种情况。  \n输出`end of files`，并统计现有行数。见样例3\n\n### 输入格式:\n第1行为n  \n 接下来输入<=n行数据进行测试\n\n### 输出格式:\n见样例输出。输出错误原因的时候，需要将整行输出（如果该行有左右空格，需要将左右空格也输出）\n\n\n### 输入样例1:\n```in\n3\n1\n    2    \n3\n```\n\n### 输出样例1:\n\n```out\nTotal: 3\nOK: 3\nError: 0\navg grade = 2.00\n```\n\n### 输入样例2:\n\n```in\n5\n1\n  2\n   a  \n  b  5\n3\n```\n\n### 输出样例2:\n\n```out\nline 3 error for input \"   a  \"\nline 4 error for input \"  b  5\"\nTotal: 5\nOK: 3\nError: 2\navg grade = 2.00\n```\n\n### 输入样例3:\n```in\n5\n a\n 2    \n3\n```\n\n### 输出样例3:\n\n```out\nline 1 error for input \" a\"\nend of files\nTotal: 3\nOK: 2\nError: 1\navg grade = 2.50\n```\n**提示：**对于样例3，如果是在IDLE中进行测试，可在输入最后一行并回车后，按'Ctrl+D'结束输入。"
+}
