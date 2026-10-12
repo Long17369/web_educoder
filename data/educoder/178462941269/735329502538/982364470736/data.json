@@ -1,0 +1,17 @@
+{
+    "type": "problem",
+    "title": "进程创建",
+    "description": "[TOC]\r\n\r\n---\r\n\r\n####任务描述\r\n\r\n`fork()`函数通过系统调用创建一个与原来进程几乎完全相同的进程。那么，进程中的变量父进程和子进程是否都能使用并修改呢？\r\n\r\n围绕问题的提出，我们尝试在父子进程中都修改同一个文件中的内容，最终将文件内容输出，便可知晓答案。\r\n\r\n下面我们通过学习相关知识并编写代码来测试你的猜想是否正确。\r\n\r\n\r\n####相关知识\r\n\r\nLinux 进程中的几个状态：\r\n\r\n-  R 运行状态 (`runing`)，并不意味着进程一定在运行中，也可以在运行队列里\r\n\r\n-  S 睡眠状态 (`sleeping`)，进程在等待事件完成（浅度睡眠，可以被唤醒）\r\n\r\n-  D 磁盘睡眠状态 (`Disk sleep`)，不可中断睡眠（深度睡眠，不可以被唤醒，通常在磁盘写入时发生）\r\n\r\n-  T 停止状态 (`stopped`)，可以通过发送 SIGSTOP 信号给进程来停止进程，可以发送 SIGCONT 信号让进程继续运行\r\n\r\n-  Z 僵尸状态 (`zombie`)，子进程退出，父进程还在运行，但是父进程没有读到子进程的退出状态，子进程进入僵尸状态\r\n\r\n为了完成本关任务，你需要掌握：1. 如何创建进程；2.`fork()`函数的执行步骤。\r\n\r\n#####进程的创建\r\n\r\n在使用创建进程函数前，我们需要先导入`unistd.h`库。\r\n\r\n创建进程的函数原型是：`pid_t fork(void)；`\r\n\r\n例如：\r\n```\r\npid_t pid = fork();\r\n```\r\n\r\n`pid_t`是一个整数类型，即`fork()`函数会返回新进程的 ID 号（`0~32768`的整数）。`fork`函数在父进程中返回子进程的`pid`，在子进程中返回`0`。\r\n\r\n注意在子进程中返回的`0`，并不是子进程的`pid`，子进程的`pid`在父进程的返回值中保存。而子进程的返回值是为了标识它是子进程，用来区分父子进程的。\r\n\r\n父子进程的注意事项：\r\n\r\n1. 新进程是当前进程的**子进程**。\r\n2. 父进程和子进程\r\n①父进程：`fork()`的调用者；\r\n②子进程：新建的进程。\r\n\r\n3. 子进程是父进程的**复制**（相同的代码，相同的数据，相同的堆栈），除了 ID 号和时间信息外，两者完全相同。\r\n4. 子进程和父进程可以并发运行。\r\n\r\n#####`fork()`函数的执行步骤\r\n\r\n由于子进程是父进程的复制，所以子进程中也会有创建子进程的语句，如果不加以限制，就会形成递归创建，但实际上并不是这样的。\r\n\r\n实际流程是：父进程创建了子进程后，子进程中“创建进程”语句**不再执行**，并发运行其他语句。\r\n\r\n在 Linux 的源码中我们可以找到`fork`函数：\r\n\r\n```\r\n...\r\ncopy_files(clone_flags,p);    //克隆文件\r\ncopy_fs(clone_flags,p);       //克隆文件系统\r\ncopy_mm(clone_flags,p);       //克隆内存信息\r\n...\r\n```\r\n\r\n我们可以看到有三条语句，用于拷贝进程的所有信息，这也解释了为什么说子进程是父进程的复制。\r\n\r\n####编程要求\r\n\r\n通过提示，在右侧编辑器中补充代码，完成在指定文件中添加内容，具体要求如下：\r\n\r\n1. 创建进程；\r\n2. 父进程向文件中添加`hello` 和 `world！`；\r\n3. 子进程向文件中添加`hello` 和 `welcome！`；\r\n4. 只需修改文件内容即可，平台将为你输出文件内容。\r\n\r\n提示：`fork()`函数的返回值为`0`时则为子进程。\r\n\r\n####测试说明\r\n\r\n平台会对你编写的代码进行测试：\r\n\r\n预期输出：\r\n`hello world!`\r\n`hello welcome!`\r\n\r\n\r\n\r\n\r\n\r\n---\r\n开始你的任务吧，祝你成功！\r\n\r\n\r\n",
+    "content": [
+        {
+            "code": "#include <stdio.h>\n#include <string.h>\n#include <unistd.h>\n\t//请在此处添加导入相应库函数代码\n\nint main(){\n    \n\tFILE *fp=fopen(\"test.txt\",\"w+\");\n    int pid;\t//pid表示fork函数的返回值\n\t/**********  Begin  **********/\n\tpid = fork();\n    if (pid == 0) {\n        fputs(\"hello welcome!\\n\", fp);\n    } else {\n        fputs(\"hello world!\\n\", fp);\n    }\n\n\t/**********  End  **********/\n    fclose(fp);\n\treturn 0;\n\t\n}",
+            "filename": "Task.c",
+            "language": "c"
+        },
+        {
+            "code": "cd src/step1\ntouch test.txt\ngcc -o Task Task.c #执行学生任务文件\n\ngrep \"fork\" Task.c >/dev/null #判断学生是否调用方法\nif [ $? -eq 0 ]; then\n    ./Task > test.txt\n\tcat test.txt\nelse\n    echo \"Not found!\"\nfi",
+            "filename": "Test.sh",
+            "language": "shell"
+        }
+    ]
+}
